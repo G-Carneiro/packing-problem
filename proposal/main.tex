@@ -1,0 +1,69 @@
+% --------------------------------------------
+% Definição do tipo do documento e suas
+% características.
+% --------------------------------------------
+\documentclass[
+    12pt,                   % Tamanho da fonte.
+    a4paper,                % Tipo de papel.
+    sumario=tradicional,    % Tipo de sumário.
+    brazil,                 % Linguagem principal do documento.
+    oneside                 % Imprimir documento em um lado da folha.
+]{abntex2}                  % Estilo do documento.
+
+% --------------------------------------------
+% Importação de configurações pessoais.
+% --------------------------------------------
+\usepackage{setup/packages}
+
+
+\input{setup/setup.tex}
+
+% --------------------------------------------
+% Início do documento.
+% --------------------------------------------
+% Aqui devem ser inseridas todas informações.
+% --------------------------------------------
+\begin{document}
+    % --------------------------------------------
+    % Inserção dos elementos pré-textuais.
+    % --------------------------------------------
+    % Capa, folha de rosto, ficha catalográfica,
+    % errata, folha de aprovação, dedicatória,
+    % agradecimentos, epígrafe, resumos,
+    % lista de ilustrações, lista de tabelas,
+    % lista de abreviaturas e siglas,
+    % lista de símbolos e sumário.
+    % --------------------------------------------
+    \include{beforetext/beforetext}
+
+    % --------------------------------------------
+    % Inserção dos elementos textuais.
+    % --------------------------------------------
+    % Aqui devem ser inseridos todos os capítulos
+    % e/ou seções do trabalho.
+    % --------------------------------------------
+    \chapter{Introdução}\label{ch:introducao}
+    \input{chapters/Introduction/introduction}
+
+    % --------------------------------------------
+    % Definição do estilo da bibliografia.
+    % Deve estar comentado para padrão ABNT.
+    % --------------------------------------------
+    %\bibliographystyle{unsrt}
+
+    % --------------------------------------------
+    % Definição do arquivo da bibliografia.
+    % --------------------------------------------
+    \bibliography{aftertext/references}
+
+    % --------------------------------------------
+    % Inserção dos elementos pós-textuais.
+    % --------------------------------------------
+    % Glossário, apêndices, anexos e índice.
+    % --------------------------------------------
+    \include{aftertext/aftertext}
+
+\end{document}
+% --------------------------------------------
+% Final do documento. Não adicionar nada após.
+% --------------------------------------------
