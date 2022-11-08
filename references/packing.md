@@ -18,6 +18,7 @@
 
 - 2DPackLib: a two-dimensional cutting and packing
   library. https://link.springer.com/article/10.1007/s11590-021-01808-y
+  - 2D-KP: não ficou claro.
 - Uma revisão sobre métodos exatos para problemas de empacotamento bidimensionais. Exact solution
   techniques for two-dimensional cutting and
   packing. https://www.sciencedirect.com/science/article/pii/S0377221720306111
