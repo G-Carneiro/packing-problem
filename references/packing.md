@@ -18,7 +18,10 @@
 
 - 2DPackLib: a two-dimensional cutting and packing
   library. https://link.springer.com/article/10.1007/s11590-021-01808-y
-  - 2D-KP: não ficou claro.
+    - 2D-KP: não ficou claro.
+    - guillotine cuts.
+    - loading constraints.
+    - http://or.dei.unibo.it/library/2dpacklib
 - Uma revisão sobre métodos exatos para problemas de empacotamento bidimensionais. Exact solution
   techniques for two-dimensional cutting and
   packing. https://www.sciencedirect.com/science/article/pii/S0377221720306111
@@ -35,4 +38,11 @@
 ---
 
 - Gurobi, Cplex, CBC, SCIP.
-- Bottom-left, area, perímetro, rotação.  
+- Bottom-left, area, perímetro, rotação.
+
+## Instancias
+
+- http://people.brunel.ac.uk/~mastjjb/jeb/info.html
+- https://www.ibr.cs.tu-bs.de/alg/packlib/instances_problem_type.shtml
+- https://oscar-oliveira.github.io/2D-Cutting-and-Packing/pages/datset.htm
+- http://people.brunel.ac.uk/~mastjjb/jeb/orlib/gcutinfo.html
