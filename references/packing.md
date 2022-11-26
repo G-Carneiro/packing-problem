@@ -16,15 +16,14 @@
 
 ## 2D
 
-- 2DPackLib: a two-dimensional cutting and packing
+- [x] 2DPackLib: a two-dimensional cutting and packing
   library. https://link.springer.com/article/10.1007/s11590-021-01808-y
     - 2D-KP: não ficou claro.
     - guillotine cuts.
     - loading constraints.
     - http://or.dei.unibo.it/library/2dpacklib
-- Uma revisão sobre métodos exatos para problemas de empacotamento bidimensionais. Exact solution
-  techniques for two-dimensional cutting and
-  packing. https://www.sciencedirect.com/science/article/pii/S0377221720306111
+- [ ] Uma revisão sobre métodos exatos para problemas de empacotamento bidimensionais. Exact solution techniques for two-dimensional cutting and packing. https://www.sciencedirect.com/science/article/pii/S0377221720306111
+    - book by Scheithauer (2018) https://books.google.com.br/books?hl=pt-BR&lr=&id=FlM7DwAAQBAJ&oi=fnd&pg=PR5&ots=_1sBmfTTp0&sig=sX2xrJtTukC5oT7m2aDjTsGH2mI&redir_esc=y#v=onepage&q&f=false
 - Uma heurística nova para o problema de corte 2d
   guilhotinado. https://www.sciencedirect.com/science/article/pii/S0377221721009826
 - Exemplo de problema industrial com empacotamento de retângulos e simulated
