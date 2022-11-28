@@ -2,7 +2,7 @@
 
 O problema de empacotamento, é um problema de otimização de difícil resolução.
 Seu objetivo é simples, colocar peças em um espaço $N$-dimensional.
-Tanto as peças quanto o espaço, podem ser de formato regular(convexo) ou não (côncavo).
+Tanto as peças quanto o espaço, podem ser de formato regular (convexo) ou não (côncavo).
 Pensando no caso 2D, triângulos, retângulos, círculos e outros polígonos convexos são considerados regulares, enquanto estrelas e outros polígonos côncavos são irregulares.
 
 O foco deste trabalho será em problemas de empacotamento 2D de peças e objetos retangulares ortogonais, sem qualquer variante.
@@ -29,4 +29,25 @@ Ambas restrições indicam uma orientação fixa, ou seja, peças não podem ser
 Por existirem diferentes objetivos na solução de um problema de empacotamento foram criadas algumas classificações.
 
 \subsection{Empacotamento 2D em Faixa}\label{subsec:empacotamento-2d-em-faixa}
+
+Aqui o objetivo é encontrar um empacotamento de altura mínima para um dado conjunto de itens em uma caixa com comprimento fixo.
+
+\subsection{Empacotamento 2D da Mochila}\label{subsec:empacotamento-2d-da-mochila}
+
+Nesse problema deve-se encontrar $\mathcal{I} \subseteq \mathcal{I}'$ que maximize o valor de $\mathcal{B}$.
+Geralmente o valor é dado pela área de caixa ocupada pelos itens, dessa forma, outra interpretação do problema seria minimizar a area desperdiçada (vazia).
+
+\subsection{Empacotamento 2D em Caixas}\label{subsec:empacotamento-2d-em-caixas}
+
+O problema envolve encontrar uma solução que minimize o número de caixas necessárias para empacotar todos os itens.
+As caixas podem possuir diferentes tamanhos, mas a maioria dos problemas lida com as mesmas dimensões.
+
+\subsection{Empacotamento 2D Ortogonal}\label{subsec:empacotamento-ortogonal}
+
+Nessa categoria busca-se uma solução, caso exista, para empacotar \textbf{todos} os itens na caixa.
+
+
+\section{Variantes}\label{sec:variantes}
+
+
 
