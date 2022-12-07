@@ -1,15 +1,17 @@
 \chapter{Problema de Empacotamento}\label{ch:problema-de-empacotamento}
 
 O problema de empacotamento, é um problema de otimização de difícil resolução.
-Seu objetivo é simples, colocar peças em um espaço $N$-dimensional.
+Seu objetivo é simples, colocar peças em um espaço $N$-dimensional, na \autoref{fig:packing-example} é possível ver representações para os casos 1D, 2D e 3D.
 Tanto as peças quanto o espaço, podem ser de formato regular (convexo) ou não (côncavo).
 Pensando no caso 2D, triângulos, retângulos, círculos e outros polígonos convexos são considerados regulares, enquanto estrelas e outros polígonos côncavos são irregulares.
+
+\input{utils/figures/packing_example}
 
 Outra forma de definir se uma peça é regular ou não, é o número de parâmetros necessários para representá-la.
 Se forem preciso três ou mais é irregular, caso contrário, regular\cite{aprendizado-reforco}.
 A \autoref{fig:pieces-example} mostra alguns exemplos de ambos tipos de peças.
 
-O foco deste trabalho será em problemas de empacotamento 2D de peças e objetos retangulares ortogonais, sem qualquer variante.
+O foco deste trabalho será em problemas de empacotamento 2D de peças e objetos retangulares ortogonais, sem qualquer variante (\autoref{sec:variantes}).
 
 \input{utils/figures/pieces_example}
 
@@ -31,6 +33,7 @@ Ambas restrições indicam uma orientação fixa, ou seja, peças não podem ser
 
 
 \section{Classificação}\label{sec:classificacao}
+% TODO: adicionar imagens para cada classe
 
 Por existirem diferentes objetivos na solução de um problema de empacotamento foram criadas algumas classificações.
 Algumas delas (as principais) são mostradas em \cite{exact-solution-techniques}.
@@ -45,8 +48,17 @@ As caixas podem possuir diferentes tamanhos, mas a maioria dos problemas lida co
 
 Por fim, no \textbf{Empacotamento 2D Ortogonal} busca-se uma solução, caso exista, para empacotar \textbf{todos} os itens na caixa.
 
+Todos os problemas descritos são NP-difícil, com exceção do Ortogonal, sendo NP-completo\cite{2DPackLib}.
+
 
 \section{Variantes}\label{sec:variantes}
 
 
+Variantes são pequenas alterações no escopo do problema, também podem ser vistas como restrições ou relaxamento.
+Existem quatro mais comuns\cite{2DPackLib}, os quais são descritos a seguir.
 
+\textbf{Corte guilhotinado} consiste em cortar a caixa de forma paralela a um de seus lados recursivamente, é útil na resolução de problemas de corte (problemas de empacotamento podem ser reduzidos para essa categoria e vice-versa).
+\textbf{Rotações ortogonais} são um modo de relaxar o problema, permitindo rotações de 90 graus para os itens a serem alocados.
+
+\textbf{Restrições de carga e descarga} implicam que algumas peças \textbf{devem} ser posicionadas em dada posição, usando como exemplo um caminhão de entregas, visa evitar situações onde um produto precisa ser descarregado para se ter acesso a um item mais a fundo e então carregar novamente o primeiro item.
+Existem varientes aplicáveis somente a algumas categorias do problema, é o caso de \textbf{caixas de tamanho variável}  que pode ser unida ao \textbf{Empacotamento 2D em Caixas} e define que caixas não têm de ter as mesmas dimensões.
