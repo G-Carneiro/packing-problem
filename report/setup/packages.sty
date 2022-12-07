@@ -33,7 +33,7 @@
 \RequirePackage{indentfirst}                        % Indenta primeiro parágrafo
 \RequirePackage{mathtools}                          % Mais símbolos matemáticos
 \RequirePackage{amsfonts}                           % Fontes matemáticas
-\RequirePackage[hyperref]{backref}                  % permissão de hyperlinks
+\RequirePackage{hyperref}                           % permissão de hyperlinks
 \RequirePackage[alf]{abntex2cite}                   % Referências com padrão ABNT
 
 % --------------------------------------------
@@ -46,21 +46,6 @@
 \providecommand{\listingautorefname}{Código}
 %\pagecolor{black}
 %\color{white}
-
-% --------------------------------------------
-% backref Commands
-% --------------------------------------------
-%\renewcommand*{\backref}[1]{}% for backref < 1.33 necessary
-\renewcommand*{\backrefalt}[4]{
-    \newline
-    \ifcase #1
-    Não citado.
-    \or
-    Citado na seção #2.
-    \else
-    Citado nas seções #2.
-    \fi
-}
 
 % --------------------------------------------
 % ABNTEX2 Commands
@@ -121,7 +106,7 @@
 %        \vfill
         \vspace*{\fill}
 %        \begin{center}
-            \textbf{\printtitle}\printsubtitle
+        \textbf{\printtitle}\printsubtitle
 %        \end{center}
         \vspace*{\fill}
 %        \vfill{
