@@ -1,13 +1,15 @@
-\chapter{Pesquisa Operacional}\label{ch:pesquisa-operacional}
+\chapter{Conceitos Básicos}\label{ch:conceitos-basicos}
+
+Antes de estudar o problema, são necessários alguns conceitos básicos e definição formal de termos importantes para a área de otimização.
 
 
-Pesquisa Operacional pode ser entendida como o estudo e a aplicação de métodos científicos para tomada de decisões em problemas complexos.
+\section{Pesquisa Operacional}\label{sec:pesquisa-operacional}
+
+Pesquisa Operacional pode ser entendida como o estudo e a aplicação de métodos científicos para tomada de decisões em problemas complexos\cite[p.IX]{arenales}.
 Ela permite modelar, analisar e solucionar tais problemas de modo, geralmente, satisfatório.
 
 
-\section{Conceitos Básicos}\label{sec:conceitos-basicos}
-
-\subsection{Modelos de Otimização}\label{subsec:modelos-de-otimizacao}
+\section{Modelos de Otimização}\label{sec:modelos-de-otimizacao}
 
 Modelos são aproximações de realidade, representam o problema de maneira simples e objetiva, usando restrições.
 Eles são o que baseiam a Pesquisa Operacional.
@@ -26,30 +28,26 @@ Onde
     \item $f(x)$: função objetivo, a qual determinará o critério de escolha da solução.
 \end{itemize}
 
-\subsection{Solução Factível}\label{subsec:solucao-factivel}
 
-Uma solução $x'$ é factível somente se satisfaz todas as restrições dados ao problema, ou seja, $x' \in \mathcal{X}$.
+\section{Definições}\label{sec:definicoes}
 
-\subsection{Problema Infactível}\label{subsec:solucao-infactivel}
+A seguir serão dadas as definições de quatro expressões que aparecem com frequência no estudo de problemas de otimização.
 
+Uma solução $x'$ é \textbf{factível} somente se satisfaz todas as restrições dados ao problema, ou seja, $x' \in \mathcal{X}$.
 Existem casos onde o problema não tem solução, possivelmente por muitas restrições terem sido aplicadas.
-Isso é chamado problema infactível e $\mathcal{X} = \emptyset$.
+Isso é chamado \textbf{problema infactível} e $\mathcal{X} = \emptyset$.
+Se para toda solução for possível encontrar outra melhor o problema é dito \textbf{ilimitado}.
 
-\subsection{Problema Ilimitado}\label{subsec:problema-ilimitado}
+Uma solução $x'$ é \textbf{ótima} somente se for \textbf{factível} e possuir resultado melhor que as demais soluções, isto é, $f(x') \le f(x), \forall x \in \mathcal{X}$ (caso seja um problema de maximização é necessário substituir “$\le$” por “$\ge$”).
+Importante observar que existe somente solução ótima se o problema não for infactível nem ilimitado.
 
-Se para toda solução for possível encontrar outra melhor o problema é ilimitado.
 
-\subsection{Solução Ótima}\label{subsec:solucao-otima}
-
-Uma solução $x'$ é ótima somente se for factível e possuir resultado melhor que as demais soluções, isto é, $f(x') \le f(x), \forall x \in \mathcal{X}$ (caso seja um problema de maximização é necessário substituir “$\le$” por “$\ge$”).
-Importante observar, que existe somente solução ótima se o problema não for infactível nem ilimitado.
-
-\subsection{Tipos de Modelo}\label{subsec:tipos-de-modelo}
+\section{Tipos de Modelo}\label{sec:tipos-de-modelo}
 % TODO: adicionar figuras
 
 É importante saber diferenciar os modelos devido ao método de resolução que varia para cada um deles.
 
-\subsubsection{Modelo Linear x Não-linear}\label{subsubsec:modelo-linear}
+\subsection{Modelo Linear x Não-linear}\label{subsec:modelo-linear}
 
 
 Modelos lineares possuem como função objetivo uma função linear e todas as restrições também são lineares.
@@ -68,16 +66,16 @@ Exemplos:
     \item $f(x_1, x_2) = \tan(x_1 + x_2)$.
 \end{itemize}
 
-\subsubsection{Modelo Contínuo x Discreto}\label{subsubsec:modelo-continuo-x-discreto}
+\subsection{Modelo Contínuo x Discreto}\label{subsec:modelo-continuo-x-discreto}
 
 Um modelo é contínuo quando sua região factível é contínua, ou seja, dado um ponto dessa região todos os seus vizinhos também serão uma solução.
 Modelos discretos não possuem seu domínio contínuo.
 
-\subsubsection{Modelo Determinístico x Estocástico}\label{subsubsec:modelo-deterministico-x-estocastico}
+\subsection{Modelo Determinístico x Estocástico}\label{subsec:modelo-deterministico-x-estocastico}
 
 Em modelos determinísticos seus dados são conhecidos, enquanto os estocásticos possuem uma incerteza quanto aos dados.
 
-\subsubsection{Tipos de Programação}\label{subsubsec:tipos-de-programacao}
+\subsection{Tipos de Programação}\label{subsec:tipos-de-programacao}
 
 Com base nas categorias de modelo é possível também dividir métodos de programação (planejamento) para sua solução.
 
@@ -88,7 +86,8 @@ Com base nas categorias de modelo é possível também dividir métodos de progr
     \item Não-linear: modelo não-linear contínuo determinístico.
 \end{itemize}
 
-\subsection{Métodos Exatos x Heurísticas}\label{subsec:metodos-exatos-x-heuristicas}
+
+\section{Métodos Exatos x Heurísticas}\label{sec:metodos-exatos-x-heuristicas}
 
 Métodos exatos sempre vão garantir a solução ótima para o problema, porém encontrar tal solução pode requerer grande tempo e/ou muitos recursos computacionais.
 Já heurísticas buscam por soluções factíveis e são geralmente usadas em problemas de grande porte.

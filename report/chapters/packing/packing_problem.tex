@@ -5,46 +5,45 @@ Seu objetivo é simples, colocar peças em um espaço $N$-dimensional.
 Tanto as peças quanto o espaço, podem ser de formato regular (convexo) ou não (côncavo).
 Pensando no caso 2D, triângulos, retângulos, círculos e outros polígonos convexos são considerados regulares, enquanto estrelas e outros polígonos côncavos são irregulares.
 
+Outra forma de definir se uma peça é regular ou não, é o número de parâmetros necessários para representá-la.
+Se forem preciso três ou mais é irregular, caso contrário, regular\cite{aprendizado-reforco}.
+A \autoref{fig:pieces-example} mostra alguns exemplos de ambos tipos de peças.
+
 O foco deste trabalho será em problemas de empacotamento 2D de peças e objetos retangulares ortogonais, sem qualquer variante.
+
+\input{utils/figures/pieces_example}
 
 
 \section{Definição}\label{sec:definicao}
 
-De acordo com \citeauthor{2DPackLib}, dado uma caixa retangular $\mathcal{B} = (W, H)$ de comprimento $W \in \mathbb{Z}_+$ e altura $H \in \mathbb{Z}_+$ e um conjunto $\mathcal{I}$ de itens também retangulares, onde cada item $i \in \mathcal{I}$ com comprimento $w_i \in \mathbb{Z}_+, w_i \le W$ e altura $h_i \in \mathbb{Z}_+, h_i \le H$.
+De acordo com \cite{2DPackLib}, dado uma caixa retangular $\mathcal{B} = (W, H)$ de comprimento $W \in \mathbb{Z}_+$ e altura $H \in \mathbb{Z}_+$ e um conjunto $\mathcal{I}$ de itens também retangulares, onde cada item $i \in \mathcal{I}$ com comprimento $w_i \in \mathbb{Z}_+, w_i \le W$ e altura $h_i \in \mathbb{Z}_+, h_i \le H$.
 Um empacotamento $\mathcal{I}' \subseteq \mathcal{I}$ em $\mathcal{B}$ pode ser descrito como uma função $\mathcal{F}: \mathcal{I}' \to \mathbb{Z}_+^2$ que mapeie cada item $i \in \mathcal{I}'$ para um par de coordenadas $\mathcal{F}(i) = (x_i, y_i)$, de forma
 
 \begin{align}
-    x_i \in {0, \dots, W - w_i}, y_i \in {0, \dots, H - h_i} (i \in \mathcal{I}') \label{eq:1} \\
+    x_i \in \{0, \dots, W - w_i\}, y_i \in \{0, \dots, H - h_i\} (i \in \mathcal{I}') \label{eq:1} \\
     [x_i, x_i + w_i) \cap [x_j, x_j + w_j) = \emptyset \text{ ou } [y_i, y_i + h_i) \cap [y_j, y_j + h_j) = \emptyset (i, j \in \mathcal{I}', i \neq j) \label{eq:2}.
 \end{align}
 
 Nessa forma de representação a caixa está posicionada no plano cartesiano, com seu canto inferior esquerdo na origem.
 Já as coordenadas $\mathcal{F}(i) = (x_i, y_i)$ representam a posição em que o canto inferior esquerdo da peça será alocado.
-A \autoref{eq:1} garante que cada item deve estar inteiramente dentro da caixa, enquanto a \autoref{eq:2} impede sobreposição entre peças.
+A Restrição \ref{eq:1} garante que cada item deve estar inteiramente dentro da caixa, enquanto a Restrição \ref{eq:2} impede sobreposição entre peças.
 Ambas restrições indicam uma orientação fixa, ou seja, peças não podem ser rotacionadas.
 
 
 \section{Classificação}\label{sec:classificacao}
 
 Por existirem diferentes objetivos na solução de um problema de empacotamento foram criadas algumas classificações.
+Algumas delas (as principais) são mostradas em \cite{exact-solution-techniques}.
 
-\subsection{Empacotamento 2D em Faixa}\label{subsec:empacotamento-2d-em-faixa}
+O objetivo do \textbf{Empacotamento 2D em Faixa} é encontrar um empacotamento de altura mínima para um dado conjunto de itens em uma caixa com comprimento fixo.
 
-Aqui o objetivo é encontrar um empacotamento de altura mínima para um dado conjunto de itens em uma caixa com comprimento fixo.
-
-\subsection{Empacotamento 2D da Mochila}\label{subsec:empacotamento-2d-da-mochila}
-
-Nesse problema deve-se encontrar $\mathcal{I} \subseteq \mathcal{I}'$ que maximize o valor de $\mathcal{B}$.
+No \textbf{Empacotamento 2D da Mochila} deve-se encontrar $\mathcal{I} \subseteq \mathcal{I}'$ que maximize o valor de $\mathcal{B}$.
 Geralmente o valor é dado pela área de caixa ocupada pelos itens, dessa forma, outra interpretação do problema seria minimizar a area desperdiçada (vazia).
 
-\subsection{Empacotamento 2D em Caixas}\label{subsec:empacotamento-2d-em-caixas}
-
-O problema envolve encontrar uma solução que minimize o número de caixas necessárias para empacotar todos os itens.
+Já o \textbf{Empacotamento 2D em Caixas} envolve encontrar uma solução que minimize o número de caixas necessárias para empacotar todos os itens.
 As caixas podem possuir diferentes tamanhos, mas a maioria dos problemas lida com as mesmas dimensões.
 
-\subsection{Empacotamento 2D Ortogonal}\label{subsec:empacotamento-ortogonal}
-
-Nessa categoria busca-se uma solução, caso exista, para empacotar \textbf{todos} os itens na caixa.
+Por fim, no \textbf{Empacotamento 2D Ortogonal} busca-se uma solução, caso exista, para empacotar \textbf{todos} os itens na caixa.
 
 
 \section{Variantes}\label{sec:variantes}
