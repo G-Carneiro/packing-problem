@@ -48,7 +48,7 @@ As caixas podem possuir diferentes tamanhos, mas a maioria dos problemas lida co
 
 Por fim, no \textbf{Empacotamento 2D Ortogonal} busca-se uma solução, caso exista, para empacotar \textbf{todos} os itens na caixa.
 
-Todos os problemas descritos são NP-difícil, com exceção do Ortogonal, sendo NP-completo\cite{2DPackLib}.
+Todos os problemas descritos são NP-difícil, com exceção do Ortogonal, sendo NP-completo \cite{2DPackLib}.
 
 
 \section{Variantes}\label{sec:variantes}
@@ -73,3 +73,6 @@ Consequentemente a literatura é dominada por abordagens que usem heurísticas e
 
 Sua premissa é simples, dado uma fila como entrada, enquanto ela não estiver vazia, basta retirar o primeiro item dela e alocar no canto mais a baixo e a esquerda quanto for possível \cite{aprendizado-reforco}, sem sobreposições entre peças (\autoref{sec:definicao}).
 Caso não exista uma posição válida, a peça é desconsiderada e passa-se para próxima da fila.
+A \autoref{fig:bottom-left} mostra um exemplo de alocação para um dado conjunto de peças regulares.
+
+\input{utils/figures/bottom_left}
