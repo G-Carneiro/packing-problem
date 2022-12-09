@@ -65,19 +65,11 @@ Existem varientes aplicáveis somente a algumas categorias do problema, é o cas
 
 
 \section{Bottom-Left}\label{sec:bottom-left}
+% TODO: adicionar figura com exemplo
 
 Como descrito na \autoref{sec:classificacao}, a maioria das classes do problema são NP-difíceis.
 Isso torna métodos de soluções exatos, os quais buscam pela solução ótima, extremamente custosos em tempo e recursos computacionais em instâncias de porte moderado, muitas vezes sendo inviável por falta de algum desses dois motivos.
 Consequentemente a literatura é dominada por abordagens que usem heurísticas e meta-heurísticas, sendo a \textit{bottom-left} uma das principais estratégias de solução e será usada no estudo deste trabalho.
 
-Sua premissa é simples, dado uma fila como entrada, enquanto ela não estiver vazia, basta retirar o primeiro item dela e alocar no canto mais a baixo e a esquerda quanto for possível, sem sobreposições entre peças (\autoref{sec:definicao}).
+Sua premissa é simples, dado uma fila como entrada, enquanto ela não estiver vazia, basta retirar o primeiro item dela e alocar no canto mais a baixo e a esquerda quanto for possível \cite{aprendizado-reforco}, sem sobreposições entre peças (\autoref{sec:definicao}).
 Caso não exista uma posição válida, a peça é desconsiderada e passa-se para próxima da fila.
-
-
-% https://link.springer.com/article/10.1023/A:1012590107280
-% https://repositorio.unesp.br/handle/11449/94286
-% https://www.scielo.br/j/pope/a/tTXXckvGTHbDfZQkmzCqdkp/?lang=pt&format=html
-% https://repositorio.usp.br/item/000734666
-% https://www.teses.usp.br/teses/disponiveis/55/55134/tde-10032022-110656/en.php
-% https://www.sciencedirect.com/science/article/abs/pii/S0377221719303820?casa_token=qkJplmp-pmoAAAAA:2B1oeacxI3JDHiIL9ZAc5SKPNVX1oJtaxGzH8g_WwrY2ekkF2J1alsHrlnntSuzJ4G9Kr7zx6J6Q
-
