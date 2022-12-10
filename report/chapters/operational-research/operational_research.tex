@@ -86,6 +86,13 @@ Com base nas categorias de modelo é possível também dividir métodos de progr
 
 
 \section{Métodos Exatos x Heurísticas}\label{sec:metodos-exatos-x-heuristicas}
+% TODO: falar mais sobre heurísticas e como escapar de ótimos locais.
 
 Métodos exatos sempre vão garantir a solução ótima para o problema, porém encontrar tal solução pode requerer grande tempo e/ou muitos recursos computacionais.
 Já heurísticas buscam por soluções factíveis e são geralmente usadas em problemas de grande porte.
+
+Como o problema de interesse é NP-difícil e o principal interesse é em instâncias de médio e grande porte, utilizar um método exato seria bastante desafiador e, provavelmente, não seria possível obter um resultado em tempo hábil devido aos recursos computacionais atuais.
+Portanto, métodos heuríticos serão usados, já que eles tendem a diminuir a demanda computacional, porém não garantem otimalidade da solução resultante.
+
+Heurísticas geralmente convergem para ótimos locais, por isso geralmente mecanismos de fuga são usados para se escapar dessa região e tentar atingir um resultado melhor.
+Alguns exemplos desses mecanismos são o \textit{multi-start} e o \textit{simulated annealing}.
