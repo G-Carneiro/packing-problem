@@ -5,8 +5,6 @@ Seu objetivo é simples, colocar peças em um espaço $N$-dimensional, na \autor
 Tanto as peças quanto o espaço, podem ser de formato regular (convexo) ou não (côncavo).
 Pensando no caso 2D, triângulos, retângulos, círculos e outros polígonos convexos são considerados regulares, enquanto estrelas e outros polígonos côncavos são irregulares.
 
-\input{utils/figures/packing_example}
-
 Outra forma de definir se uma peça é regular ou não, é o número de parâmetros necessários para representá-la.
 Se forem preciso três ou mais é irregular, caso contrário, regular \cite{aprendizado-reforco}.
 A \autoref{fig:pieces-example} mostra alguns exemplos de ambos tipos de peças.
@@ -61,7 +59,7 @@ Todos os problemas descritos são NP-difícil, com exceção do Ortogonal, sendo
 
 
 Variantes são pequenas alterações no escopo do problema, também podem ser vistas como restrições ou relaxamento.
-Existem quatro mais comuns \cite{2DPackLib}, os quais são descritos a seguir.
+Existem quatro mais comuns \cite{2DPackLib}, as quais são descritas a seguir.
 
 \textbf{Corte guilhotinado} consiste em cortar a caixa de forma paralela a um de seus lados recursivamente, é útil na resolução de problemas de corte (problemas de empacotamento podem ser reduzidos para essa categoria e vice-versa).
 \textbf{Rotações ortogonais} são um modo de relaxar o problema, permitindo rotações de 90 graus para os itens a serem alocados.
@@ -77,11 +75,11 @@ Como descrito na \autoref{sec:classificacao}, a maioria das classes do problema 
 Isso torna métodos de soluções exatos, os quais buscam pela solução ótima, extremamente custosos em tempo e recursos computacionais em instâncias de porte moderado, muitas vezes sendo inviável por falta de algum desses dois motivos.
 Consequentemente a literatura é dominada por abordagens que usem heurísticas e meta-heurísticas, sendo a \textit{bottom-left} uma das principais estratégias de solução e será usada no estudo deste trabalho.
 
+\input{utils/figures/bottom_left}
+
 Sua premissa é simples, dado uma fila como entrada, enquanto ela não estiver vazia, basta retirar o primeiro item dela e alocar no canto mais a baixo e a esquerda quanto for possível \cite{aprendizado-reforco}, sem sobreposições entre peças (\autoref{sec:definicao}).
 Caso não exista uma posição válida, a peça é desconsiderada e passa-se para próxima da fila.
 A \autoref{fig:bottom-left} mostra um exemplo de alocação para um dado conjunto de peças regulares.
 
 Vale destacar que a própria ordem da fila pode gerar resultados diferentes, alterando a qualidade da solução.
 Um dos resultados esperados deste trabalho é comparar diferentes formas de ordenação e identificar se há alguma que se destaque na qualidade de solução, para isso será usado um conjunto de instâncias.
-
-\input{utils/figures/bottom_left}
