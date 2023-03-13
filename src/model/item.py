@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 from .coordinate import Coordinate
+from .ordered_queue import OrderedQueue
+from .region import Region
 
 
 class Item:
@@ -16,7 +18,7 @@ class Item:
         self._demand: int = demand
         self._copies: int = copies
         self._items: set[Item] = items
-        self._available_pos: list[Coordinate] = [Coordinate(x=0, y=0)]
+        self._regions: OrderedQueue[Region] = OrderedQueue([Region((0, 0), (width, height))])
 
     @property
     def height(self) -> float:
@@ -40,7 +42,4 @@ class Item:
                 new_x: float = coord.x + item.width
                 new_y: float = coord.y + item.height
                 if (new_x <= self.width) and (new_y <= self.height):
-                    self._available_pos.remove(coord)
-                    self._available_pos.append(Coordinate(new_x, coord.y))
-                    self._available_pos.append(Coordinate(coord.x, new_y))
                     break
