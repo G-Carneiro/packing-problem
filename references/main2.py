@@ -1,6 +1,8 @@
-import sys, os
+import sys
 from itertools import product
-from pulp import LpProblem, LpMaximize, LpVariable, lpSum, GUROBI_CMD, PULP_CBC_CMD, CPLEX_CMD, CPLEX_PY, SCIP_CMD
+
+from pulp import LpMaximize, LpProblem, lpSum, LpVariable
+
 
 class Data:
     def __init__(self, filename):
@@ -94,7 +96,6 @@ def solve_model(inputfile):
     pos = {i: (x[i].varValue, y[i].varValue) for i in B if p[i].varValue > 0.5}
     plot_solution(pos, items, container)
     
-
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:

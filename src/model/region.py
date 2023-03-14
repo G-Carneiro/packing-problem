@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from .coordinate import Coordinate
-from .item import Item
 
 
 class Region:
@@ -40,29 +39,3 @@ class Region:
 
     def __lt__(self, other: Region) -> bool:
         return (self._start < other.start)
-
-    def split_horizontally(self, item: Item) -> tuple[Region, Region]:
-        start = (item.position.x, item.position.y + item.height)
-        end = self.end
-        region0 = Region(start=start, end=end)
-        start = (item.position.x + item.width, item.position.y)
-        end = (self.end.x, item.position.y + item.height)
-        region1 = Region(start=start, end=end)
-        return (region0, region1)
-
-    def split_vertically(self, item: Item) -> tuple[Region, Region]:
-        start = (item.position.x, item.position.y + item.height)
-        end = (item.position.x + item.width, self.end.y)
-        region0 = Region(start=start, end=end)
-        start = (item.position.x + item.width, item.position.y)
-        end = self.end
-        region1 = Region(start=start, end=end)
-        return (region0, region1)
-
-    def fake_split(self, item: Item) -> tuple[Region, Region]:
-        start = (item.position.x, item.position.y + item.height)
-        end = self.end
-        region0 = Region(start=start, end=end)
-        start = (item.position.x + item.width, item.position.y)
-        region1 = Region(start=start, end=end)
-        return (region0, region1)

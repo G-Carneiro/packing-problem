@@ -57,12 +57,17 @@ class Item:
     def position(self, coordinate: Coordinate | None) -> None:
         self._position = coordinate
 
+    def coords(self) -> tuple[Coordinate, Coordinate, Coordinate, Coordinate]:
+        return (self.position, self.position + (0, self.height),
+                self.position + (self.width, 0), self.position + (self.width, self.height))
+
     def conflict(self, other: Item) -> bool:
         if (other.position is None):
             return False
-        if (self.position.x):  # cohen-... CG
-            pass
-
+        for coord in self.coords():
+            if (other.position.x < coord.x < other.position.x + other.width) and \
+                    (other.position.y < coord.y < other.position.y + other.height):
+                return True
         return False
 
     def replace_region(self, original: Region, split: tuple[Region, Region]) -> None:
@@ -70,6 +75,35 @@ class Item:
         self._regions.append(split[0])
         self._regions.append(split[1])
         return None
+
+    @staticmethod
+    def split_horizontally(region: Region, item: Item) -> tuple[Region, Region]:
+        start = (item.position.x, item.position.y + item.height)
+        end = region.end
+        region0 = Region(start=start, end=end)
+        start = (item.position.x + item.width, item.position.y)
+        end = (region.end.x, item.position.y + item.height)
+        region1 = Region(start=start, end=end)
+        return (region0, region1)
+
+    @staticmethod
+    def split_vertically(region: Region, item: Item) -> tuple[Region, Region]:
+        start = (item.position.x, item.position.y + item.height)
+        end = (item.position.x + item.width, region.end.y)
+        region0 = Region(start=start, end=end)
+        start = (item.position.x + item.width, item.position.y)
+        end = region.end
+        region1 = Region(start=start, end=end)
+        return (region0, region1)
+
+    @staticmethod
+    def fake_split(region: Region, item: Item) -> tuple[Region, Region]:
+        start = (item.position.x, item.position.y + item.height)
+        end = region.end
+        region0 = Region(start=start, end=end)
+        start = (item.position.x + item.width, item.position.y)
+        region1 = Region(start=start, end=end)
+        return (region0, region1)
 
     def solve(self, order_mode: OrderMode, split_mode: SplitMode, decrescent: bool) -> None:
         match order_mode:
@@ -87,9 +121,10 @@ class Item:
 
         for item in items:
             for region in self._regions:
-                if (item.width <= region.width) and (item.height <= region.height):
-                    item.position = region.start
+                if (item.width > region.width) or (item.height > region.height):
+                    continue
 
+                item.position = region.start
                 match split_mode:
                     case SplitMode.NONE:
                         for other in items:
@@ -101,14 +136,14 @@ class Item:
 
                         if (item.position is None):
                             continue
-                        split = region.fake_split(item=item)
+                        split = self.fake_split(region=region, item=item)
                     case SplitMode.HORIZONTALLY:
-                        split = region.split_horizontally(item=item)
+                        split = self.split_horizontally(region=region, item=item)
                     case SplitMode.VERTICALLY:
-                        split = region.split_vertically(item=item)
+                        split = self.split_vertically(region=region, item=item)
                     case _:
-                        split_h = region.split_horizontally(item=item)
-                        split_v = region.split_vertically(item=item)
+                        split_h = self.split_horizontally(region=region, item=item)
+                        split_v = self.split_vertically(region=region, item=item)
                         biggest = max(split_h[0], split_h[1], split_v[0], split_v[1])
                         if (biggest in split_h):
                             split = split_h
