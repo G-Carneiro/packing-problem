@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from typing import NoReturn
+
 from .coordinate import Coordinate
 from .ordered_queue import OrderedQueue
 from .region import Region
@@ -34,6 +36,14 @@ class Item:
         return self._width
 
     @property
+    def items(self) -> set[Item]:
+        return self._items
+
+    @property
+    def regions(self) -> OrderedQueue[Region]:
+        return self._regions
+
+    @property
     def demand(self) -> float:
         return self._demand
 
@@ -54,7 +64,7 @@ class Item:
         return self._position
 
     @position.setter
-    def position(self, coordinate: Coordinate | None) -> None:
+    def position(self, coordinate: Coordinate | None) -> NoReturn:
         self._position = coordinate
 
     def coords(self) -> tuple[Coordinate, Coordinate, Coordinate, Coordinate]:
@@ -72,8 +82,11 @@ class Item:
 
     def replace_region(self, original: Region, split: tuple[Region, Region]) -> None:
         self._regions.remove(original)
-        self._regions.append(split[0])
-        self._regions.append(split[1])
+        r0, r1 = split
+        if (r0.start.x != r0.end.x) and (r0.start.y != r0.end.y):
+            self._regions.append(r0)
+        if (r1.start.x != r1.end.x) and (r1.start.y != r1.end.y):
+            self._regions.append(r1)
         return None
 
     @staticmethod
@@ -106,20 +119,9 @@ class Item:
         return (region0, region1)
 
     def solve(self, order_mode: OrderMode, split_mode: SplitMode, decrescent: bool) -> None:
-        match order_mode:
-            case OrderMode.AREA:
-                items: list[Item] = sorted(self._items, key=lambda x: x.area, reverse=decrescent)
-            case OrderMode.HEIGHT:
-                items: list[Item] = sorted(self._items, key=lambda x: x.height, reverse=decrescent)
-            case OrderMode.WIDTH:
-                items: list[Item] = sorted(self._items, key=lambda x: x.width, reverse=decrescent)
-            case OrderMode.PERIMETER:
-                items: list[Item] = sorted(self._items, key=lambda x: x.perimeter,
-                                           reverse=decrescent)
-            case _:
-                items = list(self._items)
-
-        for item in items:
+        self._items = sorted(self._items, key=lambda x: eval(f"x.{order_mode.name.lower()}"),
+                             reverse=decrescent)
+        for item in self._items:
             for region in self._regions:
                 if (item.width > region.width) or (item.height > region.height):
                     continue
@@ -127,7 +129,7 @@ class Item:
                 item.position = region.start
                 match split_mode:
                     case SplitMode.NONE:
-                        for other in items:
+                        for other in self._items:
                             if (other == item):
                                 break
                             if item.conflict(other=other):

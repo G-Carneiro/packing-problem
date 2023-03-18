@@ -45,3 +45,4 @@
 - https://www.ibr.cs.tu-bs.de/alg/packlib/instances_problem_type.shtml
 - https://oscar-oliveira.github.io/2D-Cutting-and-Packing/pages/datset.htm
 - http://people.brunel.ac.uk/~mastjjb/jeb/orlib/gcutinfo.html
+- gcut, ngcut

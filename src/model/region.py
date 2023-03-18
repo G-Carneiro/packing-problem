@@ -39,3 +39,6 @@ class Region:
 
     def __lt__(self, other: Region) -> bool:
         return (self._start < other.start)
+
+    def __repr__(self) -> str:
+        return f"{self.start} {self.end}"
