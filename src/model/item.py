@@ -15,13 +15,13 @@ class Item:
                  height: float = float("inf"),
                  demand: int = 1,
                  copies: int = 1,
-                 items: set[Item] = None,
+                 items: list[Item] = None,
                  ) -> None:
         self._width: float = width
         self._height: float = height
         self._demand: int = demand
         self._copies: int = copies
-        self._items: set[Item] = items
+        self._items: list[Item] = items
         self._area: float = width * height
         self._perimeter: float = 2 * (width + height)
         self._position: Coordinate | None = None
@@ -36,7 +36,7 @@ class Item:
         return self._width
 
     @property
-    def items(self) -> set[Item]:
+    def items(self) -> list[Item]:
         return self._items
 
     @property
@@ -119,8 +119,8 @@ class Item:
         return (region0, region1)
 
     def solve(self, order_mode: OrderMode, split_mode: SplitMode, decrescent: bool) -> None:
-        self._items = sorted(self._items, key=lambda x: eval(f"x.{order_mode.name.lower()}"),
-                             reverse=decrescent)
+        if (order_mode != OrderMode.NONE):
+            self._items.sort(key=lambda x: eval(f"x.{order_mode.name.lower()}"), reverse=decrescent)
         for item in self._items:
             for region in self._regions:
                 if (item.width > region.width) or (item.height > region.height):
@@ -154,3 +154,4 @@ class Item:
 
                 self.replace_region(original=region, split=split)
                 break
+        return None

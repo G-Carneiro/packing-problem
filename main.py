@@ -16,10 +16,10 @@ def main() -> None:
                 for descending in [True, False]:
                     for _ in range(num_tests):
                         print(order, split, descending)
-                        items: set[Item] = set()
+                        items: list[Item] = []
                         for line in lines[2:]:
                             _, width, height = line.split()
-                            items.add(Item(width=float(width), height=float(height)))
+                            items.append(Item(width=float(width), height=float(height)))
                         width, height = lines[1].split()
                         box = Item(width=float(width), height=float(height), items=items)
                         start = time()
