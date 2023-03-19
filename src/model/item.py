@@ -71,8 +71,43 @@ class Item:
         return (self.position, self.position + (0, self.height),
                 self.position + (self.width, 0), self.position + (self.width, self.height))
 
+    def percent_free(self) -> float:
+        return (100 - self.percent_busy())
+
+    def percent_busy(self) -> float:
+        busy_area: float = 0
+        for item in self.items:
+            if item.position is not None:
+                busy_area += item.area
+        return (busy_area / self.area * 100)
+
+    def solution_quality(self) -> float:
+        for item in self.items:
+            if item.position is None:
+                break
+        else:
+            return self.percent_busy()
+        return 100
+
+    def inside_items(self) -> int:
+        num_items: int = 0
+        for item in self.items:
+            if item.position is not None:
+                num_items += 1
+
+        return num_items
+
+    def outside_items(self) -> int:
+        return (len(self.items) - self.inside_items())
+
+    def inside_items_percent(self) -> float:
+        return (self.inside_items() / len(self.items) * 100)
+
+    def outside_item_percent(self) -> float:
+        return (self.outside_items() / len(self.items) * 100)
+
     def conflict(self, other: Item) -> bool:
-        if (other.position is None):
+        if (other.position is None) or (self.position is None):
             return False
         for coord in self.coords():
             if (other.position.x < coord.x < other.position.x + other.width) and \
@@ -118,7 +153,7 @@ class Item:
         region1 = Region(start=start, end=end)
         return (region0, region1)
 
-    def solve(self, order_mode: OrderMode, split_mode: SplitMode, decrescent: bool) -> None:
+    def solve(self, order_mode: OrderMode, split_mode: SplitMode, decrescent: bool) -> float:
         if (order_mode != OrderMode.NONE):
             self._items.sort(key=lambda x: eval(f"x.{order_mode.name.lower()}"), reverse=decrescent)
         for item in self._items:
@@ -154,4 +189,4 @@ class Item:
 
                 self.replace_region(original=region, split=split)
                 break
-        return None
+        return self.solution_quality()
