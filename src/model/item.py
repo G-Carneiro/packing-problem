@@ -107,6 +107,7 @@ class Item:
         return (self.outside_items() / len(self.items) * 100)
 
     def conflict(self, other: Item) -> bool:
+        #  FIXME: use cohen-sutherland clipping algorithm
         if (other.position is None) or (self.position is None):
             return False
         for coord in self.coords():
