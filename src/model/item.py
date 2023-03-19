@@ -155,9 +155,11 @@ class Item:
         return (region0, region1)
 
     def solve(self, order_mode: OrderMode, split_mode: SplitMode, decrescent: bool) -> float:
+        items = self.items
         if (order_mode != OrderMode.NONE):
-            self._items.sort(key=lambda x: eval(f"x.{order_mode.name.lower()}"), reverse=decrescent)
-        for item in self._items:
+            items = sorted(self._items, key=lambda x: eval(f"x.{order_mode.name.lower()}"),
+                           reverse=decrescent)
+        for item in items:
             for region in self._regions:
                 if (item.width > region.width) or (item.height > region.height):
                     continue
@@ -165,7 +167,7 @@ class Item:
                 item.position = region.start
                 match split_mode:
                     case SplitMode.NONE:
-                        for other in self._items:
+                        for other in items:
                             if (other == item):
                                 break
                             if item.conflict(other=other):
@@ -191,3 +193,10 @@ class Item:
                 self.replace_region(original=region, split=split)
                 break
         return self.solution_quality()
+
+    def reset(self) -> None:
+        self.position = None
+        self._regions = OrderedQueue([Region((0, 0), (self.width, self.height))])
+        for item in self.items:
+            item.reset()
+        return None
