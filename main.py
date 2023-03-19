@@ -44,16 +44,17 @@ def main(folder: str = "references/bkw") -> None:
         file_name = file.name
         with open(file, "r") as f:
             lines = f.readlines()
+        items: list[Item] = []
+        for line in lines[2:]:
+            _, width, height = line.split()
+            items.append(Item(width=float(width), height=float(height)))
+        width, height = lines[1].split()
+        box = Item(width=float(width), height=float(height), items=items)
         for split in SplitMode:
             for order in OrderMode:
                 for descending in [True, False]:
                     for _ in range(num_tests):
-                        items: list[Item] = []
-                        for line in lines[2:]:
-                            _, width, height = line.split()
-                            items.append(Item(width=float(width), height=float(height)))
-                        width, height = lines[1].split()
-                        box = Item(width=float(width), height=float(height), items=items)
+                        box.reset()
                         start = time()
                         box.solve(order_mode=order, split_mode=split, decrescent=descending)
                         exec_time = time() - start

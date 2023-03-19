@@ -15,7 +15,7 @@ class Item:
                  height: float = float("inf"),
                  demand: int = 1,
                  copies: int = 1,
-                 items: list[Item] = None,
+                 items: list[Item] = (),
                  ) -> None:
         self._width: float = width
         self._height: float = height
@@ -86,8 +86,8 @@ class Item:
             if item.position is None:
                 break
         else:
-            return self.percent_busy()
-        return 100
+            return 100
+        return self.percent_busy()
 
     def inside_items(self) -> int:
         num_items: int = 0
