@@ -1,8 +1,6 @@
-from os import listdir, path, scandir
+from os import listdir, makedirs, path, scandir
 from time import time
 
-import matplotlib.pyplot as plt
-from matplotlib.patches import Rectangle
 from pandas import DataFrame
 from tabulate import tabulate
 
@@ -11,44 +9,51 @@ from src.utils.order_mode import OrderMode
 from src.utils.split_mode import SplitMode
 
 
-def export_model(model: Item, figure_file: str) -> None:
-    fig, ax = plt.subplots()
-    box = Rectangle(xy=(0, 0), width=model.width, height=model.height, alpha=0.1)
-    ax.add_patch(box)
-    cmap = plt.cm.get_cmap('brg', len(model.items))
-    for idx, item in enumerate(model.items):
-        if item.position is None:
-            continue
-        x = item.position.x
-        y = item.position.y
-        rect = Rectangle(xy=(x, y), width=item.width, height=item.height,
-                         facecolor=cmap(idx), alpha=0.2, linewidth=1, edgecolor='k')
-        ax.add_patch(rect)
-        cx = x + rect.get_width() / 2
-        cy = y + rect.get_height() / 2
-        ax.annotate(f"{idx}", (cx, cy), color='black', weight='bold', fontsize=10, ha='center',
-                    va='center')
-
-    plt.xlim(0, model.width)
-    plt.ylim(0, model.height)
-    plt.savefig(figure_file.lower())
-    plt.close()
+def to_csv(csv_folder: str, file_name: str, box: Item, exec_time: float,
+           order: OrderMode, split: SplitMode, decrescent: bool) -> None:
+    data = {"Instance": [file_name],
+            "SplitMode": [split.name],
+            "OrderMode": [order.name],
+            "Decrescent": [decrescent],
+            "Exec. Time": [exec_time],
+            "Solution Quality %": [box.solution_quality()],
+            "Busy %": [box.percent_busy()],
+            "Free %": [box.percent_free()],
+            "Nº Items": [len(box.items)],
+            "Inside Items": [box.inside_items()],
+            "Outside Items": [box.outside_items()],
+            "Inside Items %": [box.inside_items_percent()],
+            "Outside Items %": [box.outside_item_percent()]}
+    _to_csv(csv_folder=csv_folder, order=order, split=split, decrescent=decrescent,
+            data=data)
+    _to_csv(csv_folder=f"{csv_folder}/bkw/{file_name.lower()}", order=order, split=split,
+            decrescent=decrescent,
+            data=data)
     return None
 
 
-def to_csv(csv_file: str, data: dict[str, list[str]]) -> None:
-    with open(csv_file.lower(), "a") as f:
-        DataFrame(data).to_csv(f, index=False,
-                               header=not bool(path.getsize(csv_file.lower())))
+def _to_csv(csv_folder: str, order: OrderMode, split: SplitMode, decrescent: bool,
+            data) -> None:
+    files = [f"order/{order.name}", f"split/{split.name}",
+             f"decrescent/{decrescent}", "all"]
+
+    makedirs(f"{csv_folder}/order", exist_ok=True)
+    makedirs(f"{csv_folder}/split", exist_ok=True)
+    makedirs(f"{csv_folder}/decrescent", exist_ok=True)
+    for file in files:
+        file = f"{csv_folder}/{file}".lower()
+
+        with open(file, "a") as f:
+            DataFrame(data).to_csv(f, index=False,
+                                   header=not bool(path.getsize(file)))
+
     return None
 
 
 def csv_to_table(csv_folder: str, table_folder: str) -> None:
     for file in scandir(csv_folder):
         file_name = file.name
-        if file.is_file():
-            pass
-        else:
+        if not file.is_file():
             csv_to_table(csv_folder=f"{csv_folder}/{file_name}",
                          table_folder=f"{table_folder}/{file_name}")
             continue
@@ -58,6 +63,8 @@ def csv_to_table(csv_folder: str, table_folder: str) -> None:
         data = []
         for line in lines:
             data.append(line.split(","))
+
+        makedirs(table_folder, exist_ok=True)
 
         with open(f"{table_folder}/{file_name}.dat", "w") as f:
             s = tabulate(tabular_data=data, headers="firstrow", tablefmt="plain")
@@ -83,35 +90,20 @@ def main(folder: str = "references/bkw") -> None:
         for split in SplitMode:
             for order in OrderMode:
                 for descending in [True, False]:
+                    exec_time = 0
                     for _ in range(num_tests):
                         box.reset()
                         start = time()
                         box.solve(order_mode=order, split_mode=split, decrescent=descending)
-                        exec_time = time() - start
-                        data = {"Instance": [file_name],
-                                "SplitMode": [split.name],
-                                "OrderMode": [order.name],
-                                "Decrescent": [descending],
-                                "Exec. Time": [exec_time],
-                                "Solution Quality": [box.solution_quality()],
-                                "Busy %": [box.percent_busy()],
-                                "Free %": [box.percent_free()],
-                                "Nº Items": [len(box.items)],
-                                "Inside Items": [box.inside_items()],
-                                "Outside Items": [box.outside_items()],
-                                "Inside Items %": [box.inside_items_percent()],
-                                "Outside Items %": [box.outside_item_percent()]}
-                        to_csv(csv_file=f"{csv_folder}/bkw/{file_name}", data=data)
-                        to_csv(csv_file=f"{csv_folder}/order/{order.name}", data=data)
-                        to_csv(csv_file=f"{csv_folder}/split/{split.name}", data=data)
-                        to_csv(csv_file=f"{csv_folder}/decrescent/{descending}", data=data)
-                        to_csv(csv_file=f"{csv_folder}/all", data=data)
+                        exec_time += time() - start
 
                     else:
-                        export_model(model=box, figure_file=f"{figure_folder}/{file_name}_"
-                                                            f"{split.name}_"
-                                                            f"{order.name}_"
-                                                            f"{str(descending)}.png")
+                        box.export_model(figure_file=f"{figure_folder}/{file_name}_{split.name}_"
+                                                     f"{order.name}_{str(descending)}.png")
+                    exec_time /= num_tests
+                    to_csv(csv_folder=csv_folder, file_name=file_name, box=box,
+                           exec_time=exec_time, order=order, split=split, decrescent=descending)
+
         break
     csv_to_table(csv_folder=csv_folder, table_folder=data_folder)
     return None

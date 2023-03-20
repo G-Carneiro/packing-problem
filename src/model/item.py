@@ -2,6 +2,9 @@ from __future__ import annotations
 
 from typing import NoReturn
 
+import matplotlib.pyplot as plt
+from matplotlib.patches import Rectangle
+
 from .coordinate import Coordinate
 from .ordered_queue import OrderedQueue
 from .region import Region
@@ -199,4 +202,34 @@ class Item:
         self._regions = OrderedQueue([Region((0, 0), (self.width, self.height))])
         for item in self.items:
             item.reset()
+        return None
+
+    def export_model(self, figure_file: str) -> None:
+        fig, ax = plt.subplots()
+        box = Rectangle(xy=(0, 0), width=self.width, height=self.height, alpha=0.1)
+        ax.add_patch(box)
+        item_cmap = plt.get_cmap('brg', len(self.items))
+        region_cmap = plt.get_cmap('hsv', 2 * len(self.items) + 1)
+        self._rectangle_cmap(iterable=self.items, cmap=item_cmap, ax=ax)
+        self._rectangle_cmap(iterable=self.regions, cmap=region_cmap, ax=ax)
+        plt.xlim(0, self.width)
+        plt.ylim(0, self.height)
+        plt.savefig(figure_file.lower())
+        plt.close()
+        return None
+
+    @staticmethod
+    def _rectangle_cmap(iterable, cmap, ax) -> None:
+        for idx, item in enumerate(iterable):
+            if item.position is None:
+                continue
+            x = item.position.x
+            y = item.position.y
+            rect = Rectangle(xy=(x, y), width=item.width, height=item.height,
+                             facecolor=cmap(idx), alpha=0.2, linewidth=1, edgecolor='k')
+            ax.add_patch(rect)
+            cx = x + rect.get_width() / 2
+            cy = y + rect.get_height() / 2
+            ax.annotate(f"{idx}", (cx, cy), color='black', weight='bold', fontsize=10, ha='center',
+                        va='center')
         return None

@@ -23,6 +23,10 @@ class Region:
         return self._start
 
     @property
+    def position(self) -> Coordinate:
+        return self.start
+
+    @property
     def end(self) -> Coordinate:
         return self._end
 
