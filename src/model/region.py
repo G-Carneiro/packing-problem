@@ -4,6 +4,8 @@ from .coordinate import Coordinate
 
 
 class Region:
+    id_: int = 0
+
     def __init__(self,
                  start: Coordinate | tuple[float, float],
                  end: Coordinate | tuple[float, float]
@@ -17,6 +19,12 @@ class Region:
         self._end: Coordinate = end
         self._height: float = end.y - start.y
         self._width: float = end.x - start.x
+        self._id: int = Region.id_
+        Region.id_ += 1
+
+    @property
+    def id(self) -> int:
+        return self._id
 
     @property
     def start(self) -> Coordinate:

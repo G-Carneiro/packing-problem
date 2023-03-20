@@ -76,7 +76,6 @@ def main(folder: str = "references/bkw") -> None:
     num_tests: int = 1
     csv_folder = "output/csv"
     data_folder = "output/data"
-    figure_folder = "output/figures"
     for file_name in sorted(listdir(folder)):
         file = f"{folder}/{file_name}"
         with open(file, "r") as f:
@@ -97,9 +96,6 @@ def main(folder: str = "references/bkw") -> None:
                         box.solve(order_mode=order, split_mode=split, decrescent=descending)
                         exec_time += time() - start
 
-                    else:
-                        box.export_model(figure_file=f"{figure_folder}/{file_name}_{split.name}_"
-                                                     f"{order.name}_{str(descending)}.png")
                     exec_time /= num_tests
                     to_csv(csv_folder=csv_folder, file_name=file_name, box=box,
                            exec_time=exec_time, order=order, split=split, decrescent=descending)

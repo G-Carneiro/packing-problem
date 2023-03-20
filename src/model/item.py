@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from os import makedirs
 from typing import NoReturn
 
 import matplotlib.pyplot as plt
@@ -13,6 +14,8 @@ from ..utils.split_mode import SplitMode
 
 
 class Item:
+    id_: int = 0
+
     def __init__(self,
                  width: float = float("inf"),
                  height: float = float("inf"),
@@ -20,6 +23,8 @@ class Item:
                  copies: int = 1,
                  items: list[Item] = (),
                  ) -> None:
+        self._id: int = Item.id_
+        Item.id_ += 1
         self._width: float = width
         self._height: float = height
         self._demand: int = demand
@@ -28,7 +33,12 @@ class Item:
         self._area: float = width * height
         self._perimeter: float = 2 * (width + height)
         self._position: Coordinate | None = None
+        self._export_id: int = 0
         self._regions: OrderedQueue[Region] = OrderedQueue([Region((0, 0), (width, height))])
+
+    @property
+    def id(self) -> int:
+        return self._id
 
     @property
     def height(self) -> float:
@@ -157,11 +167,17 @@ class Item:
         region1 = Region(start=start, end=end)
         return (region0, region1)
 
-    def solve(self, order_mode: OrderMode, split_mode: SplitMode, decrescent: bool) -> float:
+    def solve(self, order_mode: OrderMode, split_mode: SplitMode, decrescent: bool,
+              export: bool = False, export_all: bool = False) -> float:
         items = self.items
         if (order_mode != OrderMode.NONE):
             items = sorted(self._items, key=lambda x: eval(f"x.{order_mode.name.lower()}"),
                            reverse=decrescent)
+
+        if export_all:
+            self.export_model(folder=f"output/figures/"
+                                     f"{split_mode.name}/{order_mode.name}/{decrescent}")
+
         for item in items:
             for region in self._regions:
                 if (item.width > region.width) or (item.height > region.height):
@@ -194,17 +210,32 @@ class Item:
                             split = split_v
 
                 self.replace_region(original=region, split=split)
+                if export_all:
+                    self.export_model(folder=f"output/figures/{split_mode.name}/{order_mode.name}"
+                                             f"/{decrescent}")
                 break
+        if export and not export_all:
+            self.export_model(folder=f"output/figures/"
+                                     f"{split_mode.name}/{order_mode.name}/{decrescent}")
         return self.solution_quality()
 
     def reset(self) -> None:
         self.position = None
+        self._export_id = 0
+        Region.id_ = 0
+        Item.id_ = 0
         self._regions = OrderedQueue([Region((0, 0), (self.width, self.height))])
         for item in self.items:
             item.reset()
         return None
 
-    def export_model(self, figure_file: str) -> None:
+    def export_model(self, folder: str) -> None:
+        folder = folder.lower()
+        makedirs(folder, exist_ok=True)
+        num: str = "0" * (len(str(len(self.items))) - len(str(self._export_id))) \
+                   + f"{self._export_id}"
+        file = f"{folder}/{num}.png"
+        self._export_id += 1
         fig, ax = plt.subplots()
         box = Rectangle(xy=(0, 0), width=self.width, height=self.height, alpha=0.1)
         ax.add_patch(box)
@@ -214,7 +245,7 @@ class Item:
         self._rectangle_cmap(iterable=self.regions, cmap=region_cmap, ax=ax)
         plt.xlim(0, self.width)
         plt.ylim(0, self.height)
-        plt.savefig(figure_file.lower())
+        plt.savefig(file)
         plt.close()
         return None
 
@@ -226,10 +257,14 @@ class Item:
             x = item.position.x
             y = item.position.y
             rect = Rectangle(xy=(x, y), width=item.width, height=item.height,
-                             facecolor=cmap(idx), alpha=0.2, linewidth=1, edgecolor='k')
+                             facecolor=cmap(item.id), alpha=0.2, linewidth=1, edgecolor='k')
             ax.add_patch(rect)
             cx = x + rect.get_width() / 2
             cy = y + rect.get_height() / 2
-            ax.annotate(f"{idx}", (cx, cy), color='black', weight='bold', fontsize=10, ha='center',
+            if isinstance(item, Item):
+                label = idx
+            else:
+                label = f"R{item.id}"
+            ax.annotate(label, (cx, cy), color='black', weight='bold', fontsize=10, ha='center',
                         va='center')
         return None
