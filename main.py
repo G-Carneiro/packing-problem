@@ -1,4 +1,4 @@
-from os import path, scandir
+from os import listdir, path, scandir
 from time import time
 
 import matplotlib.pyplot as plt
@@ -39,7 +39,29 @@ def export_model(model: Item, figure_file: str) -> None:
 def to_csv(csv_file: str, data: dict[str, list[str]]) -> None:
     with open(csv_file.lower(), "a") as f:
         DataFrame(data).to_csv(f, index=False,
-                               header=not bool(path.getsize(csv_file)))
+                               header=not bool(path.getsize(csv_file.lower())))
+    return None
+
+
+def csv_to_table(csv_folder: str, table_folder: str) -> None:
+    for file in scandir(csv_folder):
+        file_name = file.name
+        if file.is_file():
+            pass
+        else:
+            csv_to_table(csv_folder=f"{csv_folder}/{file_name}",
+                         table_folder=f"{table_folder}/{file_name}")
+            continue
+        with open(file, "r") as f:
+            lines = f.readlines()
+
+        data = []
+        for line in lines:
+            data.append(line.split(","))
+
+        with open(f"{table_folder}/{file_name}.dat", "w") as f:
+            s = tabulate(tabular_data=data, headers="firstrow", tablefmt="plain")
+            f.write(s)
     return None
 
 
@@ -48,8 +70,8 @@ def main(folder: str = "references/bkw") -> None:
     csv_folder = "output/csv"
     data_folder = "output/data"
     figure_folder = "output/figures"
-    for file in scandir(folder):
-        file_name = file.name
+    for file_name in sorted(listdir(folder)):
+        file = f"{folder}/{file_name}"
         with open(file, "r") as f:
             lines = f.readlines()
         items: list[Item] = []
@@ -66,10 +88,9 @@ def main(folder: str = "references/bkw") -> None:
                         start = time()
                         box.solve(order_mode=order, split_mode=split, decrescent=descending)
                         exec_time = time() - start
-                        data_file = f"{csv_folder}/{file_name}"
                         data = {"Instance": [file_name],
-                                "OrderMode": [order.name],
                                 "SplitMode": [split.name],
+                                "OrderMode": [order.name],
                                 "Decrescent": [descending],
                                 "Exec. Time": [exec_time],
                                 "Solution Quality": [box.solution_quality()],
@@ -80,7 +101,11 @@ def main(folder: str = "references/bkw") -> None:
                                 "Outside Items": [box.outside_items()],
                                 "Inside Items %": [box.inside_items_percent()],
                                 "Outside Items %": [box.outside_item_percent()]}
-                        to_csv(csv_file=data_file, data=data)
+                        to_csv(csv_file=f"{csv_folder}/bkw/{file_name}", data=data)
+                        to_csv(csv_file=f"{csv_folder}/order/{order.name}", data=data)
+                        to_csv(csv_file=f"{csv_folder}/split/{split.name}", data=data)
+                        to_csv(csv_file=f"{csv_folder}/decrescent/{descending}", data=data)
+                        to_csv(csv_file=f"{csv_folder}/all", data=data)
 
                     else:
                         export_model(model=box, figure_file=f"{figure_folder}/{file_name}_"
@@ -88,18 +113,8 @@ def main(folder: str = "references/bkw") -> None:
                                                             f"{order.name}_"
                                                             f"{str(descending)}.png")
         break
-    for file in scandir(csv_folder):
-        file_name = file.name
-        with open(file, "r") as f:
-            lines = f.readlines()
-
-        data = []
-        for line in lines:
-            data.append(line.split(","))
-
-        with open(f"{data_folder}/{file_name}.dat", "w") as f:
-            s = tabulate(tabular_data=data, headers="firstrow", tablefmt="plain")
-            f.write(s)
+    csv_to_table(csv_folder=csv_folder, table_folder=data_folder)
+    return None
 
 
 if __name__ == "__main__":
