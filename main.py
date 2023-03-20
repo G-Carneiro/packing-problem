@@ -93,7 +93,8 @@ def main(folder: str = "references/bkw") -> None:
                     for _ in range(num_tests):
                         box.reset()
                         start = time()
-                        box.solve(order_mode=order, split_mode=split, decrescent=descending)
+                        box.solve(order_mode=order, split_mode=split, decrescent=descending,
+                                  export_all=True)
                         exec_time += time() - start
 
                     exec_time /= num_tests

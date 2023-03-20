@@ -82,7 +82,7 @@ class Item:
 
     def coords(self) -> tuple[Coordinate, Coordinate, Coordinate, Coordinate]:
         return (self.position, self.position + (0, self.height),
-                self.position + (self.width, 0), self.position + (self.width, self.height))
+                self.position + (self.width, self.height), self.position + (self.width, 0))
 
     def percent_free(self) -> float:
         return (100 - self.percent_busy())
@@ -120,12 +120,21 @@ class Item:
         return (self.outside_items() / len(self.items) * 100)
 
     def conflict(self, other: Item) -> bool:
-        #  FIXME: use cohen-sutherland clipping algorithm
+        # adaptation of cohen-sutherland clipping algorithm
+        def region_code(point: Coordinate) -> int:
+            code: str = ""
+            code += f"{int(point.y >= self.position.y + self.height)}"  # 1000 top
+            code += f"{int(point.y <= self.position.y)}"  # 0100 bottom
+            code += f"{int(point.x >= self.position.x + self.width)}"  # 0010 right
+            code += f"{int(point.x <= self.position.x)}"  # 0001 left
+            return int(code, 2)
+
         if (other.position is None) or (self.position is None):
             return False
-        for coord in self.coords():
-            if (other.position.x < coord.x < other.position.x + other.width) and \
-                    (other.position.y < coord.y < other.position.y + other.height):
+
+        coords = other.coords()
+        for idx, coord in enumerate(coords):
+            if region_code(point=coord) & region_code(coords[idx - 1]) == 0:
                 return True
         return False
 
