@@ -199,7 +199,8 @@ class Item:
         return split
 
     def solve(self, order_mode: OrderMode, split_mode: SplitMode, decrescent: bool,
-              export: bool = False, export_all: bool = False) -> float:
+              export: bool = False, export_all: bool = False, show_regions: bool = False
+              ) -> float:
         items = self.items
         if (order_mode != OrderMode.NONE):
             items = sorted(self._items, key=lambda x: eval(f"x.{order_mode.name.lower()}"),
@@ -207,7 +208,8 @@ class Item:
 
         if export_all:
             self.export_model(folder=f"output/figures/"
-                                     f"{split_mode.name}/{order_mode.name}/{decrescent}")
+                                     f"{split_mode.name}/{order_mode.name}/{decrescent}",
+                              show_regions=show_regions)
 
         for item in items:
             for region in self._regions:
@@ -237,11 +239,12 @@ class Item:
                 self.replace_region(original=region, split=split)
                 if export_all:
                     self.export_model(folder=f"output/figures/{split_mode.name}/{order_mode.name}"
-                                             f"/{decrescent}")
+                                             f"/{decrescent}", show_regions=show_regions)
                 break
         if export and not export_all:
             self.export_model(folder=f"output/figures/"
-                                     f"{split_mode.name}/{order_mode.name}/{decrescent}")
+                                     f"{split_mode.name}/{order_mode.name}/{decrescent}",
+                              show_regions=show_regions)
         return self.solution_quality()
 
     def reset(self) -> None:
@@ -254,7 +257,7 @@ class Item:
             item.reset()
         return None
 
-    def export_model(self, folder: str) -> None:
+    def export_model(self, folder: str, show_regions: bool = False) -> None:
         folder = folder.lower()
         makedirs(folder, exist_ok=True)
         num: str = "0" * (len(str(len(self.items))) - len(str(self._export_id))) \
@@ -265,9 +268,10 @@ class Item:
         box = Rectangle(xy=(0, 0), width=self.width, height=self.height, alpha=0.1)
         ax.add_patch(box)
         item_cmap = plt.get_cmap('brg', len(self.items))
-        region_cmap = plt.get_cmap('hsv', 2 * len(self.items) + 1)
         self._rectangle_cmap(iterable=self.items, cmap=item_cmap, ax=ax)
-        self._rectangle_cmap(iterable=self.regions, cmap=region_cmap, ax=ax)
+        if show_regions:
+            region_cmap = plt.get_cmap('hsv', 2 * len(self.items) + 1)
+            self._rectangle_cmap(iterable=self.regions, cmap=region_cmap, ax=ax)
         plt.xlim(0, self.width)
         plt.ylim(0, self.height)
         plt.savefig(file)
