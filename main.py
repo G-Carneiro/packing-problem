@@ -31,8 +31,15 @@ def export_model(model: Item, figure_file: str) -> None:
 
     plt.xlim(0, model.width)
     plt.ylim(0, model.height)
-    plt.savefig(figure_file)
+    plt.savefig(figure_file.lower())
     plt.close()
+    return None
+
+
+def to_csv(csv_file: str, data: dict[str, list[str]]) -> None:
+    with open(csv_file.lower(), "a") as f:
+        DataFrame(data).to_csv(f, index=False,
+                               header=not bool(path.getsize(csv_file)))
     return None
 
 
@@ -40,6 +47,7 @@ def main(folder: str = "references/bkw") -> None:
     num_tests: int = 1
     csv_folder = "output/csv"
     data_folder = "output/data"
+    figure_folder = "output/figures"
     for file in scandir(folder):
         file_name = file.name
         with open(file, "r") as f:
@@ -62,7 +70,7 @@ def main(folder: str = "references/bkw") -> None:
                         data = {"Instance": [file_name],
                                 "OrderMode": [order.name],
                                 "SplitMode": [split.name],
-                                "Descrescent": [descending],
+                                "Decrescent": [descending],
                                 "Exec. Time": [exec_time],
                                 "Solution Quality": [box.solution_quality()],
                                 "Busy %": [box.percent_busy()],
@@ -72,15 +80,13 @@ def main(folder: str = "references/bkw") -> None:
                                 "Outside Items": [box.outside_items()],
                                 "Inside Items %": [box.inside_items_percent()],
                                 "Outside Items %": [box.outside_item_percent()]}
+                        to_csv(csv_file=data_file, data=data)
 
-                        with open(f"{data_file}", "a") as f:
-                            DataFrame(data).to_csv(f, index=False,
-                                                   header=not bool(path.getsize(data_file)))
                     else:
-                        export_model(model=box, figure_file=f"output/figures/{file_name.lower()}_"
-                                                            f"{split.name.lower()}_"
-                                                            f"{order.name.lower()}_"
-                                                            f"{str(descending).lower()}.png")
+                        export_model(model=box, figure_file=f"{figure_folder}/{file_name}_"
+                                                            f"{split.name}_"
+                                                            f"{order.name}_"
+                                                            f"{str(descending)}.png")
         break
     for file in scandir(csv_folder):
         file_name = file.name
