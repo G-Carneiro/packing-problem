@@ -8,7 +8,7 @@ from matplotlib.patches import Rectangle
 
 from .coordinate import Coordinate
 from .ordered_queue import OrderedQueue
-from .region import Region
+from .region import NotRegion, Region
 from ..utils.order_mode import OrderMode
 from ..utils.split_mode import SplitMode
 
@@ -132,40 +132,62 @@ class Item:
     def replace_region(self, original: Region, split: tuple[Region, Region]) -> None:
         self._regions.remove(original)
         r0, r1 = split
-        if (r0.start.x != r0.end.x) and (r0.start.y != r0.end.y):
+        if r0 is not None:
             self._regions.append(r0)
-        if (r1.start.x != r1.end.x) and (r1.start.y != r1.end.y):
+        if r1 is not None:
             self._regions.append(r1)
         return None
 
     @staticmethod
-    def split_horizontally(region: Region, item: Item) -> tuple[Region, Region]:
+    def new_region(start: Coordinate | tuple[float, float],
+                   end: Coordinate | tuple[float, float]) -> Region | None:
+        try:
+            region = Region(start=start, end=end)
+        except NotRegion:
+            return None
+
+        return region
+
+    def split_horizontally(self, region: Region, item: Item) -> tuple[Region, Region]:
         start = (item.position.x, item.position.y + item.height)
         end = region.end
-        region0 = Region(start=start, end=end)
+        region0 = self.new_region(start=start, end=end)
         start = (item.position.x + item.width, item.position.y)
         end = (region.end.x, item.position.y + item.height)
-        region1 = Region(start=start, end=end)
+        region1 = self.new_region(start=start, end=end)
         return (region0, region1)
 
-    @staticmethod
-    def split_vertically(region: Region, item: Item) -> tuple[Region, Region]:
+    def split_vertically(self, region: Region, item: Item) -> tuple[Region, Region]:
         start = (item.position.x, item.position.y + item.height)
         end = (item.position.x + item.width, region.end.y)
-        region0 = Region(start=start, end=end)
+        region0 = self.new_region(start=start, end=end)
         start = (item.position.x + item.width, item.position.y)
         end = region.end
-        region1 = Region(start=start, end=end)
+        region1 = self.new_region(start=start, end=end)
         return (region0, region1)
 
-    @staticmethod
-    def fake_split(region: Region, item: Item) -> tuple[Region, Region]:
+    def fake_split(self, region: Region, item: Item) -> tuple[Region, Region]:
         start = (item.position.x, item.position.y + item.height)
         end = region.end
-        region0 = Region(start=start, end=end)
+        region0 = self.new_region(start=start, end=end)
         start = (item.position.x + item.width, item.position.y)
-        region1 = Region(start=start, end=end)
+        region1 = self.new_region(start=start, end=end)
         return (region0, region1)
+
+    def choose_best_split(self, region: Region, item: Item) -> tuple[Region, Region]:
+        split_h = self.split_horizontally(region=region, item=item)
+        split_v = self.split_vertically(region=region, item=item)
+        regions: list[Region] = [region for region in split_h + split_v if region is not None]
+        try:
+            biggest = max(regions, key=lambda x: x.area)
+        except ValueError:
+            return split_h
+
+        if (biggest in split_h):
+            split = split_h
+        else:
+            split = split_v
+        return split
 
     def solve(self, order_mode: OrderMode, split_mode: SplitMode, decrescent: bool,
               export: bool = False, export_all: bool = False) -> float:
@@ -201,13 +223,7 @@ class Item:
                     case SplitMode.VERTICALLY:
                         split = self.split_vertically(region=region, item=item)
                     case _:
-                        split_h = self.split_horizontally(region=region, item=item)
-                        split_v = self.split_vertically(region=region, item=item)
-                        biggest = max(split_h[0], split_h[1], split_v[0], split_v[1])
-                        if (biggest in split_h):
-                            split = split_h
-                        else:
-                            split = split_v
+                        split = self.choose_best_split(region=region, item=item)
 
                 self.replace_region(original=region, split=split)
                 if export_all:

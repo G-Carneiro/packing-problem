@@ -3,6 +3,10 @@ from __future__ import annotations
 from .coordinate import Coordinate
 
 
+class NotRegion(Exception):
+    pass
+
+
 class Region:
     id_: int = 0
 
@@ -14,6 +18,9 @@ class Region:
             start = Coordinate(x=start[0], y=start[1])
         if isinstance(end, tuple):
             end = Coordinate(x=end[0], y=end[1])
+
+        if (start.x == end.x) or (start.y == end.y):
+            raise NotRegion
 
         self._start: Coordinate = start
         self._end: Coordinate = end
@@ -46,6 +53,7 @@ class Region:
     def width(self) -> float:
         return self._width
 
+    @property
     def area(self) -> float:
         return (self.height * self.width)
 
