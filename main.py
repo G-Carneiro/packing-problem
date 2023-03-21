@@ -94,7 +94,7 @@ def main(folder: str = "references/bkw") -> None:
                         box.reset()
                         start = time()
                         box.solve(order_mode=order, split_mode=split, decrescent=descending,
-                                  export_all=True)
+                                  export_all=True, show_regions=(split != SplitMode.NONE))
                         exec_time += time() - start
 
                     exec_time /= num_tests
@@ -106,5 +106,6 @@ def main(folder: str = "references/bkw") -> None:
     return None
 
 
+# FIXME: items label in figure
 if __name__ == "__main__":
     main()

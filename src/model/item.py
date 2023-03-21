@@ -191,12 +191,11 @@ class Item:
             biggest = max(regions, key=lambda x: x.area)
         except ValueError:
             return split_h
-
+        # FIXME: find best solution
+        Region.id_ -= len(regions)
         if (biggest in split_h):
-            split = split_h
-        else:
-            split = split_v
-        return split
+            return self.split_horizontally(region=region, item=item)
+        return self.split_vertically(region=region, item=item)
 
     def solve(self, order_mode: OrderMode, split_mode: SplitMode, decrescent: bool,
               export: bool = False, export_all: bool = False, show_regions: bool = False
