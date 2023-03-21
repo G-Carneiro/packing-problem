@@ -106,6 +106,5 @@ def main(folder: str = "references/bkw") -> None:
     return None
 
 
-# FIXME: items label in figure
 if __name__ == "__main__":
     main()
