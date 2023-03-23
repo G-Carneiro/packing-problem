@@ -26,6 +26,9 @@ def to_csv(csv_folder: str, file_name: str, box: Item, exec_time: float,
             "Outside Items %": [box.outside_item_percent()]}
     _to_csv(csv_folder=csv_folder, order=order, split=split, decrescent=decrescent,
             data=data)
+    _to_csv(csv_folder=f"{csv_folder}/bkw", order=order, split=split,
+            decrescent=decrescent,
+            data=data)
     _to_csv(csv_folder=f"{csv_folder}/bkw/{file_name.lower()}", order=order, split=split,
             decrescent=decrescent,
             data=data)
@@ -76,6 +79,7 @@ def main(folder: str = "references/bkw") -> None:
     num_tests: int = 1
     csv_folder = "output/csv"
     data_folder = "output/data"
+    total_time = 0
     for file_name in sorted(listdir(folder)):
         file = f"{folder}/{file_name}"
         with open(file, "r") as f:
@@ -85,17 +89,23 @@ def main(folder: str = "references/bkw") -> None:
             _, width, height = line.split()
             items.append(Item(width=float(width), height=float(height)))
         width, height = lines[1].split()
-        box = Item(width=float(width), height=float(height), items=items)
+        box = Item(width=float(width), height=float(height), items=items,
+                   name=file_name, instance="bkw")
         for split in SplitMode:
             for order in OrderMode:
                 for descending in [True, False]:
                     exec_time = 0
                     for _ in range(num_tests):
+                        print(f"[Starting] file={file_name} split={split.name} order={order.name} "
+                              f"decrescent={descending}")
                         box.reset()
                         start = time()
                         box.solve(order_mode=order, split_mode=split, decrescent=descending,
                                   export_all=True, show_regions=(split != SplitMode.NONE))
                         exec_time += time() - start
+                        total_time += exec_time
+                        print(f"[Finished] file={file_name} split={split.name} order={order.name} "
+                              f"decrescent={descending} exec={exec_time} total={total_time}")
 
                     exec_time /= num_tests
                     to_csv(csv_folder=csv_folder, file_name=file_name, box=box,

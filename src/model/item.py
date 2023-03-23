@@ -17,12 +17,16 @@ class Item:
     id_: int = 0
 
     def __init__(self,
+                 name: str = "",
+                 instance: str = "",
                  width: float = float("inf"),
                  height: float = float("inf"),
                  demand: int = 1,
                  copies: int = 1,
                  items: list[Item] = (),
                  ) -> None:
+        self._name: str = name
+        self._instance: str = instance
         self._id: int = Item.id_
         Item.id_ += 1
         self._width: float = width
@@ -259,7 +263,8 @@ class Item:
 
     def export_model(self, folder: str, order: OrderMode, split: SplitMode, decrescent: bool,
                      show_regions: bool = False) -> None:
-        folder = f"{folder}/{split.name}/{order.name}/{decrescent}".lower()
+        folder = f"{folder}/{self._instance}/{self._name}/{split.name}/{order.name}/" \
+                 f"{decrescent}".lower()
         makedirs(folder, exist_ok=True)
         num: str = "0" * (len(str(len(self.items))) - len(str(self._export_id))) \
                    + f"{self._export_id}"
