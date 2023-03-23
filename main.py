@@ -24,14 +24,12 @@ def to_csv(csv_folder: str, file_name: str, box: Item, exec_time: float,
             "Outside Items": [box.outside_items()],
             "Inside Items %": [box.inside_items_percent()],
             "Outside Items %": [box.outside_item_percent()]}
-    _to_csv(csv_folder=csv_folder, order=order, split=split, decrescent=decrescent,
-            data=data)
+    _to_csv(csv_folder=csv_folder, order=order, split=split,
+            decrescent=decrescent, data=data)
     _to_csv(csv_folder=f"{csv_folder}/bkw", order=order, split=split,
-            decrescent=decrescent,
-            data=data)
+            decrescent=decrescent, data=data)
     _to_csv(csv_folder=f"{csv_folder}/bkw/{file_name.lower()}", order=order, split=split,
-            decrescent=decrescent,
-            data=data)
+            decrescent=decrescent, data=data)
     return None
 
 

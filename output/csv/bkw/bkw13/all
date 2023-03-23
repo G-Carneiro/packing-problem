@@ -1,0 +1,2 @@
+Instance,SplitMode,OrderMode,Decrescent,Exec. Time,Solution Quality %,Busy %,Free %,Nº Items,Inside Items,Outside Items,Inside Items %,Outside Items %
+BKW13,VERTICALLY,AREA,True,5319.353272438049,94.93391927083333,94.93391927083333,5.066080729166671,3152,2648,504,84.01015228426397,15.989847715736042

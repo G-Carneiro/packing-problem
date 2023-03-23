@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Exec. Time    Solution Quality %    Busy %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW09       VERTICALLY   AREA         True              10.2419                70.5467   70.5467   29.4533         100              80               20                80                 20
+BKW09       VERTICALLY   AREA         False             10.1633                35.68     35.68     64.32           100              85               15                85                 15
+BKW09       VERTICALLY   PERIMETER    True              10.1803                73.5867   73.5867   26.4133         100              80               20                80                 20
+BKW09       VERTICALLY   PERIMETER    False             10.1095                35.68     35.68     64.32           100              85               15                85                 15
+BKW09       VERTICALLY   HEIGHT       True              10.2046                50.7067   50.7067   49.2933         100              82               18                82                 18
+BKW09       VERTICALLY   HEIGHT       False             10.1635                34.3467   34.3467   65.6533         100              83               17                83                 17
+BKW09       VERTICALLY   WIDTH        True              11.1446                90.04     90.04      9.96           100              85               15                85                 15
+BKW09       VERTICALLY   WIDTH        False              8.71587               31.8267   31.8267   68.1733         100              78               22                78                 22
+BKW09       VERTICALLY   NONE         True              10.1925                35.3467   35.3467   64.6533         100              82               18                82                 18
+BKW09       VERTICALLY   NONE         False             10.1504                35.3467   35.3467   64.6533         100              82               18                82                 18

@@ -1,0 +1,12 @@
+Instance    SplitMode     OrderMode    Decrescent      Exec. Time    Solution Quality %    Busy %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW08       HORIZONTALLY  AREA         True               8.07357               72.1875   72.1875   27.8125          80              63               17             78.75              21.25
+BKW08       HORIZONTALLY  AREA         False              4.48084               16.3875   16.3875   83.6125          80              41               39             51.25              48.75
+BKW08       HORIZONTALLY  PERIMETER    True               7.88856               72.95     72.95     27.05            80              63               17             78.75              21.25
+BKW08       HORIZONTALLY  PERIMETER    False              4.45384               16.3875   16.3875   83.6125          80              41               39             51.25              48.75
+BKW08       HORIZONTALLY  HEIGHT       True               9.62368               83.3125   83.3125   16.6875          80              72                8             90                 10
+BKW08       HORIZONTALLY  HEIGHT       False              2.74136               10.95     10.95     89.05            80              28               52             35                 65
+BKW08       HORIZONTALLY  WIDTH        True               6.79542               53.8875   53.8875   46.1125          80              57               23             71.25              28.75
+BKW08       HORIZONTALLY  WIDTH        False              6.56337               24.7625   24.7625   75.2375          80              55               25             68.75              31.25
+BKW08       HORIZONTALLY  NONE         True               6.71238               36.7625   36.7625   63.2375          80              56               24             70                 30
+BKW08       HORIZONTALLY  NONE         False              6.7452                36.7625   36.7625   63.2375          80              56               24             70                 30

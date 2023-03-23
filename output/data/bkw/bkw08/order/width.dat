@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Exec. Time    Solution Quality %    Busy %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW08       VERTICALLY    WIDTH        True               8.52884               92.7      92.7       7.3             80              69               11             86.25              13.75
+BKW08       VERTICALLY    WIDTH        False              6.88152               51.1875   51.1875   48.8125          80              65               15             81.25              18.75
+BKW08       HORIZONTALLY  WIDTH        True               6.79542               53.8875   53.8875   46.1125          80              57               23             71.25              28.75
+BKW08       HORIZONTALLY  WIDTH        False              6.56337               24.7625   24.7625   75.2375          80              55               25             68.75              31.25
+BKW08       MAX_AREA      WIDTH        True               9.84036               80.5      80.5      19.5             80              73                7             91.25               8.75
+BKW08       MAX_AREA      WIDTH        False              8.58205               58.35     58.35     41.65            80              74                6             92.5                7.5
+BKW08       NONE          WIDTH        True               8.80197              100       100         0               80              80                0            100                  0
+BKW08       NONE          WIDTH        False              8.50169               76.5      76.5      23.5             80              77                3             96.25               3.75

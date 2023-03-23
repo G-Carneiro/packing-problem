@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Exec. Time    Solution Quality %    Busy %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW12       NONE         AREA         True               248.871               99.51     99.51     0.49            500             499                1              99.8                0.2
+BKW12       NONE         AREA         False              352.207               76.57     76.57    23.43            500             494                6              98.8                1.2
+BKW12       NONE         PERIMETER    True               247.681              100       100        0               500             500                0             100                  0
+BKW12       NONE         PERIMETER    False              358.05                81.1567   81.1567  18.8433          500             495                5              99                  1
+BKW12       NONE         HEIGHT       True               237.918              100       100        0               500             500                0             100                  0
+BKW12       NONE         HEIGHT       False              321.476               62.8067   62.8067  37.1933          500             483               17              96.6                3.4
+BKW12       NONE         WIDTH        True               261.39               100       100        0               500             500                0             100                  0
+BKW12       NONE         WIDTH        False              374                   92.6633   92.6633   7.33667         500             497                3              99.4                0.6
+BKW12       NONE         NONE         True               292.6                 95.4267   95.4267   4.57333         500             498                2              99.6                0.4
+BKW12       NONE         NONE         False              291.377               95.4267   95.4267   4.57333         500             498                2              99.6                0.4

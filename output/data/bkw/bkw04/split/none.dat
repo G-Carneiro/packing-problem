@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Exec. Time    Solution Quality %    Busy %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW04       NONE         AREA         True               3.3849                98.1875   98.1875    1.8125          40              39                1              97.5                2.5
+BKW04       NONE         AREA         False              2.85527               44.6719   44.6719   55.3281          40              35                5              87.5               12.5
+BKW04       NONE         PERIMETER    True               3.06028               96.9375   96.9375    3.0625          40              36                4              90                 10
+BKW04       NONE         PERIMETER    False              3.21559               48.2812   48.2812   51.7188          40              38                2              95                  5
+BKW04       NONE         HEIGHT       True               3.23849               96.1875   96.1875    3.8125          40              38                2              95                  5
+BKW04       NONE         HEIGHT       False              3.16727               58.1562   58.1562   41.8438          40              38                2              95                  5
+BKW04       NONE         WIDTH        True               3.40047               94.375    94.375     5.625           40              39                1              97.5                2.5
+BKW04       NONE         WIDTH        False              3.2764                63.7812   63.7812   36.2188          40              39                1              97.5                2.5
+BKW04       NONE         NONE         True               3.57032              100       100         0               40              40                0             100                  0
+BKW04       NONE         NONE         False              3.44373              100       100         0               40              40                0             100                  0

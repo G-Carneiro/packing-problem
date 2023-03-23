@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Exec. Time    Solution Quality %    Busy %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW09       NONE         AREA         True               11.5376               94.2933   94.2933   5.70667         100              97                3                97                  3
+BKW09       NONE         AREA         False              11.5961               58.4667   58.4667  41.5333          100              95                5                95                  5
+BKW09       NONE         PERIMETER    True               12.1859              100       100        0               100             100                0               100                  0
+BKW09       NONE         PERIMETER    False              11.3222               51.9867   51.9867  48.0133          100              93                7                93                  7
+BKW09       NONE         HEIGHT       True               11.8042               93.1067   93.1067   6.89333         100              98                2                98                  2
+BKW09       NONE         HEIGHT       False              11.3733               54.28     54.28    45.72            100              94                6                94                  6
+BKW09       NONE         WIDTH        True               12.4342              100       100        0               100             100                0               100                  0
+BKW09       NONE         WIDTH        False              11.857                68.4667   68.4667  31.5333          100              96                4                96                  4
+BKW09       NONE         NONE         True               11.364                78.8667   78.8667  21.1333          100              96                4                96                  4
+BKW09       NONE         NONE         False              11.3542               78.8667   78.8667  21.1333          100              96                4                96                  4

@@ -1,0 +1,12 @@
+Instance    SplitMode     OrderMode    Decrescent      Exec. Time    Solution Quality %    Busy %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW01       HORIZONTALLY  AREA         True              0.794139                100       100         0             10              10                0               100                  0
+BKW01       HORIZONTALLY  AREA         False             0.481769                 12.75     12.75     87.25          10               6                4                60                 40
+BKW01       HORIZONTALLY  PERIMETER    True              0.826481                100       100         0             10              10                0               100                  0
+BKW01       HORIZONTALLY  PERIMETER    False             0.492855                 12.75     12.75     87.25          10               6                4                60                 40
+BKW01       HORIZONTALLY  HEIGHT       True              0.812681                100       100         0             10              10                0               100                  0
+BKW01       HORIZONTALLY  HEIGHT       False             0.513754                 12.75     12.75     87.25          10               6                4                60                 40
+BKW01       HORIZONTALLY  WIDTH        True              0.662577                 88.75     88.75     11.25          10               8                2                80                 20
+BKW01       HORIZONTALLY  WIDTH        False             0.671936                 24        24        76             10               8                2                80                 20
+BKW01       HORIZONTALLY  NONE         True              0.556502                 52.75     52.75     47.25          10               7                3                70                 30
+BKW01       HORIZONTALLY  NONE         False             0.599503                 52.75     52.75     47.25          10               7                3                70                 30

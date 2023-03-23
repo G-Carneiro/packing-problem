@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Exec. Time    Solution Quality %    Busy %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW11       VERTICALLY   AREA         True               67.7237               65.7238   65.7238   34.2762         300             259               41           86.3333            13.6667
+BKW11       VERTICALLY   AREA         False              62.4908               37.9238   37.9238   62.0762         300             257               43           85.6667            14.3333
+BKW11       VERTICALLY   PERIMETER    True               70.6365               73.9429   73.9429   26.0571         300             261               39           87                 13
+BKW11       VERTICALLY   PERIMETER    False              62.7092               37.9238   37.9238   62.0762         300             257               43           85.6667            14.3333
+BKW11       VERTICALLY   HEIGHT       True               69.7463               56.7238   56.7238   43.2762         300             260               40           86.6667            13.3333
+BKW11       VERTICALLY   HEIGHT       False              67.378                35.7524   35.7524   64.2476         300             258               42           86                 14
+BKW11       VERTICALLY   WIDTH        True               43.6297               88.9714   88.9714   11.0286         300             194              106           64.6667            35.3333
+BKW11       VERTICALLY   WIDTH        False              58.9986               37.9238   37.9238   62.0762         300             257               43           85.6667            14.3333
+BKW11       VERTICALLY   NONE         True               63.6481               39.2      39.2      60.8            300             253               47           84.3333            15.6667
+BKW11       VERTICALLY   NONE         False              64.6103               39.2      39.2      60.8            300             253               47           84.3333            15.6667

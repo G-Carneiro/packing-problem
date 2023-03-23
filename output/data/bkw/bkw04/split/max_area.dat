@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Exec. Time    Solution Quality %    Busy %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW04       MAX_AREA     AREA         True               3.92558               86.5      86.5     13.5              40              36                4              90                 10
+BKW04       MAX_AREA     AREA         False              3.58732               38.5938   38.5938  61.4062           40              36                4              90                 10
+BKW04       MAX_AREA     PERIMETER    True               3.9225                88.125    88.125   11.875            40              37                3              92.5                7.5
+BKW04       MAX_AREA     PERIMETER    False              3.60297               38.5938   38.5938  61.4062           40              36                4              90                 10
+BKW04       MAX_AREA     HEIGHT       True               3.6584                92.7969   92.7969   7.20312          40              36                4              90                 10
+BKW04       MAX_AREA     HEIGHT       False              3.5959                49.3125   49.3125  50.6875           40              36                4              90                 10
+BKW04       MAX_AREA     WIDTH        True               4.12441               90.3125   90.3125   9.6875           40              38                2              95                  5
+BKW04       MAX_AREA     WIDTH        False              3.70602               48.2812   48.2812  51.7188           40              38                2              95                  5
+BKW04       MAX_AREA     NONE         True               4.03419               85.5312   85.5312  14.4688           40              37                3              92.5                7.5
+BKW04       MAX_AREA     NONE         False              4.0472                85.5312   85.5312  14.4688           40              37                3              92.5                7.5

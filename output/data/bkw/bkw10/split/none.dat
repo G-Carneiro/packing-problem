@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Exec. Time    Solution Quality %    Busy %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW10       NONE         AREA         True               38.5448               96.1238   96.1238   3.87619         200             196                4              98                  2
+BKW10       NONE         AREA         False              43.5664               48.5905   48.5905  51.4095          200             195                5              97.5                2.5
+BKW10       NONE         PERIMETER    True               40.1731              100       100        0               200             200                0             100                  0
+BKW10       NONE         PERIMETER    False              47.316                50.3619   50.3619  49.6381          200             196                4              98                  2
+BKW10       NONE         HEIGHT       True               41.5177               82.8857   82.8857  17.1143          200             197                3              98.5                1.5
+BKW10       NONE         HEIGHT       False              41.1298               50.3619   50.3619  49.6381          200             196                4              98                  2
+BKW10       NONE         WIDTH        True               39.6748              100       100        0               200             200                0             100                  0
+BKW10       NONE         WIDTH        False              44.9981               58.6286   58.6286  41.3714          200             197                3              98.5                1.5
+BKW10       NONE         NONE         True               39.0223               77.4476   77.4476  22.5524          200             198                2              99                  1
+BKW10       NONE         NONE         False              39.8218               77.4476   77.4476  22.5524          200             198                2              99                  1

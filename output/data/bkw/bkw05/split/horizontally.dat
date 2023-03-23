@@ -1,0 +1,12 @@
+Instance    SplitMode     OrderMode    Decrescent      Exec. Time    Solution Quality %    Busy %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW05       HORIZONTALLY  AREA         True               3.23006                 90.47     90.47      9.53          50              35               15                70                 30
+BKW05       HORIZONTALLY  AREA         False              3.7936                  41.1      41.1      58.9           50              39               11                78                 22
+BKW05       HORIZONTALLY  PERIMETER    True               3.85298                 90.88     90.88      9.12          50              40               10                80                 20
+BKW05       HORIZONTALLY  PERIMETER    False              3.76286                 41.1      41.1      58.9           50              39               11                78                 22
+BKW05       HORIZONTALLY  HEIGHT       True               4.21644                 77.42     77.42     22.58          50              42                8                84                 16
+BKW05       HORIZONTALLY  HEIGHT       False              1.96964                 25.08     25.08     74.92          50              23               27                46                 54
+BKW05       HORIZONTALLY  WIDTH        True               3.92906                 83.96     83.96     16.04          50              39               11                78                 22
+BKW05       HORIZONTALLY  WIDTH        False              4.07894                 42.81     42.81     57.19          50              40               10                80                 20
+BKW05       HORIZONTALLY  NONE         True               4.40426                 77.5      77.5      22.5           50              43                7                86                 14
+BKW05       HORIZONTALLY  NONE         False              4.31038                 77.5      77.5      22.5           50              43                7                86                 14

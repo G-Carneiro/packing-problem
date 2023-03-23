@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Exec. Time    Solution Quality %    Busy %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW11       MAX_AREA     AREA         True               95.2917               96.7143   96.7143   3.28571         300             283               17           94.3333            5.66667
+BKW11       MAX_AREA     AREA         False              83.7466               41.2667   41.2667  58.7333          300             271               29           90.3333            9.66667
+BKW11       MAX_AREA     PERIMETER    True               78.304                97.7714   97.7714   2.22857         300             250               50           83.3333           16.6667
+BKW11       MAX_AREA     PERIMETER    False              84.1777               41.8286   41.8286  58.1714          300             270               30           90                10
+BKW11       MAX_AREA     HEIGHT       True              101.3                  82.2571   82.2571  17.7429          300             286               14           95.3333            4.66667
+BKW11       MAX_AREA     HEIGHT       False              68.2239               27.8762   27.8762  72.1238          300             226               74           75.3333           24.6667
+BKW11       MAX_AREA     WIDTH        True               93.6539               89.9905   89.9905  10.0095          300             286               14           95.3333            4.66667
+BKW11       MAX_AREA     WIDTH        False              79.7309               61.1238   61.1238  38.8762          300             284               16           94.6667            5.33333
+BKW11       MAX_AREA     NONE         True               94.5522               80.2762   80.2762  19.7238          300             292                8           97.3333            2.66667
+BKW11       MAX_AREA     NONE         False              90.4822               80.2762   80.2762  19.7238          300             292                8           97.3333            2.66667

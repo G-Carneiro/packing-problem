@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Exec. Time    Solution Quality %    Busy %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW10       MAX_AREA     AREA         True               50.1292               91.3429   91.3429   8.65714         200             195                5              97.5                2.5
+BKW10       MAX_AREA     AREA         False              44.715                31.3143   31.3143  68.6857          200             188               12              94                  6
+BKW10       MAX_AREA     PERIMETER    True               51.3493               95.9429   95.9429   4.05714         200             198                2              99                  1
+BKW10       MAX_AREA     PERIMETER    False              44.9604               31.5619   31.5619  68.4381          200             188               12              94                  6
+BKW10       MAX_AREA     HEIGHT       True               49.8453               72.2952   72.2952  27.7048          200             195                5              97.5                2.5
+BKW10       MAX_AREA     HEIGHT       False              42.6663               30.581    30.581   69.419           200             181               19              90.5                9.5
+BKW10       MAX_AREA     WIDTH        True               46.2646               94.0381   94.0381   5.9619          200             197                3              98.5                1.5
+BKW10       MAX_AREA     WIDTH        False              42.3073               54.6      54.6     45.4             200             194                6              97                  3
+BKW10       MAX_AREA     NONE         True               46.0088               83.0667   83.0667  16.9333          200             192                8              96                  4
+BKW10       MAX_AREA     NONE         False              45.7631               83.0667   83.0667  16.9333          200             192                8              96                  4

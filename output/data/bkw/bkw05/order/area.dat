@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Exec. Time    Solution Quality %    Busy %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW05       VERTICALLY    AREA         True               3.81265                 64.92     64.92     35.08          50              39               11                78                 22
+BKW05       VERTICALLY    AREA         False              2.35327                 22.27     22.27     77.73          50              29               21                58                 42
+BKW05       HORIZONTALLY  AREA         True               3.23006                 90.47     90.47      9.53          50              35               15                70                 30
+BKW05       HORIZONTALLY  AREA         False              3.7936                  41.1      41.1      58.9           50              39               11                78                 22
+BKW05       MAX_AREA      AREA         True               4.42765                 92.14     92.14      7.86          50              42                8                84                 16
+BKW05       MAX_AREA      AREA         False              4.40076                 50.92     50.92     49.08          50              43                7                86                 14
+BKW05       NONE          AREA         True               4.18418                 97.66     97.66      2.34          50              49                1                98                  2
+BKW05       NONE          AREA         False              3.75361                 62.75     62.75     37.25          50              46                4                92                  8

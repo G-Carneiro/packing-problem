@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Exec. Time    Solution Quality %    Busy %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW10       VERTICALLY   AREA         True               36.8223               61.8381   61.8381   38.1619         200             177               23              88.5               11.5
+BKW10       VERTICALLY   AREA         False              28.6537               22.5714   22.5714   77.4286         200             168               32              84                 16
+BKW10       VERTICALLY   PERIMETER    True               37.9639               62.5714   62.5714   37.4286         200             180               20              90                 10
+BKW10       VERTICALLY   PERIMETER    False              27.8536               21.981    21.981    78.019          200             166               34              83                 17
+BKW10       VERTICALLY   HEIGHT       True               33.7889               50.9905   50.9905   49.0095         200             170               30              85                 15
+BKW10       VERTICALLY   HEIGHT       False              32.0701               24.3048   24.3048   75.6952         200             172               28              86                 14
+BKW10       VERTICALLY   WIDTH        True               37.8714               84.0667   84.0667   15.9333         200             187               13              93.5                6.5
+BKW10       VERTICALLY   WIDTH        False              27.8889               21.981    21.981    78.019          200             166               34              83                 17
+BKW10       VERTICALLY   NONE         True               32.6026               41.6286   41.6286   58.3714         200             171               29              85.5               14.5
+BKW10       VERTICALLY   NONE         False              31.9907               41.6286   41.6286   58.3714         200             171               29              85.5               14.5
