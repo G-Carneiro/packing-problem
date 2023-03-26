@@ -1,54 +1,12 @@
-from os import listdir, makedirs, path, scandir
+from os import listdir, makedirs, scandir
 from time import time
 
-from pandas import DataFrame
 from tabulate import tabulate
 
 from src.model.item import Item
+from src.model.model import Model
 from src.utils.order_mode import OrderMode
 from src.utils.split_mode import SplitMode
-
-
-def to_csv(csv_folder: str, file_name: str, box: Item, exec_time: float,
-           order: OrderMode, split: SplitMode, decrescent: bool) -> None:
-    data = {"Instance": [file_name],
-            "SplitMode": [split.name],
-            "OrderMode": [order.name],
-            "Decrescent": [decrescent],
-            "Exec. Time": [exec_time],
-            "Solution Quality %": [box.solution_quality()],
-            "Busy %": [box.percent_busy()],
-            "Free %": [box.percent_free()],
-            "Nº Items": [len(box.items)],
-            "Inside Items": [box.inside_items()],
-            "Outside Items": [box.outside_items()],
-            "Inside Items %": [box.inside_items_percent()],
-            "Outside Items %": [box.outside_item_percent()]}
-    _to_csv(csv_folder=csv_folder, order=order, split=split,
-            decrescent=decrescent, data=data)
-    _to_csv(csv_folder=f"{csv_folder}/bkw", order=order, split=split,
-            decrescent=decrescent, data=data)
-    _to_csv(csv_folder=f"{csv_folder}/bkw/{file_name.lower()}", order=order, split=split,
-            decrescent=decrescent, data=data)
-    return None
-
-
-def _to_csv(csv_folder: str, order: OrderMode, split: SplitMode, decrescent: bool,
-            data) -> None:
-    files = [f"order/{order.name}", f"split/{split.name}",
-             f"decrescent/{decrescent}", "all"]
-
-    makedirs(f"{csv_folder}/order", exist_ok=True)
-    makedirs(f"{csv_folder}/split", exist_ok=True)
-    makedirs(f"{csv_folder}/decrescent", exist_ok=True)
-    for file in files:
-        file = f"{csv_folder}/{file}".lower()
-
-        with open(file, "a") as f:
-            DataFrame(data).to_csv(f, index=False,
-                                   header=not bool(path.getsize(file)))
-
-    return None
 
 
 def csv_to_table(csv_folder: str, table_folder: str) -> None:
@@ -87,27 +45,26 @@ def main(folder: str = "references/bkw") -> None:
             _, width, height = line.split()
             items.append(Item(width=float(width), height=float(height)))
         width, height = lines[1].split()
-        box = Item(width=float(width), height=float(height), items=items,
-                   name=file_name, instance="bkw")
+        box = Item(width=float(width), height=float(height))
         for split in SplitMode:
             for order in OrderMode:
                 for descending in [True, False]:
                     exec_time = 0
+                    model = Model(name=file_name, instance="bkw", box=box, items=items,
+                                  order=order, split=split, decrescent=descending)
                     for _ in range(num_tests):
                         print(f"[Starting] file={file_name} split={split.name} order={order.name} "
                               f"decrescent={descending}")
-                        box.reset()
+                        model.reset()
                         start = time()
-                        box.solve(order_mode=order, split_mode=split, decrescent=descending,
-                                  export_all=True, show_regions=(split != SplitMode.NONE))
+                        model.solve(export_all=True, show_regions=(split != SplitMode.NONE))
                         exec_time += time() - start
                         total_time += exec_time
                         print(f"[Finished] file={file_name} split={split.name} order={order.name} "
                               f"decrescent={descending} exec={exec_time} total={total_time}")
 
                     exec_time /= num_tests
-                    to_csv(csv_folder=csv_folder, file_name=file_name, box=box,
-                           exec_time=exec_time, order=order, split=split, decrescent=descending)
+                    model.to_csv(csv_folder=csv_folder, exec_time=exec_time)
 
         break
     csv_to_table(csv_folder=csv_folder, table_folder=data_folder)
