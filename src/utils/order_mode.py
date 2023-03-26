@@ -6,4 +6,4 @@ class OrderMode(Enum):
     PERIMETER = auto()
     HEIGHT = auto()
     WIDTH = auto()
-    NONE = auto()
+    ID = auto()

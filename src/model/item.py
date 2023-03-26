@@ -56,11 +56,9 @@ class Item:
     def items(self) -> list[Item]:
         return self._items
 
-    def sorted_items(self, order: OrderMode = OrderMode.NONE, reverse: bool = False) -> list[Item]:
-        if order != OrderMode.NONE:
-            return sorted(self._items, key=lambda x: eval(f"x.{order.name.lower()}"),
-                          reverse=reverse)
-        return self.items
+    def sorted_items(self, order: OrderMode = OrderMode.ID, reverse: bool = False) -> list[Item]:
+        return sorted(self._items, key=lambda x: eval(f"x.{order.name.lower()}"),
+                      reverse=reverse)
 
     @property
     def regions(self) -> OrderedQueue[Region]:
