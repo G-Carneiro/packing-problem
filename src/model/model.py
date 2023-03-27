@@ -176,7 +176,7 @@ class Model:
                         for other in self.items:
                             if (other == item):
                                 break
-                            if item.conflict(other=other):
+                            if other.conflict(other=item) or item.conflict(other=other):
                                 item.position = None
                                 break
 
@@ -264,7 +264,7 @@ class Model:
                 "Decrescent": [self.decrescent],
                 "Exec. Time": [exec_time],
                 "Solution Quality %": [self.solution_quality()],
-                "Busy %": [self.percent_busy()],
+                "Occupied %": [self.percent_busy()],
                 "Free %": [self.percent_free()],
                 "Nº Items": [len(self.items)],
                 "Inside Items": [self.inside_items()],
