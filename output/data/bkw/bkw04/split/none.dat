@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Exec. Time    Solution Quality %    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW04       NONE         AREA         True             0.0380243               96.1875       96.1875    3.8125          40              33                7              82.5               17.5
+BKW04       NONE         AREA         False            0.104399                44.6719       44.6719   55.3281          40              35                5              87.5               12.5
+BKW04       NONE         PERIMETER    True             0.0380822               95.0625       95.0625    4.9375          40              30               10              75                 25
+BKW04       NONE         PERIMETER    False            0.116194                48.2812       48.2812   51.7188          40              38                2              95                  5
+BKW04       NONE         HEIGHT       True             0.0437708               94            94         6               40              37                3              92.5                7.5
+BKW04       NONE         HEIGHT       False            0.0874877               58.1562       58.1562   41.8438          40              38                2              95                  5
+BKW04       NONE         WIDTH        True             0.0972021               93.875        93.875     6.125           40              38                2              95                  5
+BKW04       NONE         WIDTH        False            0.141047                63.7812       63.7812   36.2188          40              39                1              97.5                2.5
+BKW04       NONE         ID           True             0.0444567               48.2812       48.2812   51.7188          40              38                2              95                  5
+BKW04       NONE         ID           False            0.0693702               88.7656       88.7656   11.2344          40              37                3              92.5                7.5

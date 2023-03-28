@@ -1,0 +1,12 @@
+Instance    SplitMode     OrderMode    Decrescent      Exec. Time    Solution Quality %    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW04       HORIZONTALLY  AREA         True           0.000278378               87.3125       87.3125   12.6875          40              34                6              85                 15
+BKW04       HORIZONTALLY  AREA         False          0.000293684               18.6875       18.6875   81.3125          40              28               12              70                 30
+BKW04       HORIZONTALLY  PERIMETER    True           0.000255728               85.7812       85.7812   14.2188          40              31                9              77.5               22.5
+BKW04       HORIZONTALLY  PERIMETER    False          0.000285387               17.5625       17.5625   82.4375          40              26               14              65                 35
+BKW04       HORIZONTALLY  HEIGHT       True           0.000300312               74.6094       74.6094   25.3906          40              36                4              90                 10
+BKW04       HORIZONTALLY  HEIGHT       False          0.000281572               17.5625       17.5625   82.4375          40              26               14              65                 35
+BKW04       HORIZONTALLY  WIDTH        True           0.000282907               75.6406       75.6406   24.3594          40              34                6              85                 15
+BKW04       HORIZONTALLY  WIDTH        False          0.000286961               18.6875       18.6875   81.3125          40              28               12              70                 30
+BKW04       HORIZONTALLY  ID           True           0.000302696               33.8594       33.8594   66.1406          40              34                6              85                 15
+BKW04       HORIZONTALLY  ID           False          0.000314045               62.7656       62.7656   37.2344          40              34                6              85                 15

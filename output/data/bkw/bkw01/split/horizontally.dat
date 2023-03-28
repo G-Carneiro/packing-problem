@@ -1,0 +1,12 @@
+Instance    SplitMode     OrderMode    Decrescent      Exec. Time    Solution Quality %    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW01       HORIZONTALLY  AREA         True           6.08921e-05                100           100         0             10              10                0               100                  0
+BKW01       HORIZONTALLY  AREA         False          5.67436e-05                 12.75         12.75     87.25          10               6                4                60                 40
+BKW01       HORIZONTALLY  PERIMETER    True           6.06537e-05                100           100         0             10              10                0               100                  0
+BKW01       HORIZONTALLY  PERIMETER    False          5.34058e-05                 12.75         12.75     87.25          10               6                4                60                 40
+BKW01       HORIZONTALLY  HEIGHT       True           6.21319e-05                100           100         0             10              10                0               100                  0
+BKW01       HORIZONTALLY  HEIGHT       False          5.38826e-05                 12.75         12.75     87.25          10               6                4                60                 40
+BKW01       HORIZONTALLY  WIDTH        True           5.92709e-05                 88.75         88.75     11.25          10               8                2                80                 20
+BKW01       HORIZONTALLY  WIDTH        False          6.9046e-05                  24            24        76             10               8                2                80                 20
+BKW01       HORIZONTALLY  ID           True           6.03199e-05                 17.75         17.75     82.25          10               7                3                70                 30
+BKW01       HORIZONTALLY  ID           False          5.49316e-05                 52.75         52.75     47.25          10               7                3                70                 30

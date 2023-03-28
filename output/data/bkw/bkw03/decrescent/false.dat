@@ -1,0 +1,22 @@
+Instance    SplitMode     OrderMode    Decrescent      Exec. Time    Solution Quality %    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW03       VERTICALLY    AREA         False          0.000169802               52            52        48               30              24                6           80                20
+BKW03       VERTICALLY    PERIMETER    False          0.00015955                52            52        48               30              24                6           80                20
+BKW03       VERTICALLY    HEIGHT       False          0.000179863               55.3333       55.3333   44.6667          30              25                5           83.3333           16.6667
+BKW03       VERTICALLY    WIDTH        False          0.000163889               52            52        48               30              24                6           80                20
+BKW03       VERTICALLY    ID           False          0.000179338               66.4          66.4      33.6             30              25                5           83.3333           16.6667
+BKW03       HORIZONTALLY  AREA         False          0.000168276               20.2          20.2      79.8             30              17               13           56.6667           43.3333
+BKW03       HORIZONTALLY  PERIMETER    False          0.00016737                20.2          20.2      79.8             30              17               13           56.6667           43.3333
+BKW03       HORIZONTALLY  HEIGHT       False          0.000171709               20.2          20.2      79.8             30              17               13           56.6667           43.3333
+BKW03       HORIZONTALLY  WIDTH        False          0.000217104               39.6667       39.6667   60.3333          30              23                7           76.6667           23.3333
+BKW03       HORIZONTALLY  ID           False          0.000183201               33.8667       33.8667   66.1333          30              20               10           66.6667           33.3333
+BKW03       MAX_AREA      AREA         False          0.000389767               35.0667       35.0667   64.9333          30              22                8           73.3333           26.6667
+BKW03       MAX_AREA      PERIMETER    False          0.00038681                38.1333       38.1333   61.8667          30              22                8           73.3333           26.6667
+BKW03       MAX_AREA      HEIGHT       False          0.000408602               38.1333       38.1333   61.8667          30              22                8           73.3333           26.6667
+BKW03       MAX_AREA      WIDTH        False          0.00039916                55.3333       55.3333   44.6667          30              25                5           83.3333           16.6667
+BKW03       MAX_AREA      ID           False          0.000453997               62.9333       62.9333   37.0667          30              27                3           90                10
+BKW03       NONE          AREA         False          0.051109                  58.3333       58.3333   41.6667          30              26                4           86.6667           13.3333
+BKW03       NONE          PERIMETER    False          0.0460675                 55.7333       55.7333   44.2667          30              26                4           86.6667           13.3333
+BKW03       NONE          HEIGHT       False          0.0466575                 51.4667       51.4667   48.5333          30              24                6           80                20
+BKW03       NONE          WIDTH        False          0.0504207                 71.6          71.6      28.4             30              28                2           93.3333            6.66667
+BKW03       NONE          ID           False          0.0273745                 80            80        20               30              28                2           93.3333            6.66667

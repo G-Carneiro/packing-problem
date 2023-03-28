@@ -1,0 +1,22 @@
+Instance    SplitMode     OrderMode    Decrescent      Exec. Time    Solution Quality %    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW10       VERTICALLY    AREA         False          0.000987387              22.5714       22.5714    77.4286         200             168               32              84                 16
+BKW10       VERTICALLY    PERIMETER    False          0.000936413              21.981        21.981     78.019          200             166               34              83                 17
+BKW10       VERTICALLY    HEIGHT       False          0.00109596               24.3048       24.3048    75.6952         200             172               28              86                 14
+BKW10       VERTICALLY    WIDTH        False          0.000918198              21.981        21.981     78.019          200             166               34              83                 17
+BKW10       VERTICALLY    ID           False          0.00105424               41.6286       41.6286    58.3714         200             171               29              85.5               14.5
+BKW10       HORIZONTALLY  AREA         False          0.00356984               16.3714       16.3714    83.6286         200             152               48              76                 24
+BKW10       HORIZONTALLY  PERIMETER    False          0.00355587               16.3714       16.3714    83.6286         200             152               48              76                 24
+BKW10       HORIZONTALLY  HEIGHT       False          0.00251942                9.88571       9.88571   90.1143         200             103               97              51.5               48.5
+BKW10       HORIZONTALLY  WIDTH        False          0.00331459               28.981        28.981     71.019          200             179               21              89.5               10.5
+BKW10       HORIZONTALLY  ID           False          0.0023149                75.4952       75.4952    24.5048         200             190               10              95                  5
+BKW10       MAX_AREA      AREA         False          0.00466328               31.3143       31.3143    68.6857         200             188               12              94                  6
+BKW10       MAX_AREA      PERIMETER    False          0.00460844               31.5619       31.5619    68.4381         200             188               12              94                  6
+BKW10       MAX_AREA      HEIGHT       False          0.0040194                30.581        30.581     69.419          200             181               19              90.5                9.5
+BKW10       MAX_AREA      WIDTH        False          0.00362897               54.6          54.6       45.4            200             194                6              97                  3
+BKW10       MAX_AREA      ID           False          0.00459342               83.0667       83.0667    16.9333         200             192                8              96                  4
+BKW10       NONE          AREA         False         18.5952                   48.5905       48.5905    51.4095         200             195                5              97.5                2.5
+BKW10       NONE          PERIMETER    False         18.8468                   50.3619       50.3619    49.6381         200             196                4              98                  2
+BKW10       NONE          HEIGHT       False         12.5265                   48.5905       48.5905    51.4095         200             195                5              97.5                2.5
+BKW10       NONE          WIDTH        False         21.4451                   57.1714       57.1714    42.8286         200             196                4              98                  2
+BKW10       NONE          ID           False         11.3025                   76.2476       76.2476    23.7524         200             197                3              98.5                1.5

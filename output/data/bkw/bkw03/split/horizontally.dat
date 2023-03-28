@@ -1,0 +1,12 @@
+Instance    SplitMode     OrderMode    Decrescent      Exec. Time    Solution Quality %    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW03       HORIZONTALLY  AREA         True           0.000216532               88.8          88.8      11.2             30              23                7           76.6667            23.3333
+BKW03       HORIZONTALLY  AREA         False          0.000168276               20.2          20.2      79.8             30              17               13           56.6667            43.3333
+BKW03       HORIZONTALLY  PERIMETER    True           0.000205803               93            93         7               30              27                3           90                 10
+BKW03       HORIZONTALLY  PERIMETER    False          0.00016737                20.2          20.2      79.8             30              17               13           56.6667            43.3333
+BKW03       HORIZONTALLY  HEIGHT       True           0.000243282               83.0667       83.0667   16.9333          30              25                5           83.3333            16.6667
+BKW03       HORIZONTALLY  HEIGHT       False          0.000171709               20.2          20.2      79.8             30              17               13           56.6667            43.3333
+BKW03       HORIZONTALLY  WIDTH        True           0.000198746               58.1333       58.1333   41.8667          30              24                6           80                 20
+BKW03       HORIZONTALLY  WIDTH        False          0.000217104               39.6667       39.6667   60.3333          30              23                7           76.6667            23.3333
+BKW03       HORIZONTALLY  ID           True           0.000235367               67.1333       67.1333   32.8667          30              26                4           86.6667            13.3333
+BKW03       HORIZONTALLY  ID           False          0.000183201               33.8667       33.8667   66.1333          30              20               10           66.6667            33.3333

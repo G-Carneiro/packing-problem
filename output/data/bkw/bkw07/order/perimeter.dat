@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Exec. Time    Solution Quality %    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW07       VERTICALLY    PERIMETER    True           0.000473785               75.775        75.775    24.225           70              59               11           84.2857           15.7143
+BKW07       VERTICALLY    PERIMETER    False          0.000438643               40.6375       40.6375   59.3625          70              59               11           84.2857           15.7143
+BKW07       HORIZONTALLY  PERIMETER    True           0.000615835               83.775        83.775    16.225           70              62                8           88.5714           11.4286
+BKW07       HORIZONTALLY  PERIMETER    False          0.00063982                11.525        11.525    88.475           70              47               23           67.1429           32.8571
+BKW07       MAX_AREA      PERIMETER    True           0.00114884                90.5875       90.5875    9.4125          70              64                6           91.4286            8.57143
+BKW07       MAX_AREA      PERIMETER    False          0.00112886                42.0875       42.0875   57.9125          70              63                7           90                10
+BKW07       NONE          PERIMETER    True           0.155438                  91.5875       91.5875    8.4125          70              65                5           92.8571            7.14286
+BKW07       NONE          PERIMETER    False          0.54246                   60.7125       60.7125   39.2875          70              65                5           92.8571            7.14286

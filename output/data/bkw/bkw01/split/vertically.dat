@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Exec. Time    Solution Quality %    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW01       VERTICALLY   AREA         True           9.72271e-05                   100           100         0          10              10                0               100                  0
+BKW01       VERTICALLY   AREA         False          6.67095e-05                    60            60        40          10               9                1                90                 10
+BKW01       VERTICALLY   PERIMETER    True           6.14643e-05                   100           100         0          10              10                0               100                  0
+BKW01       VERTICALLY   PERIMETER    False          6.66618e-05                    60            60        40          10               9                1                90                 10
+BKW01       VERTICALLY   HEIGHT       True           6.85215e-05                    60            60        40          10               9                1                90                 10
+BKW01       VERTICALLY   HEIGHT       False          6.29902e-05                    24            24        76          10               8                2                80                 20
+BKW01       VERTICALLY   WIDTH        True           5.6982e-05                    100           100         0          10              10                0               100                  0
+BKW01       VERTICALLY   WIDTH        False          6.69956e-05                    60            60        40          10               9                1                90                 10
+BKW01       VERTICALLY   ID           True           7.43389e-05                    60            60        40          10               9                1                90                 10
+BKW01       VERTICALLY   ID           False          7.77245e-05                    60            60        40          10               9                1                90                 10

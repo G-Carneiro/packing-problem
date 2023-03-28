@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Exec. Time    Solution Quality %    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW08       NONE         AREA         True              0.464862               94.2          94.2       5.8             80              55               25             68.75              31.25
+BKW08       NONE         AREA         False             1.05729                66.725        66.725    33.275           80              76                4             95                  5
+BKW08       NONE         PERIMETER    True              0.517428               95.95         95.95      4.05            80              65               15             81.25              18.75
+BKW08       NONE         PERIMETER    False             1.01477                66.725        66.725    33.275           80              76                4             95                  5
+BKW08       NONE         HEIGHT       True              0.530856               91.0375       91.0375    8.9625          80              71                9             88.75              11.25
+BKW08       NONE         HEIGHT       False             0.890493               57.3875       57.3875   42.6125          80              70               10             87.5               12.5
+BKW08       NONE         WIDTH        True              0.604534               94.175        94.175     5.825           80              78                2             97.5                2.5
+BKW08       NONE         WIDTH        False             1.1389                 71.825        71.825    28.175           80              76                4             95                  5
+BKW08       NONE         ID           True              0.823458               82.45         82.45     17.55            80              77                3             96.25               3.75
+BKW08       NONE         ID           False             0.53027                87.7          87.7      12.3             80              77                3             96.25               3.75

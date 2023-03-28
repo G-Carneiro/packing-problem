@@ -1,0 +1,22 @@
+Instance    SplitMode     OrderMode    Decrescent      Exec. Time    Solution Quality %    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW12       VERTICALLY    AREA         False           0.00326772               51.1267       51.1267   48.8733         500             462               38              92.4                7.6
+BKW12       VERTICALLY    PERIMETER    False           0.00319915               56.2433       56.2433   43.7567         500             466               34              93.2                6.8
+BKW12       VERTICALLY    HEIGHT       False           0.00362086               50.2133       50.2133   49.7867         500             465               35              93                  7
+BKW12       VERTICALLY    WIDTH        False           0.00263553               55.9967       55.9967   44.0033         500             457               43              91.4                8.6
+BKW12       VERTICALLY    ID           False           0.00434718               49.83         49.83     50.17           500             458               42              91.6                8.4
+BKW12       HORIZONTALLY  AREA         False           0.00911531                8.55          8.55     91.45           500             183              317              36.6               63.4
+BKW12       HORIZONTALLY  PERIMETER    False           0.00904503                8.55          8.55     91.45           500             183              317              36.6               63.4
+BKW12       HORIZONTALLY  HEIGHT       False           0.00843539                8.55          8.55     91.45           500             183              317              36.6               63.4
+BKW12       HORIZONTALLY  WIDTH        False           0.0223559                26.6167       26.6167   73.3833         500             409               91              81.8               18.2
+BKW12       HORIZONTALLY  ID           False           0.013055                 34.7533       34.7533   65.2467         500             413               87              82.6               17.4
+BKW12       MAX_AREA      AREA         False           0.0178699                28.7067       28.7067   71.2933         500             430               70              86                 14
+BKW12       MAX_AREA      PERIMETER    False           0.0191504                28.21         28.21     71.79           500             427               73              85.4               14.6
+BKW12       MAX_AREA      HEIGHT       False           0.018976                 24.49         24.49     75.51           500             394              106              78.8               21.2
+BKW12       MAX_AREA      WIDTH        False           0.0096118                67.24         67.24     32.76           500             488               12              97.6                2.4
+BKW12       MAX_AREA      ID           False           0.0257654                75.5567       75.5567   24.4433         500             489               11              97.8                2.2
+BKW12       NONE          AREA         False         307.566                    76.57         76.57     23.43           500             494                6              98.8                1.2
+BKW12       NONE          PERIMETER    False         324.226                    81.1567       81.1567   18.8433         500             495                5              99                  1
+BKW12       NONE          HEIGHT       False         289.35                     66.3867       66.3867   33.6133         500             486               14              97.2                2.8
+BKW12       NONE          WIDTH        False         346.931                    77.3367       77.3367   22.6633         500             492                8              98.4                1.6
+BKW12       NONE          ID           False         277.111                    82.3267       82.3267   17.6733         500             493                7              98.6                1.4

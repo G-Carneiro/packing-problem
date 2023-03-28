@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Exec. Time    Solution Quality %    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW02       MAX_AREA     AREA         True           0.000273705               71.9333       71.9333   28.0667          20              17                3                85                 15
+BKW02       MAX_AREA     AREA         False          0.000248861               43.8667       43.8667   56.1333          20              15                5                75                 25
+BKW02       MAX_AREA     PERIMETER    True           0.000276184               71.9333       71.9333   28.0667          20              17                3                85                 15
+BKW02       MAX_AREA     PERIMETER    False          0.00029645                60.2          60.2      39.8             20              17                3                85                 15
+BKW02       MAX_AREA     HEIGHT       True           0.00028863                68.2          68.2      31.8             20              16                4                80                 20
+BKW02       MAX_AREA     HEIGHT       False          0.000255156               49.3333       49.3333   50.6667          20              15                5                75                 25
+BKW02       MAX_AREA     WIDTH        True           0.000283813               79.4667       79.4667   20.5333          20              18                2                90                 10
+BKW02       MAX_AREA     WIDTH        False          0.000254536               55.2667       55.2667   44.7333          20              15                5                75                 25
+BKW02       MAX_AREA     ID           True           0.000263071               54.1333       54.1333   45.8667          20              16                4                80                 20
+BKW02       MAX_AREA     ID           False          0.000292587               76.8          76.8      23.2             20              17                3                85                 15

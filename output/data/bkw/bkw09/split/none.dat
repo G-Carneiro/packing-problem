@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Exec. Time    Solution Quality %    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW09       NONE         AREA         True              0.923749               94.2933       94.2933   5.70667         100              97                3                97                  3
+BKW09       NONE         AREA         False             1.87454                58.4667       58.4667  41.5333          100              95                5                95                  5
+BKW09       NONE         PERIMETER    True              1.10177                97.12         97.12     2.88            100              80               20                80                 20
+BKW09       NONE         PERIMETER    False             1.80543                51.9867       51.9867  48.0133          100              93                7                93                  7
+BKW09       NONE         HEIGHT       True              1.10442                85.2133       85.2133  14.7867          100              93                7                93                  7
+BKW09       NONE         HEIGHT       False             1.67305                54.28         54.28    45.72            100              94                6                94                  6
+BKW09       NONE         WIDTH        True              1.73229                97.28         97.28     2.72            100              98                2                98                  2
+BKW09       NONE         WIDTH        False             2.27137                68.4667       68.4667  31.5333          100              96                4                96                  4
+BKW09       NONE         ID           True              1.31657                72.5733       72.5733  27.4267          100              97                3                97                  3
+BKW09       NONE         ID           False             1.1922                 83.1733       83.1733  16.8267          100              97                3                97                  3

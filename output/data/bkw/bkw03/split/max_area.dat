@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Exec. Time    Solution Quality %    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW03       MAX_AREA     AREA         True           0.000427628               92.4          92.4      7.6              30              25                5           83.3333           16.6667
+BKW03       MAX_AREA     AREA         False          0.000389767               35.0667       35.0667  64.9333           30              22                8           73.3333           26.6667
+BKW03       MAX_AREA     PERIMETER    True           0.000546885               92.6667       92.6667   7.33333          30              28                2           93.3333            6.66667
+BKW03       MAX_AREA     PERIMETER    False          0.00038681                38.1333       38.1333  61.8667           30              22                8           73.3333           26.6667
+BKW03       MAX_AREA     HEIGHT       True           0.000423813               90.4          90.4      9.6              30              25                5           83.3333           16.6667
+BKW03       MAX_AREA     HEIGHT       False          0.000408602               38.1333       38.1333  61.8667           30              22                8           73.3333           26.6667
+BKW03       MAX_AREA     WIDTH        True           0.000499821               78.3333       78.3333  21.6667           30              28                2           93.3333            6.66667
+BKW03       MAX_AREA     WIDTH        False          0.00039916                55.3333       55.3333  44.6667           30              25                5           83.3333           16.6667
+BKW03       MAX_AREA     ID           True           0.000477123               72.8667       72.8667  27.1333           30              27                3           90                10
+BKW03       MAX_AREA     ID           False          0.000453997               62.9333       62.9333  37.0667           30              27                3           90                10
