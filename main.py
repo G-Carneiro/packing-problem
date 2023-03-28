@@ -5,6 +5,7 @@ from tabulate import tabulate
 
 from src.model.item import Item
 from src.model.model import Model
+from src.utils.folders import *
 from src.utils.order_mode import OrderMode
 from src.utils.split_mode import SplitMode
 
@@ -32,11 +33,9 @@ def csv_to_table(csv_folder: str, table_folder: str) -> None:
 
 
 def main(folder: str = "references/bkw") -> None:
-    num_tests: int = 1
-    csv_folder = "output/csv"
-    data_folder = "output/data"
+    num_tests: int = 5
     total_time = 0
-    for file_name in sorted(listdir(folder)):
+    for idx, file_name in enumerate(sorted(listdir(folder))):
         file = f"{folder}/{file_name}"
         with open(file, "r") as f:
             lines = f.readlines()
@@ -57,17 +56,18 @@ def main(folder: str = "references/bkw") -> None:
                               f"decrescent={descending}")
                         model.reset()
                         start = time()
-                        model.solve(export_all=True, show_regions=(split != SplitMode.NONE))
+                        model.solve()
                         exec_time += time() - start
                         total_time += exec_time
                         print(f"[Finished] file={file_name} split={split.name} order={order.name} "
                               f"decrescent={descending} exec={exec_time} total={total_time}")
 
                     exec_time /= num_tests
-                    model.to_csv(csv_folder=csv_folder, exec_time=exec_time)
+                    # model.to_csv(csv_folder=CSV, exec_time=exec_time)
+                    model.export_model(folder=FIGURES, show_regions=(not idx),
+                                       show_labels=(idx < 6))
 
-        break
-    csv_to_table(csv_folder=csv_folder, table_folder=data_folder)
+    csv_to_table(csv_folder=CSV, table_folder=DATA)
     return None
 
 

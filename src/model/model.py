@@ -173,6 +173,8 @@ class Model:
                 item.position = region.start
                 match self.split:
                     case SplitMode.NONE:
+                        # FIXME: two equal items in same place is posible, try use OrderedSet to
+                        #  solve
                         for other in self.items:
                             if (other == item):
                                 break
@@ -215,7 +217,8 @@ class Model:
             item.position = None
         return None
 
-    def export_model(self, folder: str, show_regions: bool = False) -> None:
+    def export_model(self, folder: str, show_regions: bool = False,
+                     show_labels: bool = False) -> None:
         folder = f"{folder}/{self._instance}/{self._name}/{self.split.name}/{self.order.name}/" \
                  f"{self.decrescent}".lower()
         makedirs(folder, exist_ok=True)
@@ -227,10 +230,11 @@ class Model:
         box = Rectangle(xy=(0, 0), width=self.box.width, height=self.box.height, alpha=0.1)
         ax.add_patch(box)
         item_cmap = plt.get_cmap('brg', len(self.items))
-        self._rectangle_cmap(iterable=self.items, cmap=item_cmap, ax=ax)
+        self._rectangle_cmap(iterable=self.items, cmap=item_cmap, ax=ax, show_labels=show_labels)
         if show_regions:
             region_cmap = plt.get_cmap('hsv', 2 * len(self.items) + 1)
-            self._rectangle_cmap(iterable=self.regions, cmap=region_cmap, ax=ax)
+            self._rectangle_cmap(iterable=self.regions, cmap=region_cmap, ax=ax,
+                                 show_labels=show_labels)
         plt.xlim(0, self.box.width)
         plt.ylim(0, self.box.height)
         plt.savefig(file)
@@ -238,7 +242,7 @@ class Model:
         return None
 
     @staticmethod
-    def _rectangle_cmap(iterable, cmap, ax) -> None:
+    def _rectangle_cmap(iterable, cmap, ax, show_labels: bool = False) -> None:
         for idx, item in enumerate(iterable):
             if item.position is None:
                 continue
@@ -247,14 +251,15 @@ class Model:
             rect = Rectangle(xy=(x, y), width=item.width, height=item.height,
                              facecolor=cmap(item.id), alpha=0.2, linewidth=1, edgecolor='k')
             ax.add_patch(rect)
-            cx = x + rect.get_width() / 2
-            cy = y + rect.get_height() / 2
-            if isinstance(item, Item):
-                label = idx
-            else:
-                label = f"R{item.id}"
-            ax.annotate(label, (cx, cy), color='black', weight='bold', fontsize=10, ha='center',
-                        va='center')
+            if show_labels:
+                cx = x + rect.get_width() / 2
+                cy = y + rect.get_height() / 2
+                if isinstance(item, Item):
+                    label = idx
+                else:
+                    label = f"R{item.id}"
+                ax.annotate(label, (cx, cy), color='black', weight='bold', fontsize=10, ha='center',
+                            va='center')
         return None
 
     def to_csv(self, csv_folder: str, exec_time: float) -> None:
