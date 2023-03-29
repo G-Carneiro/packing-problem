@@ -71,5 +71,11 @@ def main(folder: str = "references/bkw") -> None:
     return None
 
 
+def test():
+    from src.model.ordered_queue import OrderedQueue
+    queue = OrderedQueue([1, 4, 3, 5, 2, 7, 10, 6, 9, 0, 11, 5])
+    print(queue)
+
+
 if __name__ == "__main__":
     main()

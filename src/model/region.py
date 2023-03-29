@@ -60,5 +60,10 @@ class Region:
     def __lt__(self, other: Region) -> bool:
         return (self._start < other.start)
 
+    def __eq__(self, other: Region | None) -> bool:
+        if other is None:
+            return False
+        return (self.start == other.start and self.end == other.end)
+
     def __repr__(self) -> str:
         return f"{self.start} {self.end}"
