@@ -1,13 +1,14 @@
 from __future__ import annotations
 
 from .coordinate import Coordinate
+from .rect import Rect
 
 
 class NotRegion(Exception):
     pass
 
 
-class Region:
+class Region(Rect):
     id_: int = 0
 
     def __init__(self,
@@ -22,10 +23,11 @@ class Region:
         if (start.x == end.x) or (start.y == end.y):
             raise NotRegion
 
-        self._start: Coordinate = start
+        start: Coordinate = start
         self._end: Coordinate = end
-        self._height: float = end.y - start.y
-        self._width: float = end.x - start.x
+        height: float = end.y - start.y
+        width: float = end.x - start.x
+        super().__init__(width=width, height=height, position=start)
         self._id: int = Region.id_
         Region.id_ += 1
 
@@ -35,30 +37,14 @@ class Region:
 
     @property
     def start(self) -> Coordinate:
-        return self._start
-
-    @property
-    def position(self) -> Coordinate:
-        return self.start
+        return self.position
 
     @property
     def end(self) -> Coordinate:
         return self._end
 
-    @property
-    def height(self) -> float:
-        return self._height
-
-    @property
-    def width(self) -> float:
-        return self._width
-
-    @property
-    def area(self) -> float:
-        return (self.height * self.width)
-
     def __lt__(self, other: Region) -> bool:
-        return (self._start < other.start)
+        return (self.start < other.start)
 
     def __eq__(self, other: Region | None) -> bool:
         if other is None:

@@ -1,58 +1,23 @@
 from __future__ import annotations
 
-from typing import NoReturn
-
 from .coordinate import Coordinate
+from .rect import Rect
 
 
-class Item:
+class Item(Rect):
     id_: int = 0
 
     def __init__(self,
                  width: float = float("inf"),
                  height: float = float("inf"),
                  ) -> None:
+        super().__init__(width=width, height=height)
         self._id: int = Item.id_
         Item.id_ += 1
-        self._width: float = width
-        self._height: float = height
-        self._area: float = width * height
-        self._perimeter: float = 2 * (width + height)
-        self._position: Coordinate | None = None
 
     @property
     def id(self) -> int:
         return self._id
-
-    @property
-    def height(self) -> float:
-        return self._height
-
-    @property
-    def width(self) -> float:
-        return self._width
-
-    @property
-    def area(self) -> float:
-        return self._area
-
-    @property
-    def perimeter(self) -> float:
-        return self._perimeter
-
-    @property
-    def position(self) -> Coordinate | None:
-        return self._position
-
-    @position.setter
-    def position(self, coordinate: Coordinate | None) -> NoReturn:
-        self._position = coordinate
-
-    @property
-    def end(self) -> Coordinate | None:
-        if self.position is None:
-            return None
-        return self.position + (self.width, self.height)
 
     def coords(self) -> tuple[Coordinate, Coordinate, Coordinate, Coordinate]:
         return (self.position, self.position + (0, self.height),
