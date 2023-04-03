@@ -48,6 +48,12 @@ class Item:
     def position(self, coordinate: Coordinate | None) -> NoReturn:
         self._position = coordinate
 
+    @property
+    def end(self) -> Coordinate | None:
+        if self.position is None:
+            return None
+        return self.position + (self.width, self.height)
+
     def coords(self) -> tuple[Coordinate, Coordinate, Coordinate, Coordinate]:
         return (self.position, self.position + (0, self.height),
                 self.position + (self.width, self.height), self.position + (self.width, 0))
@@ -64,6 +70,8 @@ class Item:
 
         if (other.position is None) or (self.position is None):
             return False
+        elif (self.position == other.position) or (self.end == other.end):
+            return True
 
         coords = other.coords()
         for idx, coord in enumerate(coords):

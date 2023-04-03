@@ -33,9 +33,9 @@ def csv_to_table(csv_folder: str, table_folder: str) -> None:
 
 
 def main(folder: str = "references/bkw") -> None:
-    num_tests: int = 5
+    num_tests: int = 1
     total_time = 0
-    for idx, file_name in enumerate(sorted(listdir(folder))):
+    for idx, file_name in enumerate(sorted(listdir(folder))[:11]):
         file = f"{folder}/{file_name}"
         with open(file, "r") as f:
             lines = f.readlines()
@@ -64,18 +64,24 @@ def main(folder: str = "references/bkw") -> None:
 
                     exec_time /= num_tests
                     # model.to_csv(csv_folder=CSV, exec_time=exec_time)
-                    model.export_model(folder=FIGURES, show_regions=(not idx),
-                                       show_labels=(idx < 6))
+                    model.export_model(folder=FIGURES, show_regions=False,
+                                       show_labels=False)
 
-    csv_to_table(csv_folder=CSV, table_folder=DATA)
+    # csv_to_table(csv_folder=CSV, table_folder=DATA)
     return None
 
 
 def test():
     from src.model.ordered_queue import OrderedQueue
-    queue = OrderedQueue([1, 4, 3, 5, 2, 7, 10, 6, 9, 0, 11, 5])
+    from random import randint
+    lista = []
+    for _ in range(100):
+        lista.append(randint(0, 100))
+    print(lista)
+    queue = OrderedQueue(lista)
     print(queue)
 
 
+# TODO: mediana, desvio padrão - numpy
 if __name__ == "__main__":
     main()
