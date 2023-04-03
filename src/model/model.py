@@ -6,9 +6,10 @@ from pandas import DataFrame
 
 from .coordinate import Coordinate
 from .item import Item
+from .order_mode import OrderMode
 from .ordered_queue import OrderedQueue
 from .region import NotRegion, Region
-from ..utils.order_mode import OrderMode
+from ..utils.order_key import OrderKey
 from ..utils.split_mode import SplitMode
 
 
@@ -18,7 +19,7 @@ class Model:
                  instance: str,
                  box: Item,
                  items: list[Item],
-                 order: OrderMode,
+                 order: OrderKey,
                  split: SplitMode,
                  decrescent: bool = True
                  ) -> None:
@@ -26,10 +27,9 @@ class Model:
         self._instance: str = instance
         self._box: Item = box
         self._items: list[Item] = items
-        self._items: list[Item] = self.sorted_items(order=order, reverse=decrescent)
-        self._order: OrderMode = order
+        self._order: OrderMode = OrderMode(key=order, reverse=decrescent)
+        self._items: list[Item] = self.sorted_items(order=self.order)
         self._split: SplitMode = split
-        self._decrescent: bool = decrescent
         self._export_id: int = 0
         self._regions: OrderedQueue[Region] = OrderedQueue([Region((0, 0), (box.width,
                                                                             box.height))])
@@ -60,11 +60,11 @@ class Model:
 
     @property
     def decrescent(self) -> bool:
-        return self._decrescent
+        return self.order.reverse
 
-    def sorted_items(self, order: OrderMode = OrderMode.ID, reverse: bool = False) -> list[Item]:
+    def sorted_items(self, order: OrderMode) -> list[Item]:
         return sorted(self._items, key=lambda x: eval(f"x.{order.name.lower()}"),
-                      reverse=reverse)
+                      reverse=order.reverse)
 
     def percent_free(self) -> float:
         return (100 - self.percent_busy())
@@ -200,14 +200,11 @@ class Model:
             self.export_model(folder=f"output/figures", show_regions=show_regions)
         return self.solution_quality()
 
-    def reset(self, order: OrderMode = None, split: SplitMode = None,
-              decrescent: bool = None) -> None:
+    def reset(self, order: OrderMode = None, split: SplitMode = None) -> None:
         if order is not None:
             self._order = order
         if split is not None:
             self._split = split
-        if decrescent is not None:
-            self._decrescent = decrescent
         self.box.position = None
         self._export_id = 0
         Region.id_ = 0

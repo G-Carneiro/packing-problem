@@ -1,7 +1,7 @@
 from enum import auto, Enum
 
 
-class OrderMode(Enum):
+class OrderKey(Enum):
     AREA = auto()
     PERIMETER = auto()
     HEIGHT = auto()

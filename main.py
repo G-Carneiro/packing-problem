@@ -6,7 +6,7 @@ from tabulate import tabulate
 from src.model.item import Item
 from src.model.model import Model
 from src.utils.folders import *
-from src.utils.order_mode import OrderMode
+from src.utils.order_key import OrderKey
 from src.utils.split_mode import SplitMode
 
 
@@ -46,7 +46,7 @@ def main(folder: str = "references/bkw") -> None:
         width, height = lines[1].split()
         box = Item(width=float(width), height=float(height))
         for split in SplitMode:
-            for order in OrderMode:
+            for order in OrderKey:
                 for descending in [True, False]:
                     exec_time = 0
                     model = Model(name=file_name, instance="bkw", box=box, items=items,
