@@ -32,10 +32,10 @@ def csv_to_table(csv_folder: str, table_folder: str) -> None:
     return None
 
 
-def main(folder: str = "references/bkw") -> None:
+def main(folder: str = INSTANCES) -> None:
     num_tests: int = 1
     total_time = 0
-    for idx, file_name in enumerate(sorted(listdir(folder))[:11]):
+    for idx, file_name in enumerate(sorted(listdir(folder))[:1]):
         file = f"{folder}/{file_name}"
         with open(file, "r") as f:
             lines = f.readlines()
