@@ -259,12 +259,15 @@ class Model:
                             va='center')
         return None
 
-    def to_csv(self, csv_folder: str, exec_time: float) -> None:
+    def to_csv(self, csv_folder: str, exec_time: float,
+               median: float, std: float) -> None:
         data = {"Instance": [self._name],
                 "SplitMode": [self.split.name],
                 "OrderMode": [self.order.name],
                 "Decrescent": [self.decrescent],
                 "Exec. Time": [exec_time],
+                "Median": [median],
+                "Standard deviation": [std],
                 "Solution Quality %": [self.solution_quality()],
                 "Occupied %": [self.percent_busy()],
                 "Free %": [self.percent_free()],
@@ -274,8 +277,8 @@ class Model:
                 "Inside Items %": [self.inside_items_percent()],
                 "Outside Items %": [self.outside_item_percent()]}
         self._to_csv(csv_folder=csv_folder, data=data)
-        self._to_csv(csv_folder=f"{csv_folder}/bkw", data=data)
-        self._to_csv(csv_folder=f"{csv_folder}/bkw/{self.name.lower()}", data=data)
+        self._to_csv(csv_folder=f"{csv_folder}/{self._instance}", data=data)
+        self._to_csv(csv_folder=f"{csv_folder}/{self._instance}/{self.name.lower()}", data=data)
         return None
 
     def _to_csv(self, csv_folder: str, data) -> None:

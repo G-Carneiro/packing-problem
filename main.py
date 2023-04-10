@@ -1,6 +1,7 @@
 from os import listdir, makedirs, scandir
 from time import time
 
+from numpy import mean, median, std
 from tabulate import tabulate
 
 from src.model.item import Item
@@ -33,9 +34,9 @@ def csv_to_table(csv_folder: str, table_folder: str) -> None:
 
 
 def main(folder: str = INSTANCES) -> None:
-    num_tests: int = 1
+    num_tests: int = 5
     total_time = 0
-    for idx, file_name in enumerate(sorted(listdir(folder))[:1]):
+    for idx, file_name in enumerate(sorted(listdir(folder))[:10]):
         file = f"{folder}/{file_name}"
         with open(file, "r") as f:
             lines = f.readlines()
@@ -48,7 +49,7 @@ def main(folder: str = INSTANCES) -> None:
         for split in SplitMode:
             for order in OrderKey:
                 for descending in [True, False]:
-                    exec_time = 0
+                    exec_time = []
                     model = Model(name=file_name, instance="bkw", box=box, items=items,
                                   order=order, split=split, decrescent=descending)
                     for _ in range(num_tests):
@@ -57,17 +58,19 @@ def main(folder: str = INSTANCES) -> None:
                         model.reset()
                         start = time()
                         model.solve()
-                        exec_time += time() - start
-                        total_time += exec_time
+                        exec_time.append(time() - start)
+                        total_time += exec_time[-1]
                         print(f"[Finished] file={file_name} split={split.name} order={order.name} "
                               f"decrescent={descending} exec={exec_time} total={total_time}")
 
-                    exec_time /= num_tests
-                    # model.to_csv(csv_folder=CSV, exec_time=exec_time)
+                    media = mean(exec_time)
+                    mediana = median(exec_time)
+                    desvio = std(exec_time)
+                    model.to_csv(csv_folder=CSV, exec_time=media, median=mediana, std=desvio)
                     model.export_model(folder=FIGURES, show_regions=False,
                                        show_labels=False)
 
-    # csv_to_table(csv_folder=CSV, table_folder=DATA)
+    csv_to_table(csv_folder=CSV, table_folder=DATA)
     return None
 
 
