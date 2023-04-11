@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+NGCUT10     VERTICALLY    PERIMETER    True                       91        5.14507e-05  4.91142e-05           5.65288e-06       91        9                13               6                7           46.1538            53.8462
+NGCUT10     VERTICALLY    PERIMETER    False                      29.4444   3.29971e-05  3.0756e-05            5.11706e-06       29.4444  70.5556           13               4                9           30.7692            69.2308
+NGCUT10     HORIZONTALLY  PERIMETER    True                       87.6667   5.04971e-05  4.76837e-05           5.63475e-06       87.6667  12.3333           13               4                9           30.7692            69.2308
+NGCUT10     HORIZONTALLY  PERIMETER    False                      90.1111   6.34193e-05  6.12736e-05           5.92699e-06       90.1111   9.88889          13               7                6           53.8462            46.1538
+NGCUT10     MAX_AREA      PERIMETER    True                       87.6667   9.12189e-05  8.74996e-05           7.80995e-06       87.6667  12.3333           13               4                9           30.7692            69.2308
+NGCUT10     MAX_AREA      PERIMETER    False                      90.1111   0.000138569  0.000133276           9.89411e-06       90.1111   9.88889          13               7                6           53.8462            46.1538
+NGCUT10     NONE          PERIMETER    True                       87.6667   0.000444937  0.000441551           8.28161e-06       87.6667  12.3333           13               4                9           30.7692            69.2308
+NGCUT10     NONE          PERIMETER    False                      90.1111   0.000564098  0.000566959           6.49795e-06       90.1111   9.88889          13               7                6           53.8462            46.1538

@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+NGCUT06     VERTICALLY   AREA         True                       80        7.06196e-05  6.79493e-05           5.56165e-06       80       20                15               6                9           40                 60
+NGCUT06     VERTICALLY   AREA         False                      70.6667   8.53062e-05  8.22544e-05           6.99083e-06       70.6667  29.3333           15               7                8           46.6667            53.3333
+NGCUT06     VERTICALLY   PERIMETER    True                       90.6667   6.66618e-05  6.38962e-05           5.13038e-06       90.6667   9.33333          15               7                8           46.6667            53.3333
+NGCUT06     VERTICALLY   PERIMETER    False                      70.6667   8.77857e-05  8.53539e-05           8.14457e-06       70.6667  29.3333           15               7                8           46.6667            53.3333
+NGCUT06     VERTICALLY   HEIGHT       True                       68        8.3065e-05   8.13007e-05           5.68137e-06       68       32                15               6                9           40                 60
+NGCUT06     VERTICALLY   HEIGHT       False                      78.6667   7.37667e-05  7.10487e-05           7.2686e-06        78.6667  21.3333           15               7                8           46.6667            53.3333
+NGCUT06     VERTICALLY   WIDTH        True                       76        7.69138e-05  7.41482e-05           6.68695e-06       76       24                15               7                8           46.6667            53.3333
+NGCUT06     VERTICALLY   WIDTH        False                      70.6667   0.0001091    0.000113964           1.49742e-05       70.6667  29.3333           15               7                8           46.6667            53.3333
+NGCUT06     VERTICALLY   ID           True                       72        6.88076e-05  6.29425e-05           7.91119e-06       72       28                15               6                9           40                 60
+NGCUT06     VERTICALLY   ID           False                      70.6667   7.66277e-05  7.31945e-05           6.0815e-06        70.6667  29.3333           15               7                8           46.6667            53.3333

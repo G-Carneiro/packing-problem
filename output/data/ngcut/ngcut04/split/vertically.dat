@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+NGCUT04     VERTICALLY   AREA         True                            70   3.19004e-05  2.98023e-05           4.42046e-06            70        30           7               4                3           57.1429            42.8571
+NGCUT04     VERTICALLY   AREA         False                           20   2.45571e-05  2.26498e-05           4.19779e-06            20        80           7               2                5           28.5714            71.4286
+NGCUT04     VERTICALLY   PERIMETER    True                            78   4.24862e-05  3.93391e-05           5.73475e-06            78        22           7               5                2           71.4286            28.5714
+NGCUT04     VERTICALLY   PERIMETER    False                           30   2.25067e-05  2.00272e-05           4.63195e-06            30        70           7               2                5           28.5714            71.4286
+NGCUT04     VERTICALLY   HEIGHT       True                            30   2.20776e-05  2.00272e-05           4.02807e-06            30        70           7               2                5           28.5714            71.4286
+NGCUT04     VERTICALLY   HEIGHT       False                           20   2.56538e-05  2.38419e-05           4.0534e-06             20        80           7               2                5           28.5714            71.4286
+NGCUT04     VERTICALLY   WIDTH        True                            78   4.42982e-05  4.22001e-05           4.44099e-06            78        22           7               5                2           71.4286            28.5714
+NGCUT04     VERTICALLY   WIDTH        False                           30   2.31743e-05  2.12193e-05           4.34e-06               30        70           7               2                5           28.5714            71.4286
+NGCUT04     VERTICALLY   ID           True                            62   3.86238e-05  3.69549e-05           4.64274e-06            62        38           7               4                3           57.1429            42.8571
+NGCUT04     VERTICALLY   ID           False                           70   3.33786e-05  3.09944e-05           4.44253e-06            70        30           7               4                3           57.1429            42.8571

@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+NGCUT07     VERTICALLY    AREA         True                         33.75   7.6437e-05   7.34329e-05           5.62102e-06         33.75     66.25           8               7                1              87.5               12.5
+NGCUT07     VERTICALLY    AREA         False                        20.25   5.63145e-05  5.24521e-05           8.18495e-06         20.25     79.75           8               6                2              75                 25
+NGCUT07     HORIZONTALLY  AREA         True                        100      7.48634e-05  7.27177e-05           6.46462e-06         43.75     56.25           8               8                0             100                  0
+NGCUT07     HORIZONTALLY  AREA         False                        33.75   6.94752e-05  6.74725e-05           6.12249e-06         33.75     66.25           8               7                1              87.5               12.5
+NGCUT07     MAX_AREA      AREA         True                        100      0.000176001  0.000170946           1.11006e-05         43.75     56.25           8               8                0             100                  0
+NGCUT07     MAX_AREA      AREA         False                        33.75   0.000213671  0.000211716           8.79555e-06         33.75     66.25           8               7                1              87.5               12.5
+NGCUT07     NONE          AREA         True                        100      0.00074873   0.000746727           1.01809e-05         43.75     56.25           8               8                0             100                  0
+NGCUT07     NONE          AREA         False                        33.75   0.00057478   0.000569582           9.87341e-06         33.75     66.25           8               7                1              87.5               12.5

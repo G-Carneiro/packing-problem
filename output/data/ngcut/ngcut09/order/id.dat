@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+NGCUT09     VERTICALLY    ID           True                         55.5    7.46727e-05  7.1764e-05            7.43377e-06         55.5      44.5           18               6               12           33.3333            66.6667
+NGCUT09     VERTICALLY    ID           False                        62.5    9.50813e-05  9.13143e-05           6.86115e-06         62.5      37.5           18               9                9           50                 50
+NGCUT09     HORIZONTALLY  ID           True                         60.75   8.83102e-05  8.55923e-05           6.17794e-06         60.75     39.25          18               7               11           38.8889            61.1111
+NGCUT09     HORIZONTALLY  ID           False                        66.25   7.0858e-05   6.81877e-05           6.96803e-06         66.25     33.75          18               6               12           33.3333            66.6667
+NGCUT09     MAX_AREA      ID           True                         55.5    0.000139713  0.000134706           8.60952e-06         55.5      44.5           18               6               12           33.3333            66.6667
+NGCUT09     MAX_AREA      ID           False                        76.5    0.000207663  0.000195265           2.02294e-05         76.5      23.5           18               9                9           50                 50
+NGCUT09     NONE          ID           True                         76.75   0.00246787   0.00231457            0.000294332         76.75     23.25          18               7               11           38.8889            61.1111
+NGCUT09     NONE          ID           False                        71.5    0.00210328   0.00210214            7.46124e-06         71.5      28.5           18               9                9           50                 50

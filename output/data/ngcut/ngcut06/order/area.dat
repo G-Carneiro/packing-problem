@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+NGCUT06     VERTICALLY    AREA         True                       80        7.06196e-05  6.79493e-05           5.56165e-06       80        20               15               6                9           40                 60
+NGCUT06     VERTICALLY    AREA         False                      70.6667   8.53062e-05  8.22544e-05           6.99083e-06       70.6667   29.3333          15               7                8           46.6667            53.3333
+NGCUT06     HORIZONTALLY  AREA         True                       74.6667   6.70433e-05  6.48499e-05           6.77948e-06       74.6667   25.3333          15               6                9           40                 60
+NGCUT06     HORIZONTALLY  AREA         False                      62.6667   7.51495e-05  7.22408e-05           6.69341e-06       62.6667   37.3333          15               6                9           40                 60
+NGCUT06     MAX_AREA      AREA         True                       60        0.000117302  0.00011301            8.7808e-06        60        40               15               5               10           33.3333            66.6667
+NGCUT06     MAX_AREA      AREA         False                      70.6667   0.000165844  0.000162363           1.07522e-05       70.6667   29.3333          15               7                8           46.6667            53.3333
+NGCUT06     NONE          AREA         True                       85.3333   0.000766373  0.00073719            5.62996e-05       85.3333   14.6667          15               7                8           46.6667            53.3333
+NGCUT06     NONE          AREA         False                      70.6667   0.00267515   0.00268006            9.78109e-06       70.6667   29.3333          15               7                8           46.6667            53.3333

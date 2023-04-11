@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+NGCUT07     VERTICALLY    HEIGHT       True                         20.25   6.49452e-05  6.22272e-05           6.90772e-06         20.25     79.75           8               6                2              75                 25
+NGCUT07     VERTICALLY    HEIGHT       False                        20.25   6.66618e-05  6.86646e-05           9.40059e-06         20.25     79.75           8               6                2              75                 25
+NGCUT07     HORIZONTALLY  HEIGHT       True                        100      7.57217e-05  7.31945e-05           5.30684e-06         43.75     56.25           8               8                0             100                  0
+NGCUT07     HORIZONTALLY  HEIGHT       False                       100      7.83443e-05  7.58171e-05           8.05784e-06         43.75     56.25           8               8                0             100                  0
+NGCUT07     MAX_AREA      HEIGHT       True                         33.75   0.00014863   0.000145674           9.05062e-06         33.75     66.25           8               7                1              87.5               12.5
+NGCUT07     MAX_AREA      HEIGHT       False                       100      0.000166416  0.000161171           1.00113e-05         43.75     56.25           8               8                0             100                  0
+NGCUT07     NONE          HEIGHT       True                        100      0.000736761  0.000733614           1.00242e-05         43.75     56.25           8               8                0             100                  0
+NGCUT07     NONE          HEIGHT       False                       100      0.000749397  0.000746727           8.55308e-06         43.75     56.25           8               8                0             100                  0
