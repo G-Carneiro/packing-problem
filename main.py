@@ -11,14 +11,15 @@ from src.utils.order_key import OrderKey
 from src.utils.split_mode import SplitMode
 
 
-def to_ins2d(folder: str = "instances/OKP"):
+def to_ins2d(folder: str = "instances/GCUT"):
     for file in scandir(folder):
         with open(file, "r") as f:
             lines = f.readlines()
 
-        data = []
-        for line in lines:
+        data = [lines[0].split(), lines[1].split()]
+        for line in lines[2:]:
             new_line = line.split()
+            new_line[-2] = "1"
             data.append(new_line)
 
         with open(file, "w") as f:
