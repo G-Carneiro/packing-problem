@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW07       VERTICALLY    HEIGHT       True                       67.8      0.000747824  0.000749111           9.41026e-06       67.8      32.2             70              57               13           81.4286           18.5714
+BKW07       VERTICALLY    HEIGHT       False                      42.0875   0.000708628  0.000706196           1.09811e-05       42.0875   57.9125          70              61                9           87.1429           12.8571
+BKW07       HORIZONTALLY  HEIGHT       True                       86.1      0.000823164  0.000810623           2.65713e-05       86.1      13.9             70              67                3           95.7143            4.28571
+BKW07       HORIZONTALLY  HEIGHT       False                       6.75     0.00078702   0.000784874           1.02459e-05        6.75     93.25            70              41               29           58.5714           41.4286
+BKW07       MAX_AREA      HEIGHT       True                       82.35     0.00155249   0.00154901            2.88896e-05       82.35     17.65            70              67                3           95.7143            4.28571
+BKW07       MAX_AREA      HEIGHT       False                      38.9      0.00141234   0.00139666            4.68822e-05       38.9      61.1             70              57               13           81.4286           18.5714
+BKW07       NONE          HEIGHT       True                       82.35     0.256859     0.23953               0.0373486         82.35     17.65            70              67                3           95.7143            4.28571
+BKW07       NONE          HEIGHT       False                      56.6875   0.54043      0.531277              0.0200449         56.6875   43.3125          70              62                8           88.5714           11.4286

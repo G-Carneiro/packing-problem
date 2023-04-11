@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Solution Quality %    Exec. Time    Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW05       NONE         AREA         True                         92.05      0.177481  0.177084           0.0018622           92.05      7.95          50              38               12                76                 24
+BKW05       NONE         AREA         False                        62.75      0.247756  0.245759           0.00419351          62.75     37.25          50              46                4                92                  8
+BKW05       NONE         PERIMETER    True                         93.13      0.19128   0.192509           0.0078643           93.13      6.87          50              36               14                72                 28
+BKW05       NONE         PERIMETER    False                        67.88      0.276854  0.268955           0.0190976           67.88     32.12          50              47                3                94                  6
+BKW05       NONE         HEIGHT       True                         80.48      0.201295  0.188862           0.0227721           80.48     19.52          50              45                5                90                 10
+BKW05       NONE         HEIGHT       False                        62.59      0.288999  0.294411           0.0135754           62.59     37.41          50              46                4                92                  8
+BKW05       NONE         WIDTH        True                         93.56      0.193728  0.192913           0.00165758          93.56      6.44          50              38               12                76                 24
+BKW05       NONE         WIDTH        False                        59.57      0.282892  0.282608           0.00153101          59.57     40.43          50              45                5                90                 10
+BKW05       NONE         ID           True                         67.88      0.236274  0.235473           0.00124915          67.88     32.12          50              47                3                94                  6
+BKW05       NONE         ID           False                        88.04      0.156715  0.156714           0.000210655         88.04     11.96          50              46                4                92                  8

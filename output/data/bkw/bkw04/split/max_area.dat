@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW04       MAX_AREA     AREA         True                       86.5      0.000859547  0.000851393           3.28625e-05       86.5     13.5              40              36                4              90                 10
+BKW04       MAX_AREA     AREA         False                      38.5938   0.00074091   0.000736475           1.98399e-05       38.5938  61.4062           40              36                4              90                 10
+BKW04       MAX_AREA     PERIMETER    True                       88.125    0.000876093  0.00086236            2.94184e-05       88.125   11.875            40              37                3              92.5                7.5
+BKW04       MAX_AREA     PERIMETER    False                      38.5938   0.00076685   0.00074625            3.60527e-05       38.5938  61.4062           40              36                4              90                 10
+BKW04       MAX_AREA     HEIGHT       True                       92.7969   0.000802946  0.000799894           2.70999e-05       92.7969   7.20312          40              36                4              90                 10
+BKW04       MAX_AREA     HEIGHT       False                      49.3125   0.000779629  0.000779867           1.82368e-05       49.3125  50.6875           40              36                4              90                 10
+BKW04       MAX_AREA     WIDTH        True                       90.3125   0.000989199  0.000939131           0.000101381       90.3125   9.6875           40              38                2              95                  5
+BKW04       MAX_AREA     WIDTH        False                      48.2812   0.000853062  0.000816822           8.7164e-05        48.2812  51.7188           40              38                2              95                  5
+BKW04       MAX_AREA     ID           True                       61.6719   0.000852537  0.000841379           7.20623e-05       61.6719  38.3281           40              38                2              95                  5
+BKW04       MAX_AREA     ID           False                      85.5312   0.00112362   0.00101113            0.000162499       85.5312  14.4688           40              37                3              92.5                7.5

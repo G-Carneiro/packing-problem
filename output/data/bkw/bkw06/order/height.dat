@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW06       VERTICALLY    HEIGHT       True                         69.38   0.000612926  0.000606298           1.54736e-05         69.38     30.62          60              52                8           86.6667           13.3333
+BKW06       VERTICALLY    HEIGHT       False                        33.86   0.000483036  0.000478745           1.11043e-05         33.86     66.14          60              51                9           85                15
+BKW06       HORIZONTALLY  HEIGHT       True                         81.6    0.000984097  0.000980377           1.22581e-05         81.6      18.4           60              56                4           93.3333            6.66667
+BKW06       HORIZONTALLY  HEIGHT       False                        22.88   0.000653267  0.000647545           1.63584e-05         22.88     77.12          60              39               21           65                35
+BKW06       MAX_AREA      HEIGHT       True                         72.5    0.0014461    0.00143838            2.88755e-05         72.5      27.5           60              55                5           91.6667            8.33333
+BKW06       MAX_AREA      HEIGHT       False                        28.52   0.00129929   0.00129318            2.04866e-05         28.52     71.48          60              48               12           80                20
+BKW06       NONE          HEIGHT       True                         72.5    0.168962     0.168763              0.0011633           72.5      27.5           60              55                5           91.6667            8.33333
+BKW06       NONE          HEIGHT       False                        57.88   0.367675     0.366079              0.00461631          57.88     42.12          60              55                5           91.6667            8.33333

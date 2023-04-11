@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW08       VERTICALLY    WIDTH        True                       92.7      0.000884581  0.000872374           1.8481e-05        92.7       7.3             80              69               11             86.25              13.75
+BKW08       VERTICALLY    WIDTH        False                      51.1875   0.000711966  0.000674248           0.000105238       51.1875   48.8125          80              65               15             81.25              18.75
+BKW08       HORIZONTALLY  WIDTH        True                       53.8875   0.000849533  0.000849485           3.30326e-05       53.8875   46.1125          80              57               23             71.25              28.75
+BKW08       HORIZONTALLY  WIDTH        False                      24.7625   0.000967121  0.000936747           5.72315e-05       24.7625   75.2375          80              55               25             68.75              31.25
+BKW08       MAX_AREA      WIDTH        True                       80.5      0.00192633   0.00192809            8.81052e-05       80.5      19.5             80              73                7             91.25               8.75
+BKW08       MAX_AREA      WIDTH        False                      58.35     0.00169339   0.00152922            0.000338027       58.35     41.65            80              74                6             92.5                7.5
+BKW08       NONE          WIDTH        True                       94.175    0.67467      0.672642              0.00604214        94.175     5.825           80              78                2             97.5                2.5
+BKW08       NONE          WIDTH        False                      70.4375   1.31557      1.31965               0.00875037        70.4375   29.5625          80              75                5             93.75               6.25

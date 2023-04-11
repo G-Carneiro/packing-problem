@@ -1,4 +1,4 @@
 CSV: str = "output/csv"
 DATA: str = "output/data"
 FIGURES: str = "output/figures"
-INSTANCES: str = "instances/NGCUT"
+INSTANCES: str = "instances/BKW"

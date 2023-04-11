@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW01       VERTICALLY   AREA         True                           100   7.48158e-05  6.69956e-05           1.36698e-05           100         0          10              10                0               100                  0
+BKW01       VERTICALLY   AREA         False                           60   8.36372e-05  8.17776e-05           6.26347e-06            60        40          10               9                1                90                 10
+BKW01       VERTICALLY   PERIMETER    True                           100   7.13348e-05  6.98566e-05           5.19381e-06           100         0          10              10                0               100                  0
+BKW01       VERTICALLY   PERIMETER    False                           60   8.48293e-05  8.22544e-05           5.44389e-06            60        40          10               9                1                90                 10
+BKW01       VERTICALLY   HEIGHT       True                            60   9.05037e-05  8.79765e-05           5.93198e-06            60        40          10               9                1                90                 10
+BKW01       VERTICALLY   HEIGHT       False                           24   8.14438e-05  7.9155e-05            5.59466e-06            24        76          10               8                2                80                 20
+BKW01       VERTICALLY   WIDTH        True                           100   6.16074e-05  5.93662e-05           5.11706e-06           100         0          10              10                0               100                  0
+BKW01       VERTICALLY   WIDTH        False                           60   8.61168e-05  8.24928e-05           6.82294e-06            60        40          10               9                1                90                 10
+BKW01       VERTICALLY   ID           True                            60   0.000102329  0.000100136           6.35715e-06            60        40          10               9                1                90                 10
+BKW01       VERTICALLY   ID           False                           60   0.000102139  9.91821e-05           6.19631e-06            60        40          10               9                1                90                 10

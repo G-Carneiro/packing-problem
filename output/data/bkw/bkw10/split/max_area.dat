@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Solution Quality %    Exec. Time      Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW10       MAX_AREA     AREA         True                       91.3429    0.00617456  0.00619936           0.000130645       91.3429   8.65714         200             195                5              97.5                2.5
+BKW10       MAX_AREA     AREA         False                      31.3143    0.00551944  0.00544953           0.000201283       31.3143  68.6857          200             188               12              94                  6
+BKW10       MAX_AREA     PERIMETER    True                       95.9429    0.00599403  0.00594616           0.000155917       95.9429   4.05714         200             198                2              99                  1
+BKW10       MAX_AREA     PERIMETER    False                      31.5619    0.00573902  0.00585747           0.000195017       31.5619  68.4381          200             188               12              94                  6
+BKW10       MAX_AREA     HEIGHT       True                       72.2952    0.00631909  0.00626922           0.000196956       72.2952  27.7048          200             195                5              97.5                2.5
+BKW10       MAX_AREA     HEIGHT       False                      30.581     0.00530767  0.0052464            0.000272939       30.581   69.419           200             181               19              90.5                9.5
+BKW10       MAX_AREA     WIDTH        True                       94.0381    0.00518079  0.00516796           0.000155955       94.0381   5.9619          200             197                3              98.5                1.5
+BKW10       MAX_AREA     WIDTH        False                      54.6       0.0045886   0.00451994           0.00018409        54.6     45.4             200             194                6              97                  3
+BKW10       MAX_AREA     ID           True                       58.6286    0.00486569  0.00474882           0.000214243       58.6286  41.3714          200             197                3              98.5                1.5
+BKW10       MAX_AREA     ID           False                      83.0667    0.00608282  0.00592065           0.000393349       83.0667  16.9333          200             192                8              96                  4

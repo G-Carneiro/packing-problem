@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW03       VERTICALLY    HEIGHT       True                       75.4667   0.000232983  0.000226498           1.09998e-05       75.4667   24.5333          30              22                8           73.3333            26.6667
+BKW03       VERTICALLY    HEIGHT       False                      55.3333   0.000254726  0.000249147           1.4165e-05        55.3333   44.6667          30              25                5           83.3333            16.6667
+BKW03       HORIZONTALLY  HEIGHT       True                       83.0667   0.000340605  0.000336647           8.54803e-06       83.0667   16.9333          30              25                5           83.3333            16.6667
+BKW03       HORIZONTALLY  HEIGHT       False                      20.2      0.00024662   0.000240564           1.04422e-05       20.2      79.8             30              17               13           56.6667            43.3333
+BKW03       MAX_AREA      HEIGHT       True                       90.4      0.000539398  0.000532389           2.19177e-05       90.4       9.6             30              25                5           83.3333            16.6667
+BKW03       MAX_AREA      HEIGHT       False                      38.1333   0.000535774  0.00053072            2.63093e-05       38.1333   61.8667          30              22                8           73.3333            26.6667
+BKW03       NONE          HEIGHT       True                       89.7333   0.0259913    0.0258443             0.000273539       89.7333   10.2667          30              25                5           83.3333            16.6667
+BKW03       NONE          HEIGHT       False                      51.4667   0.0534011    0.0530753             0.000641138       51.4667   48.5333          30              24                6           80                 20

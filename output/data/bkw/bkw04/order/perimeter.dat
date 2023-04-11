@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW04       VERTICALLY    PERIMETER    True                       93.4062   0.00041132   0.000406504           1.45583e-05       93.4062   6.59375          40              36                4              90                 10
+BKW04       VERTICALLY    PERIMETER    False                      44.4688   0.000353956  0.000350714           1.30879e-05       44.4688  55.5312           40              36                4              90                 10
+BKW04       HORIZONTALLY  PERIMETER    True                       85.7812   0.000363636  0.000361681           9.67098e-06       85.7812  14.2188           40              31                9              77.5               22.5
+BKW04       HORIZONTALLY  PERIMETER    False                      17.5625   0.000398636  0.000394821           1.24234e-05       17.5625  82.4375           40              26               14              65                 35
+BKW04       MAX_AREA      PERIMETER    True                       88.125    0.000876093  0.00086236            2.94184e-05       88.125   11.875            40              37                3              92.5                7.5
+BKW04       MAX_AREA      PERIMETER    False                      38.5938   0.00076685   0.00074625            3.60527e-05       38.5938  61.4062           40              36                4              90                 10
+BKW04       NONE          PERIMETER    True                       95.0625   0.0556697    0.0515587             0.0104959         95.0625   4.9375           40              30               10              75                 25
+BKW04       NONE          PERIMETER    False                      48.2812   0.13407      0.129769              0.00677663        48.2812  51.7188           40              38                2              95                  5
