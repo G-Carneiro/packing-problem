@@ -11,23 +11,17 @@ from src.utils.order_key import OrderKey
 from src.utils.split_mode import SplitMode
 
 
-def to_ins2d(folder: str = "instances/GCUT"):
+def to_ins2d(folder: str = "instances/OKP"):
     for file in scandir(folder):
         with open(file, "r") as f:
             lines = f.readlines()
 
-        file_name = lines[-1].split()[0].upper()
         data = []
-        width, height, num_items = lines[0].split()[:3]
-        data.append([num_items])
-        data.append([width, height])
-        for idx, line in enumerate(lines[1:-1]):
+        for line in lines:
             new_line = line.split()
-            new_line.insert(0, f"{idx + 1}")
-            new_line[-2] = 1
             data.append(new_line)
 
-        with open(f"{folder}/{file_name}.ins2D", "w") as f:
+        with open(file, "w") as f:
             s = tabulate(tabular_data=data, tablefmt="plain")
             f.write(s)
     return None
