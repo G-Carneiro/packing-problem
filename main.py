@@ -11,7 +11,7 @@ from src.utils.order_key import OrderKey
 from src.utils.split_mode import SplitMode
 
 
-def to_ins2d(folder: str = "instances/gcut"):
+def to_ins2d(folder: str = "instances/GCUT"):
     for file in scandir(folder):
         with open(file, "r") as f:
             lines = f.readlines()
