@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Solution Quality %    Exec. Time      Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+OKP4        NONE         AREA         True                         93.89    0.00167918  0.00166321           3.20912e-05         93.89      6.11          61               8               53           13.1148            86.8852
+OKP4        NONE         AREA         False                        73.77    0.0260915   0.0261126            8.77452e-05         73.77     26.23          61              23               38           37.7049            62.2951
+OKP4        NONE         PERIMETER    True                         90.99    0.00208235  0.00207615           1.12163e-05         90.99      9.01          61              12               49           19.6721            80.3279
+OKP4        NONE         PERIMETER    False                        70.57    0.0238347   0.0238249            6.12852e-05         70.57     29.43          61              18               43           29.5082            70.4918
+OKP4        NONE         HEIGHT       True                         94.72    0.00276513  0.00276542           8.0632e-06          94.72      5.28          61              15               46           24.5902            75.4098
+OKP4        NONE         HEIGHT       False                        82.15    0.0191098   0.0190756            9.23725e-05         82.15     17.85          61              15               46           24.5902            75.4098
+OKP4        NONE         WIDTH        True                         88.31    0.00450363  0.00450826           1.66215e-05         88.31     11.69          61              16               45           26.2295            73.7705
+OKP4        NONE         WIDTH        False                        78.85    0.0120415   0.0120695            7.63525e-05         78.85     21.15          61              24               37           39.3443            60.6557
+OKP4        NONE         ID           True                         91.86    0.00380301  0.00380278           8.0936e-06          91.86      8.14          61              14               47           22.9508            77.0492
+OKP4        NONE         ID           False                        77.85    0.00503736  0.00503492           1.48865e-05         77.85     22.15          61              16               45           26.2295            73.7705

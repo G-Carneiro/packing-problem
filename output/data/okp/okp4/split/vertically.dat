@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+OKP4        VERTICALLY   AREA         True                         93.89   0.000109434  0.000106096           5.68417e-06         93.89      6.11          61               8               53           13.1148            86.8852
+OKP4        VERTICALLY   AREA         False                        73.77   0.000409603  0.000406027           1.07166e-05         73.77     26.23          61              23               38           37.7049            62.2951
+OKP4        VERTICALLY   PERIMETER    True                         90.99   0.00020833   0.000206709           4.98608e-06         90.99      9.01          61              12               49           19.6721            80.3279
+OKP4        VERTICALLY   PERIMETER    False                        71.06   0.000383568  0.000380754           7.30573e-06         71.06     28.94          61              21               40           34.4262            65.5738
+OKP4        VERTICALLY   HEIGHT       True                         94.72   0.000278854  0.000277519           9.6229e-06          94.72      5.28          61              15               46           24.5902            75.4098
+OKP4        VERTICALLY   HEIGHT       False                        77.99   0.000213194  0.000210047           7.33059e-06         77.99     22.01          61              16               45           26.2295            73.7705
+OKP4        VERTICALLY   WIDTH        True                         86.95   0.000206375  0.000203371           6.53215e-06         86.95     13.05          61              17               44           27.8689            72.1311
+OKP4        VERTICALLY   WIDTH        False                        76.85   0.000437069  0.000433683           1.11883e-05         76.85     23.15          61              23               38           37.7049            62.2951
+OKP4        VERTICALLY   ID           True                         91.86   0.000250769  0.000246048           1.00819e-05         91.86      8.14          61              14               47           22.9508            77.0492
+OKP4        VERTICALLY   ID           False                        77.85   0.000292015  0.000287294           8.86122e-06         77.85     22.15          61              16               45           26.2295            73.7705

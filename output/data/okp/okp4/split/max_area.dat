@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+OKP4        MAX_AREA     AREA         True                         66.14   0.00015831   0.000155449           9.43969e-06         66.14     33.86          61               6               55           9.83607            90.1639
+OKP4        MAX_AREA     AREA         False                        73.77   0.000670385  0.000658989           2.32994e-05         73.77     26.23          61              23               38          37.7049             62.2951
+OKP4        MAX_AREA     PERIMETER    True                         90.99   0.000341845  0.000337839           1.2494e-05          90.99      9.01          61              12               49          19.6721             80.3279
+OKP4        MAX_AREA     PERIMETER    False                        68.15   0.000517893  0.000509501           2.09208e-05         68.15     31.85          61              18               43          29.5082             70.4918
+OKP4        MAX_AREA     HEIGHT       True                         94.72   0.00044775   0.000430584           2.36854e-05         94.72      5.28          61              15               46          24.5902             75.4098
+OKP4        MAX_AREA     HEIGHT       False                        70.55   0.00036664   0.000361443           1.57207e-05         70.55     29.45          61              15               46          24.5902             75.4098
+OKP4        MAX_AREA     WIDTH        True                         82.15   0.000354719  0.000353575           1.0406e-05          82.15     17.85          61              15               46          24.5902             75.4098
+OKP4        MAX_AREA     WIDTH        False                        76.85   0.000737238  0.000687361           0.000132178         76.85     23.15          61              23               38          37.7049             62.2951
+OKP4        MAX_AREA     ID           True                         88.61   0.000365782  0.000362635           1.0014e-05          88.61     11.39          61              12               49          19.6721             80.3279
+OKP4        MAX_AREA     ID           False                        78.41   0.000320768  0.000295639           4.43955e-05         78.41     21.59          61              12               49          19.6721             80.3279

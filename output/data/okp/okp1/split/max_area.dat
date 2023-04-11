@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+OKP1        MAX_AREA     AREA         True                         77.56   0.000231123  0.000225306           1.07734e-05         77.56     22.44          50               8               42                16                 84
+OKP1        MAX_AREA     AREA         False                        67.06   0.000705147  0.000698328           1.71612e-05         67.06     32.94          50              25               25                50                 50
+OKP1        MAX_AREA     PERIMETER    True                         88.4    0.000253916  0.000247478           1.01892e-05         88.4      11.6           50              14               36                28                 72
+OKP1        MAX_AREA     PERIMETER    False                        67.16   0.000505877  0.000495911           1.53037e-05         67.16     32.84          50              17               33                34                 66
+OKP1        MAX_AREA     HEIGHT       True                         79.7    0.000563192  0.000555754           1.46548e-05         79.7      20.3           50              19               31                38                 62
+OKP1        MAX_AREA     HEIGHT       False                        78.56   0.000295877  0.000293255           8.76265e-06         78.56     21.44          50              15               35                30                 70
+OKP1        MAX_AREA     WIDTH        True                         88.4    0.000371981  0.000367165           1.68725e-05         88.4      11.6           50              14               36                28                 72
+OKP1        MAX_AREA     WIDTH        False                        65.74   0.000680542  0.000670433           2.06259e-05         65.74     34.26          50              24               26                48                 52
+OKP1        MAX_AREA     ID           True                         77.52   0.000251436  0.000246286           8.00547e-06         77.52     22.48          50               9               41                18                 82
+OKP1        MAX_AREA     ID           False                        62.66   0.000575829  0.00057435            1.69505e-05         62.66     37.34          50              20               30                40                 60

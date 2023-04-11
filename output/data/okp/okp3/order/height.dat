@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+OKP3        VERTICALLY    HEIGHT       True                         87.84   0.000144911  0.000144005           4.64861e-06         87.84     12.16          30               9               21           30                 70
+OKP3        VERTICALLY    HEIGHT       False                        80.64   0.000160789  0.000157595           9.28131e-06         80.64     19.36          30              12               18           40                 60
+OKP3        HORIZONTALLY  HEIGHT       True                         89.4    0.000177002  0.000172615           6.74114e-06         89.4      10.6           30              10               20           33.3333            66.6667
+OKP3        HORIZONTALLY  HEIGHT       False                        40.82   9.30309e-05  9.03606e-05           5.69296e-06         40.82     59.18          30               7               23           23.3333            76.6667
+OKP3        MAX_AREA      HEIGHT       True                         89.4    0.000273132  0.000267267           1.15051e-05         89.4      10.6           30              10               20           33.3333            66.6667
+OKP3        MAX_AREA      HEIGHT       False                        56.46   0.000249624  0.000234842           4.90621e-05         56.46     43.54          30               9               21           30                 70
+OKP3        NONE          HEIGHT       True                         89.4    0.00152011   0.00146389            9.44297e-05         89.4      10.6           30              10               20           33.3333            66.6667
+OKP3        NONE          HEIGHT       False                        71.51   0.00701923   0.00702               6.29767e-05         71.51     28.49          30               9               21           30                 70

@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+OKP1        VERTICALLY    HEIGHT       True                         79.7    0.000364923  0.000360966           8.51071e-06         79.7      20.3           50              19               31                38                 62
+OKP1        VERTICALLY    HEIGHT       False                        91.38   0.000209093  0.000207186           6.67061e-06         91.38      8.62          50              21               29                42                 58
+OKP1        HORIZONTALLY  HEIGHT       True                         83.7    0.000261593  0.000257969           8.64299e-06         83.7      16.3           50              23               27                46                 54
+OKP1        HORIZONTALLY  HEIGHT       False                        69.32   0.000118637  0.000116587           5.56818e-06         69.32     30.68          50              13               37                26                 74
+OKP1        MAX_AREA      HEIGHT       True                         79.7    0.000563192  0.000555754           1.46548e-05         79.7      20.3           50              19               31                38                 62
+OKP1        MAX_AREA      HEIGHT       False                        78.56   0.000295877  0.000293255           8.76265e-06         78.56     21.44          50              15               35                30                 70
+OKP1        NONE          HEIGHT       True                         88.54   0.00844831   0.00835419            0.000170033         88.54     11.46          50              21               29                42                 58
+OKP1        NONE          HEIGHT       False                        91.38   0.00668344   0.00661278            9.99377e-05         91.38      8.62          50              21               29                42                 58
