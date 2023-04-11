@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+OF2         VERTICALLY    AREA         True                       81.2857   6.49929e-05  6.27041e-05           4.44662e-06       81.2857   18.7143          24               6               18           25                 75
+OF2         VERTICALLY    AREA         False                      62.8214   9.15051e-05  8.96454e-05           5.22436e-06       62.8214   37.1786          24               8               16           33.3333            66.6667
+OF2         HORIZONTALLY  AREA         True                       89.1429   7.92027e-05  7.62939e-05           6.8096e-06        89.1429   10.8571          24               8               16           33.3333            66.6667
+OF2         HORIZONTALLY  AREA         False                      50.2857   9.69887e-05  9.32217e-05           6.25439e-06       50.2857   49.7143          24               7               17           29.1667            70.8333
+OF2         MAX_AREA      AREA         True                       83.0714   0.000162077  0.000155926           1.05287e-05       83.0714   16.9286          24               7               17           29.1667            70.8333
+OF2         MAX_AREA      AREA         False                      50.2857   0.000174618  0.0001688             1.24733e-05       50.2857   49.7143          24               7               17           29.1667            70.8333
+OF2         NONE          AREA         True                       81.2857   0.00149522   0.00147057            5.01461e-05       81.2857   18.7143          24               6               18           25                 75
+OF2         NONE          AREA         False                      75.3571   0.00522213   0.00523853            2.93824e-05       75.3571   24.6429          24               9               15           37.5               62.5

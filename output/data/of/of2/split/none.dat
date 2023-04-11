@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Solution Quality %    Exec. Time      Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+OF2         NONE         AREA         True                       81.2857    0.00149522  0.00147057           5.01461e-05       81.2857  18.7143           24               6               18           25                 75
+OF2         NONE         AREA         False                      75.3571    0.00522213  0.00523853           2.93824e-05       75.3571  24.6429           24               9               15           37.5               62.5
+OF2         NONE         PERIMETER    True                       81.8214    0.00189652  0.0018971            5.25084e-06       81.8214  18.1786           24               6               18           25                 75
+OF2         NONE         PERIMETER    False                      63.1786    0.0049437   0.00478625           0.000326128       63.1786  36.8214           24               8               16           33.3333            66.6667
+OF2         NONE         HEIGHT       True                       73.9643    0.00198612  0.0019803            1.66706e-05       73.9643  26.0357           24               7               17           29.1667            70.8333
+OF2         NONE         HEIGHT       False                      64.5714    0.00526438  0.00526452           7.44324e-06       64.5714  35.4286           24               8               16           33.3333            66.6667
+OF2         NONE         WIDTH        True                       77.1071    0.00296488  0.00296283           5.78056e-06       77.1071  22.8929           24               7               17           29.1667            70.8333
+OF2         NONE         WIDTH        False                      71.3214    0.00245285  0.00245667           9.44691e-06       71.3214  28.6786           24               8               16           33.3333            66.6667
+OF2         NONE         ID           True                       92.3571    0.00144391  0.00144315           5.39985e-06       92.3571   7.64286          24               8               16           33.3333            66.6667
+OF2         NONE         ID           False                      82.4643    0.00188279  0.00187635           1.34507e-05       82.4643  17.5357           24               7               17           29.1667            70.8333

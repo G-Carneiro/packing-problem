@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Solution Quality %    Exec. Time      Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+OF1         NONE         AREA         True                       80.8929    0.00123076  0.00122166           1.636e-05         80.8929   19.1071          23               7               16           30.4348            69.5652
+OF1         NONE         AREA         False                      56.6071    0.00387659  0.0038693            2.77414e-05       56.6071   43.3929          23               8               15           34.7826            65.2174
+OF1         NONE         PERIMETER    True                       84.8571    0.00121098  0.00121117           6.38214e-06       84.8571   15.1429          23               7               16           30.4348            69.5652
+OF1         NONE         PERIMETER    False                      56.6071    0.00546713  0.00545335           4.71395e-05       56.6071   43.3929          23               8               15           34.7826            65.2174
+OF1         NONE         HEIGHT       True                       95         0.00144744  0.00144935           6.46989e-06       95         5               23               8               15           34.7826            65.2174
+OF1         NONE         HEIGHT       False                      64.4286    0.00351505  0.00350738           1.4675e-05        64.4286   35.5714          23               7               16           30.4348            69.5652
+OF1         NONE         WIDTH        True                       81.0357    0.00174747  0.00174236           1.86135e-05       81.0357   18.9643          23               8               15           34.7826            65.2174
+OF1         NONE         WIDTH        False                      89         0.00117393  0.00117445           4.719e-06         89        11               23               9               14           39.1304            60.8696
+OF1         NONE         ID           True                       74.5714    0.00252275  0.00252056           2.44648e-05       74.5714   25.4286          23               9               14           39.1304            60.8696
+OF1         NONE         ID           False                      78.75      0.00174804  0.00174832           2.8824e-06        78.75     21.25            23               8               15           34.7826            65.2174

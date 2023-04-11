@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+OF1         VERTICALLY   AREA         True                       71        8.69751e-05  8.13007e-05           1.24658e-05       71        29               23               6               17           26.087             73.913
+OF1         VERTICALLY   AREA         False                      56.6071   8.91685e-05  8.60691e-05           7.47282e-06       56.6071   43.3929          23               8               15           34.7826            65.2174
+OF1         VERTICALLY   PERIMETER    True                       84.8571   9.25064e-05  8.86917e-05           8.04287e-06       84.8571   15.1429          23               7               16           30.4348            69.5652
+OF1         VERTICALLY   PERIMETER    False                      56.6071   9.00745e-05  8.7738e-05            5.92008e-06       56.6071   43.3929          23               8               15           34.7826            65.2174
+OF1         VERTICALLY   HEIGHT       True                       95        0.000108004  0.000104904           4.99884e-06       95         5               23               8               15           34.7826            65.2174
+OF1         VERTICALLY   HEIGHT       False                      74.75     8.81195e-05  8.60691e-05           5.25949e-06       74.75     25.25            23               9               14           39.1304            60.8696
+OF1         VERTICALLY   WIDTH        True                       75.5714   0.00010376   0.000100374           8.57432e-06       75.5714   24.4286          23               8               15           34.7826            65.2174
+OF1         VERTICALLY   WIDTH        False                      85.8571   0.000110388  0.000107527           5.25603e-06       85.8571   14.1429          23               8               15           34.7826            65.2174
+OF1         VERTICALLY   ID           True                       74.5714   0.000113153  0.000110388           5.43803e-06       74.5714   25.4286          23               9               14           39.1304            60.8696
+OF1         VERTICALLY   ID           False                      78.75     0.000104761  0.000102043           6.38428e-06       78.75     21.25            23               8               15           34.7826            65.2174

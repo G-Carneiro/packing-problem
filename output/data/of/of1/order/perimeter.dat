@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+OF1         VERTICALLY    PERIMETER    True                       84.8571   9.25064e-05  8.86917e-05           8.04287e-06       84.8571   15.1429          23               7               16           30.4348            69.5652
+OF1         VERTICALLY    PERIMETER    False                      56.6071   9.00745e-05  8.7738e-05            5.92008e-06       56.6071   43.3929          23               8               15           34.7826            65.2174
+OF1         HORIZONTALLY  PERIMETER    True                       77.7857   6.67572e-05  6.41346e-05           6.8439e-06        77.7857   22.2143          23               5               18           21.7391            78.2609
+OF1         HORIZONTALLY  PERIMETER    False                      70.7143   0.000101662  9.799e-05             6.80993e-06       70.7143   29.2857          23               8               15           34.7826            65.2174
+OF1         MAX_AREA      PERIMETER    True                       83.1786   0.000163364  0.000159979           9.65215e-06       83.1786   16.8214          23               7               16           30.4348            69.5652
+OF1         MAX_AREA      PERIMETER    False                      56.6071   0.000185156  0.000181913           9.19641e-06       56.6071   43.3929          23               8               15           34.7826            65.2174
+OF1         NONE          PERIMETER    True                       84.8571   0.00121098   0.00121117            6.38214e-06       84.8571   15.1429          23               7               16           30.4348            69.5652
+OF1         NONE          PERIMETER    False                      56.6071   0.00546713   0.00545335            4.71395e-05       56.6071   43.3929          23               8               15           34.7826            65.2174

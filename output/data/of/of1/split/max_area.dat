@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+OF1         MAX_AREA     AREA         True                       75.7143   0.000147247  0.000145674           8.66821e-06       75.7143   24.2857          23               6               17           26.087             73.913
+OF1         MAX_AREA     AREA         False                      56.6071   0.000204086  0.000200272           1.08725e-05       56.6071   43.3929          23               8               15           34.7826            65.2174
+OF1         MAX_AREA     PERIMETER    True                       83.1786   0.000163364  0.000159979           9.65215e-06       83.1786   16.8214          23               7               16           30.4348            69.5652
+OF1         MAX_AREA     PERIMETER    False                      56.6071   0.000185156  0.000181913           9.19641e-06       56.6071   43.3929          23               8               15           34.7826            65.2174
+OF1         MAX_AREA     HEIGHT       True                       95        0.000195026  0.000192881           1.02625e-05       95         5               23               8               15           34.7826            65.2174
+OF1         MAX_AREA     HEIGHT       False                      64.4286   0.00017972   0.000174761           1.0976e-05        64.4286   35.5714          23               7               16           30.4348            69.5652
+OF1         MAX_AREA     WIDTH        True                       74.75     0.000170326  0.000166416           9.67709e-06       74.75     25.25            23               7               16           30.4348            69.5652
+OF1         MAX_AREA     WIDTH        False                      85.8571   0.000205135  0.000203371           8.02958e-06       85.8571   14.1429          23               8               15           34.7826            65.2174
+OF1         MAX_AREA     ID           True                       51.4286   0.000172853  0.000170708           7.18744e-06       51.4286   48.5714          23               7               16           30.4348            69.5652
+OF1         MAX_AREA     ID           False                      69.1786   0.000281477  0.000277042           8.95718e-06       69.1786   30.8214          23               8               15           34.7826            65.2174

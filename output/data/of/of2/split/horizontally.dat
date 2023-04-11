@@ -1,0 +1,12 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+OF2         HORIZONTALLY  AREA         True                       89.1429   7.92027e-05  7.62939e-05           6.8096e-06        89.1429   10.8571          24               8               16           33.3333            66.6667
+OF2         HORIZONTALLY  AREA         False                      50.2857   9.69887e-05  9.32217e-05           6.25439e-06       50.2857   49.7143          24               7               17           29.1667            70.8333
+OF2         HORIZONTALLY  PERIMETER    True                       77.1071   9.06467e-05  8.84533e-05           5.32352e-06       77.1071   22.8929          24               7               17           29.1667            70.8333
+OF2         HORIZONTALLY  PERIMETER    False                      50.2857   9.68933e-05  9.27448e-05           6.68355e-06       50.2857   49.7143          24               7               17           29.1667            70.8333
+OF2         HORIZONTALLY  HEIGHT       True                       81.3571   7.82013e-05  7.55787e-05           5.82054e-06       81.3571   18.6429          24               7               17           29.1667            70.8333
+OF2         HORIZONTALLY  HEIGHT       False                      35.4286   8.13961e-05  7.96318e-05           4.67592e-06       35.4286   64.5714          24               5               19           20.8333            79.1667
+OF2         HORIZONTALLY  WIDTH        True                       77.1071   9.35555e-05  9.15527e-05           5.34951e-06       77.1071   22.8929          24               7               17           29.1667            70.8333
+OF2         HORIZONTALLY  WIDTH        False                      79.6071   0.000101852  9.91821e-05           7.16748e-06       79.6071   20.3929          24               9               15           37.5               62.5
+OF2         HORIZONTALLY  ID           True                       58.2857   6.46114e-05  6.19888e-05           4.51865e-06       58.2857   41.7143          24               5               19           20.8333            79.1667
+OF2         HORIZONTALLY  ID           False                      82.7143   8.18253e-05  7.86781e-05           6.45828e-06       82.7143   17.2857          24               7               17           29.1667            70.8333
