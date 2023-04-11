@@ -1,4 +1,5 @@
 from os import listdir, makedirs, scandir
+from os.path import basename, dirname
 from time import time
 
 from numpy import mean, median, std
@@ -11,7 +12,7 @@ from src.utils.order_key import OrderKey
 from src.utils.split_mode import SplitMode
 
 
-def to_ins2d(folder: str = "instances/GCUT"):
+def tabulate_ins2d(folder: str = "instances/GCUT"):
     for file in scandir(folder):
         with open(file, "r") as f:
             lines = f.readlines()
@@ -19,7 +20,6 @@ def to_ins2d(folder: str = "instances/GCUT"):
         data = [lines[0].split(), lines[1].split()]
         for line in lines[2:]:
             new_line = line.split()
-            new_line[-2] = "1"
             data.append(new_line)
 
         with open(file, "w") as f:
@@ -53,21 +53,24 @@ def csv_to_table(csv_folder: str, table_folder: str) -> None:
 def main(folder: str = INSTANCES) -> None:
     num_tests: int = 5
     total_time = 0
+    folder_name = basename(dirname(f"{folder}/"))
     for idx, file_name in enumerate(sorted(listdir(folder))[:10]):
         file = f"{folder}/{file_name}"
+        file_name = file_name.split(".")[0]
         with open(file, "r") as f:
             lines = f.readlines()
         items: list[Item] = []
         for line in lines[2:]:
-            _, width, height = line.split()
-            items.append(Item(width=float(width), height=float(height)))
+            _, width, height, demand, copies, profit = line.split()
+            for _ in range(int(copies)):
+                items.append(Item(width=float(width), height=float(height)))
         width, height = lines[1].split()
         box = Item(width=float(width), height=float(height))
         for split in SplitMode:
             for order in OrderKey:
                 for descending in [True, False]:
                     exec_time = []
-                    model = Model(name=file_name, instance="bkw", box=box, items=items,
+                    model = Model(name=file_name, instance=folder_name, box=box, items=items,
                                   order=order, split=split, decrescent=descending)
                     for _ in range(num_tests):
                         print(f"[Starting] file={file_name} split={split.name} order={order.name} "
@@ -78,7 +81,7 @@ def main(folder: str = INSTANCES) -> None:
                         exec_time.append(time() - start)
                         total_time += exec_time[-1]
                         print(f"[Finished] file={file_name} split={split.name} order={order.name} "
-                              f"decrescent={descending} exec={exec_time} total={total_time}")
+                              f"decrescent={descending} exec={exec_time[-1]} total={total_time}")
 
                     media = mean(exec_time)
                     mediana = median(exec_time)
@@ -104,4 +107,4 @@ def test():
 
 # TODO: mediana, desvio padrão - numpy
 if __name__ == "__main__":
-    to_ins2d()
+    main()

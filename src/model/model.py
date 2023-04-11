@@ -265,10 +265,10 @@ class Model:
                 "SplitMode": [self.split.name],
                 "OrderMode": [self.order.name],
                 "Decrescent": [self.decrescent],
+                "Solution Quality %": [self.solution_quality()],
                 "Exec. Time": [exec_time],
                 "Median": [median],
                 "Standard deviation": [std],
-                "Solution Quality %": [self.solution_quality()],
                 "Occupied %": [self.percent_busy()],
                 "Free %": [self.percent_free()],
                 "Nº Items": [len(self.items)],
@@ -282,6 +282,7 @@ class Model:
         return None
 
     def _to_csv(self, csv_folder: str, data) -> None:
+        csv_folder = csv_folder.lower()
         files = [f"order/{self.order.name}", f"split/{self.split.name}",
                  f"decrescent/{self.decrescent}", "all"]
 
