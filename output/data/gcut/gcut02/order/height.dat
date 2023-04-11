@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+GCUT02      VERTICALLY    HEIGHT       True                       60.1696   3.2568e-05   3.0756e-05            4.50504e-06       60.1696   39.8304          20               2               18                10                 90
+GCUT02      VERTICALLY    HEIGHT       False                      46.0144   5.35965e-05  5.17368e-05           4.61425e-06       46.0144   53.9856          20               4               16                20                 80
+GCUT02      HORIZONTALLY  HEIGHT       True                       60.1696   3.35217e-05  3.17097e-05           3.68308e-06       60.1696   39.8304          20               2               18                10                 90
+GCUT02      HORIZONTALLY  HEIGHT       False                      44.344    4.58717e-05  4.48227e-05           3.35349e-06       44.344    55.656           20               3               17                15                 85
+GCUT02      MAX_AREA      HEIGHT       True                       60.1696   5.75542e-05  5.50747e-05           5.65731e-06       60.1696   39.8304          20               2               18                10                 90
+GCUT02      MAX_AREA      HEIGHT       False                      54.664    0.000102949  9.98974e-05           6.88266e-06       54.664    45.336           20               4               16                20                 80
+GCUT02      NONE          HEIGHT       True                       72.2      0.000128031  0.000125408           6.07102e-06       72.2      27.8             20               3               17                15                 85
+GCUT02      NONE          HEIGHT       False                      54.664    0.000774622  0.000771046           1.46894e-05       54.664    45.336           20               4               16                20                 80

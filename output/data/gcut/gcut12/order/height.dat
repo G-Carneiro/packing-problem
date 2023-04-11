@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+GCUT12      VERTICALLY    HEIGHT       True                       86.2188   5.87463e-05  5.72205e-05           4.67106e-06       86.2188   13.7812          50               3               47                 6                 94
+GCUT12      VERTICALLY    HEIGHT       False                      62.7312   9.53674e-05  9.36985e-05           3.69972e-06       62.7312   37.2688          50               5               45                10                 90
+GCUT12      HORIZONTALLY  HEIGHT       True                       86.2188   6.10828e-05  5.8651e-05            4.90331e-06       86.2188   13.7812          50               3               47                 6                 94
+GCUT12      HORIZONTALLY  HEIGHT       False                      46.6858   7.38144e-05  7.10487e-05           4.98882e-06       46.6858   53.3142          50               3               47                 6                 94
+GCUT12      MAX_AREA      HEIGHT       True                       86.2188   9.44614e-05  9.20296e-05           6.60966e-06       86.2188   13.7812          50               3               47                 6                 94
+GCUT12      MAX_AREA      HEIGHT       False                      62.4328   0.000129747  0.000127554           7.4719e-06        62.4328   37.5672          50               4               46                 8                 92
+GCUT12      NONE          HEIGHT       True                       86.2188   0.000162601  0.000159025           6.49795e-06       86.2188   13.7812          50               3               47                 6                 94
+GCUT12      NONE          HEIGHT       False                      62.4328   0.00143991   0.00144219            1.45998e-05       62.4328   37.5672          50               4               46                 8                 92

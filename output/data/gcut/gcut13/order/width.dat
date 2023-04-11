@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+GCUT13      VERTICALLY    WIDTH        True                       81.8049   0.000237751  0.00023365            8.02079e-06       81.8049   18.1951          32              17               15            53.125             46.875
+GCUT13      VERTICALLY    WIDTH        False                      10.1909   0.000105858  0.000103951           5.80293e-06       10.1909   89.8091          32               7               25            21.875             78.125
+GCUT13      HORIZONTALLY  WIDTH        True                       47.0389   0.000270033  0.000264883           1.24194e-05       47.0389   52.9611          32              18               14            56.25              43.75
+GCUT13      HORIZONTALLY  WIDTH        False                      37.3764   0.000271225  0.000267982           1.08711e-05       37.3764   62.6236          32              16               16            50                 50
+GCUT13      MAX_AREA      WIDTH        True                       73.4412   0.000514221  0.000510693           1.17164e-05       73.4412   26.5588          32              20               12            62.5               37.5
+GCUT13      MAX_AREA      WIDTH        False                      40.0229   0.000399065  0.000392437           1.35294e-05       40.0229   59.9771          32              15               17            46.875             53.125
+GCUT13      NONE          WIDTH        True                       72.3215   0.0262862    0.0262306             9.85321e-05       72.3215   27.6785          32              21               11            65.625             34.375
+GCUT13      NONE          WIDTH        False                      47.4392   0.0240194    0.0240362             0.000148767       47.4392   52.5608          32              15               17            46.875             53.125

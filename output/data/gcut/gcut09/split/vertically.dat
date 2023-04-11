@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+GCUT09      VERTICALLY   AREA         True                       72.2042   3.62873e-05  3.45707e-05           3.44315e-06       72.2042   27.7958          10               3                7                30                 70
+GCUT09      VERTICALLY   AREA         False                      54.3733   5.04017e-05  4.81606e-05           4.90378e-06       54.3733   45.6267          10               4                6                40                 60
+GCUT09      VERTICALLY   PERIMETER    True                       72.2042   3.78132e-05  3.52859e-05           5.54568e-06       72.2042   27.7958          10               3                7                30                 70
+GCUT09      VERTICALLY   PERIMETER    False                      54.3733   4.9305e-05   4.69685e-05           4.68273e-06       54.3733   45.6267          10               4                6                40                 60
+GCUT09      VERTICALLY   HEIGHT       True                       60.5416   3.57628e-05  3.40939e-05           3.50402e-06       60.5416   39.4584          10               3                7                30                 70
+GCUT09      VERTICALLY   HEIGHT       False                      72.1475   6.29425e-05  6.07967e-05           5.03058e-06       72.1475   27.8525          10               5                5                50                 50
+GCUT09      VERTICALLY   WIDTH        True                       80.6112   5.12123e-05  4.8399e-05            5.9983e-06        80.6112   19.3888          10               4                6                40                 60
+GCUT09      VERTICALLY   WIDTH        False                      47.476    3.72887e-05  3.55244e-05           4.01394e-06       47.476    52.524           10               3                7                30                 70
+GCUT09      VERTICALLY   ID           True                       60.5416   3.70979e-05  3.50475e-05           4.48227e-06       60.5416   39.4584          10               3                7                30                 70
+GCUT09      VERTICALLY   ID           False                      77.7122   5.64098e-05  4.86374e-05           1.65254e-05       77.7122   22.2878          10               4                6                40                 60

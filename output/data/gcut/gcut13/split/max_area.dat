@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+GCUT13      MAX_AREA     AREA         True                       91.2187   0.000276184  0.000268698           1.1219e-05        91.2187    8.7813          32              11               21            34.375             65.625
+GCUT13      MAX_AREA     AREA         False                      40.5105   0.000465775  0.000460386           1.17583e-05       40.5105   59.4895          32              17               15            53.125             46.875
+GCUT13      MAX_AREA     PERIMETER    True                       91.2187   0.00026989   0.000269175           9.7022e-06        91.2187    8.7813          32              11               21            34.375             65.625
+GCUT13      MAX_AREA     PERIMETER    False                      40.5105   0.000464296  0.000460148           1.07427e-05       40.5105   59.4895          32              17               15            53.125             46.875
+GCUT13      MAX_AREA     HEIGHT       True                       91.4087   0.000315237  0.00030899            1.03512e-05       91.4087    8.5913          32              13               19            40.625             59.375
+GCUT13      MAX_AREA     HEIGHT       False                      32.934    0.000377607  0.000373602           9.61439e-06       32.934    67.066           32              14               18            43.75              56.25
+GCUT13      MAX_AREA     WIDTH        True                       73.4412   0.000514221  0.000510693           1.17164e-05       73.4412   26.5588          32              20               12            62.5               37.5
+GCUT13      MAX_AREA     WIDTH        False                      40.0229   0.000399065  0.000392437           1.35294e-05       40.0229   59.9771          32              15               17            46.875             53.125
+GCUT13      MAX_AREA     ID           True                       75.5894   0.000491953  0.00048542            1.24157e-05       75.5894   24.4106          32              19               13            59.375             40.625
+GCUT13      MAX_AREA     ID           False                      40.0229   0.000404119  0.000398636           1.15745e-05       40.0229   59.9771          32              15               17            46.875             53.125

@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+GCUT04      VERTICALLY    AREA         True                       92.816    6.84738e-05  6.62804e-05           6.58381e-06       92.816     7.184           50               4               46                 8                 92
+GCUT04      VERTICALLY    AREA         False                      58.848    0.00010767   0.000105858           4.87588e-06       58.848    41.152           50               6               44                12                 88
+GCUT04      HORIZONTALLY  AREA         True                       83.6768   6.53744e-05  6.12736e-05           1.02386e-05       83.6768   16.3232          50               3               47                 6                 94
+GCUT04      HORIZONTALLY  AREA         False                      71.9872   0.000146818  0.000143051           7.55061e-06       71.9872   28.0128          50               7               43                14                 86
+GCUT04      MAX_AREA      AREA         True                       94.3856   0.00011673   0.000112772           9.30334e-06       94.3856    5.6144          50               4               46                 8                 92
+GCUT04      MAX_AREA      AREA         False                      64.5616   0.000192499  0.000188589           8.41398e-06       64.5616   35.4384          50               7               43                14                 86
+GCUT04      NONE          AREA         True                       94.3856   0.000424194  0.000377178           7.37458e-05       94.3856    5.6144          50               4               46                 8                 92
+GCUT04      NONE          AREA         False                      75.2704   0.0063355    0.00631666            4.23728e-05       75.2704   24.7296          50               8               42                16                 84

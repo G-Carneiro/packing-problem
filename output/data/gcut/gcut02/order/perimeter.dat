@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+GCUT02      VERTICALLY    PERIMETER    True                       75.976    4.04358e-05  3.83854e-05           4.7243e-06        75.976    24.024           20               3               17                15                 85
+GCUT02      VERTICALLY    PERIMETER    False                      50.1248   5.53131e-05  5.36442e-05           3.59056e-06       50.1248   49.8752          20               4               16                20                 80
+GCUT02      HORIZONTALLY  PERIMETER    True                       65.656    3.33309e-05  3.09944e-05           4.57217e-06       65.656    34.344           20               2               18                10                 90
+GCUT02      HORIZONTALLY  PERIMETER    False                      63.64     7.45773e-05  7.1764e-05            4.57962e-06       63.64     36.36            20               5               15                25                 75
+GCUT02      MAX_AREA      PERIMETER    True                       77.6864   7.55787e-05  7.36713e-05           5.48259e-06       77.6864   22.3136          20               3               17                15                 85
+GCUT02      MAX_AREA      PERIMETER    False                      41.5536   0.00010128   9.84669e-05           7.15319e-06       41.5536   58.4464          20               4               16                20                 80
+GCUT02      NONE          PERIMETER    True                       77.6864   0.000129747  0.000126123           7.01032e-06       77.6864   22.3136          20               3               17                15                 85
+GCUT02      NONE          PERIMETER    False                      76.2352   0.00133896   0.001333              1.48288e-05       76.2352   23.7648          20               6               14                30                 70

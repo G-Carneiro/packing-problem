@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+GCUT01      VERTICALLY    ID           True                       63.104    4.73022e-05  4.62532e-05           4.76503e-06       63.104    36.896           10               4                6                40                 60
+GCUT01      VERTICALLY    ID           False                      77.3888   3.35693e-05  3.19481e-05           3.88381e-06       77.3888   22.6112          10               3                7                30                 70
+GCUT01      HORIZONTALLY  ID           True                       47.4752   4.11987e-05  3.71933e-05           6.50389e-06       47.4752   52.5248          10               3                7                30                 70
+GCUT01      HORIZONTALLY  ID           False                      67.7568   2.40803e-05  2.24113e-05           3.68432e-06       67.7568   32.2432          10               2                8                20                 80
+GCUT01      MAX_AREA      ID           True                       63.104    9.47952e-05  9.10759e-05           7.46764e-06       63.104    36.896           10               4                6                40                 60
+GCUT01      MAX_AREA      ID           False                      77.3888   6.73294e-05  6.4373e-05            6.78819e-06       77.3888   22.6112          10               3                7                30                 70
+GCUT01      NONE          ID           True                       63.104    0.000211     0.000197172           2.62377e-05       63.104    36.896           10               4                6                40                 60
+GCUT01      NONE          ID           False                      77.3888   0.000114298  0.000111818           7.08645e-06       77.3888   22.6112          10               3                7                30                 70

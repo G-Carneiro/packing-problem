@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+GCUT05      VERTICALLY    AREA         True                       65.744    3.80516e-05  3.50475e-05           4.67592e-06       65.744    34.256           10               3                7                30                 70
+GCUT05      VERTICALLY    AREA         False                      36.6852   3.66211e-05  3.45707e-05           4.42869e-06       36.6852   63.3148          10               3                7                30                 70
+GCUT05      HORIZONTALLY  AREA         True                       56.5568   2.79903e-05  2.6226e-05            4.25322e-06       56.5568   43.4432          10               2                8                20                 80
+GCUT05      HORIZONTALLY  AREA         False                      56.6948   5.04494e-05  4.86374e-05           5.52926e-06       56.6948   43.3052          10               4                6                40                 60
+GCUT05      MAX_AREA      AREA         True                       72.7928   7.59125e-05  7.1764e-05            8.52939e-06       72.7928   27.2072          10               3                7                30                 70
+GCUT05      MAX_AREA      AREA         False                      56.6948   9.5892e-05   9.27448e-05           7.8561e-06        56.6948   43.3052          10               4                6                40                 60
+GCUT05      NONE          AREA         True                       72.7928   0.000122213  0.000119686           6.57032e-06       72.7928   27.2072          10               3                7                30                 70
+GCUT05      NONE          AREA         False                      56.6948   0.000473309  0.000471592           7.23379e-06       56.6948   43.3052          10               4                6                40                 60
