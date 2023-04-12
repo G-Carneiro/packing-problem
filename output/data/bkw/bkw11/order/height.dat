@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW11       VERTICALLY    HEIGHT       True                       56.7238    0.0037015    0.00369453           0.000117763       56.7238   43.2762         300             260               40           86.6667           13.3333
+BKW11       VERTICALLY    HEIGHT       False                      35.7524    0.00295582   0.00294209           4.1865e-05        35.7524   64.2476         300             258               42           86                14
+BKW11       HORIZONTALLY  HEIGHT       True                       82.181     0.00638766   0.00634146           9.65262e-05       82.181    17.819          300             285               15           95                 5
+BKW11       HORIZONTALLY  HEIGHT       False                      10.781     0.00445347   0.00443101           7.08187e-05       10.781    89.219          300             106              194           35.3333           64.6667
+BKW11       MAX_AREA      HEIGHT       True                       82.2571    0.0117291    0.0118091            0.000205434       82.2571   17.7429         300             286               14           95.3333            4.66667
+BKW11       MAX_AREA      HEIGHT       False                      27.8762    0.00975714   0.00966811           0.000222426       27.8762   72.1238         300             226               74           75.3333           24.6667
+BKW11       NONE          HEIGHT       True                       83.381    37.1351      37.0777               0.289634          83.381    16.619          300             289               11           96.3333            3.66667
+BKW11       NONE          HEIGHT       False                      58.0381   52.7709      52.8238               0.323855          58.0381   41.9619         300             280               20           93.3333            6.66667

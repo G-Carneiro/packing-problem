@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Solution Quality %    Exec. Time    Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW12       NONE         AREA         True                       95.91         223.229   223.621              0.979097       95.91      4.09           500             383              117              76.6               23.4
+BKW12       NONE         AREA         False                      66.8933       366.344   366.413              0.286294       66.8933   33.1067         500             489               11              97.8                2.2
+BKW12       NONE         PERIMETER    True                       95.84         223.486   222.31               1.75126        95.84      4.16           500             372              128              74.4               25.6
+BKW12       NONE         PERIMETER    False                      68.8833       356.08    355.733              1.12638        68.8833   31.1167         500             490               10              98                  2
+BKW12       NONE         HEIGHT       True                       90.05         230.05    229.889              0.420206       90.05      9.95           500             485               15              97                  3
+BKW12       NONE         HEIGHT       False                      65.8767       302.29    304.626              5.96809        65.8767   34.1233         500             486               14              97.2                2.8
+BKW12       NONE         WIDTH        True                       96.28         295.204   295.019              0.858855       96.28      3.72           500             461               39              92.2                7.8
+BKW12       NONE         WIDTH        False                      73.9967       368.863   364.198              6.62375        73.9967   26.0033         500             490               10              98                  2
+BKW12       NONE         ID           True                       88.5733       299.701   295.465              6.50975        88.5733   11.4267         500             493                7              98.6                1.4
+BKW12       NONE         ID           False                      78.0967       318.79    319.034              1.11997        78.0967   21.9033         500             493                7              98.6                1.4

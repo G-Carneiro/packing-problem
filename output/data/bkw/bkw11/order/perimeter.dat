@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW11       VERTICALLY    PERIMETER    True                       73.9429    0.00388575   0.00391817           0.000216464       73.9429  26.0571          300             261               39           87                13
+BKW11       VERTICALLY    PERIMETER    False                      37.9238    0.00260563   0.00253201           0.000190386       37.9238  62.0762          300             257               43           85.6667           14.3333
+BKW11       HORIZONTALLY  PERIMETER    True                       94.8857    0.00480752   0.00481772           3.38687e-05       94.8857   5.11429         300             256               44           85.3333           14.6667
+BKW11       HORIZONTALLY  PERIMETER    False                      21.781     0.0055768    0.00531173           0.000431968       21.781   78.219           300             205               95           68.3333           31.6667
+BKW11       MAX_AREA      PERIMETER    True                       97.7714    0.00880809   0.00880909           0.000160029       97.7714   2.22857         300             250               50           83.3333           16.6667
+BKW11       MAX_AREA      PERIMETER    False                      41.8286    0.00933299   0.00930476           8.77573e-05       41.8286  58.1714          300             270               30           90                10
+BKW11       NONE          PERIMETER    True                       98.1524   47.2976      47.3058               0.0306054         98.1524   1.84762         300             260               40           86.6667           13.3333
+BKW11       NONE          PERIMETER    False                      69.9905   65.9799      65.9628               0.0633052         69.9905  30.0095          300             289               11           96.3333            3.66667

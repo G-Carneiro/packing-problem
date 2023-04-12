@@ -54,7 +54,7 @@ def main(folder: str = INSTANCES) -> None:
     num_tests: int = 5
     total_time = 0
     folder_name = basename(dirname(f"{folder}/"))
-    for idx, file_name in enumerate(sorted(listdir(folder))[:10]):
+    for idx, file_name in enumerate(sorted(listdir(folder))[10:12]):
         file = f"{folder}/{file_name}"
         file_name = file_name.split(".")[0]
         with open(file, "r") as f:

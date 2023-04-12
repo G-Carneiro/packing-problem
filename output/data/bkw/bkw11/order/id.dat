@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW11       VERTICALLY    ID           True                       46.3905    0.00294666   0.00292492           3.93468e-05       46.3905   53.6095         300             265               35           88.3333           11.6667
+BKW11       VERTICALLY    ID           False                      39.2       0.00318027   0.00315619           4.85143e-05       39.2      60.8            300             253               47           84.3333           15.6667
+BKW11       HORIZONTALLY  ID           True                       52.4571    0.00626779   0.0062449            6.67146e-05       52.4571   47.5429         300             268               32           89.3333           10.6667
+BKW11       HORIZONTALLY  ID           False                      54.4952    0.00598688   0.00593734           7.47179e-05       54.4952   45.5048         300             267               33           89                11
+BKW11       MAX_AREA      ID           True                       80.5143    0.0103827    0.0104072            0.00024564        80.5143   19.4857         300             293                7           97.6667            2.33333
+BKW11       MAX_AREA      ID           False                      80.2762    0.00908313   0.00913525           0.000166477       80.2762   19.7238         300             292                8           97.3333            2.66667
+BKW11       NONE          ID           True                       78.7143   55.696       55.9041               0.494526          78.7143   21.2857         300             292                8           97.3333            2.66667
+BKW11       NONE          ID           False                      85.2095   41.4134      41.4374               0.105162          85.2095   14.7905         300             294                6           98                 2

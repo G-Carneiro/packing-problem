@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time        Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW12       VERTICALLY    WIDTH        True                       87.8       0.00586576    0.00587249           4.24967e-05       87.8      12.2            500             313              187              62.6               37.4
+BKW12       VERTICALLY    WIDTH        False                      55.9967    0.00383987    0.00383234           4.79411e-05       55.9967   44.0033         500             457               43              91.4                8.6
+BKW12       HORIZONTALLY  WIDTH        True                       74.5833    0.0163762     0.0162556            0.000237114       74.5833   25.4167         500             463               37              92.6                7.4
+BKW12       HORIZONTALLY  WIDTH        False                      26.6167    0.0142647     0.0142472            4.25978e-05       26.6167   73.3833         500             409               91              81.8               18.2
+BKW12       MAX_AREA      WIDTH        True                       89.6933    0.0270993     0.027144             0.000110289       89.6933   10.3067         500             496                4              99.2                0.8
+BKW12       MAX_AREA      WIDTH        False                      67.24      0.0124371     0.011909             0.00136395        67.24     32.76           500             488               12              97.6                2.4
+BKW12       NONE          WIDTH        True                       96.28    295.204       295.019                0.858855          96.28      3.72           500             461               39              92.2                7.8
+BKW12       NONE          WIDTH        False                      73.9967  368.863       364.198                6.62375           73.9967   26.0033         500             490               10              98                  2
