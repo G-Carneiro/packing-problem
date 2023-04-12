@@ -54,7 +54,7 @@ def main(folder: str = INSTANCES) -> None:
     num_tests: int = 5
     total_time = 0
     folder_name = basename(dirname(f"{folder}/"))
-    for idx, file_name in enumerate(sorted(listdir(folder))[10:12]):
+    for file_name in [sorted(listdir(folder))[-1]]:
         file = f"{folder}/{file_name}"
         file_name = file_name.split(".")[0]
         with open(file, "r") as f:
@@ -67,6 +67,8 @@ def main(folder: str = INSTANCES) -> None:
         width, height = lines[1].split()
         box = Item(width=float(width), height=float(height))
         for split in SplitMode:
+            if split == SplitMode.NONE:
+                break
             for order in OrderKey:
                 for descending in [True, False]:
                     exec_time = []
