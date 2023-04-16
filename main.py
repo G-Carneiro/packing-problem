@@ -107,6 +107,6 @@ def test():
     print(queue)
 
 
-# TODO: mediana, desvio padrão - numpy
+# TODO: run bkw13, with order=NONE
 if __name__ == "__main__":
     main()
