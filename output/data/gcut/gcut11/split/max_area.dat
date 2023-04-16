@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+GCUT11      MAX_AREA     AREA         True                       78.1734   8.74043e-05  8.55923e-05           5.45682e-06       78.1734   21.8266          30               3               27          10                  90
+GCUT11      MAX_AREA     AREA         False                      51.201    0.000129747  0.000127077           7.21491e-06       51.201    48.799           30               5               25          16.6667             83.3333
+GCUT11      MAX_AREA     PERIMETER    True                       78.1734   8.40187e-05  8.2016e-05            5.65932e-06       78.1734   21.8266          30               3               27          10                  90
+GCUT11      MAX_AREA     PERIMETER    False                      51.201    0.000139189  0.000136852           9.42209e-06       51.201    48.799           30               5               25          16.6667             83.3333
+GCUT11      MAX_AREA     HEIGHT       True                       59.2969   6.39915e-05  6.19888e-05           6.57724e-06       59.2969   40.7031          30               2               28           6.66667            93.3333
+GCUT11      MAX_AREA     HEIGHT       False                      56.1136   0.000112915  0.000108957           6.62546e-06       56.1136   43.8864          30               4               26          13.3333             86.6667
+GCUT11      MAX_AREA     WIDTH        True                       81.7617   0.000108767  0.000103951           7.49317e-06       81.7617   18.2383          30               4               26          13.3333             86.6667
+GCUT11      MAX_AREA     WIDTH        False                      58.7358   0.000133801  0.000132799           6.55612e-06       58.7358   41.2642          30               5               25          16.6667             83.3333
+GCUT11      MAX_AREA     ID           True                       79.2448   0.000134325  0.000131607           6.84157e-06       79.2448   20.7552          30               5               25          16.6667             83.3333
+GCUT11      MAX_AREA     ID           False                      71.8717   0.000107908  0.000104666           7.16304e-06       71.8717   28.1283          30               4               26          13.3333             86.6667

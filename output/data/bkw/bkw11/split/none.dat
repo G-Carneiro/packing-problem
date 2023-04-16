@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Solution Quality %    Exec. Time    Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW11       NONE         AREA         True                       97.2095       47.6853   47.629              0.153334        97.2095   2.79048         300             276               24           92                 8
+BKW11       NONE         AREA         False                      69.4381       67.3668   67.316              0.279509        69.4381  30.5619          300             291                9           97                 3
+BKW11       NONE         PERIMETER    True                       98.1524       47.2976   47.3058             0.0306054       98.1524   1.84762         300             260               40           86.6667           13.3333
+BKW11       NONE         PERIMETER    False                      69.9905       65.9799   65.9628             0.0633052       69.9905  30.0095          300             289               11           96.3333            3.66667
+BKW11       NONE         HEIGHT       True                       83.381        37.1351   37.0777             0.289634        83.381   16.619           300             289               11           96.3333            3.66667
+BKW11       NONE         HEIGHT       False                      58.0381       52.7709   52.8238             0.323855        58.0381  41.9619          300             280               20           93.3333            6.66667
+BKW11       NONE         WIDTH        True                       98.0952       60.246    60.1914             0.127368        98.0952   1.90476         300             270               30           90                10
+BKW11       NONE         WIDTH        False                      72.7238       70.3336   70.2268             0.156615        72.7238  27.2762          300             289               11           96.3333            3.66667
+BKW11       NONE         ID           True                       78.7143       55.696    55.9041             0.494526        78.7143  21.2857          300             292                8           97.3333            2.66667
+BKW11       NONE         ID           False                      85.2095       41.4134   41.4374             0.105162        85.2095  14.7905          300             294                6           98                 2

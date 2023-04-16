@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Solution Quality %    Exec. Time     Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW04       NONE         AREA         True                       96.1875     0.0452466  0.04529             0.000270823       96.1875    3.8125          40              33                7              82.5               17.5
+BKW04       NONE         AREA         False                      44.6719     0.114416   0.114925            0.00556402        44.6719   55.3281          40              35                5              87.5               12.5
+BKW04       NONE         PERIMETER    True                       95.0625     0.0556697  0.0515587           0.0104959         95.0625    4.9375          40              30               10              75                 25
+BKW04       NONE         PERIMETER    False                      48.2812     0.13407    0.129769            0.00677663        48.2812   51.7188          40              38                2              95                  5
+BKW04       NONE         HEIGHT       True                       94          0.0527213  0.0527265           7.94933e-05       94         6               40              37                3              92.5                7.5
+BKW04       NONE         HEIGHT       False                      58.1562     0.103932   0.102144            0.00370686        58.1562   41.8438          40              38                2              95                  5
+BKW04       NONE         WIDTH        True                       93.875      0.118128   0.115213            0.00506034        93.875     6.125           40              38                2              95                  5
+BKW04       NONE         WIDTH        False                      63.7812     0.154315   0.153907            0.000789928       63.7812   36.2188          40              39                1              97.5                2.5
+BKW04       NONE         ID           True                       48.2812     0.0522459  0.0522554           0.000144188       48.2812   51.7188          40              38                2              95                  5
+BKW04       NONE         ID           False                      88.7656     0.0849498  0.0818629           0.00568272        88.7656   11.2344          40              37                3              92.5                7.5

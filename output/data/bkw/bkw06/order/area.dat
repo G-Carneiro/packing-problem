@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW06       VERTICALLY    AREA         True                         70.02   0.000650406  0.000653982           8.97924e-06         70.02     29.98          60              48               12           80                 20
+BKW06       VERTICALLY    AREA         False                        33.86   0.0004498    0.000447035           1.21931e-05         33.86     66.14          60              51                9           85                 15
+BKW06       HORIZONTALLY  AREA         True                         95.74   0.000592041  0.00058794            1.18025e-05         95.74      4.26          60              49               11           81.6667            18.3333
+BKW06       HORIZONTALLY  AREA         False                        13.24   0.000617027  0.000611067           1.15941e-05         13.24     86.76          60              37               23           61.6667            38.3333
+BKW06       MAX_AREA      AREA         True                         95.92   0.0012887    0.00121379            0.000132984         95.92      4.08          60              51                9           85                 15
+BKW06       MAX_AREA      AREA         False                        35.78   0.00118899   0.00117373            3.09055e-05         35.78     64.22          60              52                8           86.6667            13.3333
+BKW06       NONE          AREA         True                         96.94   0.161368     0.160609              0.00130393          96.94      3.06          60              47               13           78.3333            21.6667
+BKW06       NONE          AREA         False                        56.9    0.386329     0.383765              0.00540965          56.9      43.1           60              54                6           90                 10

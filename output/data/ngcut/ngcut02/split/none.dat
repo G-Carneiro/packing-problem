@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+NGCUT02     NONE         AREA         True                            97   0.000383615  0.000379086           8.99821e-06            97         3          17               5               12           29.4118            70.5882
+NGCUT02     NONE         AREA         False                           76   0.00114837   0.00109267            0.000117533            76        24          17               7               10           41.1765            58.8235
+NGCUT02     NONE         PERIMETER    True                            97   0.000376749  0.000374079           9.62857e-06            97         3          17               5               12           29.4118            70.5882
+NGCUT02     NONE         PERIMETER    False                           76   0.00107827   0.00107694            4.70984e-06            76        24          17               7               10           41.1765            58.8235
+NGCUT02     NONE         HEIGHT       True                            90   0.000703573  0.000700235           5.9576e-06             90        10          17               7               10           41.1765            58.8235
+NGCUT02     NONE         HEIGHT       False                           86   0.00134726   0.00134945            1.25558e-05            86        14          17               8                9           47.0588            52.9412
+NGCUT02     NONE         WIDTH        True                            91   0.000589943  0.000586987           6.87804e-06            91         9          17               5               12           29.4118            70.5882
+NGCUT02     NONE         WIDTH        False                           88   0.000553226  0.000549793           7.79829e-06            88        12          17               7               10           41.1765            58.8235
+NGCUT02     NONE         ID           True                            88   0.00075531   0.000759363           6.87043e-06            88        12          17               7               10           41.1765            58.8235
+NGCUT02     NONE         ID           False                           82   0.000933886  0.000932217           1.35953e-05            82        18          17               9                8           52.9412            47.0588

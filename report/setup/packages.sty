@@ -1,0 +1,120 @@
+%! Package = PACKAGE_NAME
+%! Author = gabriel
+%! Date = 5/17/21
+% --------------------------------------------
+% Exportação do pacote criado.
+% --------------------------------------------
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{setup/packages}[2021/05/17 gabriel's Package]
+
+% --------------------------------------------
+% Pacotes utilizados no documento.
+% --------------------------------------------
+\RequirePackage[T1]{fontenc}                        % Pacote de fontes
+\RequirePackage[utf8]{inputenc}                     % Pacote de acentuações
+\RequirePackage[brazil]{babel}                      % Tradução para português (pt-br)
+%\RequirePackage{mathptmx}                          % Fonte utilizada = TIMES
+%\RequirePackage{authblk}                           % Informações extras sobre autor(es)
+%\RequirePackage[nottoc]{tocbibind}                 % Adicionar referencias no sumário
+\RequirePackage{array}                              % Edição de colunas, matrizes e tabelas.
+%\RequirePackage[useregional=numeric]{datetime2}    % Fuso horario brasileiro
+\RequirePackage{titling}                            % get title, author, date
+\RequirePackage{graphicx}                           % Plotar imagens e gráficos
+\RequirePackage{float}                              % Posicionamento forçado de imagens
+\RequirePackage{xcolor}                             % Pacote de cores
+\RequirePackage{helvet}                             % Fonte utilizada
+\RequirePackage{pdfpages}                           % Adicionar páginas de outros pdf's
+\RequirePackage{multirow}                           % multirow table
+\RequirePackage{svg}                                % Incluir imagens .svg
+\RequirePackage{physics}                            % Símbolos da física (braket)
+\RequirePackage{pgfplots}                           % Criar e plotar gráficos
+\RequirePackage{minted}                             % Incluir códigos
+\RequirePackage{forest}                             % Desenhar árvores (útil para
+\RequirePackage{indentfirst}                        % Indenta primeiro parágrafo
+\RequirePackage{mathtools}                          % Mais símbolos matemáticos
+\RequirePackage{amsfonts}                           % Fontes matemáticas
+\RequirePackage{hyperref}                           % permissão de hyperlinks
+\RequirePackage[alf]{abntex2cite}                   % Referências com padrão ABNT
+
+% --------------------------------------------
+% Packages configuration.
+% --------------------------------------------
+\graphicspath{{./utils/images/}} % diretório de imagens
+%\citebrackets[] % citação com colchetes
+\renewcommand{\listingscaption}{Código}
+\renewcommand{\listoflistingscaption}{Lista de Códigos}
+\providecommand{\listingautorefname}{Código}
+%\pagecolor{black}
+%\color{white}
+
+% --------------------------------------------
+% ABNTEX2 Commands
+% --------------------------------------------
+\providecommand{\printeducationcenter}{}
+\newcommand{\educationcenter}[1]{\renewcommand{\printeducationcenter}{#1}}
+
+\providecommand{\printsubtitle}{}
+\newcommand{\subtitle}[1]{\renewcommand{\printsubtitle}{#1}}
+
+\providecommand{\printaffilinitials}{}
+\newcommand{\affilinitials}[1]{\renewcommand{\printaffilinitials}{#1}}
+
+\providecommand{\printcourse}{}
+\newcommand{\course}[1]{\renewcommand{\printcourse}{#1}}
+
+\providecommand{\printdepartment}{}
+\newcommand{\department}[1]{\renewcommand{\printdepartment}{#1}}
+
+\providecommand{\printuniversity}{}
+\newcommand{\university}[1]{\renewcommand{\printuniversity}{#1}}
+
+\providecommand{\printprogram}{}
+\newcommand{\program}[1]{\renewcommand{\printprogram}{#1}}
+
+\providecommand{\printformation}{}
+\newcommand{\formation}[1]{\renewcommand{\printformation}{#1}}
+
+% TODO: warnings daqui em diante
+\newcommand{\affil}{\instituicao}
+
+\newcommand{\printaffil}{\imprimirinstituicao}
+
+\newcommand{\printtitle}{\imprimirtitulo}
+
+\newcommand{\worktype}{\tipotrabalho}
+
+\newcommand{\printworktype}{\imprimirtipotrabalho}
+
+\newcommand{\printcover}{\imprimircapa}
+
+\newcommand{\printtitlepage}{\imprimirfolhaderosto}
+
+\newcommand{\printcoverufsc}{
+    \begin{capa}
+        \centering
+        \begin{figure}
+            \includegraphics[scale=0.2]{logo-ufsc}
+            \centering
+            \label{fig:logo-ufsc}
+        \end{figure}
+        \ABNTEXchapterfont\MakeUppercase{\printaffil}
+
+        \vspace*{1cm}
+
+        \large\theauthor
+
+%        \vfill
+        \vspace*{\fill}
+%        \begin{center}
+        \textbf{\printtitle}: \\ \printsubtitle
+%        \end{center}
+        \vspace*{\fill}
+%        \vfill{
+
+        \large\imprimirlocal
+
+        \large\the\year
+
+        \vspace*{1cm}
+    \end{capa}
+}

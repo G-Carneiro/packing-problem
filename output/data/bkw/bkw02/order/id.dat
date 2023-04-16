@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW02       VERTICALLY    ID           True                       40.7333   0.000146866  0.000139236           1.57753e-05       40.7333   59.2667          20              13                7                65                 35
+BKW02       VERTICALLY    ID           False                      57.4667   0.000182724  0.000189304           2.30932e-05       57.4667   42.5333          20              12                8                60                 40
+BKW02       HORIZONTALLY  ID           True                       50.4      0.000168943  0.000162125           1.27098e-05       50.4      49.6             20              15                5                75                 25
+BKW02       HORIZONTALLY  ID           False                      78.5333   0.000185442  0.000180483           9.38946e-06       78.5333   21.4667          20              16                4                80                 20
+BKW02       MAX_AREA      ID           True                       54.1333   0.000328588  0.00032568            9.44739e-06       54.1333   45.8667          20              16                4                80                 20
+BKW02       MAX_AREA      ID           False                      76.8      0.000387478  0.000383854           1.89823e-05       76.8      23.2             20              17                3                85                 15
+BKW02       NONE          ID           True                       64.3333   0.0130246    0.0120792             0.00199152        64.3333   35.6667          20              17                3                85                 15
+BKW02       NONE          ID           False                      76.8      0.00792232   0.00792456            0.000113198       76.8      23.2             20              17                3                85                 15

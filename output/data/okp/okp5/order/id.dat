@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+OKP5        VERTICALLY    ID           True                         82.92   0.000376892  0.00037384            1.14156e-05         82.92     17.08          97              19               78           19.5876            80.4124
+OKP5        VERTICALLY    ID           False                        76.46   0.000355959  0.000343561           2.48116e-05         76.46     23.54          97              18               79           18.5567            81.4433
+OKP5        HORIZONTALLY  ID           True                         71.31   0.000295877  0.000294447           1.09038e-05         71.31     28.69          97              16               81           16.4948            83.5052
+OKP5        HORIZONTALLY  ID           False                        80.3    0.00025239   0.00025034            1.60664e-05         80.3      19.7           97              17               80           17.5258            82.4742
+OKP5        MAX_AREA      ID           True                         77.06   0.00061326   0.000603199           2.26923e-05         77.06     22.94          97              20               77           20.6186            79.3814
+OKP5        MAX_AREA      ID           False                        66.86   0.000523663  0.000516415           1.41755e-05         66.86     33.14          97              16               81           16.4948            83.5052
+OKP5        NONE          ID           True                         82.92   0.0148974    0.0148919             0.000105659         82.92     17.08          97              19               78           19.5876            80.4124
+OKP5        NONE          ID           False                        89.9    0.0277001    0.0276105             0.000426362         89.9      10.1           97              19               78           19.5876            80.4124

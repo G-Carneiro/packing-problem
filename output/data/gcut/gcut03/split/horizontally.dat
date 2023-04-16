@@ -1,0 +1,12 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+GCUT03      HORIZONTALLY  AREA         True                       87.016    5.87463e-05  5.74589e-05           4.70501e-06       87.016    12.984           30               4               26           13.3333            86.6667
+GCUT03      HORIZONTALLY  AREA         False                      61.6464   7.71046e-05  7.53403e-05           6.95202e-06       61.6464   38.3536          30               5               25           16.6667            83.3333
+GCUT03      HORIZONTALLY  PERIMETER    True                       93.5504   6.18935e-05  5.96046e-05           4.9797e-06        93.5504    6.4496          30               4               26           13.3333            86.6667
+GCUT03      HORIZONTALLY  PERIMETER    False                      61.6464   8.08716e-05  7.77245e-05           7.1325e-06        61.6464   38.3536          30               5               25           16.6667            83.3333
+GCUT03      HORIZONTALLY  HEIGHT       True                       68.152    5.58853e-05  5.4121e-05            4.51512e-06       68.152    31.848           30               3               27           10                 90
+GCUT03      HORIZONTALLY  HEIGHT       False                      36.6032   5.77927e-05  5.50747e-05           4.35099e-06       36.6032   63.3968          30               3               27           10                 90
+GCUT03      HORIZONTALLY  WIDTH        True                       75.7456   6.27518e-05  6.00815e-05           4.52468e-06       75.7456   24.2544          30               4               26           13.3333            86.6667
+GCUT03      HORIZONTALLY  WIDTH        False                      49.6064   6.96659e-05  6.65188e-05           6.60966e-06       49.6064   50.3936          30               4               26           13.3333            86.6667
+GCUT03      HORIZONTALLY  ID           True                       56.0832   6.74725e-05  6.48499e-05           5.06885e-06       56.0832   43.9168          30               4               26           13.3333            86.6667
+GCUT03      HORIZONTALLY  ID           False                      57.9184   8.64983e-05  8.39233e-05           6.6234e-06        57.9184   42.0816          30               4               26           13.3333            86.6667

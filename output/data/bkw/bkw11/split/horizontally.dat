@@ -1,0 +1,12 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time      Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW11       HORIZONTALLY  AREA         True                       93.7905    0.00664406  0.0066421            8.05347e-05       93.7905   6.20952         300             257               43           85.6667            14.3333
+BKW11       HORIZONTALLY  AREA         False                      21.781     0.00533447  0.005301             5.98655e-05       21.781   78.219           300             205               95           68.3333            31.6667
+BKW11       HORIZONTALLY  PERIMETER    True                       94.8857    0.00480752  0.00481772           3.38687e-05       94.8857   5.11429         300             256               44           85.3333            14.6667
+BKW11       HORIZONTALLY  PERIMETER    False                      21.781     0.0055768   0.00531173           0.000431968       21.781   78.219           300             205               95           68.3333            31.6667
+BKW11       HORIZONTALLY  HEIGHT       True                       82.181     0.00638766  0.00634146           9.65262e-05       82.181   17.819           300             285               15           95                  5
+BKW11       HORIZONTALLY  HEIGHT       False                      10.781     0.00445347  0.00443101           7.08187e-05       10.781   89.219           300             106              194           35.3333            64.6667
+BKW11       HORIZONTALLY  WIDTH        True                       80.4286    0.00530772  0.00529432           4.38743e-05       80.4286  19.5714          300             253               47           84.3333            15.6667
+BKW11       HORIZONTALLY  WIDTH        False                      27.2667    0.00685868  0.00609851           0.00109172        27.2667  72.7333          300             236               64           78.6667            21.3333
+BKW11       HORIZONTALLY  ID           True                       52.4571    0.00626779  0.0062449            6.67146e-05       52.4571  47.5429          300             268               32           89.3333            10.6667
+BKW11       HORIZONTALLY  ID           False                      54.4952    0.00598688  0.00593734           7.47179e-05       54.4952  45.5048          300             267               33           89                 11

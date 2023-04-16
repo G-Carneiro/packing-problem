@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+NGCUT12     VERTICALLY    PERIMETER    True                       95        9.67503e-05  9.36985e-05           6.72222e-06       95        5                22               9               13           40.9091            59.0909
+NGCUT12     VERTICALLY    PERIMETER    False                      52        8.28743e-05  8.03471e-05           5.42757e-06       52       48                22               7               15           31.8182            68.1818
+NGCUT12     HORIZONTALLY  PERIMETER    True                       97.6667   9.408e-05    9.10759e-05           7.05751e-06       97.6667   2.33333          22              10               12           45.4545            54.5455
+NGCUT12     HORIZONTALLY  PERIMETER    False                      53.3333   0.000137234  0.000133276           6.46567e-06       53.3333  46.6667           22              10               12           45.4545            54.5455
+NGCUT12     MAX_AREA      PERIMETER    True                       95        0.000192642  0.000190258           9.28425e-06       95        5                22               9               13           40.9091            59.0909
+NGCUT12     MAX_AREA      PERIMETER    False                      53.3333   0.000226068  0.00022006            1.18208e-05       53.3333  46.6667           22              10               12           45.4545            54.5455
+NGCUT12     NONE          PERIMETER    True                       95        0.00142913   0.0014286             9.84111e-06       95        5                22               9               13           40.9091            59.0909
+NGCUT12     NONE          PERIMETER    False                      53.3333   0.00465908   0.00466418            2.45331e-05       53.3333  46.6667           22              10               12           45.4545            54.5455

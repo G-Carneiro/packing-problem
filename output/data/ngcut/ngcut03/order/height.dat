@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+NGCUT03     VERTICALLY    HEIGHT       True                            85   5.80311e-05  5.57899e-05           5.3686e-06             85        15          21               6               15           28.5714            71.4286
+NGCUT03     VERTICALLY    HEIGHT       False                           66   8.50201e-05  8.10623e-05           6.85486e-06            66        34          21               8               13           38.0952            61.9048
+NGCUT03     HORIZONTALLY  HEIGHT       True                            93   6.63757e-05  6.41346e-05           5.8451e-06             93         7          21               8               13           38.0952            61.9048
+NGCUT03     HORIZONTALLY  HEIGHT       False                           80   9.48906e-05  9.2268e-05            5.73594e-06            80        20          21               9               12           42.8571            57.1429
+NGCUT03     MAX_AREA      HEIGHT       True                            85   0.000122499  0.000119925           7.37388e-06            85        15          21               6               15           28.5714            71.4286
+NGCUT03     MAX_AREA      HEIGHT       False                           80   0.000188351  0.000182152           1.29687e-05            80        20          21               9               12           42.8571            57.1429
+NGCUT03     NONE          HEIGHT       True                            93   0.000912476  0.000908852           8.62456e-06            93         7          21               8               13           38.0952            61.9048
+NGCUT03     NONE          HEIGHT       False                           88   0.00291681   0.00291872            1.70778e-05            88        12          21              10               11           47.619             52.381

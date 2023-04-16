@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+NGCUT11     VERTICALLY    ID           True                       50.5556   6.77109e-05  6.48499e-05           5.75967e-06       50.5556   49.4444          15               6                9           40                 60
+NGCUT11     VERTICALLY    ID           False                      78.5556   8.75473e-05  8.36849e-05           7.41693e-06       78.5556   21.4444          15               8                7           53.3333            46.6667
+NGCUT11     HORIZONTALLY  ID           True                       63.3333   9.59873e-05  9.2268e-05            6.50424e-06       63.3333   36.6667          15               8                7           53.3333            46.6667
+NGCUT11     HORIZONTALLY  ID           False                      84.7778   8.26836e-05  7.86781e-05           7.96389e-06       84.7778   15.2222          15               9                6           60                 40
+NGCUT11     MAX_AREA      ID           True                       58.6667   0.0001616    0.000157118           9.06166e-06       58.6667   41.3333          15               7                8           46.6667            53.3333
+NGCUT11     MAX_AREA      ID           False                      78.5556   0.000177002  0.000174522           8.15601e-06       78.5556   21.4444          15               8                7           53.3333            46.6667
+NGCUT11     NONE          ID           True                       63.3333   0.00161729   0.00161386            9.65828e-06       63.3333   36.6667          15               8                7           53.3333            46.6667
+NGCUT11     NONE          ID           False                      84.7778   0.0023355    0.00233078            1.34831e-05       84.7778   15.2222          15               9                6           60                 40

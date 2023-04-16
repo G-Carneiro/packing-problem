@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+GCUT10      VERTICALLY    HEIGHT       True                       59.7263   3.19958e-05  3.00407e-05           4.54974e-06       59.7263   40.2737          20               2               18                10                 90
+GCUT10      VERTICALLY    HEIGHT       False                      65.2485   5.85556e-05  5.34058e-05           9.20259e-06       65.2485   34.7515          20               4               16                20                 80
+GCUT10      HORIZONTALLY  HEIGHT       True                       59.7263   3.36647e-05  3.19481e-05           3.99918e-06       59.7263   40.2737          20               2               18                10                 90
+GCUT10      HORIZONTALLY  HEIGHT       False                      51.2196   4.42982e-05  4.19617e-05           4.69e-06          51.2196   48.7804          20               3               17                15                 85
+GCUT10      MAX_AREA      HEIGHT       True                       59.7263   5.85079e-05  5.62668e-05           5.99868e-06       59.7263   40.2737          20               2               18                10                 90
+GCUT10      MAX_AREA      HEIGHT       False                      51.2196   7.84874e-05  7.51019e-05           7.01194e-06       51.2196   48.7804          20               3               17                15                 85
+GCUT10      NONE          HEIGHT       True                       59.7263   6.40869e-05  6.03199e-05           5.52679e-06       59.7263   40.2737          20               2               18                10                 90
+GCUT10      NONE          HEIGHT       False                      51.2196   0.00052104   0.000518084           6.47797e-06       51.2196   48.7804          20               3               17                15                 85

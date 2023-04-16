@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+OKP1        VERTICALLY    ID           True                         86.04   0.000181913  0.000180006           5.28623e-06         86.04     13.96          50              14               36                28                 72
+OKP1        VERTICALLY    ID           False                        82.12   0.000408983  0.000407219           1.1108e-05          82.12     17.88          50              23               27                46                 54
+OKP1        HORIZONTALLY  ID           True                         81.52   0.00017333   0.000170708           5.74386e-06         81.52     18.48          50              13               37                26                 74
+OKP1        HORIZONTALLY  ID           False                        68.56   0.000196552  0.000193119           7.61836e-06         68.56     31.44          50              17               33                34                 66
+OKP1        MAX_AREA      ID           True                         77.52   0.000251436  0.000246286           8.00547e-06         77.52     22.48          50               9               41                18                 82
+OKP1        MAX_AREA      ID           False                        62.66   0.000575829  0.00057435            1.69505e-05         62.66     37.34          50              20               30                40                 60
+OKP1        NONE          ID           True                         90.04   0.00944791   0.00946593            0.000127036         90.04      9.96          50              18               32                36                 64
+OKP1        NONE          ID           False                        92.12   0.0185555    0.0185151             0.000101494         92.12      7.88          50              25               25                50                 50

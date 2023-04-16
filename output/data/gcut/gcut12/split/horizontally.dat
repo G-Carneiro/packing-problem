@@ -1,0 +1,12 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+GCUT12      HORIZONTALLY  AREA         True                       86.2188   5.98431e-05  5.81741e-05           4.00373e-06       86.2188   13.7812          50               3               47                 6                 94
+GCUT12      HORIZONTALLY  AREA         False                      45.9083   9.41277e-05  9.17912e-05           5.036e-06         45.9083   54.0917          50               4               46                 8                 92
+GCUT12      HORIZONTALLY  PERIMETER    True                       86.2188   6.03676e-05  5.81741e-05           5.69296e-06       86.2188   13.7812          50               3               47                 6                 94
+GCUT12      HORIZONTALLY  PERIMETER    False                      46.0824   9.90868e-05  9.27448e-05           8.65377e-06       46.0824   53.9176          50               4               46                 8                 92
+GCUT12      HORIZONTALLY  HEIGHT       True                       86.2188   6.10828e-05  5.8651e-05            4.90331e-06       86.2188   13.7812          50               3               47                 6                 94
+GCUT12      HORIZONTALLY  HEIGHT       False                      46.6858   7.38144e-05  7.10487e-05           4.98882e-06       46.6858   53.3142          50               3               47                 6                 94
+GCUT12      HORIZONTALLY  WIDTH        True                       80.0304   6.07014e-05  5.84126e-05           5.65127e-06       80.0304   19.9696          50               3               47                 6                 94
+GCUT12      HORIZONTALLY  WIDTH        False                      67.3601   0.00010519   0.000102282           7.04429e-06       67.3601   32.6399          50               5               45                10                 90
+GCUT12      HORIZONTALLY  ID           True                       75.9252   8.74996e-05  8.41618e-05           6.7989e-06        75.9252   24.0748          50               4               46                 8                 92
+GCUT12      HORIZONTALLY  ID           False                      81.7816   9.00745e-05  8.55923e-05           1.27374e-05       81.7816   18.2184          50               4               46                 8                 92

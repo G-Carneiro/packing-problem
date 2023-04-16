@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW05       VERTICALLY    WIDTH        True                         87.05   0.000541592  0.000526428           2.34653e-05         87.05     12.95          50              41                9                82                 18
+BKW05       VERTICALLY    WIDTH        False                        22.27   0.000311232  0.000304699           1.45084e-05         22.27     77.73          50              29               21                58                 42
+BKW05       HORIZONTALLY  WIDTH        True                         83.96   0.000549936  0.000542879           1.58527e-05         83.96     16.04          50              39               11                78                 22
+BKW05       HORIZONTALLY  WIDTH        False                        42.81   0.000680637  0.000679016           0.000111358         42.81     57.19          50              40               10                80                 20
+BKW05       MAX_AREA      WIDTH        True                         89.7    0.00106049   0.00105643            2.29393e-05         89.7      10.3           50              42                8                84                 16
+BKW05       MAX_AREA      WIDTH        False                        52.92   0.00132608   0.00131512            3.06295e-05         52.92     47.08          50              43                7                86                 14
+BKW05       NONE          WIDTH        True                         93.56   0.193728     0.192913              0.00165758          93.56      6.44          50              38               12                76                 24
+BKW05       NONE          WIDTH        False                        59.57   0.282892     0.282608              0.00153101          59.57     40.43          50              45                5                90                 10

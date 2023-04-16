@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+GCUT11      VERTICALLY    ID           True                       66.3607   7.46727e-05  7.22408e-05           6.22158e-06       66.3607   33.6393          30               5               25           16.6667            83.3333
+GCUT11      VERTICALLY    ID           False                      59.7295   5.24044e-05  5.05447e-05           4.078e-06         59.7295   40.2705          30               3               27           10                 90
+GCUT11      HORIZONTALLY  ID           True                       54.3848   5.64575e-05  5.45979e-05           3.98209e-06       54.3848   45.6152          30               3               27           10                 90
+GCUT11      HORIZONTALLY  ID           False                      62.8011   5.35011e-05  5.10216e-05           4.70984e-06       62.8011   37.1989          30               3               27           10                 90
+GCUT11      MAX_AREA      ID           True                       79.2448   0.000134325  0.000131607           6.84157e-06       79.2448   20.7552          30               5               25           16.6667            83.3333
+GCUT11      MAX_AREA      ID           False                      71.8717   0.000107908  0.000104666           7.16304e-06       71.8717   28.1283          30               4               26           13.3333            86.6667
+GCUT11      NONE          ID           True                       64.4488   0.000669289  0.00067091            5.79588e-06       64.4488   35.5512          30               4               26           13.3333            86.6667
+GCUT11      NONE          ID           False                      71.8717   0.000209665  0.000206709           7.93988e-06       71.8717   28.1283          30               4               26           13.3333            86.6667

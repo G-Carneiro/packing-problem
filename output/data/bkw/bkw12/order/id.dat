@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time        Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW12       VERTICALLY    ID           True                       59.3267    0.00800271    0.00799656           3.93812e-05       59.3267   40.6733         500             458               42              91.6                8.4
+BKW12       VERTICALLY    ID           False                      49.83      0.00669918    0.0066781            5.00115e-05       49.83     50.17           500             458               42              91.6                8.4
+BKW12       HORIZONTALLY  ID           True                       45.3133    0.0258911     0.0159457            0.0200082         45.3133   54.6867         500             449               51              89.8               10.2
+BKW12       HORIZONTALLY  ID           False                      34.7533    0.0157242     0.0157206            0.000123573       34.7533   65.2467         500             413               87              82.6               17.4
+BKW12       MAX_AREA      ID           True                       84.9233    0.0285264     0.0286059            0.00014258        84.9233   15.0767         500             493                7              98.6                1.4
+BKW12       MAX_AREA      ID           False                      75.5567    0.0288291     0.0288026            6.37557e-05       75.5567   24.4433         500             489               11              97.8                2.2
+BKW12       NONE          ID           True                       88.5733  299.701       295.465                6.50975           88.5733   11.4267         500             493                7              98.6                1.4
+BKW12       NONE          ID           False                      78.0967  318.79        319.034                1.11997           78.0967   21.9033         500             493                7              98.6                1.4

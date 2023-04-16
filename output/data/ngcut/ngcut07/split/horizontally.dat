@@ -1,0 +1,12 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+NGCUT07     HORIZONTALLY  AREA         True                        100      7.48634e-05  7.27177e-05           6.46462e-06         43.75     56.25           8               8                0             100                  0
+NGCUT07     HORIZONTALLY  AREA         False                        33.75   6.94752e-05  6.74725e-05           6.12249e-06         33.75     66.25           8               7                1              87.5               12.5
+NGCUT07     HORIZONTALLY  PERIMETER    True                        100      7.30038e-05  7.05719e-05           6.9615e-06          43.75     56.25           8               8                0             100                  0
+NGCUT07     HORIZONTALLY  PERIMETER    False                        33.75   6.81877e-05  6.65188e-05           5.71608e-06         33.75     66.25           8               7                1              87.5               12.5
+NGCUT07     HORIZONTALLY  HEIGHT       True                        100      7.57217e-05  7.31945e-05           5.30684e-06         43.75     56.25           8               8                0             100                  0
+NGCUT07     HORIZONTALLY  HEIGHT       False                       100      7.83443e-05  7.58171e-05           8.05784e-06         43.75     56.25           8               8                0             100                  0
+NGCUT07     HORIZONTALLY  WIDTH        True                        100      7.34329e-05  7.1764e-05            5.40743e-06         43.75     56.25           8               8                0             100                  0
+NGCUT07     HORIZONTALLY  WIDTH        False                        33.75   7.24316e-05  6.96182e-05           7.6997e-06          33.75     66.25           8               7                1              87.5               12.5
+NGCUT07     HORIZONTALLY  ID           True                        100      7.77721e-05  7.39098e-05           6.3643e-06          43.75     56.25           8               8                0             100                  0
+NGCUT07     HORIZONTALLY  ID           False                       100      7.61032e-05  7.39098e-05           5.60441e-06         43.75     56.25           8               8                0             100                  0

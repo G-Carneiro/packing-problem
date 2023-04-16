@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+OKP5        VERTICALLY    AREA         True                         84.86   0.000170279  0.000167131           5.51443e-06         84.86     15.14          97              10               87           10.3093            89.6907
+OKP5        VERTICALLY    AREA         False                        58.74   0.000478125  0.000473499           7.85928e-06         58.74     41.26          97              22               75           22.6804            77.3196
+OKP5        HORIZONTALLY  AREA         True                         87.79   0.000333214  0.000334501           4.059e-06           87.79     12.21          97              13               84           13.4021            86.5979
+OKP5        HORIZONTALLY  AREA         False                        62.2    0.000425053  0.000422001           7.88931e-06         62.2      37.8           97              21               76           21.6495            78.3505
+OKP5        MAX_AREA      AREA         True                         86.82   0.000329733  0.000324011           1.59031e-05         86.82     13.18          97              11               86           11.3402            88.6598
+OKP5        MAX_AREA      AREA         False                        58.74   0.000707722  0.000699997           2.01351e-05         58.74     41.26          97              22               75           22.6804            77.3196
+OKP5        NONE          AREA         True                         84.86   0.00472121   0.00468087            8.93708e-05         84.86     15.14          97              10               87           10.3093            89.6907
+OKP5        NONE          AREA         False                        83.74   0.101231     0.101647              0.000741124         83.74     16.26          97              27               70           27.8351            72.1649

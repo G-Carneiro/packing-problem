@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+NGCUT05     MAX_AREA     AREA         True                       79.3333   9.62257e-05  9.17912e-05           8.06066e-06       79.3333   20.6667          14               4               10           28.5714            71.4286
+NGCUT05     MAX_AREA     AREA         False                      70        0.000136614  0.000133514           7.71681e-06       70        30               14               6                8           42.8571            57.1429
+NGCUT05     MAX_AREA     PERIMETER    True                       79.3333   9.43661e-05  9.03606e-05           1.07763e-05       79.3333   20.6667          14               4               10           28.5714            71.4286
+NGCUT05     MAX_AREA     PERIMETER    False                      60        0.000119925  0.000115395           8.88889e-06       60        40               14               5                9           35.7143            64.2857
+NGCUT05     MAX_AREA     HEIGHT       True                       71.3333   8.71181e-05  8.34465e-05           8.22264e-06       71.3333   28.6667          14               4               10           28.5714            71.4286
+NGCUT05     MAX_AREA     HEIGHT       False                      70        0.000136471  0.00013423            9.08322e-06       70        30               14               6                8           42.8571            57.1429
+NGCUT05     MAX_AREA     WIDTH        True                       79.3333   0.000109386  0.000106096           7.18965e-06       79.3333   20.6667          14               5                9           35.7143            64.2857
+NGCUT05     MAX_AREA     WIDTH        False                      78.6667   0.000105143  0.00010252            7.70502e-06       78.6667   21.3333          14               5                9           35.7143            64.2857
+NGCUT05     MAX_AREA     ID           True                       83.3333   0.000129557  0.000126123           8.7971e-06        83.3333   16.6667          14               6                8           42.8571            57.1429
+NGCUT05     MAX_AREA     ID           False                      58        7.30038e-05  7.05719e-05           6.54744e-06       58        42               14               3               11           21.4286            78.5714

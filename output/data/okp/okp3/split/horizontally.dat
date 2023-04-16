@@ -1,0 +1,12 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+OKP3        HORIZONTALLY  AREA         True                         87.71   0.000104046  9.91821e-05           8.25713e-06         87.71     12.29          30               7               23           23.3333            76.6667
+OKP3        HORIZONTALLY  AREA         False                        40.82   9.43184e-05  9.20296e-05           5.46722e-06         40.82     59.18          30               7               23           23.3333            76.6667
+OKP3        HORIZONTALLY  PERIMETER    True                         82.12   8.88824e-05  8.74996e-05           4.81912e-06         82.12     17.88          30               6               24           20                 80
+OKP3        HORIZONTALLY  PERIMETER    False                        40.32   0.000108242  0.000105619           8.38474e-06         40.32     59.68          30               7               23           23.3333            76.6667
+OKP3        HORIZONTALLY  HEIGHT       True                         89.4    0.000177002  0.000172615           6.74114e-06         89.4      10.6           30              10               20           33.3333            66.6667
+OKP3        HORIZONTALLY  HEIGHT       False                        40.82   9.30309e-05  9.03606e-05           5.69296e-06         40.82     59.18          30               7               23           23.3333            76.6667
+OKP3        HORIZONTALLY  WIDTH        True                         84.12   9.06944e-05  8.67844e-05           6.58761e-06         84.12     15.88          30               7               23           23.3333            76.6667
+OKP3        HORIZONTALLY  WIDTH        False                        41.86   0.000135183  0.000133038           7.33772e-06         41.86     58.14          30               8               22           26.6667            73.3333
+OKP3        HORIZONTALLY  ID           True                         55.74   0.000103426  0.000100851           6.38926e-06         55.74     44.26          30               6               24           20                 80
+OKP3        HORIZONTALLY  ID           False                        47      0.000111532  0.000108242           7.4353e-06          47        53             30               7               23           23.3333            76.6667

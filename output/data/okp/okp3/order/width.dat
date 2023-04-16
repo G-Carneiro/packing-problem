@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+OKP3        VERTICALLY    WIDTH        True                         78.78   0.000105     0.000102758           7.04139e-06         78.78     21.22          30               8               22           26.6667            73.3333
+OKP3        VERTICALLY    WIDTH        False                        58.59   0.000157166  0.000152826           7.72329e-06         58.59     41.41          30              10               20           33.3333            66.6667
+OKP3        HORIZONTALLY  WIDTH        True                         84.12   9.06944e-05  8.67844e-05           6.58761e-06         84.12     15.88          30               7               23           23.3333            76.6667
+OKP3        HORIZONTALLY  WIDTH        False                        41.86   0.000135183  0.000133038           7.33772e-06         41.86     58.14          30               8               22           26.6667            73.3333
+OKP3        MAX_AREA      WIDTH        True                         85.68   0.000181341  0.000177622           1.02676e-05         85.68     14.32          30               8               22           26.6667            73.3333
+OKP3        MAX_AREA      WIDTH        False                        70.75   0.000296021  0.000290394           1.3685e-05          70.75     29.25          30              11               19           36.6667            63.3333
+OKP3        NONE          WIDTH        True                         85.68   0.00186644   0.00187039            1.20013e-05         85.68     14.32          30               8               22           26.6667            73.3333
+OKP3        NONE          WIDTH        False                        73.97   0.00324073   0.00323582            2.08474e-05         73.97     26.03          30              12               18           40                 60

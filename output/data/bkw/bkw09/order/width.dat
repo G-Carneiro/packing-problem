@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW09       VERTICALLY    WIDTH        True                       90.04     0.00102248   0.00102043            1.70282e-05       90.04      9.96           100              85               15                85                 15
+BKW09       VERTICALLY    WIDTH        False                      31.8267   0.000660658  0.000669241           1.53413e-05       31.8267   68.1733         100              78               22                78                 22
+BKW09       HORIZONTALLY  WIDTH        True                       70.48     0.00152965   0.00144291            0.000183426       70.48     29.52           100              89               11                89                 11
+BKW09       HORIZONTALLY  WIDTH        False                      34.12     0.00151138   0.00150228            2.72797e-05       34.12     65.88           100              86               14                86                 14
+BKW09       MAX_AREA      WIDTH        True                       76.4533   0.00271249   0.00266743            7.35273e-05       76.4533   23.5467         100              92                8                92                  8
+BKW09       MAX_AREA      WIDTH        False                      63.9867   0.00221543   0.00218105            0.000106775       63.9867   36.0133         100              94                6                94                  6
+BKW09       NONE          WIDTH        True                       96.28     1.86233      1.8686                0.0197539         96.28      3.72           100              98                2                98                  2
+BKW09       NONE          WIDTH        False                      68.4667   2.40126      2.39241               0.02594           68.4667   31.5333         100              96                4                96                  4

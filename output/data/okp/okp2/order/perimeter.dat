@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+OKP2        VERTICALLY    PERIMETER    True                         86.82   0.000120544  0.000117302           8.99897e-06         86.82     13.18          30              10               20           33.3333            66.6667
+OKP2        VERTICALLY    PERIMETER    False                        67.76   0.000207376  0.00020504            7.35072e-06         67.76     32.24          30              13               17           43.3333            56.6667
+OKP2        HORIZONTALLY  PERIMETER    True                         84.59   0.000100565  9.91821e-05           5.54322e-06         84.59     15.41          30               9               21           30                 70
+OKP2        HORIZONTALLY  PERIMETER    False                        41.18   0.000108767  0.000106812           6.01533e-06         41.18     58.82          30               7               23           23.3333            76.6667
+OKP2        MAX_AREA      PERIMETER    True                         90.05   0.000192976  0.000188828           9.99494e-06         90.05      9.95          30               9               21           30                 70
+OKP2        MAX_AREA      PERIMETER    False                        60.48   0.00026722   0.000261307           1.25702e-05         60.48     39.52          30              10               20           33.3333            66.6667
+OKP2        NONE          PERIMETER    True                         90.05   0.00143237   0.00139236            8.70938e-05         90.05      9.95          30               9               21           30                 70
+OKP2        NONE          PERIMETER    False                        61.32   0.0054472    0.00534129            0.000166875         61.32     38.68          30              10               20           33.3333            66.6667

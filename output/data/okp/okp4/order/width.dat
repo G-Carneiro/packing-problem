@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+OKP4        VERTICALLY    WIDTH        True                         86.95   0.000206375  0.000203371           6.53215e-06         86.95     13.05          61              17               44           27.8689            72.1311
+OKP4        VERTICALLY    WIDTH        False                        76.85   0.000437069  0.000433683           1.11883e-05         76.85     23.15          61              23               38           37.7049            62.2951
+OKP4        HORIZONTALLY  WIDTH        True                         82.15   0.000230789  0.000230074           7.95475e-06         82.15     17.85          61              15               46           24.5902            75.4098
+OKP4        HORIZONTALLY  WIDTH        False                        49.89   0.000225115  0.00022006            9.50976e-06         49.89     50.11          61              16               45           26.2295            73.7705
+OKP4        MAX_AREA      WIDTH        True                         82.15   0.000354719  0.000353575           1.0406e-05          82.15     17.85          61              15               46           24.5902            75.4098
+OKP4        MAX_AREA      WIDTH        False                        76.85   0.000737238  0.000687361           0.000132178         76.85     23.15          61              23               38           37.7049            62.2951
+OKP4        NONE          WIDTH        True                         88.31   0.00450363   0.00450826            1.66215e-05         88.31     11.69          61              16               45           26.2295            73.7705
+OKP4        NONE          WIDTH        False                        78.85   0.0120415    0.0120695             7.63525e-05         78.85     21.15          61              24               37           39.3443            60.6557

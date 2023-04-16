@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW10       VERTICALLY    WIDTH        True                       84.0667    0.00245037   0.00246453           5.22315e-05       84.0667  15.9333          200             187               13              93.5                6.5
+BKW10       VERTICALLY    WIDTH        False                      21.981     0.00125227   0.0011847            8.97622e-05       21.981   78.019           200             166               34              83                 17
+BKW10       HORIZONTALLY  WIDTH        True                       87.8571    0.0026926    0.00257707           0.000202061       87.8571  12.1429          200             190               10              95                  5
+BKW10       HORIZONTALLY  WIDTH        False                      28.981     0.00358438   0.0035634            9.13415e-05       28.981   71.019           200             179               21              89.5               10.5
+BKW10       MAX_AREA      WIDTH        True                       94.0381    0.00518079   0.00516796           0.000155955       94.0381   5.9619          200             197                3              98.5                1.5
+BKW10       MAX_AREA      WIDTH        False                      54.6       0.0045886    0.00451994           0.00018409        54.6     45.4             200             194                6              97                  3
+BKW10       NONE          WIDTH        True                       98.1143   12.3049      12.2667               0.0715691         98.1143   1.88571         200             165               35              82.5               17.5
+BKW10       NONE          WIDTH        False                      55.8      21.3953      21.334                0.134579          55.8     44.2             200             195                5              97.5                2.5

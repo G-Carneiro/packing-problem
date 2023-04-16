@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+GCUT08      MAX_AREA     AREA         True                       79.6752   9.20296e-05  8.89301e-05           7.96332e-06       79.6752   20.3248          50               3               47                 6                 94
+GCUT08      MAX_AREA     AREA         False                      48.0484   0.000157833  0.000157118           1.01702e-05       48.0484   51.9516          50               5               45                10                 90
+GCUT08      MAX_AREA     PERIMETER    True                       79.6752   9.16958e-05  8.98838e-05           7.38344e-06       79.6752   20.3248          50               3               47                 6                 94
+GCUT08      MAX_AREA     PERIMETER    False                      48.0484   0.000147963  0.00014472            7.23254e-06       48.0484   51.9516          50               5               45                10                 90
+GCUT08      MAX_AREA     HEIGHT       True                       79.6752   9.43184e-05  9.10759e-05           6.31265e-06       79.6752   20.3248          50               3               47                 6                 94
+GCUT08      MAX_AREA     HEIGHT       False                      39.6812   0.000107527  0.000104427           7.03072e-06       39.6812   60.3188          50               3               47                 6                 94
+GCUT08      MAX_AREA     WIDTH        True                       63.4032   9.35555e-05  8.86917e-05           8.40722e-06       63.4032   36.5968          50               3               47                 6                 94
+GCUT08      MAX_AREA     WIDTH        False                      55.2024   0.000148726  0.000145435           6.5769e-06        55.2024   44.7976          50               5               45                10                 90
+GCUT08      MAX_AREA     ID           True                       84.072    0.000149632  0.000145435           8.96226e-06       84.072    15.928           50               5               45                10                 90
+GCUT08      MAX_AREA     ID           False                      66.914    0.000127172  0.000122547           8.64589e-06       66.914    33.086           50               4               46                 8                 92

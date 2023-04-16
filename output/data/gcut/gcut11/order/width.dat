@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+GCUT11      VERTICALLY    WIDTH        True                       82.6283   5.25475e-05  5.17368e-05           3.8135e-06        82.6283   17.3717          30               3               27           10                 90
+GCUT11      VERTICALLY    WIDTH        False                      38.3174   5.34534e-05  4.88758e-05           7.29327e-06       38.3174   61.6826          30               3               27           10                 90
+GCUT11      HORIZONTALLY  WIDTH        True                       81.7617   6.07491e-05  5.91278e-05           3.64211e-06       81.7617   18.2383          30               4               26           13.3333            86.6667
+GCUT11      HORIZONTALLY  WIDTH        False                      65.997    0.00010128   9.9659e-05            5.05402e-06       65.997    34.003           30               6               24           20                 80
+GCUT11      MAX_AREA      WIDTH        True                       81.7617   0.000108767  0.000103951           7.49317e-06       81.7617   18.2383          30               4               26           13.3333            86.6667
+GCUT11      MAX_AREA      WIDTH        False                      58.7358   0.000133801  0.000132799           6.55612e-06       58.7358   41.2642          30               5               25           16.6667            83.3333
+GCUT11      NONE          WIDTH        True                       82.6283   0.000265694  0.000262976           5.48383e-06       82.6283   17.3717          30               3               27           10                 90
+GCUT11      NONE          WIDTH        False                      58.7358   0.00125918   0.00125813            1.01047e-05       58.7358   41.2642          30               5               25           16.6667            83.3333

@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW02       VERTICALLY    AREA         True                       61        0.000150204  0.000147104           8.2052e-06        61        39               20              14                6                70                 30
+BKW02       VERTICALLY    AREA         False                      29.1333   0.000172043  0.000181437           2.52195e-05       29.1333   70.8667          20              12                8                60                 40
+BKW02       HORIZONTALLY  AREA         True                       82.6667   0.000167894  0.000163555           1.00242e-05       82.6667   17.3333          20              13                7                65                 35
+BKW02       HORIZONTALLY  AREA         False                      40.1333   0.000172758  0.000168562           8.36927e-06       40.1333   59.8667          20              14                6                70                 30
+BKW02       MAX_AREA      AREA         True                       71.9333   0.000417852  0.000355005           0.000104333       71.9333   28.0667          20              17                3                85                 15
+BKW02       MAX_AREA      AREA         False                      43.8667   0.000322151  0.000321865           9.91821e-06       43.8667   56.1333          20              15                5                75                 25
+BKW02       NONE          AREA         True                       85.8667   0.00555429   0.00556469            7.29238e-05       85.8667   14.1333          20              14                6                70                 30
+BKW02       NONE          AREA         False                      43.5333   0.0119086    0.0118027             0.000177015       43.5333   56.4667          20              15                5                75                 25

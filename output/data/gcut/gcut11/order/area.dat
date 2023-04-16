@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+GCUT11      VERTICALLY    AREA         True                       76.0952   5.36442e-05  5.03063e-05           8.82728e-06       76.0952   23.9048          30               3               27          10                  90
+GCUT11      VERTICALLY    AREA         False                      51.201    0.000117588  0.000114918           5.89507e-06       51.201    48.799           30               5               25          16.6667             83.3333
+GCUT11      HORIZONTALLY  AREA         True                       66.0312   4.71592e-05  4.74453e-05           4.62655e-06       66.0312   33.9688          30               2               28           6.66667            93.3333
+GCUT11      HORIZONTALLY  AREA         False                      66.5978   0.000100756  9.82285e-05           6.98302e-06       66.5978   33.4022          30               6               24          20                  80
+GCUT11      MAX_AREA      AREA         True                       78.1734   8.74043e-05  8.55923e-05           5.45682e-06       78.1734   21.8266          30               3               27          10                  90
+GCUT11      MAX_AREA      AREA         False                      51.201    0.000129747  0.000127077           7.21491e-06       51.201    48.799           30               5               25          16.6667             83.3333
+GCUT11      NONE          AREA         True                       78.1734   0.0001513    0.00014329            1.21968e-05       78.1734   21.8266          30               3               27          10                  90
+GCUT11      NONE          AREA         False                      65.997    0.0018229    0.00182319            1.0284e-05        65.997    34.003           30               6               24          20                  80

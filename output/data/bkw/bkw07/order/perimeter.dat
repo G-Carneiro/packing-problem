@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW07       VERTICALLY    PERIMETER    True                       75.775    0.000708008  0.000705719           1.66474e-05       75.775    24.225           70              59               11           84.2857           15.7143
+BKW07       VERTICALLY    PERIMETER    False                      40.6375   0.000621176  0.000622272           1.43334e-05       40.6375   59.3625          70              59               11           84.2857           15.7143
+BKW07       HORIZONTALLY  PERIMETER    True                       83.775    0.000965977  0.000914574           0.000101836       83.775    16.225           70              62                8           88.5714           11.4286
+BKW07       HORIZONTALLY  PERIMETER    False                      11.525    0.000853729  0.000840425           2.50838e-05       11.525    88.475           70              47               23           67.1429           32.8571
+BKW07       MAX_AREA      PERIMETER    True                       90.5875   0.00149145   0.00147963            2.98001e-05       90.5875    9.4125          70              64                6           91.4286            8.57143
+BKW07       MAX_AREA      PERIMETER    False                      42.0875   0.00145383   0.00143909            4.45095e-05       42.0875   57.9125          70              63                7           90                10
+BKW07       NONE          PERIMETER    True                       91.5875   0.234417     0.233835              0.00104207        91.5875    8.4125          70              65                5           92.8571            7.14286
+BKW07       NONE          PERIMETER    False                      60.7125   0.639531     0.631842              0.0234057         60.7125   39.2875          70              65                5           92.8571            7.14286

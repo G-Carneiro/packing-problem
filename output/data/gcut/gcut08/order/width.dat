@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+GCUT08      VERTICALLY    WIDTH        True                       81.3776   7.27654e-05  6.98566e-05           5.70693e-06       81.3776   18.6224          50               4               46                 8                 92
+GCUT08      VERTICALLY    WIDTH        False                      35.9152   6.1512e-05   5.74589e-05           5.88464e-06       35.9152   64.0848          50               3               47                 6                 94
+GCUT08      HORIZONTALLY  WIDTH        True                       63.4032   5.84126e-05  5.65052e-05           4.07689e-06       63.4032   36.5968          50               3               47                 6                 94
+GCUT08      HORIZONTALLY  WIDTH        False                      66.0228   0.000132227  0.000128746           6.62889e-06       66.0228   33.9772          50               6               44                12                 88
+GCUT08      MAX_AREA      WIDTH        True                       63.4032   9.35555e-05  8.86917e-05           8.40722e-06       63.4032   36.5968          50               3               47                 6                 94
+GCUT08      MAX_AREA      WIDTH        False                      55.2024   0.000148726  0.000145435           6.5769e-06        55.2024   44.7976          50               5               45                10                 90
+GCUT08      NONE          WIDTH        True                       81.3776   0.000264549  0.000263453           5.81194e-06       81.3776   18.6224          50               4               46                 8                 92
+GCUT08      NONE          WIDTH        False                      72.9048   0.00430069   0.00419831            0.000222289       72.9048   27.0952          50               6               44                12                 88

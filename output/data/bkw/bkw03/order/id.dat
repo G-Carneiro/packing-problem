@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW03       VERTICALLY    ID           True                       65.9333   0.000240564  0.000235081           1.22604e-05       65.9333   34.0667          30              25                5           83.3333           16.6667
+BKW03       VERTICALLY    ID           False                      66.4      0.000255013  0.000249624           1.17901e-05       66.4      33.6             30              25                5           83.3333           16.6667
+BKW03       HORIZONTALLY  ID           True                       67.1333   0.000327921  0.000323057           1.0144e-05        67.1333   32.8667          30              26                4           86.6667           13.3333
+BKW03       HORIZONTALLY  ID           False                      33.8667   0.000428295  0.000433922           1.69137e-05       33.8667   66.1333          30              20               10           66.6667           33.3333
+BKW03       MAX_AREA      ID           True                       72.8667   0.000607824  0.000601053           1.8641e-05        72.8667   27.1333          30              27                3           90                10
+BKW03       MAX_AREA      ID           False                      62.9333   0.00059104   0.000586271           1.04622e-05       62.9333   37.0667          30              27                3           90                10
+BKW03       NONE          ID           True                       78.9333   0.0521503    0.0521169             0.000202722       78.9333   21.0667          30              28                2           93.3333            6.66667
+BKW03       NONE          ID           False                      80        0.0343661    0.0330083             0.00184261        80        20               30              28                2           93.3333            6.66667

@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+GCUT12      VERTICALLY    WIDTH        True                       87.9958   6.59466e-05  6.86646e-05           1.07321e-05       87.9958   12.0042          50               3               47                 6                 94
+GCUT12      VERTICALLY    WIDTH        False                      42.5142   6.17981e-05  5.74589e-05           5.9983e-06        42.5142   57.4858          50               3               47                 6                 94
+GCUT12      HORIZONTALLY  WIDTH        True                       80.0304   6.07014e-05  5.84126e-05           5.65127e-06       80.0304   19.9696          50               3               47                 6                 94
+GCUT12      HORIZONTALLY  WIDTH        False                      67.3601   0.00010519   0.000102282           7.04429e-06       67.3601   32.6399          50               5               45                10                 90
+GCUT12      MAX_AREA      WIDTH        True                       80.0304   9.66072e-05  9.27448e-05           6.6131e-06        80.0304   19.9696          50               3               47                 6                 94
+GCUT12      MAX_AREA      WIDTH        False                      56.874    0.000134134  0.000139475           6.87142e-06       56.874    43.126           50               4               46                 8                 92
+GCUT12      NONE          WIDTH        True                       80.0304   0.000239086  0.00023675            6.43182e-06       80.0304   19.9696          50               3               47                 6                 94
+GCUT12      NONE          WIDTH        False                      70.6035   0.00101504   0.00101185            7.27485e-06       70.6035   29.3965          50               5               45                10                 90

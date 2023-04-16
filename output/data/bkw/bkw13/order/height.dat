@@ -1,0 +1,8 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time     Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+BKW13       VERTICALLY    HEIGHT       True                      86.7168      0.0906435  0.0902832           0.000650632      86.7168   13.2832         3152            2741              411           86.9607           13.0393
+BKW13       VERTICALLY    HEIGHT       False                     78.2632      0.0731152  0.0726967           0.000629843      78.2632   21.7368         3152            3057               95           96.986             3.01396
+BKW13       HORIZONTALLY  HEIGHT       True                      85.3234      0.236992   0.217409            0.0398129        85.3234   14.6766         3152            2712              440           86.0406           13.9594
+BKW13       HORIZONTALLY  HEIGHT       False                      1.2526      0.322697   0.322554            0.00280497        1.2526   98.7474         3152             592             2560           18.7817           81.2183
+BKW13       MAX_AREA      HEIGHT       True                      97.1108      0.526851   0.525175            0.00297202       97.1108    2.88916        3152            3020              132           95.8122            4.18782
+BKW13       MAX_AREA      HEIGHT       False                      9.58626     0.435822   0.4326              0.00530125        9.58626  90.4137         3152            1400             1752           44.4162           55.5838

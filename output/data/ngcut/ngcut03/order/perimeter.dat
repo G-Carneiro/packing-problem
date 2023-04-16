@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+NGCUT03     VERTICALLY    PERIMETER    True                            84   5.04494e-05  4.8399e-05            5.2139e-06             84        16          21               5               16           23.8095            76.1905
+NGCUT03     VERTICALLY    PERIMETER    False                           57   7.47681e-05  7.20024e-05           6.06652e-06            57        43          21               7               14           33.3333            66.6667
+NGCUT03     HORIZONTALLY  PERIMETER    True                            90   6.59466e-05  6.34193e-05           5.7648e-06             90        10          21               7               14           33.3333            66.6667
+NGCUT03     HORIZONTALLY  PERIMETER    False                           72   9.64165e-05  9.46522e-05           6.06465e-06            72        28          21               9               12           42.8571            57.1429
+NGCUT03     MAX_AREA      PERIMETER    True                            90   0.000130463  0.000127316           8.87148e-06            90        10          21               7               14           33.3333            66.6667
+NGCUT03     MAX_AREA      PERIMETER    False                           72   0.000187302  0.000184059           1.00878e-05            72        28          21               9               12           42.8571            57.1429
+NGCUT03     NONE          PERIMETER    True                            84   0.000549841  0.000547647           7.55362e-06            84        16          21               5               16           23.8095            76.1905
+NGCUT03     NONE          PERIMETER    False                           72   0.00190721   0.00186586            0.000101585            72        28          21               9               12           42.8571            57.1429

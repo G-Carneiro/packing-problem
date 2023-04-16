@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+OKP3        VERTICALLY   AREA         True                         93.64   8.40187e-05  8.24928e-05           5.00702e-06         93.64      6.36          30               6               24           20                 80
+OKP3        VERTICALLY   AREA         False                        73.21   0.00018239   0.000178337           7.93042e-06         73.21     26.79          30              12               18           40                 60
+OKP3        VERTICALLY   PERIMETER    True                         92.62   0.000125074  0.00012207            8.03665e-06         92.62      7.38          30               8               22           26.6667            73.3333
+OKP3        VERTICALLY   PERIMETER    False                        59.01   0.00015645   0.000154257           7.15955e-06         59.01     40.99          30              10               20           33.3333            66.6667
+OKP3        VERTICALLY   HEIGHT       True                         87.84   0.000144911  0.000144005           4.64861e-06         87.84     12.16          30               9               21           30                 70
+OKP3        VERTICALLY   HEIGHT       False                        80.64   0.000160789  0.000157595           9.28131e-06         80.64     19.36          30              12               18           40                 60
+OKP3        VERTICALLY   WIDTH        True                         78.78   0.000105     0.000102758           7.04139e-06         78.78     21.22          30               8               22           26.6667            73.3333
+OKP3        VERTICALLY   WIDTH        False                        58.59   0.000157166  0.000152826           7.72329e-06         58.59     41.41          30              10               20           33.3333            66.6667
+OKP3        VERTICALLY   ID           True                         87.04   0.000163174  0.000158787           8.53871e-06         87.04     12.96          30              11               19           36.6667            63.3333
+OKP3        VERTICALLY   ID           False                        68.13   0.000125265  0.000120878           9.39817e-06         68.13     31.87          30               8               22           26.6667            73.3333

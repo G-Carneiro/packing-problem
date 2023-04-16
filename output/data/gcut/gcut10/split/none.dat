@@ -1,0 +1,12 @@
+Instance    SplitMode    OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+GCUT10      NONE         AREA         True                       85.6445   0.00013237   0.0001297             6.07551e-06       85.6445   14.3555          20               3               17                15                 85
+GCUT10      NONE         AREA         False                      61.308    0.000872612  0.000868559           1.46126e-05       61.308    38.692           20               4               16                20                 80
+GCUT10      NONE         PERIMETER    True                       85.6445   0.000136995  0.000131607           1.00844e-05       85.6445   14.3555          20               3               17                15                 85
+GCUT10      NONE         PERIMETER    False                      84.6795   0.000695515  0.000692368           6.30328e-06       84.6795   15.3205          20               5               15                25                 75
+GCUT10      NONE         HEIGHT       True                       59.7263   6.40869e-05  6.03199e-05           5.52679e-06       59.7263   40.2737          20               2               18                10                 90
+GCUT10      NONE         HEIGHT       False                      51.2196   0.00052104   0.000518084           6.47797e-06       51.2196   48.7804          20               3               17                15                 85
+GCUT10      NONE         WIDTH        True                       87.7079   0.000143719  0.000134706           1.80352e-05       87.7079   12.2921          20               3               17                15                 85
+GCUT10      NONE         WIDTH        False                      53.622    0.000184202  0.000182629           5.34951e-06       53.622    46.378           20               3               17                15                 85
+GCUT10      NONE         ID           True                       70.819    6.34193e-05  6.12736e-05           4.99656e-06       70.819    29.181           20               2               18                10                 90
+GCUT10      NONE         ID           False                      73.1757   0.000456047  0.000450611           1.46858e-05       73.1757   26.8243          20               4               16                20                 80

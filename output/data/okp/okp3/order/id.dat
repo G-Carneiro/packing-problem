@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+OKP3        VERTICALLY    ID           True                         87.04   0.000163174  0.000158787           8.53871e-06         87.04     12.96          30              11               19           36.6667            63.3333
+OKP3        VERTICALLY    ID           False                        68.13   0.000125265  0.000120878           9.39817e-06         68.13     31.87          30               8               22           26.6667            73.3333
+OKP3        HORIZONTALLY  ID           True                         55.74   0.000103426  0.000100851           6.38926e-06         55.74     44.26          30               6               24           20                 80
+OKP3        HORIZONTALLY  ID           False                        47      0.000111532  0.000108242           7.4353e-06          47        53             30               7               23           23.3333            76.6667
+OKP3        MAX_AREA      ID           True                         68.48   0.00018425   0.000181198           1.03303e-05         68.48     31.52          30               7               23           23.3333            76.6667
+OKP3        MAX_AREA      ID           False                        75.88   0.000209808  0.000203133           1.25246e-05         75.88     24.12          30               8               22           26.6667            73.3333
+OKP3        NONE          ID           True                         87.04   0.00278034   0.00277638            1.81352e-05         87.04     12.96          30              11               19           36.6667            63.3333
+OKP3        NONE          ID           False                        67      0.00256896   0.00256991            1.01096e-05         67        33             30               9               21           30                 70

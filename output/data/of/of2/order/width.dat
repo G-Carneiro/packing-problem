@@ -1,0 +1,10 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+OF2         VERTICALLY    WIDTH        True                       81.8214   7.79629e-05  7.39098e-05           8.31667e-06       81.8214   18.1786          24               6               18           25                 75
+OF2         VERTICALLY    WIDTH        False                      54.75     8.39233e-05  8.08239e-05           5.71409e-06       54.75     45.25            24               6               18           25                 75
+OF2         HORIZONTALLY  WIDTH        True                       77.1071   9.35555e-05  9.15527e-05           5.34951e-06       77.1071   22.8929          24               7               17           29.1667            70.8333
+OF2         HORIZONTALLY  WIDTH        False                      79.6071   0.000101852  9.91821e-05           7.16748e-06       79.6071   20.3929          24               9               15           37.5               62.5
+OF2         MAX_AREA      WIDTH        True                       77.1071   0.000174332  0.000171185           7.72329e-06       77.1071   22.8929          24               7               17           29.1667            70.8333
+OF2         MAX_AREA      WIDTH        False                      54.75     0.000154829  0.000153542           5.87226e-06       54.75     45.25            24               6               18           25                 75
+OF2         NONE          WIDTH        True                       77.1071   0.00296488   0.00296283            5.78056e-06       77.1071   22.8929          24               7               17           29.1667            70.8333
+OF2         NONE          WIDTH        False                      71.3214   0.00245285   0.00245667            9.44691e-06       71.3214   28.6786          24               8               16           33.3333            66.6667

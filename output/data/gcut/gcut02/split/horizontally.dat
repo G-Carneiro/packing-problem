@@ -1,0 +1,12 @@
+Instance    SplitMode     OrderMode    Decrescent      Solution Quality %    Exec. Time       Median    Standard deviation    Occupied %    Free %    Nº Items    Inside Items    Outside Items    Inside Items %    Outside Items %
+
+GCUT02      HORIZONTALLY  AREA         True                       65.656    3.29018e-05  3.12328e-05           3.51051e-06       65.656    34.344           20               2               18                10                 90
+GCUT02      HORIZONTALLY  AREA         False                      56.2416   7.13348e-05  6.98566e-05           4.91027e-06       56.2416   43.7584          20               5               15                25                 75
+GCUT02      HORIZONTALLY  PERIMETER    True                       65.656    3.33309e-05  3.09944e-05           4.57217e-06       65.656    34.344           20               2               18                10                 90
+GCUT02      HORIZONTALLY  PERIMETER    False                      63.64     7.45773e-05  7.1764e-05            4.57962e-06       63.64     36.36            20               5               15                25                 75
+GCUT02      HORIZONTALLY  HEIGHT       True                       60.1696   3.35217e-05  3.17097e-05           3.68308e-06       60.1696   39.8304          20               2               18                10                 90
+GCUT02      HORIZONTALLY  HEIGHT       False                      44.344    4.58717e-05  4.48227e-05           3.35349e-06       44.344    55.656           20               3               17                15                 85
+GCUT02      HORIZONTALLY  WIDTH        True                       68.1568   5.53131e-05  5.29289e-05           6.05414e-06       68.1568   31.8432          20               4               16                20                 80
+GCUT02      HORIZONTALLY  WIDTH        False                      56.2416   7.24792e-05  7.05719e-05           5.21696e-06       56.2416   43.7584          20               5               15                25                 75
+GCUT02      HORIZONTALLY  ID           True                       76.7008   7.0715e-05   6.8903e-05            4.26656e-06       76.7008   23.2992          20               5               15                25                 75
+GCUT02      HORIZONTALLY  ID           False                      56.8624   5.76973e-05  5.55515e-05           4.32584e-06       56.8624   43.1376          20               4               16                20                 80
