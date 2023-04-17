@@ -1,31 +1,81 @@
 \input{beforetext/cover}
 
 % --------------------------------------------
-% Geração da capa.
+% Geração da capa. (obrigatório)
 % --------------------------------------------
 \printcoverufsc
 %\printcover
 
 % --------------------------------------------
-% Geração da folha de rosto.
+% Geração da folha de rosto. (obrigatório)
 % --------------------------------------------
 \printtitlepage
 
+% --------------------------------------------
+% Geração da ficha catalográfica.(obrigatório)
+% --------------------------------------------
+\begin{fichacatalografica}
+\end{fichacatalografica}
+
+% --------------------------------------------
+% Errata. (opcional)
+% --------------------------------------------
+%\begin{errata}
+%\end{errata}
+
+% --------------------------------------------
+% Folha de aprovação. (obrigatório)
+% --------------------------------------------
+%\includepdf{}
+
+% --------------------------------------------
+% Dedicatória. (opcional)
+% --------------------------------------------
+%\begin{dedicatoria}
+%\end{dedicatoria}
+
+% --------------------------------------------
+% Agradecimentos. (opcional)
+% --------------------------------------------
+%\begin{agradecimentos}
+%\end{agradecimentos}
+
+% --------------------------------------------
+% Epígrafe. (opcional)
+% --------------------------------------------
+%\begin{epigrafe}
+%\end{epigrafe}
+
+% --------------------------------------------
+% Resumo/Abstract. (obrigatório)
+% --------------------------------------------
 \input{beforetext/abstract}
 
 % --------------------------------------------
-% Lista de Figuras.
+% Lista de Figuras. (opcional)
 % --------------------------------------------
 \listoffigures*
 \newpage
 
 % --------------------------------------------
-% Lista de Tabelas.
+% Lista de Tabelas. (opcional)
 % --------------------------------------------
-%\listoftables*
-%\newpage
+\listoftables*
+\newpage
 
 % --------------------------------------------
-% Geração do Sumário.
+% Lista de Siglas. (opcional)
+% --------------------------------------------
+%\begin{siglas}
+%\end{siglas}
+
+% --------------------------------------------
+% Lista de Símbolos. (opcional)
+% --------------------------------------------
+%\begin{simbolos}
+%\end{simbolos}
+
+% --------------------------------------------
+% Geração do Sumário. (obrigatório)
 % --------------------------------------------
 \tableofcontents*
