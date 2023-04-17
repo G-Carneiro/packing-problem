@@ -3,11 +3,11 @@ from os.path import basename, dirname
 from time import time
 
 from numpy import mean, median, std
-from tabulate import tabulate
 
 from src.model.item import Item
 from src.model.model import Model
 from src.utils.folders import *
+from src.utils.functions import *
 from src.utils.order_key import OrderKey
 from src.utils.split_mode import SplitMode
 
@@ -109,4 +109,7 @@ def test():
 
 # TODO: run bkw13, with order=NONE
 if __name__ == "__main__":
-    main()
+    data_to_tex_table(data_file="output/data/all.dat", tex_file="utils/tables/all.tex",
+                      columns=[0, 1, 2, 3, 4, 5, 13],
+                      headers=["Instance", "SplitMode", "OrderMode", "Descending",
+                               "Quality %", "Exec. Time", "Items %"])
