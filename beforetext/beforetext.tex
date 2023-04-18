@@ -14,8 +14,9 @@
 % --------------------------------------------
 % Geração da ficha catalográfica.(obrigatório)
 % --------------------------------------------
-\begin{fichacatalografica}
-\end{fichacatalografica}
+% TODO:
+%\begin{fichacatalografica}
+%\end{fichacatalografica}
 
 % --------------------------------------------
 % Errata. (opcional)
@@ -26,6 +27,7 @@
 % --------------------------------------------
 % Folha de aprovação. (obrigatório)
 % --------------------------------------------
+% TODO
 %\includepdf{}
 
 % --------------------------------------------
@@ -54,14 +56,16 @@
 % --------------------------------------------
 % Lista de Figuras. (opcional)
 % --------------------------------------------
+\pdfbookmark[0]{\listfigurename}{lof}
 \listoffigures*
-\newpage
+\cleardoublepage
 
 % --------------------------------------------
 % Lista de Tabelas. (opcional)
 % --------------------------------------------
+\pdfbookmark[0]{\listtablename}{lot}
 \listoftables*
-\newpage
+\cleardoublepage
 
 % --------------------------------------------
 % Lista de Siglas. (opcional)
