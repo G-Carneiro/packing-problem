@@ -33,7 +33,9 @@
 \RequirePackage{indentfirst}                        % Indenta primeiro parágrafo
 \RequirePackage{mathtools}                          % Mais símbolos matemáticos
 \RequirePackage{amsfonts}                           % Fontes matemáticas
-\RequirePackage{longtable}                          %
+\RequirePackage{longtable}                          % Tabelas em mais de uma página
+\RequirePackage{csquotes}                           % Aspas seguindo linguagem babel (biblatex)
+%\RequirePackage[a-1b]{pdfx}                         % Gerar PDF/A
 \RequirePackage{hyperref}                           % permissão de hyperlinks
 \RequirePackage[style=abnt]{biblatex}               % Referências com padrão ABNT
 
@@ -45,6 +47,8 @@
 \renewcommand{\listingscaption}{Código}
 \renewcommand{\listoflistingscaption}{Lista de Códigos}
 \providecommand{\listingautorefname}{Código}
+
+\pgfplotsset{compat=1.18}
 %\pagecolor{black}
 %\color{white}
 
