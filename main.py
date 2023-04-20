@@ -1,5 +1,4 @@
-from os import listdir, makedirs, scandir
-from os.path import basename, dirname
+from os.path import basename
 from time import time
 
 from numpy import mean, median, std
@@ -109,7 +108,4 @@ def test():
 
 # TODO: run bkw13, with order=NONE
 if __name__ == "__main__":
-    data_to_tex_table(data_file="output/data/all.dat", tex_file="utils/tables/all.tex",
-                      columns=[0, 1, 2, 3, 4, 5, 13],
-                      headers=["Instance", "SplitMode", "OrderMode", "Descending",
-                               "Quality %", "Exec. Time", "Items %"])
+    folder_data_to_ibge_table(folder="output/data")
