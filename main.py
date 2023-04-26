@@ -1,4 +1,3 @@
-from os.path import basename
 from time import time
 
 from numpy import mean, median, std
@@ -109,3 +108,4 @@ def test():
 # TODO: run bkw13, with order=NONE
 if __name__ == "__main__":
     folder_data_to_ibge_table(folder="output/data")
+    # folder_image_to_figure()

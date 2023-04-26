@@ -1,12 +1,10 @@
 from os import listdir, makedirs
-from os.path import dirname, exists, isdir
+from os.path import basename, dirname, exists, isdir
 
 from tabulate import tabulate
 
-complete_headers = ["Instance", "SplitMode", "OrderMode", "Decrescent", "Solution Quality %",
-                    "Exec. Time", "Median", "Standard deviation", "Occupied %", "Free %",
-                    "Nº Items", "Inside Items", "Outside Items", "Inside Items %",
-                    "Outside Items %"]
+from src.utils.order_key import OrderKey
+from src.utils.split_mode import SplitMode
 
 
 def get_data(data_file: str, columns: list[int], short: bool = True) -> list[list[str]]:
@@ -27,52 +25,34 @@ def get_data(data_file: str, columns: list[int], short: bool = True) -> list[lis
     return data
 
 
-def data_to_tex_table(data_file: str, tex_file: str, short: bool = True,
-                      headers: list[str] = None, columns: list[int] = None
-                      ) -> None:
-    data = get_data(data_file=data_file, short=short, columns=columns)
-    with open(tex_file, "w") as f:
-        f.write(tabulate(data, tablefmt="latex_longtable", headers=headers))
-
-    return None
-
-
 def make_ibge_table(data: list[list[str]], file: str, caption: str,
-                    label: str, fonte: str = "", nota: str = "",
-                    headers: list[str] = None
+                    label: str, fonte: str = "", nota: str = "", legend: str = "",
+                    headers: list[str] = None, tablefmt: str = "latex", ibge: bool = True
                     ) -> None:
-    table = tabulate(data, tablefmt="latex", headers=headers)
-    lines = [
-        "\\begin{table}[htb!] \n",
-        "\\IBGEtab{ \n",
-        "    \\caption{" + f"{caption}" + "} \n",
-        "    \\label{tab:" + f"{label}" + "} \n",
-        "}{ \n",
-        f"{table} \n",
-        "}{ \n",
-    ]
-    if fonte:
-        lines.append("    \\fonte{" + f"{fonte}" + "} \n")
-    if nota:
-        lines.append("    \\nota{" + f"{nota}" + "} \n")
-    lines += [
-        "} \n",
-        "\\end{table} \n"
-    ]
-    with open(file, "w") as f:
-        f.writelines(lines)
+    table = tabulate(data, tablefmt=tablefmt, headers=headers)
+    lines = begin_environment(environment="table", position="!htb", caption=caption, label=label)
+    if ibge:
+        lines += [
+            "\\IBGEtab{}{\n",
+            f"{table}\n",
+            "}{}\n",
+        ]
+    else:
+        lines.append(f"{table}\n")
+    lines += end_environment(environment="table", fonte=fonte, legend=legend, nota=nota)
+    write_environment(tex_file=file, lines=lines)
     return None
 
 
 def data_to_ibge_table(data_file: str, tex_file: str, caption: str, label: str,
                        short: bool = True, headers: list[str] = None,
-                       columns: list[int] = None, fonte: str = "", nota: str = ""
-                       ) -> None:
+                       columns: list[int] = None, fonte: str = "", nota: str = "",
+                       tablefmt: str = "latex", ibge: bool = True) -> None:
     data = get_data(data_file=data_file, columns=columns, short=short)
     folder = dirname(tex_file)
     makedirs(folder, exist_ok=True)
     make_ibge_table(data=data, file=tex_file, caption=caption, label=label,
-                    fonte=fonte, nota=nota, headers=headers)
+                    fonte=fonte, nota=nota, headers=headers, tablefmt=tablefmt, ibge=ibge)
     return None
 
 
@@ -93,8 +73,88 @@ def folder_data_to_ibge_table(folder: str) -> None:
                                            fonte="autor",
                                            columns=[0, 1, 2, 3, 4, 5, 13],
                                            headers=["Instance", "Split", "Order", "Descending",
-                                                    "Quality %", "Time (s)", "Items %"])
+                                                    "Quality %", "Time (s)", "Items %"],
+                                           ibge=True
+                                           )
                         with open("aftertext/anexos.tex", "a") as f:
-                            f.write("\\input{" + f"{tex_file[:-4]}" + "} \n")
+                            f.write("\\input{" + tex_file[:-4] + "}\n")
 
+    return None
+
+
+def make_figure(tex_file: str, image_file: str, caption: str, label: str,
+                fonte: str = "", nota: str = "", legend: str = "",
+                scale: float = 1) -> None:
+    folder = dirname(tex_file)
+    makedirs(folder, exist_ok=True)
+    lines = begin_environment(environment="figure", position="H", caption=caption,
+                              label=label, hide=True)
+    lines.append(f"    \\includegraphics[scale={scale}]" + "{" + image_file + "}\n")
+    lines += end_environment(environment="figure", fonte=fonte, legend=legend, nota=nota)
+    write_environment(tex_file=tex_file, lines=lines)
+    return None
+
+
+def folder_image_to_figure(folder: str = "instances/BKW") -> None:
+    folder_name = basename(dirname(f"{folder}/"))
+    for file_name in sorted(listdir(folder)):
+        file_name = file_name[:-6]
+        for split in SplitMode:
+            split = split.name
+            for order in OrderKey:
+                order = order.name
+                for descending in [True, False]:
+                    folder_with_figures = f"output/figures/{folder_name}/{file_name}/{split}" \
+                                          f"/{order}/{descending}".lower()
+                    if not exists(folder_with_figures):
+                        continue
+                    for figure_name in sorted(listdir(folder_with_figures)):
+                        figure_name = figure_name[:-4]
+                        figure_file = f"{folder_with_figures}/{figure_name}"
+                        tex_file = f"utils/figures/{folder_name}/{file_name}/{split}" \
+                                   f"/{order}/{descending}/{figure_name}.tex".lower()
+                        caption = f"Estado final da instância {file_name.upper()} com " \
+                                  f"configuração: Split={split}," \
+                                  f"Order={order}, descending={descending}"
+                        make_figure(tex_file=tex_file, image_file=figure_file, caption=caption,
+                                    label=f"{file_name}-{split}-{order}-{descending}".lower(),
+                                    fonte="autor", scale=0.5)
+                        with open("aftertext/anexos.tex", "a") as f:
+                            f.write("\\input{" + f"{tex_file[:-4]}" + "}\n")
+
+    return None
+
+
+def begin_environment(environment: str, position: str,
+                      caption: str, label: str,
+                      hide: bool = False) -> list[str]:
+    cap = "\\caption"
+    if hide:
+        cap += "[]"
+    cap += "{" + caption + "}"
+    lines: list[str] = [
+        "\\begin{" + environment + "}[" + f"{position}]\n",
+        "    \\centering\n"
+        "    " + f"{cap}\n",
+        "    \\label{" + f"{environment[:3]}:" + label + "}\n",
+    ]
+    return lines
+
+
+def end_environment(environment: str, fonte: str,
+                    legend: str = "", nota: str = "") -> list[str]:
+    lines: list[str] = []
+    if legend:
+        lines.append("    \\legend{" + legend + "}\n")
+    if nota:
+        lines.append("    \\nota{" + nota + "}\n")
+    if fonte:
+        lines.append("    \\fonte{" + fonte + "}\n")
+    lines.append("\\end{" + environment + "}")
+    return lines
+
+
+def write_environment(tex_file: str, lines: list[str]) -> None:
+    with open(tex_file, "w") as file:
+        file.writelines(lines)
     return None
