@@ -3,6 +3,8 @@ from os.path import basename, dirname, exists, isdir
 
 from tabulate import tabulate
 
+from src.model.data import Data
+from src.utils.descending import Descending
 from src.utils.order_key import OrderKey
 from src.utils.split_mode import SplitMode
 
@@ -26,7 +28,7 @@ def get_data(data_file: str, columns: list[int], short: bool = True) -> list[lis
 
 
 def make_ibge_table(data: list[list[str]], file: str, caption: str,
-                    label: str, fonte: str = "", nota: str = "", legend: str = "",
+                    label: str, fonte: str = "autor", nota: str = "", legend: str = "",
                     headers: list[str] = None, tablefmt: str = "latex", ibge: bool = True
                     ) -> None:
     table = tabulate(data, tablefmt=tablefmt, headers=headers)
@@ -158,3 +160,105 @@ def write_environment(tex_file: str, lines: list[str]) -> None:
     with open(tex_file, "w") as file:
         file.writelines(lines)
     return None
+
+
+def read_file(filename: str) -> list[Data]:
+    with open(filename, "r") as f:
+        lines = f.readlines()
+
+    datas: list[Data] = []
+    for line in lines[2:]:
+        splitted = line.split()
+        name, split, order, descending, quality, time, items = splitted
+        data = Data(instance_name=name, split=split, order=order, descending=descending,
+                    quality=quality, time=time, inside_items=items)
+        datas.append(data)
+
+    return datas
+
+
+def filter_datas(data_set: list[Data], instance_name: str = None, splitmode: str = None,
+                 orderkey: str = None, descending: str = None) -> list[Data]:
+    filtered: list[Data] = []
+    for data in data_set:
+        if data.filter(instance_name=instance_name, split=splitmode,
+                       order=orderkey, descending=descending):
+            filtered.append(data)
+    return filtered
+
+
+def data_to_data_obj(datas: list[list[str]]) -> list[Data]:
+    data_set: list[Data] = []
+    for data in datas:
+        name, split, order, descending, quality, time, items = data
+        quality = float(quality)
+        time = float(time)
+        items = float(items)
+        data = Data(instance_name=name, split=split, order=order, descending=descending,
+                    quality=quality, time=time, inside_items=items)
+        data_set.append(data)
+    return data_set
+
+
+def compare(data_set: list[Data], iterable) -> None:
+    data_set_filtered: dict[str, list[Data]] = {}
+    name = iterable.__name__
+    headers = [name, "Wons", "Draws", "Quality %", "Items %", "Time (s)"]
+    wons: dict[str, int] = {}
+    draws: dict[str, int] = {}
+    quality: dict[str, float] = {}
+    items: dict[str, float] = {}
+    time: dict[str, float] = {}
+    for key in iterable:
+        data_set_filtered[key] = eval(f"filter_datas(data_set={data_set}, "
+                                      f"{name.lower()}=key.name[0])")
+        wons[key] = 0
+        draws[key] = 0
+        quality[key] = 0
+        items[key] = 0
+        time[key] = 0
+
+    size = len(data_set_filtered[iterable(1)])
+    for idx in range(size):
+        qualities = []
+        for key, value in data_set_filtered.items():
+            try:
+                quality[key] += value[idx].quality
+                items[key] += value[idx].inside_items
+                time[key] += value[idx].time
+                qualities.append(value[idx].quality)
+            except IndexError:
+                pass
+        greatest = max(qualities)
+        draw: bool = qualities.count(greatest) > 1
+        for key, value in data_set_filtered.items():
+            try:
+                if (value[idx].quality == greatest):
+                    wons[key] += 1
+                    if draw:
+                        draws[key] += 1
+            except IndexError:
+                pass
+    data = []
+    for key in iterable:
+        quality[key] /= size
+        items[key] /= size
+        time[key] /= size
+        data.append([key.name[0], wons[key], draws[key],
+                     quality[key], items[key], time[key]])
+    make_ibge_table(data=data, file=f"utils/tables/compare/{name.lower()}.tex",
+                    caption=f"Resultado da comparação entre {name}.", label=name.lower(),
+                    headers=headers)
+    return None
+
+
+def compare_descending(data_set: list[Data]) -> None:
+    return compare(data_set=data_set, iterable=Descending)
+
+
+def compare_split(data_set: list[Data]) -> None:
+    return compare(data_set=data_set, iterable=SplitMode)
+
+
+def compare_order(data_set: list[Data]) -> None:
+    return compare(data_set=data_set, iterable=OrderKey)
