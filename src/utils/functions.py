@@ -262,3 +262,60 @@ def compare_split(data_set: list[Data]) -> None:
 
 def compare_order(data_set: list[Data]) -> None:
     return compare(data_set=data_set, iterable=OrderKey)
+
+
+def compare_combinations(data_set: list[Data]) -> None:
+    data_set_filtered: dict[tuple[str, str, str], list[Data]] = {}
+    headers = ["Split", "Order", "Descending", "Wons", "Draws", "Quality %", "Items %", "Time (s)"]
+    wons: dict[tuple[str, str, str], int] = {}
+    draws: dict[tuple[str, str, str], int] = {}
+    quality: dict[tuple[str, str, str], float] = {}
+    items: dict[tuple[str, str, str], float] = {}
+    time: dict[tuple[str, str, str], float] = {}
+    for split in SplitMode:
+        split = split.name[0]
+        for order in OrderKey:
+            order = order.name[0]
+            for descending in Descending:
+                descending = descending.name[0]
+                key: tuple[str, str, str] = (split, order, descending)
+                data_set_filtered[key] = filter_datas(data_set=data_set, splitmode=split,
+                                                      orderkey=order, descending=descending)
+                wons[key] = 0
+                draws[key] = 0
+                quality[key] = 0
+                items[key] = 0
+                time[key] = 0
+
+    size = 45  # len(data_set) / (len(SplitMode) * len(OrderKey) * len(Descending))
+    for idx in range(size):
+        qualities = []
+        for key, value in data_set_filtered.items():
+            try:
+                quality[key] += value[idx].quality
+                items[key] += value[idx].inside_items
+                time[key] += value[idx].time
+                qualities.append(value[idx].quality)
+            except IndexError:
+                pass
+        greatest = max(qualities)
+        draw: bool = qualities.count(greatest) > 1
+        for key, value in data_set_filtered.items():
+            try:
+                if (value[idx].quality == greatest):
+                    wons[key] += 1
+                    if draw:
+                        draws[key] += 1
+            except IndexError:
+                pass
+    data = []
+    for key in data_set_filtered.keys():
+        quality[key] /= size
+        items[key] /= size
+        time[key] /= size
+        data.append([key[0], key[1], key[2], wons[key], draws[key],
+                     quality[key], items[key], time[key]])
+    make_ibge_table(data=data, file=f"utils/tables/compare/combinations.tex",
+                    caption=f"Resultado da comparação entre todas combinações.",
+                    label="combinations", headers=headers)
+    return None
