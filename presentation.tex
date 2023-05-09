@@ -1,0 +1,241 @@
+%! Author = gabriel
+%! Date = 5/7/23
+
+% Preamble
+\documentclass[12pt]{beamer}
+
+% Packages
+\usepackage{amsmath}
+\usepackage{setup/packages}
+
+\usetheme{Madrid}
+\usecolortheme[named=darkgray]{structure}
+\setbeamercolor{background canvas}{bg=gray}
+%\setbeamercolor{frametitle}{bg=darkgray}
+\setbeamercolor{footline}{bg=white}
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{itemize item}[circle]
+\setbeamertemplate{itemize subitem}[circle]
+\setbeamertemplate{sections/subsections in toc}[sections numbered]
+\setbeamercolor{section in toc}{fg=black}
+\setbeamertemplate{navigation symbols}{}
+%\setbeamercolor{titlelike}{fg=white}
+%\usefonttheme{structuresmallcapsserif}
+\usefonttheme{serif}
+\title{Problemas de Empacotamento}
+\subtitle{métodos heurísticos baseados em \textit{bottom-left}}
+\author[\href{https://github.com/G-Carneiro}{Gabriel Carneiro}]{
+    \href{https://github.com/G-Carneiro}{Gabriel Medeiros Lopes Carneiro} \\
+    Orientador: Pedro Belin Castellucci \\
+    Coorientador: Rafael de Santiago
+}
+\institute[UFSC]{Universidade Federal de Santa Catarina}
+
+\logo{\includegraphics[scale=0.05]{utils/images/vertical_sigla_PB_fundo_claro}}
+\titlegraphic{
+    \includegraphics[scale=0.15]{utils/images/vertical_sigla_PB_fundo_claro}
+}
+%
+\setbeamertemplate{title page}[default][rounded=true]
+%\setbeamertemplate{footline}{
+%    \leavevmode%
+%    \hbox{%
+%        \begin{beamercolorbox}[wd=0.7\paperwidth,ht=2.25ex,dp=1ex,leftskip=1em]{footline}%
+%            \includegraphics[scale=0.05]{utils/images/logo-ufsc}\hspace*{1em}%
+%            \usebeamerfont{author in head/foot}\href{https://github.com/G-Carneiro}{Gabriel Carneiro}
+%        \end{beamercolorbox}%
+%%        \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+%%            \usebeamerfont{title in head/foot}\insertshorttitle
+%%        \end{beamercolorbox}%
+%        \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+%%            \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+%            \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+%        \end{beamercolorbox}}%
+%    \vskip0pt%
+%}
+
+% Document
+\begin{document}
+    \begin{frame}[plain]
+        \titlepage
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Sumário}
+        \tableofcontents
+    \end{frame}
+
+
+    \section{Conceitos básicos}\label{sec:introducao}
+
+    \subsection{Modelos de otimização}\label{subsec:modelos-de-otimizacao}
+    \begin{frame}
+        \frametitle{Modelos de otimização}
+        \[
+            \min\!/\!\max f(x), x \in \mathcal{X}.
+        \]
+        \begin{itemize}
+            \item $x$: variável de decisão, $x = x_1, x_2, \dots, x_n$.
+            \item $\mathcal{X}$: conjunto factível ou domínio;
+            \item $f(x)$: função objetivo.
+        \end{itemize}
+    \end{frame}
+
+    \subsection{Tipos de soluções}\label{subsec:tipos-de-solucoes}
+    \begin{frame}
+        \frametitle{Tipos de soluções}
+        \begin{itemize}
+            \item Factível.
+            \begin{itemize}
+                \item Problema ilimitado.
+            \end{itemize}
+            \item Infactível.
+            \item Ótima.
+        \end{itemize}
+    \end{frame}
+
+    \subsection{Métodos exatos × heurísticos}\label{subsec:metodos-exatos-heuristicos}
+    \begin{frame}
+        \frametitle{Métodos exatos × heurísticos}
+        Exatos
+        \begin{itemize}
+            \item Solução ótima.
+            \item Tempo.
+            \item Recursos.
+        \end{itemize}
+        Heurísticos
+        \begin{itemize}
+            \item Solução factível.
+            \item Simplicidade.
+            \item Grande porte.
+        \end{itemize}
+    \end{frame}
+
+
+    \section{Problema}\label{sec:problema}
+    \begin{frame}
+        \frametitle{Problema}
+        Alocar peças em um espaço.
+        \begin{itemize}
+            \item Difícil resolução.
+            \item $N$-dimensional.
+            \item Tipos de peças.
+            \item Classificação.
+            \item Variantes.
+        \end{itemize}
+    \end{frame}
+
+    \subsection{N-dimensões}\label{subsec:n-dimensoes}
+    \begin{frame}
+        \frametitle{$N$-dimensões}
+        \begin{figure}[!htb]
+            \centering
+            \includegraphics[scale=0.6]{utils/images/packing-example}
+            \caption{Represeção 1D, 2D e 3D.}
+            \label{fig:packing}
+        \end{figure}
+    \end{frame}
+
+    \subsection{Tipos de peças}\label{subsec:tipos-de-pecas}
+    \begin{frame}
+        \frametitle{Tipos de peças}
+        \begin{figure}[!htb]
+            \centering
+            \includegraphics[scale=0.6]{utils/images/pieces-example}
+            \caption{Exemplos de peças regulares (esquerda) e irregulares (direita).}
+            \label{fig:pieces}
+        \end{figure}
+    \end{frame}
+
+    \subsection{Classificação}\label{subsec:classificacao}
+    \begin{frame}
+        \frametitle{Classificação}
+        \begin{itemize}
+            \item Empacotamento em faixa.
+            \item Empacotamento da mochila.
+            \item Empacotamento em caixas.
+            \item Empacotamento ortogonal.
+        \end{itemize}
+    \end{frame}
+
+    \subsection{Variantes}\label{subsec:variantes}
+    \begin{frame}
+        \frametitle{Variantes}
+        \begin{itemize}
+            \item Corte guilhotinado.
+            \item Rotações ortogonais.
+            \item Restrições de carga e descarga.
+            \item Caixas de tamanho variável.
+        \end{itemize}
+    \end{frame}
+
+
+    \section{\textit{Bottom-left}}\label{sec:bottom-left}
+    \begin{frame}
+        \frametitle{\textit{Bottom-left}}
+        \begin{figure}[!htb]
+            \centering
+            \includegraphics[scale=0.8]{utils/images/bottom-left}
+            \caption{Representação de alocação.}
+            \label{fig:bottom-left}
+        \end{figure}
+    \end{frame}
+
+    \subsection{Critérios de ordenação}\label{subsec:criterios-de-ordenacao}
+    \begin{frame}
+        \frametitle{Critérios de ordenação}
+        \begin{itemize}
+            \item Área.
+            \item Perímetro.
+            \item Largura.
+            \item Altura.
+            \item Id.
+        \end{itemize}
+    \end{frame}
+
+    \subsection{Regiões}\label{subsec:regioes}
+    \begin{frame}
+        \frametitle{Regiões}
+        \begin{itemize}
+            \item Vertical.
+            \item Horizontal.
+            \item $\max$(área).
+            \item Nenhuma.
+        \end{itemize}
+    \end{frame}
+
+    \subsection{Testes}\label{subsec:testes}
+    \begin{frame}
+        \frametitle{Testes}
+        \begin{itemize}
+            \item 45 Instâncias.
+            \begin{itemize}
+                \item BKW.
+                \item GCUT.
+                \item NGCUT.
+                \item OF.
+                \item OKP.
+            \end{itemize}
+            \item 5 testes por configuração.
+            \item 9000 execuções.
+            \item ±5 horas.
+        \end{itemize}
+    \end{frame}
+
+
+    \section{Resultados}\label{sec:resultados}
+    \begin{frame}
+        \frametitle{Resultados}
+        Inserir tabela com resultados.
+    \end{frame}
+
+
+    \section{Conclusão}\label{sec:conclusao}
+    \begin{frame}
+        \frametitle{Conclusão}
+        \begin{itemize}
+            \item Resultados inesperados.
+            \item Múltiplos métodos de solução.
+        \end{itemize}
+    \end{frame}
+\end{document}

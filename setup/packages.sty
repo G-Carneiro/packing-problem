@@ -18,7 +18,7 @@
 %\RequirePackage[nottoc]{tocbibind}                 % Adicionar referencias no sumário
 \RequirePackage{array}                              % Edição de colunas, matrizes e tabelas.
 %\RequirePackage[useregional=numeric]{datetime2}    % Fuso horario brasileiro
-\RequirePackage{titling}                            % get title, author, date
+%\RequirePackage{titling}                            % get title, author, date
 \RequirePackage{graphicx}                           % Plotar imagens e gráficos
 \RequirePackage{float}                              % Posicionamento forçado de imagens
 \RequirePackage{xcolor}                             % Pacote de cores
@@ -59,8 +59,11 @@
 \providecommand{\printeducationcenter}{}
 \newcommand{\educationcenter}[1]{\renewcommand{\printeducationcenter}{#1}}
 
+\ifdefined\subtitle
+\else
 \providecommand{\printsubtitle}{}
 \newcommand{\subtitle}[1]{\renewcommand{\printsubtitle}{#1}}
+\fi
 
 \providecommand{\printaffilinitials}{}
 \newcommand{\affilinitials}[1]{\renewcommand{\printaffilinitials}{#1}}
