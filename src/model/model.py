@@ -160,10 +160,11 @@ class Model:
             return self.split_horizontally(region=region, item=item)
         return self.split_vertically(region=region, item=item)
 
-    def solve(self, export: bool = False, export_all: bool = False, show_regions: bool = False
-              ) -> float:
+    def solve(self, export: bool = False, export_all: bool = False,
+              show_regions: bool = False, show_labels: bool = False) -> float:
         if export_all:
-            self.export_model(folder=f"output/figures", show_regions=show_regions)
+            self.export_model(folder=f"output/figures", show_regions=show_regions,
+                              show_labels=show_labels)
 
         for item in self.items:
             for region in self._regions:
@@ -194,10 +195,12 @@ class Model:
 
                 self.replace_region(original=region, split=split)
                 if export_all:
-                    self.export_model(folder=f"output/figures", show_regions=show_regions)
+                    self.export_model(folder=f"output/figures", show_regions=show_regions,
+                                      show_labels=show_labels)
                 break
         if export and not export_all:
-            self.export_model(folder=f"output/figures", show_regions=show_regions)
+            self.export_model(folder=f"output/figures", show_regions=show_regions,
+                              show_labels=show_labels)
         return self.solution_quality()
 
     def reset(self, order: OrderMode = None, split: SplitMode = None) -> None:

@@ -22,6 +22,8 @@
 %\setbeamercolor{titlelike}{fg=white}
 %\usefonttheme{structuresmallcapsserif}
 \usefonttheme{serif}
+%\setbeamertemplate{note page}[compress]
+\setbeameroption{show notes on second screen}
 \title{Problemas de Empacotamento}
 \subtitle{métodos heurísticos baseados em \textit{bottom-left}}
 \author[\href{https://github.com/G-Carneiro}{Gabriel Carneiro}]{
@@ -150,11 +152,13 @@
     \subsection{Classificação}\label{subsec:classificacao}
     \begin{frame}
         \frametitle{Classificação}
+        \note[item]{NP-difícil}
         \begin{itemize}
-            \item Empacotamento em faixa.
-            \item Empacotamento da mochila.
-            \item Empacotamento em caixas.
-            \item Empacotamento ortogonal.
+            \item<1-> Empacotamento em faixa.
+            \note[item]{NP-difícil}
+            \item<2-> Empacotamento da mochila.
+            \item<3-> Empacotamento em caixas.
+            \item<4-> Empacotamento ortogonal.
         \end{itemize}
     \end{frame}
 
@@ -224,9 +228,23 @@
 
 
     \section{Resultados}\label{sec:resultados}
+
+    \subsection{Configurações ruins}\label{subsec:configuracoes-ruins}
     \begin{frame}
-        \frametitle{Resultados}
-        Inserir tabela com resultados.
+        \frametitle{Configurações ruins}
+
+        \only<1>{\input{utils/tables/compare/descending}}
+        \only<2->{
+            \begin{figure}
+                \centering
+                \includegraphics<2>[scale=0.5]{output/figures/bkw/bkw01/horizontally/area/false/00}
+                \includegraphics<3>[scale=0.5]{output/figures/bkw/bkw01/horizontally/area/false/01}
+                \includegraphics<4>[scale=0.5]{output/figures/bkw/bkw01/horizontally/area/false/02}
+                \includegraphics<5>[scale=0.5]{output/figures/bkw/bkw01/horizontally/area/false/06}
+                \caption{Regiões criadas na ordenação crescente.}
+                \label{fig:false}
+            \end{figure}
+        }
     \end{frame}
 
 

@@ -1,5 +1,6 @@
 from os import listdir, makedirs
 from os.path import basename, dirname, exists, isdir
+from re import sub
 
 from tabulate import tabulate
 
@@ -33,14 +34,16 @@ def make_ibge_table(data: list[list[str]], file: str, caption: str,
                     ) -> None:
     table = tabulate(data, tablefmt=tablefmt, headers=headers)
     lines = begin_environment(environment="table", position="!htb", caption=caption, label=label)
+    tabular = file.replace("tables", "tabular")
+    write_environment(tex_file=tabular, lines=table)
     if ibge:
         lines += [
             "\\IBGEtab{}{\n",
-            f"{table}\n",
+            "\\input{" + tabular[:-4] + "}\n",
             "}{}\n",
         ]
     else:
-        lines.append(f"{table}\n")
+        lines.append("\\input{" + tabular[:-4] + "}\n")
     lines += end_environment(environment="table", fonte=fonte, legend=legend, nota=nota)
     write_environment(tex_file=file, lines=lines)
     return None
@@ -51,8 +54,6 @@ def data_to_ibge_table(data_file: str, tex_file: str, caption: str, label: str,
                        columns: list[int] = None, fonte: str = "", nota: str = "",
                        tablefmt: str = "latex", ibge: bool = True) -> None:
     data = get_data(data_file=data_file, columns=columns, short=short)
-    folder = dirname(tex_file)
-    makedirs(folder, exist_ok=True)
     make_ibge_table(data=data, file=tex_file, caption=caption, label=label,
                     fonte=fonte, nota=nota, headers=headers, tablefmt=tablefmt, ibge=ibge)
     return None
@@ -87,8 +88,6 @@ def folder_data_to_ibge_table(folder: str) -> None:
 def make_figure(tex_file: str, image_file: str, caption: str, label: str,
                 fonte: str = "", nota: str = "", legend: str = "",
                 scale: float = 1) -> None:
-    folder = dirname(tex_file)
-    makedirs(folder, exist_ok=True)
     lines = begin_environment(environment="figure", position="H", caption=caption,
                               label=label, hide=True)
     lines.append(f"    \\includegraphics[scale={scale}]" + "{" + image_file + "}\n")
@@ -156,9 +155,14 @@ def end_environment(environment: str, fonte: str,
     return lines
 
 
-def write_environment(tex_file: str, lines: list[str]) -> None:
+def write_environment(tex_file: str, lines: list[str] | str) -> None:
+    folder = dirname(tex_file)
+    makedirs(folder, exist_ok=True)
     with open(tex_file, "w") as file:
-        file.writelines(lines)
+        if isinstance(lines, list):
+            file.writelines(lines)
+        else:
+            file.write(lines)
     return None
 
 
@@ -170,8 +174,9 @@ def read_file(filename: str) -> list[Data]:
     for line in lines[2:]:
         splitted = line.split()
         name, split, order, descending, quality, time, items = splitted
-        data = Data(instance_name=name, split=split, order=order, descending=descending,
-                    quality=quality, time=time, inside_items=items)
+        instance_set = sub(r"\d", "", name)
+        data = Data(instance_name=name, instance_set=instance_set, split=split, order=order,
+                    descending=descending, quality=quality, time=time, inside_items=items)
         datas.append(data)
 
     return datas
@@ -194,16 +199,20 @@ def data_to_data_obj(datas: list[list[str]]) -> list[Data]:
         quality = float(quality)
         time = float(time)
         items = float(items)
-        data = Data(instance_name=name, split=split, order=order, descending=descending,
-                    quality=quality, time=time, inside_items=items)
+        instance_set = sub(r"\d", "", name)
+        data = Data(instance_name=name, instance_set=instance_set, split=split, order=order,
+                    descending=descending, quality=quality, time=time, inside_items=items)
         data_set.append(data)
     return data_set
 
 
-def compare(data_set: list[Data], iterable) -> None:
+def compare(data_set: list[Data], iterable, count_wons: bool = True) -> None:
     data_set_filtered: dict[str, list[Data]] = {}
     name = iterable.__name__
-    headers = [name, "Wons", "Draws", "Quality %", "Items %", "Time (s)"]
+    headers = [name]
+    if count_wons:
+        headers += ["Wons", "Draws"]
+    headers += ["Quality %", "Items %", "Time (s)"]
     wons: dict[str, int] = {}
     draws: dict[str, int] = {}
     quality: dict[str, float] = {}
@@ -229,6 +238,8 @@ def compare(data_set: list[Data], iterable) -> None:
                 qualities.append(value[idx].quality)
             except IndexError:
                 pass
+        if not count_wons:
+            continue
         greatest = max(qualities)
         draw: bool = qualities.count(greatest) > 1
         for key, value in data_set_filtered.items():

@@ -4,6 +4,7 @@ from dataclasses import dataclass
 @dataclass()
 class Data:
     instance_name: str
+    instance_set: str
     split: str
     order: str
     descending: str
