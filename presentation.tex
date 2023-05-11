@@ -150,27 +150,47 @@
     \end{frame}
 
     \subsection{Classificação}\label{subsec:classificacao}
-    \begin{frame}
+    \begin{frame}<-4> % Necessário para usar environment dentro de \note
         \frametitle{Classificação}
-        \note[item]{NP-difícil}
         \begin{itemize}
             \item<1-> Empacotamento em faixa.
-            \note[item]{NP-difícil}
             \item<2-> Empacotamento da mochila.
             \item<3-> Empacotamento em caixas.
             \item<4-> Empacotamento ortogonal.
         \end{itemize}
+        \note{
+            \begin{itemize}
+                \item<1-> Dado um conjunto de itens e uma caixa com comprimento fixo,
+                queremos encontrar uma solução de altura mínima.
+                \item<2-> Nesse caso, queremos maximizar o valor da caixa
+                (geralmente é a área da caixa).
+                \item<3-> Minimizar o número de caixas necessárias para empacotar todos os itens.
+                \item<4-> Alocar todos os itens numa caixa.
+                \item<4-> Todos os problemas são NP-difícil, com exceção do ortogonal (NP-completo).
+            \end{itemize}
+        }
     \end{frame}
 
     \subsection{Variantes}\label{subsec:variantes}
-    \begin{frame}
+    \begin{frame}<-4> % Necessário para usar environment dentro de \note
         \frametitle{Variantes}
         \begin{itemize}
-            \item Corte guilhotinado.
-            \item Rotações ortogonais.
-            \item Restrições de carga e descarga.
-            \item Caixas de tamanho variável.
+            \item<1-> Corte guilhotinado.
+            \item<2-> Rotações ortogonais.
+            \item<3-> Restrições de carga e descarga.
+            \item<4-> Caixas de tamanho variável.
         \end{itemize}
+        \note{
+            \begin{itemize}
+                \item<1-> Consiste em cortar a caixa de forma paralela
+                a um dos lados de forma recursiva.
+                \item<2-> É um modo de relaxar o problema, permitindo rotações de 90° nos itens.
+                \item<3-> Algumas peças precisam ser posicionadas em certa posição
+                ou próximas a outras.
+                \item<4-> Define que caixas não precisam ter o mesmo tamanho
+                (aplicável somente para Empacotamento em Caixas.)
+            \end{itemize}
+        }
     \end{frame}
 
 
@@ -214,11 +234,11 @@
         \begin{itemize}
             \item 45 Instâncias.
             \begin{itemize}
-                \item BKW.
-                \item GCUT.
-                \item NGCUT.
-                \item OF.
-                \item OKP.
+                \item BKW\@.
+                \item GCUT\@.
+                \item NGCUT\@.
+                \item OF\@.
+                \item OKP\@.
             \end{itemize}
             \item 5 testes por configuração.
             \item 9000 execuções.
@@ -229,9 +249,9 @@
 
     \section{Resultados}\label{sec:resultados}
 
-    \subsection{Configurações ruins}\label{subsec:configuracoes-ruins}
+    \subsection{Comparativo - Ordenação}\label{subsec:configuracoes-ruins}
     \begin{frame}
-        \frametitle{Configurações ruins}
+        \frametitle{Comparativo - Ordenação}
 
         \only<1>{\input{utils/tabular/compare/descending}}
         \only<2->{
