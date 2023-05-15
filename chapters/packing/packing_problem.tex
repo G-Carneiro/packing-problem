@@ -22,8 +22,8 @@ De acordo com \cite{2DPackLib}, dado uma caixa retangular $\mathcal{B} = (W, H)$
 Um empacotamento $\mathcal{I}' \subseteq \mathcal{I}$ em $\mathcal{B}$ pode ser descrito como uma função $\mathcal{F}: \mathcal{I}' \to \mathbb{Z}_+^2$ que mapeie cada item $i \in \mathcal{I}'$ para um par de coordenadas $\mathcal{F}(i) = (x_i, y_i)$, de forma
 
 \begin{align}
-    x_i \in \{0, \dots, W - w_i\}, y_i \in \{0, \dots, H - h_i\} (i \in \mathcal{I}') \label{eq:1} \\
-    [x_i, x_i + w_i) \cap [x_j, x_j + w_j) = \emptyset \text{ ou } [y_i, y_i + h_i) \cap [y_j, y_j + h_j) = \emptyset (i, j \in \mathcal{I}', i \neq j) \label{eq:2}.
+    x_i \in \{0, \dots, W - w_i\}, y_i \in \{0, \dots, H - h_i\} \left(i \in \mathcal{I}'\right) \label{eq:1} \\
+    [x_i, x_i + w_i) \cap [x_j, x_j + w_j) = \emptyset \text{ ou } [y_i, y_i + h_i) \cap [y_j, y_j + h_j) = \emptyset \left(i, j \in \mathcal{I}', i \neq j\right) \label{eq:2}.
 \end{align}
 
 Nessa forma de representação a caixa está posicionada no plano cartesiano, com seu canto inferior esquerdo na origem.

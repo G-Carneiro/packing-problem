@@ -1,0 +1,120 @@
+\section{Problema}\label{sec:problema}
+\begin{frame}
+    \frametitle{Problema}
+    Alocar peças em um espaço.
+    \begin{itemize}
+        \item Difícil resolução.
+        \item $N$-dimensional.
+        \item Tipos de peças.
+        \item Classificação.
+        \item Variantes.
+    \end{itemize}
+    \note{
+        A premissa do problema é simples, alocar peças em um espaço.
+        Pode parecer algo bobo de resolver, mas é de difícil resolução já que pode possuir
+        $N$-dimensões e diversos tipos de peças, de modo é preciso separar o problema em
+        diferentes classes e ainda existem variantes dentro das classificações.
+    }
+\end{frame}
+
+\subsection{N-dimensões}\label{subsec:n-dimensoes}
+\begin{frame}
+    \frametitle{$N$-dimensões}
+    \begin{figure}[!htb]
+        \centering
+        \includegraphics[scale=0.6]{utils/images/packing-example}
+        \caption{Represeção 1D, 2D e 3D.}
+        \label{fig:packing}
+    \end{figure}
+    \note{
+        \begin{itemize}
+            \item O caso 1D pode ser usado para empilhar caixas de mesma profundidade e largura.
+            \item Já no 2D poderia ser aplicado em casos onde somente a profundidade é fixa.
+            \item E o 3D seria alocar caixas em um depósito ou container.
+            \item O trabalho se concentra somente no caso 2D.
+        \end{itemize}
+    }
+\end{frame}
+
+\subsection{Restrições}\label{subsec:restricoes}
+\begin{frame}
+    \frametitle{Problema}
+    \framesubtitle{Restrições}
+    \scriptsize{
+        \begin{align}
+            x_i \in \{0, \dots, W - w_i\}, y_i \in \{0, \dots, H - h_i\} \left(i \in \mathcal{I}'\right) \label{eq:eq1} \\
+            [x_i, x_i + w_i) \cap [x_j, x_j + w_j) = \emptyset \text{ ou } [y_i, y_i + h_i) \cap [y_j, y_j + h_j) = \emptyset \left(i, j \in \mathcal{I}', i \neq j\right) \label{eq:eq2}
+        \end{align}
+    }
+    \note{
+        Como já definimos a dimensão do problema, podemos ver as restrições do modelo.
+
+        A primeira restrição garante que um item só é alocado no recipiente se couber nele.
+
+        Já a segunda impede sobreposição entre as peças.
+    }
+\end{frame}
+
+\subsection{Tipos de peças}\label{subsec:tipos-de-pecas}
+\begin{frame}
+    \frametitle{Tipos de peças}
+    \begin{figure}[!htb]
+        \centering
+        \includegraphics[scale=0.6]{utils/images/pieces-example}
+        \caption{Exemplos de peças regulares (esquerda) e irregulares (direita).}
+        \label{fig:pieces}
+    \end{figure}
+    \note{
+        \begin{itemize}
+            \item Regulares: Possuem formato convexo.
+            \item Irregulares: Possuem formato côncavo.
+            \item Outra forma de se definir é checar se existe
+            alguma reta que atravesse o objeto em dois pontos diferentes.
+            \item O trabalho foca em peças regulares retangulares.
+        \end{itemize}
+    }
+\end{frame}
+
+\subsection{Classificação}\label{subsec:classificacao}
+\begin{frame}<-4> % Necessário para usar environment dentro de \note
+    \frametitle{Classificação}
+    \begin{itemize}
+        \item<1-> Empacotamento em faixa.
+        \item<2-> Empacotamento da mochila.
+        \item<3-> Empacotamento em caixas.
+        \item<4-> Empacotamento ortogonal.
+    \end{itemize}
+    \note{
+        \begin{itemize}
+            \item<1-> Dado um conjunto de itens e uma caixa com comprimento fixo,
+            queremos encontrar uma solução de altura mínima.
+            \item<2-> Nesse caso, queremos maximizar o valor da caixa
+            (geralmente é a área da caixa).
+            \item<3-> Minimizar o número de caixas necessárias para empacotar todos os itens.
+            \item<4-> Alocar todos os itens numa caixa.
+            \item<4-> Todos os problemas são NP-difícil, com exceção do ortogonal (NP-completo).
+        \end{itemize}
+    }
+\end{frame}
+
+\subsection{Variantes}\label{subsec:variantes}
+\begin{frame}<-4> % Necessário para usar environment dentro de \note
+    \frametitle{Variantes}
+    \begin{itemize}
+        \item<1-> Corte guilhotinado.
+        \item<2-> Rotações ortogonais.
+        \item<3-> Restrições de carga e descarga.
+        \item<4-> Caixas de tamanho variável.
+    \end{itemize}
+    \note{
+        \begin{itemize}
+            \item<1-> Consiste em cortar a caixa de forma paralela
+            a um dos lados de forma recursiva.
+            \item<2-> É um modo de relaxar o problema, permitindo rotações de 90° nos itens.
+            \item<3-> Algumas peças precisam ser posicionadas em certa posição
+            ou próximas a outras.
+            \item<4-> Define que caixas não precisam ter o mesmo tamanho
+            (aplicável somente para Empacotamento em Caixas).
+        \end{itemize}
+    }
+\end{frame}

@@ -9,13 +9,13 @@ Neste capítulo será mostrado o que são modelos de otimização (\autoref{sec:
 
 \section{Modelos de Otimização}\label{sec:modelos-de-otimizacao}
 
-Modelos são aproximações de realidade, representam o problema de maneira simples e objetiva, usando restrições.
+Modelos são aproximações da realidade, representam o problema de maneira simples e objetiva, usando restrições.
 Eles são o que baseiam a Pesquisa Operacional.
 De forma geral, um modelo de otimização quer minimizar ou maximizar uma função $f(x)$ com $x$ obedecendo algumas restrições.
 Pode-se então representar o modelo do seguinte modo:
 
 \[
-    \min f(x), x \in \mathcal{X}.
+    \min\!/\!\max f(x), x \in \mathcal{X}.
 \]
 
 Onde
@@ -92,7 +92,7 @@ Métodos exatos sempre vão garantir a solução ótima para o problema, porém 
 Já heurísticas buscam por soluções factíveis e são geralmente usadas em problemas de grande porte.
 
 Como o problema de interesse é NP-difícil e o principal interesse é em instâncias de médio e grande porte, utilizar um método exato seria bastante desafiador e, provavelmente, não seria possível obter um resultado em tempo hábil devido aos recursos computacionais atuais.
-Portanto, métodos heuríticos serão usados, já que eles tendem a diminuir a demanda computacional, porém não garantem otimalidade da solução resultante.
+Portanto, métodos heurísticos serão usados, já que eles tendem a diminuir a demanda computacional, porém não garantem otimalidade da solução resultante.
 
 Heurísticas geralmente convergem para ótimos locais, por isso geralmente mecanismos de fuga são usados para se escapar dessa região e tentar atingir um resultado melhor.
 Alguns exemplos desses mecanismos são o \textit{multi-start} e o \textit{simulated annealing}.
