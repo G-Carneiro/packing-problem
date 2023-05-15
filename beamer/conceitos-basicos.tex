@@ -51,7 +51,24 @@
 \begin{frame}
     \frametitle{Conceitos básicos}
     \framesubtitle{Modelo contínuo $\times$ discreto}
-    \note{}
+    \begin{figure}[!htb]
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}
+                \addplot[red] {sin((deg(x))};
+                \addplot[blue, only marks] {cos(deg(x))};
+                \legend{Contínuo, Discreto};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Exemplo de modelo contínuo e discreto.}
+        \label{fig:continuo-discreto}
+    \end{figure}
+    \note{
+        Um modelo é contínuo quando sua região factível é contínua, ou seja, dado um ponto
+        dessa região todos os seus vizinhos também serão uma solução.
+
+        Modelos discretos não possuem seu domínio contínuo.
+    }
 \end{frame}
 
 \subsection{Métodos exatos × heurísticos}\label{subsec:metodos-exatos-heuristicos}

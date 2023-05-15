@@ -5,16 +5,33 @@
     \frametitle{Comparativo}
     \framesubtitle{Ordenação}
 
-    \only<1>{\input{utils/tabular/compare/descending}}
+    \only<1>{
+        \begin{table}
+            \centering
+            \caption{Comparativo entre ordenação crescente e decrescente.}
+            \label{tab:descending}
+            \input{utils/tabular/compare/descending}
+        \end{table}
+    }
     \only<2->{
         \begin{figure}
             \centering
-            \includegraphics<2>[scale=0.5]{output/figures/bkw/bkw01/horizontally/area/false/00}
-            \includegraphics<3>[scale=0.5]{output/figures/bkw/bkw01/horizontally/area/false/01}
-            \includegraphics<4>[scale=0.5]{output/figures/bkw/bkw01/horizontally/area/false/02}
-            \includegraphics<5>[scale=0.5]{output/figures/bkw/bkw01/horizontally/area/false/06}
+            \includegraphics<2>[scale=0.5]{output/figures/bkw/bkw01/horizontally/height/false/00}
+            \includegraphics<3>[scale=0.5]{output/figures/bkw/bkw01/horizontally/height/false/01}
+            \includegraphics<4>[scale=0.5]{output/figures/bkw/bkw01/horizontally/height/false/02}
+            \includegraphics<5>[scale=0.5]{output/figures/bkw/bkw01/horizontally/height/false/06}
             \caption{Regiões criadas na ordenação crescente.}
             \label{fig:false}
         \end{figure}
     }
+    \note<1>{A primeira coisa que fica evidente com os resultados é discrepância
+    na qualidade de solução entre a ordenação crescente e a decrescente, algo já esperado.}
+    \note<2>{Isso se deve a como as regiões são criadas, as figuras mostram o caso para
+    ordenação crescente com a altura como critério e linha horizontal para criar a região.}
+    \note<3>{Ao posicionar uma peça uma das regiões ficará com a mesma altura do item
+    recém-posicionado, como a ordenação é crescente a próxima peça terá no mínimo
+    a mesma altura, mas o provável é que seja mais alta, impossibilitando que seja
+    alocada nessa região.}
+    \note<4>{Fazendo com que muitas regiões fiquem sem poder receber peças.}
+    \note<5>{Algo semelhante ocorre com outros critérios de ordenação e criação regiões.}
 \end{frame}
