@@ -5,8 +5,22 @@
         \centering
         \includegraphics[scale=0.8]{utils/images/bottom-left}
         \caption{Representação de alocação.}
+        \caption*{Fonte:\cite{aprendizado-reforco}}
         \label{fig:bottom-left}
     \end{figure}
+    \note{
+        Como o problema é NP-difícil uma heurística será usada e a \textit{bottom-left}
+        foi a escolhida.
+
+        Ela é bem simples, dado uma lista como entrada, os itens são retirados um a um
+        e posicionados no ponto mais a baixo a mais a esquerda quanto for possível.
+
+        Caso a peça não caiba em nenhuma posição ela não entra na solução e passa-se para
+        a próxima da fila.
+
+        Aqui fica claro que a sequência de alocação tem impacto direto na qualidade da solução.
+        Então como definir essa ordenação? Existe algum critério que se sobressai dos demais?
+    }
 \end{frame}
 
 \subsection{Critérios de ordenação}\label{subsec:criterios-de-ordenacao}
@@ -19,6 +33,14 @@
         \item Altura.
         \item Id.
     \end{itemize}
+    \note{
+        5 critérios de ordenação foram escolhidos: área, perímetro, largura, altura e id.
+
+        A ordenação por id considera a ordem em que os itens foram colocados na lista (ou criados),
+        ou seja, seria a forma padrão de resolver.
+
+        Cada critério pode ser usado de forma crescente ou decrescente.
+    }
 \end{frame}
 
 \subsection{Regiões}\label{subsec:regioes}
@@ -30,13 +52,21 @@
         \item $\max$(área).
         \item Nenhuma.
     \end{itemize}
+    \note{
+        As regiões são criadas de 4 formas diferentes, traçando uma linha vertical,
+        uma horizontal, traçando uma linha (vertical ou horizontal) que maximize a área de uma das
+        regiões geradas e com nenhuma linha.
+
+        Nesse último modo sobreposições de peças podem ocorrer, então verificações
+        são necessárias para cumprir a restrição.
+    }
 \end{frame}
 
 \subsection{Testes}\label{subsec:testes}
 \begin{frame}
     \frametitle{Testes}
     \begin{itemize}
-        \item 45 Instâncias.
+        \item 45 instâncias.
         \begin{itemize}
             \item BKW\@.
             \item GCUT\@.
@@ -45,7 +75,21 @@
             \item OKP\@.
         \end{itemize}
         \item 5 testes por configuração.
-        \item $45 \cdot 5 \cdot 5 \cdot 2 \cdot 4 = 9000$ execuções.
+        \item $45 \cdot 5 \cdot 2 \cdot 4 \cdot 5 = 9000$ execuções.
         \item ±5 horas.
     \end{itemize}
+    \note{
+        Para testar os métodos de solução criados foram usados 5 conjuntos de instâncias:
+        BKW, GCUT, NGCUT, OF e OKP, totalizando 45 instâncias de teste.
+
+        Cada método foi executado 5 vezes em cada uma das instâncias para se obter um média,
+        também foi calculado a mediana e desvio padrão.
+
+        Como temos 45 instâncias, 5 critérios de ordenação, cada critério pode ser crescente ou
+        decrescente, 4 formas de criar regiões e cada uma dessas configurações foi executada 5
+        vezes, temos o total de 9000 execuções.
+
+        O tempo somado de todas as execuções levou em torno de 5 horas (valor que ainda
+        será alterado, pois falta rodar a maior instância com o método de solução mais demorado).
+    }
 \end{frame}

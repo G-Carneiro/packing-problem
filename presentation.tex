@@ -19,6 +19,7 @@
 \setbeamertemplate{itemize subitem}[circle]
 \setbeamertemplate{sections/subsections in toc}[sections numbered]
 \setbeamercolor{section in toc}{fg=black}
+\setbeamercolor{bibliography entry note}{fg=black, bg=white}
 \setbeamertemplate{navigation symbols}{}
 %\setbeamercolor{titlelike}{fg=white}
 %\usefonttheme{structuresmallcapsserif}
@@ -56,6 +57,8 @@
 %        \end{beamercolorbox}}%
 %    \vskip0pt%
 %}
+
+\addbibresource{aftertext/references.bib}
 
 % Document
 \begin{document}
@@ -102,5 +105,12 @@
             \item Resultados inesperados.
             \item Múltiplos métodos de solução.
         \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Referências}
+        \framesubtitle{}
+        \printbibliography
+        \note{}
     \end{frame}
 \end{document}
