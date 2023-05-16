@@ -18,8 +18,9 @@
         Caso a peça não caiba em nenhuma posição ela não entra na solução e passa-se para
         a próxima da fila.
 
-        Aqui fica claro que a sequência de alocação tem impacto direto na qualidade da solução.
-        Então como definir essa ordenação? Existe algum critério que se sobressai dos demais?
+        Aqui fica claro que a sequência de alocação tem impacto direto na qualidade da solução
+        e é um ponto a ser resolvido.
+        Como definir essa ordenação? Existe algum critério que se sobressai dos demais?
     }
 \end{frame}
 
@@ -40,7 +41,43 @@
         ou seja, seria a forma padrão de resolver.
 
         Cada critério pode ser usado de forma crescente ou decrescente.
+        Com os critérios definidos, podemos passar para os próximos pontos do problema,
+        que são a sobreposição e o domínio infinito.
     }
+\end{frame}
+
+\subsection{Sobreposição e domínio infinito}\label{subsec:sobreposicao-e-dominio-infinito}
+\begin{frame}
+    \frametitle{Sobreposição e domínio infinito}
+    \framesubtitle{}
+    \begin{figure}[!htb]
+        \centering
+        \includegraphics<1>[scale=0.5]{utils/images/continuous_example}
+        \includegraphics<2>[scale=0.5]{utils/images/continuous_example2}
+        \includegraphics<3>[scale=0.5]{utils/images/continuous_example3}
+        \includegraphics<4>[scale=0.5]{utils/images/discrete_example}
+        \includegraphics<5>[scale=0.5]{utils/images/discrete_example2}
+        \caption{Resolvendo sobreposição e domínio infinito.}
+        \label{fig:sobreposicao-dominio}
+    \end{figure}
+    \note<1>{Supondo que estejamos em um estado do modelo como mostra a figura, onde o item 0
+    foi o primeiro alocado e o item 1 foi alocado a sua direita na posição (2, 0), porque
+    não cabia logo acima na posição (0, 2) devido a restrição \autoref{eq:eq1}.}
+    \note<2>{Agora queremos alocar um terceiro item de largura 3 e altura 1. Ao posicionar a peça
+    na posição (0, 2) percebe-se que a restrição \autoref{eq:eq1} é satisfeita, porém a restrição
+    \autoref{eq:eq2} não.}
+    \note<3>{Nesse caso, com poucas peças, com caixa pequena e um auxílio visual é fácil dizer
+    que a posição (0, 4) é válida, mas como chegar até ela? Existem infinitos pontos entre
+    as coordenadas (0, 2) e (0, 4).}
+    \note<4>{Como todas as instâncias tratam somente de peças e recipientes com valores inteiros
+    uma abordagem possível seria discretizar o domínio.}
+    \note<5>{Dessa forma somente coordenadas de valores inteiros precisariam ser checadas,
+        resolvendo parcialmente o problema com o domínio, já que ainda temos muitos pontos para
+        checar, principalmente em instâncias grandes. Mas isso não resolve a parte de sobreposição.
+        Para cada ponto ainda é necessário verificar se existe sobreposição com cada uma
+        das peças já alocadas, algo extremamente custoso. Além disso, a discretização só
+        funcionaria em casos como os das intâncias, com valores inteiros, não sendo aplicável em
+        vários problemas do mundo real.}
 \end{frame}
 
 \subsection{Regiões}\label{subsec:regioes}
@@ -53,6 +90,9 @@
         \item Nenhuma.
     \end{itemize}
     \note{
+        Ambos os problemas, de sobreposição e de domínio infinito, podem ser
+        resolvidos utilizando a estratégia de regiões.
+
         As regiões são criadas de 4 formas diferentes, traçando uma linha vertical,
         uma horizontal, traçando uma linha (vertical ou horizontal) que maximize a área de uma das
         regiões geradas e com nenhuma linha.
