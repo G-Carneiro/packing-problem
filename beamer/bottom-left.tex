@@ -71,6 +71,7 @@
     as coordenadas (0, 2) e (0, 4).}
     \note<4>{Como todas as instâncias tratam somente de peças e recipientes com valores inteiros
     uma abordagem possível seria discretizar o domínio.}
+    % TODO: checar essa nota.
     \note<5>{Dessa forma somente coordenadas de valores inteiros precisariam ser checadas,
         resolvendo parcialmente o problema com o domínio, já que ainda temos muitos pontos para
         checar, principalmente em instâncias grandes. Mas isso não resolve a parte de sobreposição.
@@ -83,23 +84,59 @@
 \subsection{Regiões}\label{subsec:regioes}
 \begin{frame}
     \frametitle{Regiões}
-    \begin{itemize}
-        \item Vertical.
-        \item Horizontal.
-        \item $\max$(área).
-        \item Nenhuma.
-    \end{itemize}
-    \note{
-        Ambos os problemas, de sobreposição e de domínio infinito, podem ser
-        resolvidos utilizando a estratégia de regiões.
-
-        As regiões são criadas de 4 formas diferentes, traçando uma linha vertical,
-        uma horizontal, traçando uma linha (vertical ou horizontal) que maximize a área de uma das
-        regiões geradas e com nenhuma linha.
-
-        Nesse último modo sobreposições de peças podem ocorrer, então verificações
-        são necessárias para cumprir a restrição.
+    \only<1>{
+        \begin{itemize}
+            \item Vertical.
+            \item Horizontal.
+            \item $\max$(área).
+            \item Nenhuma.
+        \end{itemize}
     }
+    \only<2->{
+        \begin{figure}[!htb]
+            \centering
+            \includegraphics<2>[scale=0.5]{output/figures/bkw/bkw01/vertically/area/false/01}
+            \includegraphics<3>[scale=0.5]{output/figures/bkw/bkw01/horizontally/area/false/01}
+            \includegraphics<4>[scale=0.5]{output/figures/bkw/bkw01/max_area/area/false/01}
+            \includegraphics<5>[scale=0.5]{output/figures/bkw/bkw01/none/area/false/01}
+            \caption{
+                \only<2>{Regiões criadas traçando uma linha vertical.}
+                \only<3>{Regiões criadas traçando uma linha horizontal.}
+                \only<4>{Regiões criadas maximizando uma das regiões.}
+                \only<5>{Regiões criadas possibilitando sobreposição.}
+            }
+            \label{fig:regioes}
+        \end{figure}
+    }
+
+    \note<1>{
+        Ambos os problemas, de sobreposição e de domínio infinito, podem ser
+        resolvidos utilizando a estratégia de criação de regiões.
+        Utilizando essa técnica é possível ignorar a restrição \autoref{eq:eq2}.
+        Nela, ao posicionar uma peça, duas regiões são criadas e o item seguinte somente será
+        posicionado se couber em uma dessas regiões.
+
+        O domínio passa a ser somente o canto inferior esquerdo de cada uma das regiões
+        e sobreposições não são mais possíveis.
+        Além disso, a regra para definir se uma peça cabe em dada região é igual a
+        restrição \autoref{eq:eq1}, tornando o algoritmo de solução bem simples.
+
+        Escolhi criar as regiões de 4 formas diferentes, para identificar se isso teria algum
+        impacto na solução.
+    }
+    \note<2>{A primeira é traçando uma linha vertical a partir do canto superior direito
+    de cada peça alocada. Nas figuras, retângulos indicados com um R no começo são regiões.}
+    \note<3>{A segunda é igual a primeira, porém usando uma linha horizontal.}
+    \note<4>{Já na terceira é traçada uma linha (vertical ou horizontal) que maximize a
+    área de uma das regiões geradas, basicamente identifica qual dos dois primeiros métodos
+    gera a maior área. Isso é interessente pois dá uma garantia maior de que o item seguinte
+    será alocado, em contrapartida pode gerar muitas regiões pequenas que podem
+    não ser utilizadas, diminuindo a qualidade da solução.}
+    \note<5>{No último modo nenhuma linha é traçada, todas as regiões vão até o final do recipiente.
+    Nesse caso sobreposições de peças podem ocorrer, então verificações são necessárias para
+    cumprir a restrição \autoref{eq:eq2}. Teoricamente ao permitir sobreposições possibilita
+    que mais peças sejam alocadas. Esse modo foi criado justamente para verificar isso e
+    qual seu custo.}
 \end{frame}
 
 \subsection{Testes}\label{subsec:testes}
