@@ -6,6 +6,7 @@ from tabulate import tabulate
 
 from src.model.data import Data
 from src.utils.descending import Descending
+from src.utils.instances import InstanceSet
 from src.utils.order_key import OrderKey
 from src.utils.split_mode import SplitMode
 
@@ -182,12 +183,13 @@ def read_file(filename: str) -> list[Data]:
     return datas
 
 
-def filter_datas(data_set: list[Data], instance_name: str = None, splitmode: str = None,
-                 orderkey: str = None, descending: str = None) -> list[Data]:
+def filter_datas(data_set: list[Data], instance_name: str = None, instanceset: str = None,
+                 splitmode: str = None, orderkey: str = None, descending: str = None
+                 ) -> list[Data]:
     filtered: list[Data] = []
     for data in data_set:
-        if data.filter(instance_name=instance_name, split=splitmode,
-                       order=orderkey, descending=descending):
+        if data.filter(instance_name=instance_name, instance_set=instanceset,
+                       split=splitmode, order=orderkey, descending=descending):
             filtered.append(data)
     return filtered
 
@@ -206,7 +208,8 @@ def data_to_data_obj(datas: list[list[str]]) -> list[Data]:
     return data_set
 
 
-def compare(data_set: list[Data], iterable, count_wons: bool = True) -> None:
+def compare(data_set: list[Data], iterable,
+            count_wons: bool = True, short: bool = True) -> None:
     data_set_filtered: dict[str, list[Data]] = {}
     name = iterable.__name__
     headers = [name]
@@ -220,7 +223,7 @@ def compare(data_set: list[Data], iterable, count_wons: bool = True) -> None:
     time: dict[str, float] = {}
     for key in iterable:
         data_set_filtered[key] = eval(f"filter_datas(data_set={data_set}, "
-                                      f"{name.lower()}=key.name[0])")
+                                      f"{name.lower()}=key.name)")
         wons[key] = 0
         draws[key] = 0
         quality[key] = 0
@@ -252,11 +255,17 @@ def compare(data_set: list[Data], iterable, count_wons: bool = True) -> None:
                 pass
     data = []
     for key in iterable:
+        size = len(data_set_filtered[key])
         quality[key] /= size
         items[key] /= size
         time[key] /= size
-        data.append([key.name[0], wons[key], draws[key],
-                     quality[key], items[key], time[key]])
+        new_data = [key.name]
+        if short:
+            new_data[0] = new_data[0][0]
+        if count_wons:
+            new_data += [wons[key], draws[key]]
+        new_data += [quality[key], items[key], time[key]]
+        data.append(new_data)
     make_ibge_table(data=data, file=f"utils/tables/compare/{name.lower()}.tex",
                     caption=f"Resultado da comparação entre {name}.", label=name.lower(),
                     headers=headers)
@@ -273,6 +282,10 @@ def compare_split(data_set: list[Data]) -> None:
 
 def compare_order(data_set: list[Data]) -> None:
     return compare(data_set=data_set, iterable=OrderKey)
+
+
+def compare_instance_set(data_set: list[Data]) -> None:
+    return compare(data_set=data_set, iterable=InstanceSet, count_wons=False, short=False)
 
 
 def compare_combinations(data_set: list[Data]) -> None:

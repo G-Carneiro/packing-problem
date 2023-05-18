@@ -12,18 +12,22 @@ class Data:
     time: float
     inside_items: float
 
-    def filter(self, instance_name: str = None, split: str = None,
-               order: str = None, descending: str = None) -> bool:
+    def filter(self, instance_name: str = None, instance_set: str = None,
+               split: str = None, order: str = None, descending: str = None
+               ) -> bool:
         if instance_name is None:
             instance_name = self.instance_name
+        if instance_set is None:
+            instance_set = self.instance_set
         if split is None:
             split = self.split
         if order is None:
             order = self.order
         if descending is None:
             descending = self.descending
-        return (self.instance_name == instance_name and self.split == split
-                and self.order == order and self.descending == descending)
+        return (self.instance_name == instance_name and instance_set == self.instance_set
+                and self.split == split and self.order == order
+                and self.descending == descending)
 
     def __str__(self) -> str:
         return f"{self.instance_name}: {self.split} {self.order} {self.descending} " \

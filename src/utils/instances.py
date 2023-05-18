@@ -1,7 +1,7 @@
 from enum import auto, Enum
 
 
-class Instances(Enum):
+class InstanceSet(Enum):
     BKW = auto()
     GCUT = auto()
     NGCUT = auto()

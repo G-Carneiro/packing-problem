@@ -6,7 +6,6 @@ from src.model.item import Item
 from src.model.model import Model
 from src.utils.folders import *
 from src.utils.functions import *
-from src.utils.make_model import *
 from src.utils.order_key import OrderKey
 from src.utils.split_mode import SplitMode
 
@@ -109,12 +108,13 @@ def test():
 # TODO: run bkw13, with order=NONE
 if __name__ == "__main__":
     # folder_data_to_ibge_table(folder="output/data")
-    # data_set = get_data("output/data/all.dat", columns=[0, 1, 2, 3, 4, 5, 13])
-    # data_set = data_to_data_obj(datas=data_set)
+    data_set = get_data("output/data/all.dat", columns=[0, 1, 2, 3, 4, 5, 13], short=False)
+    data_set = data_to_data_obj(datas=data_set)
 
     # compare_descending(data_set=data_set)
     # compare_order(data_set=data_set)
     # compare_split(data_set=data_set)
+    compare_instance_set(data_set=data_set)
     # compare_combinations(data_set=data_set)
     # folder_image_to_figure()
-    make()
+    # make()
