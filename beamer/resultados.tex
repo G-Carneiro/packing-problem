@@ -39,6 +39,25 @@
 
 \begin{frame}
     \frametitle{Comparativo}
+    \framesubtitle{Critérios de ordenação}
+    \begin{table}
+        \centering
+        \caption{Resultado para os critérios de ordenção.}
+        \label{tab:order}
+        \ttfamily\input{utils/tabular/compare/orderkey}
+    \end{table}
+    \note{Os próximos resultados consideram somente os casos com ordenação decrescente, já que
+    se fosse considerado a ordenação crescente faria com que a média ficasse abaixo do resultado
+    real, além de poder causar interpretações erradas na coluna de quantidade de vitórias.
+    Aqui fica claro que ter algum critério de ordenação melhora e muito na solução, já que
+    ordernar por ID teve um péssimo desempenho. Mas o curioso é que todos os demais critérios são
+    competitivos entre si. A literatura em geral usa somente ordenação pela área, esses resultados
+    podem indicar que algumas instâncias possuem características que torne mais interessante outro
+    método de ordenação.}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Comparativo}
     \framesubtitle{Regiões}
     \only<1>{
         \begin{table}
@@ -59,16 +78,17 @@
     }
 
     \note<1>{Indo para o comparativo entre regiões percebemos que a que permite sobreposições se saiu
-    melhor, tanto em quantidade como em qualidade, porém com um custo autíssimo de tempo.
+    melhor, tanto em quantidade como em qualidade, ainda que na maioria dos casos não foi a única
+    que encontrou a melhor solução, porém com um custo autíssimo de tempo.
     Regiões criadas com linhas verticais e horizontais foram mais rápidas, mas com soluções de pior
     qualidade. Enquanto maximizando as regiões criadas levou um pouco a mais de tempo, mas também
-    com acréscimo na qualidade. Ter sobreposição demora em torno de 1000 vezes mais.
-    Mas por que tanta diferença entre com e sem sobreposição?}
+    com acréscimo na qualidade. Aqui a gente percebe que ter sobreposição demora em torno de
+    1000 vezes mais. Mas por que tanta diferença entre com e sem sobreposição?}
     \note<2>{Como dito antes, sem sobreposições temos somente que checar se
     um item cabe em uma região, no pior caso teremos que fazer isso para $(n^2 + n) / 2$ regiões.
     Enquanto com sobreposição, além de ter esse número de regiões, para cada uma delas
     também é necessário checar possíveis sobreposições com as peças já alocadas, sendo o número
-    de verificações igual o somatório de $i(i - 1)$, isso no pior caso, algo extremamente custoso.
+    de verificações igual o somatório de $(n^3 - n)/3$, isso no pior caso, algo extremamente custoso.
     Por exemplo, para uma instância com 3152 itens podem ser necessárias mais de 10 bilhões
     de verificações de sobreposição.
     Então, aquela diferença de 1000 vezes fica ainda maior de acordo com a quantidade de itens
@@ -77,12 +97,21 @@
 
 \begin{frame}
     \frametitle{Comparativo}
-    \framesubtitle{Critérios de ordenação}
+    \framesubtitle{Melhores combinações de solução}
     \begin{table}
         \centering
-        \caption{Resultado para os critérios de ordenção.}
-        \label{tab:order}
-        \ttfamily\input{utils/tabular/compare/orderkey}
+        \caption{Resultado da comparação entre todas combinações.}
+        \label{tab:combinacoes}
+        \ttfamily
+        \begin{tabular}{lllrrrrr}
+            R & O & Desc.\  & W  & D  & Quality \% & Items \% & Time (s) \\
+            \hline
+            V & W & T      & 9  & 8  & 84.5497    & 47.0580  & 0.0024   \\
+            M & P & T      & 7  & 6  & 85.8682    & 46.3078  & 0.0129   \\
+            N & A & T      & 13 & 11 & 85.3558    & 42.9123  & 6.2918   \\
+            N & W & T      & 16 & 10 & 84.0171    & 48.1854  & 8.2509   \\
+            \hline
+        \end{tabular}
     \end{table}
 
     \note{}
@@ -90,12 +119,15 @@
 
 \begin{frame}
     \frametitle{Comparativo}
-    \framesubtitle{Conjunto de instâncias}
+    \framesubtitle{Conjuntos de instâncias}
     \begin{table}
         \centering
         \ttfamily\caption{Resultados para os conjuntos de instância.}
         \label{tab:instances}
         \ttfamily\input{utils/tabular/compare/instanceset}
     \end{table}
-    \note{}
+    \note{Nessa última tabela eu trouxe os resultados separados de acordo com o conjunto de
+    instância, a BKW demorou mais por ter os maiores números de itens a serem alocados dentre todas
+    as instâncias. Em geral, temos bons resultados para cada conjunto, mas vale investigar se algum
+    deles possui alguma característica que torne melhor determinado método de solução.}
 \end{frame}
