@@ -19,7 +19,8 @@
 
 \subsection{N-dimensões}\label{subsec:n-dimensoes}
 \begin{frame}
-    \frametitle{$N$-dimensões}
+    \frametitle{Problema}
+    \framesubtitle{$N$-dimensões}
     \begin{figure}[!htb]
         \centering
         \includegraphics[scale=0.6]{utils/images/packing-example}
@@ -58,7 +59,8 @@
 
 \subsection{Tipos de peças}\label{subsec:tipos-de-pecas}
 \begin{frame}
-    \frametitle{Tipos de peças}
+    \frametitle{Problema}
+    \framesubtitle{Tipos de peças}
     \begin{figure}[!htb]
         \centering
         \includegraphics[scale=0.6]{utils/images/pieces-example}
@@ -78,45 +80,49 @@
 \end{frame}
 
 \subsection{Classificação}\label{subsec:classificacao}
-\begin{frame}<-4> % Necessário para usar environment dentro de \note
-    \frametitle{Classificação}
+\begin{frame} % Necessário para usar environment dentro de \note
+    \frametitle{Problema}
+    \framesubtitle{Classificação}
     \begin{itemize}
-        \item<1-> Empacotamento em faixa.
-        \item<2-> Empacotamento da mochila.
-        \item<3-> Empacotamento em caixas.
-        \item<4-> Empacotamento ortogonal.
+        \item Empacotamento em faixa.
+        \item Empacotamento da mochila.
+        \item Empacotamento em caixas.
+        \item Empacotamento ortogonal.
     \end{itemize}
     \note{
         \begin{itemize}
-            \item<1-> Dado um conjunto de itens e uma caixa com comprimento fixo,
-            queremos encontrar uma solução de altura mínima.
-            \item<2-> Nesse caso, queremos maximizar o valor da caixa
+            \item Empacotamento em faixa: Dado um conjunto de itens e uma caixa
+            com comprimento fixo, queremos encontrar uma solução de altura mínima.
+            \item Empacotamento da mochila: Nesse caso, queremos maximizar o valor da caixa
             (geralmente é a área da caixa).
-            \item<3-> Minimizar o número de caixas necessárias para empacotar todos os itens.
-            \item<4-> Alocar todos os itens numa caixa.
-            \item<4-> Todos os problemas são NP-difícil, com exceção do ortogonal
+            \item Empacotamento em caixas: Minimizar o número de caixas necessárias para
+            empacotar todos os itens.
+            \item Empacotamento ortogonal: Alocar todos os itens numa caixa.
+            \item Todos os problemas são NP-difícil, com exceção do ortogonal
             (NP-completo)\cite{2DPackLib}.
         \end{itemize}
     }
 \end{frame}
 
 \subsection{Variantes}\label{subsec:variantes}
-\begin{frame}<-4> % Necessário para usar environment dentro de \note
-    \frametitle{Variantes}
+\begin{frame} % Necessário para usar environment dentro de \note
+    \frametitle{Problema}
+    \framesubtitle{Variantes}
     \begin{itemize}
-        \item<1-> Corte guilhotinado.
-        \item<2-> Rotações ortogonais.
-        \item<3-> Restrições de carga e descarga.
-        \item<4-> Caixas de tamanho variável.
+        \item Corte guilhotinado.
+        \item Rotações ortogonais.
+        \item Restrições de carga e descarga.
+        \item Caixas de tamanho variável.
     \end{itemize}
     \note{
         \begin{itemize}
-            \item<1-> Consiste em cortar a caixa de forma paralela
+            \item Corte guilhotinado: Consiste em cortar a caixa de forma paralela
             a um dos lados de forma recursiva.
-            \item<2-> É um modo de relaxar o problema, permitindo rotações de 90° nos itens.
-            \item<3-> Algumas peças precisam ser posicionadas em certa posição
-            ou próximas a outras.
-            \item<4-> Define que caixas não precisam ter o mesmo tamanho
+            \item Rotações ortogonais: É um modo de relaxar o problema, permitindo rotações
+            de 90° nos itens.
+            \item Restrições de carga e descarga: Algumas peças precisam ser posicionadas
+            em certa posição ou próximas a outras.
+            \item Caixas de tamanho variável: Define que caixas não precisam ter o mesmo tamanho
             (aplicável somente para Empacotamento em Caixas).
         \end{itemize}
     }
