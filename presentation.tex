@@ -101,15 +101,28 @@
     \begin{frame}
         \frametitle{Conclusão}
         \begin{itemize}
-            \item Resultados inesperados.
             \item Múltiplos métodos de solução.
+            \item Resultados inesperados.
+            \item Com sobreposição $\times$ sem sobreposição.
         \end{itemize}
+        \note{Bom, indo para as conclusões. Foram testados vários métodos de solução, todos
+        baseados em \textit{bottom-left}, ficou evidente que ordenar a lista de entrada de forma
+        decrescente é vantajoso.
+
+        Tivemos alguns resultados inesperados como a competitividade entre todos os critérios de
+        ordenação, sendo necessária uma investigação sobre características das instâncias. E também
+        a pouca vantagem em termos de qualidade quando usamos regiões que permitem sobreposições.
+
+        De modo geral, pode-se resolver um problema com todas as combinações que usem regiões sem
+        sobreposição e buscar a de melhor solução, já que seu tempo de execução é pequeno.
+        Resolver usando regiões com sobreposição só é recomendado em casos onde o modelo será usado
+        mais de uma vez e sem alterações.}
     \end{frame}
 
-    \begin{frame}
+    \begin{frame}[allowframebreaks]
         \frametitle{Referências}
         \framesubtitle{}
-        \printbibliography
+        \printbibliography\nocite{*}
         \note{}
     \end{frame}
 \end{document}
