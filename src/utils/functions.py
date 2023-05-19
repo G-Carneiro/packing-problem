@@ -31,16 +31,18 @@ def get_data(data_file: str, columns: list[int], short: bool = True) -> list[lis
 
 def make_ibge_table(data: list[list[str]], file: str, caption: str,
                     label: str, fonte: str = "autor", nota: str = "", legend: str = "",
-                    headers: list[str] = None, tablefmt: str = "latex", ibge: bool = True
+                    headers: list[str] = None, tablefmt: str = "latex", ibge: bool = True,
+                    floatfmt: tuple[str, ...] = (), monospaced: bool = True
                     ) -> None:
-    table = tabulate(data, tablefmt=tablefmt, headers=headers)
+    table = tabulate(data, tablefmt=tablefmt, headers=headers, floatfmt=floatfmt)
     lines = begin_environment(environment="table", position="!htb", caption=caption, label=label)
     tabular = file.replace("tables", "tabular")
     write_environment(tex_file=tabular, lines=table)
+    font: str = "\\ttfamily" if monospaced else ''
     if ibge:
         lines += [
             "\\IBGEtab{}{\n",
-            "\\input{" + tabular[:-4] + "}\n",
+            font + "\\input{" + tabular[:-4] + "}\n",
             "}{}\n",
         ]
     else:
@@ -208,8 +210,8 @@ def data_to_data_obj(datas: list[list[str]]) -> list[Data]:
     return data_set
 
 
-def compare(data_set: list[Data], iterable,
-            count_wons: bool = True, short: bool = True) -> None:
+def compare(data_set: list[Data], iterable, floatfmt: tuple[str, ...] = (),
+            count_wons: bool = True, short: bool = True, **kwargs) -> None:
     data_set_filtered: dict[str, list[Data]] = {}
     name = iterable.__name__
     headers = [name]
@@ -221,9 +223,12 @@ def compare(data_set: list[Data], iterable,
     quality: dict[str, float] = {}
     items: dict[str, float] = {}
     time: dict[str, float] = {}
+    args: str = ""
+    for k, v in kwargs.items():
+        args += f"{k}='{v}',"
     for key in iterable:
         data_set_filtered[key] = eval(f"filter_datas(data_set={data_set}, "
-                                      f"{name.lower()}=key.name)")
+                                      f"{name.lower()}=key.name, {args})")
         wons[key] = 0
         draws[key] = 0
         quality[key] = 0
@@ -268,24 +273,28 @@ def compare(data_set: list[Data], iterable,
         data.append(new_data)
     make_ibge_table(data=data, file=f"utils/tables/compare/{name.lower()}.tex",
                     caption=f"Resultado da comparação entre {name}.", label=name.lower(),
-                    headers=headers)
+                    headers=headers, floatfmt=floatfmt)
     return None
 
 
 def compare_descending(data_set: list[Data]) -> None:
-    return compare(data_set=data_set, iterable=Descending)
+    return compare(data_set=data_set, iterable=Descending,
+                   floatfmt=("", "", "", ".4f", ".4f", ".4e"))
 
 
 def compare_split(data_set: list[Data]) -> None:
-    return compare(data_set=data_set, iterable=SplitMode)
+    return compare(data_set=data_set, iterable=SplitMode, descending=True,
+                   floatfmt=("", "", "", ".4f", ".4f", ".4e"))
 
 
 def compare_order(data_set: list[Data]) -> None:
-    return compare(data_set=data_set, iterable=OrderKey)
+    return compare(data_set=data_set, iterable=OrderKey, descending=True,
+                   floatfmt=("", "", "", ".4f", ".4f", ".4e"))
 
 
 def compare_instance_set(data_set: list[Data]) -> None:
-    return compare(data_set=data_set, iterable=InstanceSet, count_wons=False, short=False)
+    return compare(data_set=data_set, iterable=InstanceSet, count_wons=False,
+                   short=False, floatfmt=("", ".4f", ".4f", ".4e"), descending=True)
 
 
 def compare_combinations(data_set: list[Data]) -> None:
