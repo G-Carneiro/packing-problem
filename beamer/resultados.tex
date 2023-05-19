@@ -53,7 +53,7 @@
             \item Sem sobreposição: $R = O\left(\dfrac{n^2 + n}{2}\right)$.
             \item Com sobreposição: $\displaystyle R = O\left(\dfrac{n^2 + n}{2}\right),
             S = O\left(\dfrac{n^3 - n}{3}\right)$.
-            $n = 3152 \to S = \numprint{10438481552}.$
+            $n = 3152 \to R = \numprint{4969128}, S = \numprint{10438481552}.$
             % $S = O\left(\sum_{i=1}^{n} i(i - 1)\right)$
         \end{itemize}
     }
@@ -73,6 +73,19 @@
     de verificações de sobreposição.
     Então, aquela diferença de 1000 vezes fica ainda maior de acordo com a quantidade de itens
     a serem alocados.}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Comparativo}
+    \framesubtitle{Critérios de ordenação}
+    \begin{table}
+        \centering
+        \caption{Resultado para os critérios de ordenção.}
+        \label{tab:order}
+        \ttfamily\input{utils/tabular/compare/orderkey}
+    \end{table}
+
+    \note{}
 \end{frame}
 
 \begin{frame}

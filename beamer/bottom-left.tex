@@ -71,14 +71,13 @@
     as coordenadas (0, 2) e (0, 4).}
     \note<4>{Como todas as instâncias tratam somente de peças e recipientes com valores inteiros
     uma abordagem possível seria discretizar o domínio.}
-    % TODO: checar essa nota.
     \note<5>{Dessa forma somente coordenadas de valores inteiros precisariam ser checadas,
         resolvendo parcialmente o problema com o domínio, já que ainda temos muitos pontos para
         checar, principalmente em instâncias grandes. Mas isso não resolve a parte de sobreposição.
         Para cada ponto ainda é necessário verificar se existe sobreposição com cada uma
-        das peças já alocadas, algo extremamente custoso. Além disso, a discretização só
-        funcionaria em casos como os das intâncias, com valores inteiros, não sendo aplicável em
-        vários problemas do mundo real.}
+        das peças já alocadas, algo extremamente custoso. Além disso, a discretização não
+        funcionaria tão bem em casos diferentes, com valores não inteiros, prejudicando a aplicação
+        em vários problemas do mundo real.}
 \end{frame}
 
 \subsection{Regiões}\label{subsec:regioes}
