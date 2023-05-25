@@ -115,6 +115,7 @@ if __name__ == "__main__":
     # compare_order(data_set=data_set)
     # compare_split(data_set=data_set)
     compare_instance_set(data_set=data_set)
+    # compare_superposition(data_set=data_set)
     # compare_combinations(data_set=data_set)
     # folder_image_to_figure()
     # make()

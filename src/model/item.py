@@ -38,6 +38,17 @@ class Item(Rect):
         elif (self.position == other.position) or (self.end == other.end):
             return True
 
+        if (self.position.x < other.position.x) and (self.end.x <= other.position.x):
+            return False
+        elif (self.position.x >= other.end.x) and (self.end.x >= other.end.x):
+            return False
+        elif (self.position.y < other.position.y) and (self.end.y <= other.position.y):
+            return False
+        elif (self.position.y >= other.end.y) and (self.end.y >= other.end.y):
+            return False
+        else:
+            return True
+
         coords = other.coords()
         for idx, coord in enumerate(coords):
             if region_code(point=coord) & region_code(coords[idx - 1]) == 0:

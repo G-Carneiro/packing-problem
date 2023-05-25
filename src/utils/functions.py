@@ -210,32 +210,33 @@ def data_to_data_obj(datas: list[list[str]]) -> list[Data]:
     return data_set
 
 
-def compare(data_set: list[Data], iterable, floatfmt: tuple[str, ...] = (),
-            count_wons: bool = True, short: bool = True, **kwargs) -> None:
-    data_set_filtered: dict[str, list[Data]] = {}
-    name = iterable.__name__
+def compare(name: str, data_set: list[Data], iterable: list[tuple[str, ...]],
+            floatfmt: tuple[str, ...] = (), count_wons: bool = True,
+            short: bool = True, average_time: bool = True,
+            only_best_qualities: bool = False, args: str = "", **kwargs) -> None:
+    data_set_filtered: dict[tuple[str, ...], list[Data]] = {}
     headers = [name]
     if count_wons:
         headers += ["Wons", "Draws"]
     headers += ["Quality %", "Items %", "Time (s)"]
-    wons: dict[str, int] = {}
-    draws: dict[str, int] = {}
-    quality: dict[str, float] = {}
-    items: dict[str, float] = {}
-    time: dict[str, float] = {}
-    args: str = ""
+    wons: dict[tuple[str, ...], int] = {}
+    draws: dict[tuple[str, ...], int] = {}
+    quality: dict[tuple[str, ...], float] = {}
+    items: dict[tuple[str, ...], float] = {}
+    time: dict[tuple[str, ...], float] = {}
     for k, v in kwargs.items():
-        args += f"{k}='{v}',"
+        args += f"{k}={v}, "
     for key in iterable:
         data_set_filtered[key] = eval(f"filter_datas(data_set={data_set}, "
-                                      f"{name.lower()}=key.name, {args})")
+                                      f"{args})")
         wons[key] = 0
         draws[key] = 0
         quality[key] = 0
         items[key] = 0
         time[key] = 0
-
-    size = len(data_set_filtered[iterable(1)])
+    size = len(data_set_filtered[iterable[0]])
+    best_qualities: list[float] = []
+    total_time: float = 0
     for idx in range(size):
         qualities = []
         for key, value in data_set_filtered.items():
@@ -243,12 +244,14 @@ def compare(data_set: list[Data], iterable, floatfmt: tuple[str, ...] = (),
                 quality[key] += value[idx].quality
                 items[key] += value[idx].inside_items
                 time[key] += value[idx].time
+                total_time += time[key]
                 qualities.append(value[idx].quality)
             except IndexError:
                 pass
+        greatest = max(qualities)
+        best_qualities.append(greatest)
         if not count_wons:
             continue
-        greatest = max(qualities)
         draw: bool = qualities.count(greatest) > 1
         for key, value in data_set_filtered.items():
             try:
@@ -261,10 +264,14 @@ def compare(data_set: list[Data], iterable, floatfmt: tuple[str, ...] = (),
     data = []
     for key in iterable:
         size = len(data_set_filtered[key])
+        if only_best_qualities:
+            quality[key] = sum(best_qualities)
         quality[key] /= size
         items[key] /= size
         time[key] /= size
-        new_data = [key.name]
+        if not average_time:
+            time[key] = total_time
+        new_data = [key[0]]
         if short:
             new_data[0] = new_data[0][0]
         if count_wons:
@@ -293,8 +300,28 @@ def compare_order(data_set: list[Data]) -> None:
 
 
 def compare_instance_set(data_set: list[Data]) -> None:
-    return compare(data_set=data_set, iterable=InstanceSet, count_wons=False,
-                   short=False, floatfmt=("", ".4f", ".4f", ".4e"), descending=True)
+    iterable: list[tuple[str, ...]] = []
+    for data in InstanceSet:
+        iterable.append((data.name,))
+    return compare(name="InstanceSet", data_set=data_set, iterable=iterable, count_wons=False,
+                   short=False, floatfmt=("", ".4f", ".4f", ".4e"), descending=["True"],
+                   args="instanceset=[key[0]], ")
+
+
+def compare_superposition(data_set: list[Data]) -> None:
+    iterable: list[tuple[str, ...]] = []
+    args: str = f"splitmode=[key[0]], " \
+                f"orderkey=[key[1]], " \
+                f"descending=[key[2]], "
+    for split in SplitMode:
+        if split == SplitMode.NONE:
+            continue
+        for order in OrderKey:
+            for descending in Descending:
+                iterable.append((split.name, order.name, descending.name.capitalize()))
+    return compare(name="Superposition", data_set=data_set, iterable=iterable, count_wons=False,
+                   short=False, floatfmt=("", ".4f", ".4f", ".4e"), only_best_qualities=True,
+                   average_time=False, args=args)
 
 
 def compare_combinations(data_set: list[Data]) -> None:
