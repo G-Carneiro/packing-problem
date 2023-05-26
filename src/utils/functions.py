@@ -210,12 +210,16 @@ def data_to_data_obj(datas: list[list[str]]) -> list[Data]:
     return data_set
 
 
-def compare(name: str, data_set: list[Data], iterable: list[tuple[str, ...]],
+def compare(name: str | list[str], data_set: list[Data], iterable: list[tuple[str, ...]],
+            file_name: str, line_id: str = "key[0]",
             floatfmt: tuple[str, ...] = (), count_wons: bool = True,
             short: bool = True, average_time: bool = True,
             only_best_qualities: bool = False, args: str = "", **kwargs) -> None:
     data_set_filtered: dict[tuple[str, ...], list[Data]] = {}
-    headers = [name]
+    if isinstance(name, list):
+        headers = name
+    else:
+        headers = [name]
     if count_wons:
         headers += ["Wons", "Draws"]
     headers += ["Quality %", "Items %", "Time (s)"]
@@ -271,41 +275,58 @@ def compare(name: str, data_set: list[Data], iterable: list[tuple[str, ...]],
         time[key] /= size
         if not average_time:
             time[key] = total_time
-        new_data = [key[0]]
+        line = eval(line_id)
+        if isinstance(line, list):
+            new_data = line
+        else:
+            new_data = [line]
         if short:
             new_data[0] = new_data[0][0]
         if count_wons:
             new_data += [wons[key], draws[key]]
         new_data += [quality[key], items[key], time[key]]
         data.append(new_data)
-    make_ibge_table(data=data, file=f"utils/tables/compare/{name.lower()}.tex",
-                    caption=f"Resultado da comparação entre {name}.", label=name.lower(),
+    make_ibge_table(data=data, file=f"utils/tables/compare/{file_name.lower()}.tex",
+                    caption=f"Resultado da comparação entre {name}.", label="combinations",
                     headers=headers, floatfmt=floatfmt)
     return None
 
 
 def compare_descending(data_set: list[Data]) -> None:
-    return compare(data_set=data_set, iterable=Descending,
-                   floatfmt=("", "", "", ".4f", ".4f", ".4e"))
+    iterable: list[tuple[str, ...]] = []
+    for descending in Descending:
+        iterable.append((descending.name.capitalize(),))
+    return compare(data_set=data_set, iterable=iterable, args="descending=key",
+                   floatfmt=("", "", "", ".4f", ".4f", ".4e"), name="Desc.",
+                   file_name="descending", )
 
 
 def compare_split(data_set: list[Data]) -> None:
-    return compare(data_set=data_set, iterable=SplitMode, descending=True,
-                   floatfmt=("", "", "", ".4f", ".4f", ".4e"))
+    iterable: list[tuple[str, ...]] = []
+    for split in SplitMode:
+        iterable.append((split.name,))
+    return compare(data_set=data_set, iterable=iterable, file_name="splitmode", splitmode="key",
+                   descending=[Descending.TRUE.name.capitalize()],
+                   floatfmt=("", "", "", ".4f", ".4f", ".4e"), name="SplitMode", )
 
 
 def compare_order(data_set: list[Data]) -> None:
-    return compare(data_set=data_set, iterable=OrderKey, descending=True,
-                   floatfmt=("", "", "", ".4f", ".4f", ".4e"))
+    iterable: list[tuple[str, ...]] = []
+    for order in OrderKey:
+        iterable.append((order.name,))
+    return compare(data_set=data_set, iterable=iterable, file_name="orderkey", orderkey="key",
+                   descending=[Descending.TRUE.name.capitalize()],
+                   floatfmt=("", "", "", ".4f", ".4f", ".4e"), name="OrderKey", )
 
 
 def compare_instance_set(data_set: list[Data]) -> None:
     iterable: list[tuple[str, ...]] = []
     for data in InstanceSet:
         iterable.append((data.name,))
-    return compare(name="InstanceSet", data_set=data_set, iterable=iterable, count_wons=False,
-                   short=False, floatfmt=("", ".4f", ".4f", ".4e"), descending=["True"],
-                   args="instanceset=[key[0]], ")
+    return compare(data_set=data_set, iterable=iterable, file_name="instanceset", instanceset="key",
+                   descending=[Descending.TRUE.name.capitalize()],
+                   floatfmt=("", ".4f", ".4f", ".4e"), name="InstanceSet",
+                   short=False, count_wons=False, )
 
 
 def compare_superposition(data_set: list[Data]) -> None:
@@ -321,61 +342,19 @@ def compare_superposition(data_set: list[Data]) -> None:
                 iterable.append((split.name, order.name, descending.name.capitalize()))
     return compare(name="Superposition", data_set=data_set, iterable=iterable, count_wons=False,
                    short=False, floatfmt=("", ".4f", ".4f", ".4e"), only_best_qualities=True,
-                   average_time=False, args=args)
+                   average_time=False, args=args, file_name="superposition", )
 
 
 def compare_combinations(data_set: list[Data]) -> None:
-    data_set_filtered: dict[tuple[str, str, str], list[Data]] = {}
-    headers = ["Split", "Order", "Descending", "Wons", "Draws", "Quality %", "Items %", "Time (s)"]
-    wons: dict[tuple[str, str, str], int] = {}
-    draws: dict[tuple[str, str, str], int] = {}
-    quality: dict[tuple[str, str, str], float] = {}
-    items: dict[tuple[str, str, str], float] = {}
-    time: dict[tuple[str, str, str], float] = {}
+    iterable: list[tuple[str, ...]] = []
+    args: str = f"splitmode=[key[0]], " \
+                f"orderkey=[key[1]], " \
+                f"descending=[key[2]], "
     for split in SplitMode:
-        split = split.name[0]
         for order in OrderKey:
-            order = order.name[0]
             for descending in Descending:
-                descending = descending.name[0]
-                key: tuple[str, str, str] = (split, order, descending)
-                data_set_filtered[key] = filter_datas(data_set=data_set, splitmode=split,
-                                                      orderkey=order, descending=descending)
-                wons[key] = 0
-                draws[key] = 0
-                quality[key] = 0
-                items[key] = 0
-                time[key] = 0
+                iterable.append((split.name, order.name, descending.name.capitalize(),))
 
-    size = 45  # len(data_set) / (len(SplitMode) * len(OrderKey) * len(Descending))
-    for idx in range(size):
-        qualities = []
-        for key, value in data_set_filtered.items():
-            try:
-                quality[key] += value[idx].quality
-                items[key] += value[idx].inside_items
-                time[key] += value[idx].time
-                qualities.append(value[idx].quality)
-            except IndexError:
-                pass
-        greatest = max(qualities)
-        draw: bool = qualities.count(greatest) > 1
-        for key, value in data_set_filtered.items():
-            try:
-                if (value[idx].quality == greatest):
-                    wons[key] += 1
-                    if draw:
-                        draws[key] += 1
-            except IndexError:
-                pass
-    data = []
-    for key in data_set_filtered.keys():
-        quality[key] /= size
-        items[key] /= size
-        time[key] /= size
-        data.append([key[0], key[1], key[2], wons[key], draws[key],
-                     quality[key], items[key], time[key]])
-    make_ibge_table(data=data, file=f"utils/tables/compare/combinations.tex",
-                    caption=f"Resultado da comparação entre todas combinações.",
-                    label="combinations", headers=headers)
-    return None
+    return compare(name=["Split", "Order", "Descending"], data_set=data_set, iterable=iterable,
+                   file_name="combinations", line_id="[key[0][0], key[1][0], key[2][0]]",
+                   args=args, short=False, floatfmt=("", "", "", "", "", ".4f", ".4f", ".4e"))
