@@ -117,9 +117,9 @@
     \end{table}
     \note{Aqui eu mostro uma tabela com os resultados das combinações que se saíram melhores.
     Em termos de quantidade, quem se saiu melhor foi a criação de regiões com sobreposição, com
-    a largura como critério de ordenação. Já em qualidade o melhor resultado foi obtido ao
-    maximizar uma região e com ordenação pelo perímetro. A combinação de regiões com sobreposição e
-    ordenação por área ficou bem próxima, mas consirando o custo-benefício não vale a pena.
+    a largura como critério de ordenação. Já em qualidade o melhor resultado foi obtido com
+    sopreposição e ordenação por área. A maximização de regiões e ordenação por perímetro ficou
+    bem próxima, ainda mais consirando o custo-benefício.
     A primeira linha da tabela mostra a combinação entre a criação de regiões na vertical e
     ordenação pela largura, esse resultado é bem interessante pois têm um dos menores tempos e ainda
     consegue ser competitivo tanto em qualidade quanto em quantidade.}
@@ -134,7 +134,7 @@
         \label{tab:instances}
         \ttfamily\input{utils/tabular/compare/instanceset}
     \end{table}
-    \note{Nessa última tabela eu trouxe os resultados separados de acordo com o conjunto de
+    \note{Nessa tabela eu trouxe os resultados separados de acordo com o conjunto de
     instância, a BKW demorou mais por ter os maiores números de itens a serem alocados dentre todas
     as instâncias. Em geral, temos bons resultados para cada conjunto, mas vale investigar se algum
     deles possui alguma característica que torne melhor determinado método de solução.}
@@ -149,5 +149,14 @@
         \label{tab:sobreposicao}
         \ttfamily\input{utils/tabular/compare/superposition}
     \end{table}
-    \note{}
+    \note{Na última tabela eu trouxe os números da comparação entre regiões com e sem sobreposição.
+    Na primeira linha temos os resultados de todas as combinações possíveis com regiões sem
+    sobreposição e o tempo total que levou para executar todas as instâncias. Já na segunda linha
+    somente o critério de ordenação pela área foi considerado, já que obteve os melhores resultados.
+    Os demais critérios não foram considerados pois esse sozinho já ultrapassa o tempo de todos os
+    métodos sem sobreposição, caso fossem considerados o tempo total seria cerca de 10 vezes maior
+    enquanto a qualidade teria pouco acréscimo.
+
+    Aqui fica nítido que compensa muito mais, tanto em qualidade quanto em tempo, rodar todas
+    as combinações possíveis com regiões sem sobreposição e escolher o melhor resultado.}
 \end{frame}

@@ -12,7 +12,7 @@
     \note{
         A premissa do problema é simples, alocar peças em um espaço.
         Pode parecer algo bobo de resolver, mas é de difícil resolução já que pode possuir
-        $N$-dimensões e diversos tipos de peças, de modo é preciso separar o problema em
+        $N$-dimensões e diversos tipos de peças, de modo que é preciso separar o problema em
         diferentes classes e ainda existem variantes dentro das classificações.
     }
 \end{frame}
@@ -29,6 +29,7 @@
         \label{fig:packing}
     \end{figure}
     \note{
+        Como eu disse, o problema pode ter $N$-dimensões, aqui vou citar alguns exemplos.
         \begin{itemize}
             \item O caso 1D pode ser usado para empilhar caixas de mesma profundidade e largura.
             \item Já no 2D poderia ser aplicado em casos onde somente a profundidade é fixa.
@@ -73,7 +74,7 @@
             \item Regulares: Possuem formato convexo.
             \item Irregulares: Possuem formato côncavo.
             \item Outra forma de se definir é checar se existe
-            alguma reta que atravesse o objeto em dois pontos diferentes.
+            alguma reta que atravesse o objeto em dois pontos diferentes, se sim, é irregular.
             \item O trabalho foca em peças regulares retangulares.
         \end{itemize}
     }
@@ -98,7 +99,7 @@
             \item Empacotamento em caixas: Minimizar o número de caixas necessárias para
             empacotar todos os itens.
             \item Empacotamento ortogonal: Alocar todos os itens numa caixa.
-            \item Todos os problemas são NP-difícil, com exceção do ortogonal
+            \item Todas classificações do problema são NP-difícil, com exceção da ortogonal
             (NP-completo)\cite{2DPackLib}.
         \end{itemize}
     }
@@ -115,6 +116,7 @@
         \item Caixas de tamanho variável.
     \end{itemize}
     \note{
+        Aqui vou citar algumas variantes do problema, mas nehuma foi usada no trabalho.
         \begin{itemize}
             \item Corte guilhotinado: Consiste em cortar a caixa de forma paralela
             a um dos lados de forma recursiva.
