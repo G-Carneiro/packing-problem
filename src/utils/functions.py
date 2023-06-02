@@ -82,7 +82,7 @@ def folder_data_to_ibge_table(folder: str) -> None:
                                                     "Quality %", "Time (s)", "Items %"],
                                            ibge=True
                                            )
-                        with open("aftertext/anexos.tex", "a") as f:
+                        with open("aftertext/apendices.tex", "a") as f:
                             f.write("\\input{" + tex_file[:-4] + "}\n")
 
     return None
@@ -123,7 +123,7 @@ def folder_image_to_figure(folder: str = "instances/BKW") -> None:
                         make_figure(tex_file=tex_file, image_file=figure_file, caption=caption,
                                     label=f"{file_name}-{split}-{order}-{descending}".lower(),
                                     fonte="autor", scale=0.5)
-                        with open("aftertext/anexos.tex", "a") as f:
+                        with open("aftertext/apendices.tex", "a") as f:
                             f.write("\\input{" + f"{tex_file[:-4]}" + "}\n")
 
     return None
