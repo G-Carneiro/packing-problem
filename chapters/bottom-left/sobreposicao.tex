@@ -1,0 +1,56 @@
+\section{Sobreposição e domínio infinito}\label{sec:sobreposicao-e-dominio-infinito}
+% TODO: talvez trocar para domínio contínuo
+
+Por mais simples que a heurística \textit{bottom-left} seja, ainda existem duas complicações,
+respeitar a \Cref{eq:2} sobre sobreposição de peças e o domínio infinito de coordenadas
+ao tentar alocar um item.
+As \Crefrange{fig:sobreposicao-dominio}{fig:sobreposicao-dominio5} serão usadas para
+demonstrar as complicações citadas.
+
+A \Cref{fig:sobreposicao-dominio} mostra o estado de um modelo onde o item 0 foi o primeiro alocado
+e o item 1 foi alocado a sua direita na posição (2, 0) para respeitar a \Cref{eq:1},
+porque não cabia logo acima na posição (0, 2).
+
+
+\input{utils/figures/sobreposicao-dominio/continuous_example}
+
+Supondo que a próxima peça da fila tenha largura 3 e altura 1, ao posicioná-la na posição (0, 2)
+percebe-se que a \Cref{eq:1} é satisfeita, mas a \Cref{eq:2} não (\Cref{fig:sobreposicao-dominio2}).
+
+\input{utils/figures/sobreposicao-dominio/continuous_example2}
+
+Nesse caso, com poucas peças alocadas e auxílio visual, é fácil identificar que a posição correta,
+seguindo a lógica \textit{bottom-left}, seria a de coordenadas (0, 4)
+(\Cref{fig:sobreposicao-dominio3}).
+Porém, encontrar tal posição pode ser extremamente complexo.
+Entre as coordenadas (0, 2) e (0, 4) o espaço é contínuo, existindo infinitas outras coordenadas
+entre elas, sendo impossível checar todas.
+
+\input{utils/figures/sobreposicao-dominio/continuous_example3}
+
+Como todas as instâncias usadas para testes tratam somente de peças e recipientes com valores
+inteiros, uma abordagem possível seria discretizar o domínio, conforme a
+\Cref{fig:sobreposicao-dominio4}.
+
+\input{utils/figures/sobreposicao-dominio/discrete_example}
+
+Dessa forma somente coordenadas de valores inteiros precisariam ser verificadas, resolvendo
+parcialmente o problema com domínio, já que ainda existiriam muitos pontos, principalmente em
+instâncias com espaços grandes.
+Mas isso ainda não resolve a parte de sobreposição.
+Para cada ponto ainda é necessário verificar se existe sobreposição com cada uma das peças já
+alocadas, algo extremamente custoso.
+
+Na \Cref{fig:sobreposicao-dominio5} é possível notar que três coordenadas precisaram ser checadas
+até encontrar uma que cumprisse as \Cref{eq:1,eq:2}.
+Por se tratar de um estado inicial de um modelo pequeno esse processo não é tão custoso, porém em
+modelos maiores ou estados mais avançados isso se tornará cada vez mais custoso, visto que o domínio
+será maior e, principalmente, mais peças estarão alocadas para checar possíveis sobreposições.
+
+\input{utils/figures/sobreposicao-dominio/discrete_example2}
+
+Outro fator o qual deve ser observado é de que a discretização do domínio pode não funcionar bem em
+casos onde os valores trabalhados não sejam inteiros.
+Nesses casos a discretização poderia ocorrer com algum nível de precisão nas casas decimais,
+mas ainda assim as chances de desperdício de área são grandes.
+Ou seja, muitos problemas reais seriam complexos de serem resolvidos com a discretização.
