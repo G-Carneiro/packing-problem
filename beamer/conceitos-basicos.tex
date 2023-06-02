@@ -53,18 +53,7 @@
 \begin{frame}
     \frametitle{Conceitos básicos}
     \framesubtitle{Modelo contínuo $\times$ discreto}
-    \begin{figure}[!htb]
-        \centering
-        \begin{tikzpicture}
-            \begin{axis}
-                \addplot[darkgray] {sin((deg(x))};
-                \addplot[black, only marks] {cos(deg(x))};
-                \legend{Contínuo, Discreto};
-            \end{axis}
-        \end{tikzpicture}
-        \caption{Exemplo de modelo contínuo e discreto.}
-        \label{fig:continuo-discreto}
-    \end{figure}
+    \input{utils/figures/continuo-discreto}
     \note{
     % TODO: explicar sobre domínios convexos não convexos
         Um modelo é contínuo quando sua região factível é contínua, ou seja, dado um ponto

@@ -39,6 +39,7 @@
 \RequirePackage{csquotes}                           % Aspas seguindo linguagem babel (biblatex)
 \RequirePackage{caption}                            % This Fix: destination with same identifier
 %\RequirePackage[a-1b]{pdfx}                         % Gerar PDF/A
+\RequirePackage[brazilian, nameinlink]{cleveref}    % \cref references
 \RequirePackage{hyperref}                           % permissão de hyperlinks
 \RequirePackage[style=abnt]{biblatex}               % Referências com padrão ABNT
 
@@ -50,6 +51,9 @@
 \renewcommand{\listingscaption}{Código}
 \renewcommand{\listoflistingscaption}{Lista de Códigos}
 \providecommand{\listingautorefname}{Código}
+\Crefname{equation}{Restrição}{Restrições}
+\creflabelformat{equation}{#2#1#3}
+\counterwithout{equation}{section}
 
 \pgfplotsset{compat=1.18}
 %\pagecolor{black}
