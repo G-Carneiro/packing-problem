@@ -1,0 +1,35 @@
+\chapter{Resultados}\label{ch:resultados}
+
+Para testar os métodos de solução criados foram usadas 45 instâncias de teste da literatura,
+separadas em cinco conjuntos de instância de características diferentes:
+BKW, GCUT, NGCUT, OF e OKP\@.
+Todas as elas foram obtidas através da biblioteca pública
+\href{https://site.unibo.it/operations-research/en/research/2dpacklib}{2DPackLib}.
+
+O foco do trabalho é no 2D-KP e com o critério de maximização sendo a área ocupada do espaço.
+Mas nem todos conjuntos foram feitos para ser resolvidos dessa forma, nesses casos foram
+feitas leves adaptações para usá-los.
+O motivo de usar instâncias feitas com outro objetivo é para não viciar o modelo em instâncias
+específicas.
+
+As instâncias BKW foram propostas para 2D-SPP~\cite{burke2004new}, esse conjunto é interessante, pois
+existe uma solução ótima onde todos os itens podem ser alocados.
+\citeauthor*{cote2014combinatorial} apresentam alguns resultados para esse conjunto, já
+\citeauthor*{delorme2017logic} trazem resultados usando rotações ortogonais.
+
+Instâncias GCUT foram propostas para 2D-KP com corte guilhotinados~\cite{beasley1985algorithms},
+como o trabalho não usa variantes será usada sem os cortes.
+Esse conjunto já foi usado na literatura no 2D-SPP~\cite{cote2014combinatorial},
+2D-SPP com corte guilhotinado~\cite{mrad2015arc}, 2D-SPP com rotações ortogonais~\cite{delorme2017logic}
+e 2D-CSP com corte guilhotinado~\cite{cintra2008algorithms}.
+
+NGCUT é um conjunto proposto para 2D-KP~\cite{beasley1985exact}.
+Ele possui resultados recentes para 2D-KP, 2D-SPP~\cite{cote2014combinatorial} e 2D-SSP com
+rotações ortogonais~\cite{delorme2017logic}.
+
+As instâncias OF foram inicialmente feitas para 2D-KP com cortes
+guilhotinados~\cite{oliveira1990improved} e foram resolvidas recentemente com o mesmo propósito
+~\cite{velasco2019improved, martin2020models}.
+
+Por fim, instâncias OKP foram criadas para 2D-KP~\cite{fekete1997new} e já foram resolvidas para
+versões sem e com corte guilhotinado~\cite{furini2016modeling}.
