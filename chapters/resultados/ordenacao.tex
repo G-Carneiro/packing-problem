@@ -1,0 +1,20 @@
+A primeira coisa a qual fica evidente com os resultados é a discrepância na qualidade de solução
+entre a ordenação crescente e a decrescente, algo já esperado.
+Na \Cref{tab:combinations} é possível notar que ordenando de forma decrescente é possível ocupar
+cerca de $20\%$ a mais do espaço (coluna “Qualidade \%”), quando comparado a ordenação crescente.
+
+\input{utils/tables/compare/descending}
+
+A coluna “Vitórias” indica quantas vezes tal método de solução obteve o melhor resultado em
+comparação com os demais métodos em outras linhas.
+Enquanto a coluna “Empates” mostra a quantidade de vezes que o método conseguiu a melhor qualidade,
+mas outros também conseguiram.
+Essas colunas foram feitas da seguinte forma: entre cada combinação de critério de ordenação,
+modo de criar regiões e instâncias, é feita a comparação se a qualidade de solução foi melhor
+para ordenação crescente ou decrescente.
+No caso de ambas conseguirem o melhor resultado, é acrescido 1 tanto na coluna “Vitórias”, quanto
+na “Empates” de ambas.
+Por fim, a coluna “Tempo (s)” mostra o tempo médio de execução do método.
+
+Com isso, fica claro que ordenar a fila de entrada da \textit{bottom-left} de modo decrescente é
+vantajoso em termos de qualidade, quantidade e tempo de execução.
