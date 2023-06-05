@@ -379,4 +379,6 @@ def compare_combinations(data_set: list[Data]) -> None:
 
     return compare(name=["Split", "Order", "Descending"], data_set=data_set, iterable=iterable,
                    file_name="combinations", line_id="[key[0][0], key[1][0], key[2][0]]",
+                   caption="Resultado da comparação entre todos os métodos de solução.",
+                   label="combinations",
                    args=args, short=False, floatfmt=("", "", "", "", "", ".4f", ".4f", ".4e"))

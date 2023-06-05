@@ -1,3 +1,26 @@
 \section{Comparativo entre combinações}\label{sec:comparativo-entre-combinacoes}
 
+A \Cref{tab:combinations} contém os resultados para cada um dos quarenta métodos de solução feitos.
+Com ela é possível identificar qual dos métodos apresenta melhores resultados qualitativos e
+quantitativos.
+
 \input{utils/tables/compare/combinations}
+
+Dentre os métodos que usam regiões onde é preciso checar sobreposições, os mais interessantes são
+o de ordenação decrescente pela área (linha 30), pelo perímetro (linha 32) e pela largura (linha 36).
+Utilizando a área conseguiu-se o segundo melhor resultado quantitativo e também qualitativo.
+Com o perímetro foi possível atingir o terceiro maior número de vitórias e a melhor qualidade de
+solução.
+Por fim, a largura obteve o melhor resultado quantitativo e ficou em terceiro na qualidade de solução.
+
+Nos métodos que usam regiões mais simples, os resultados foram bem variados nas combinações,
+dentre eles se destacam: regiões criadas usando linha vertical e ordenação pela largura (linha 6) e
+maximizar uma região e ordenar pela área (linha 20) ou pelo perímetro (linha 22).
+O método da linha 6 ficou em terceiro lugar no critério quantitativo (empate com a linha 32) e
+conseguiu a quinta posição na qualidade de solução.
+As linhas 20 e 22 tiveram a quarta maior quantidade de vitórias (empate também com a linha 2), já
+qualitativamente a linha 20 obteve a sexta melhor média nas soluções, enquanto a linha 22 conseguiu
+a quarta.
+
+Ainda que os resultados dos métodos que usam regiões as quais calculam sobreposições sejam melhores,
+não compensa utilizá-los, como visto na \cref{sec:comparativo-entre-criacao-de-regioes}.
