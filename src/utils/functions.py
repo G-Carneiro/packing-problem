@@ -304,9 +304,19 @@ def compare_split(data_set: list[Data]) -> None:
     iterable: list[tuple[str, ...]] = []
     for split in SplitMode:
         iterable.append((split.name,))
-    return compare(data_set=data_set, iterable=iterable, file_name="splitmode", splitmode="key",
+    return compare(data_set=data_set, iterable=iterable, file_name="regioes", splitmode="key",
+                   caption="Resultado da comparação entre criação de regiões.",
+                   floatfmt=("", "", "", ".4f", ".4f", ".4e"), name="Região", label="regioes", )
+
+
+def compare_split_true(data_set: list[Data]) -> None:
+    iterable: list[tuple[str, ...]] = []
+    for split in SplitMode:
+        iterable.append((split.name,))
+    return compare(data_set=data_set, iterable=iterable, file_name="regioes_true", splitmode="key",
                    descending=[Descending.TRUE.name.capitalize()],
-                   floatfmt=("", "", "", ".4f", ".4f", ".4e"), name="SplitMode", )
+                   caption="Resultado da comparação entre criação de regiões.",
+                   floatfmt=("", "", "", ".4f", ".4f", ".4e"), name="Região", label="regioes-true")
 
 
 def compare_order(data_set: list[Data]) -> None:
