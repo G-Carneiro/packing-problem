@@ -14,7 +14,36 @@ modo de criar regiões e instâncias, é feita a comparação se a qualidade de 
 para ordenação crescente ou decrescente.
 No caso de ambas conseguirem o melhor resultado, é acrescido 1 tanto na coluna “Vitórias”, quanto
 na “Empates” de ambas.
-Por fim, a coluna “Tempo (s)” mostra o tempo médio de execução do método.
+Por fim, a coluna “Tempo (s)” mostra o tempo médio de execução do método em segundos.
 
 Com isso, fica claro que ordenar a fila de entrada da \textit{bottom-left} de modo decrescente é
 vantajoso em termos de qualidade, quantidade e tempo de execução.
+Isso se deve a como as regiões são criadas,
+as \Crefrange{fig:estado-inicial}{fig:estado-final} serão utilizadas para exemplificar,
+elas representam estados do modelo usando ordenação crescente pela altura e linhas horizontais
+para criação de regiões para a instância BKW01.
+A \Cref{fig:estado-inicial} representa o estado inicial do modelo, onde ainda não existem peças
+alocadas.
+% TODO: talvez separar as justificativas para qualidade e quantidade e falar sobre o tempo separado.
+
+\input{utils/figures/ordenacao/estado_0}
+
+Ao posicionar uma peça, uma das regiões ficará com a mesma altura do item recém-posicionado
+(\Cref{fig:estado-1}), como a ordenação é crescente a próxima peça terá no mínimo a mesma altura,
+mas o provável é que seja mais alta, impossibilitando seu posicionamento nessa região.
+
+\input{utils/figures/ordenacao/estado_1}
+
+O mesmo irá ocorrer para todos os itens seguintes (\Cref{fig:estado-2}), fazendo com que muitas
+regiões fiquem sem poder receber peças.
+
+\input{utils/figures/ordenacao/estado_2}
+
+A \Cref{fig:estado-final} mostra o estado final do modelo e grande parte do espaço ainda está livre.
+Na \Cref{tab:bkw01} do \Cref{ch:tabelas} é possível ver que a qualidade de solução do modelo com
+essas combinações foi de $12.75\%$, enquanto ao utilizar ordenação decrescente foi possível
+encontrar uma solução de $100\%$.
+Algo semelhante ocorre com outros critérios de ordenação e criação de regiões.
+
+\input{utils/figures/ordenacao/estado_final}
+% TODO: adicionar tabela bkw01 aqui
