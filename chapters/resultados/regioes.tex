@@ -1,3 +1,40 @@
-%\section{Comparativo entre criação de regiões}\label{sec:comparativo-entre-criacao-de-regioes}
+\section{Comparativo entre criação de regiões}\label{sec:comparativo-entre-criacao-de-regioes}
 
+O comparativo entre métodos de criação de regiões gerou resultados interessantes,
+na \Cref{tab:regioes} ocorre algo semelhante ao da \Cref{tab:ordenacoes}.
+Regiões criadas de modo a ser necessário verificar sobreposições obtiveram excelentes resultados
+qualitativos (última linha), pois são pouco afetadas pela ordenação crescente
+(\cref{sec:ordenacao-crescente-decrescente}), assim como o critério de ordenação por \textit{id},
+já que as regiões sempre possuem área máxima (\cref{sec:criacao-de-regioes}).
 
+\input{utils/tables/compare/regioes}
+
+Ao considerar somente a ordenação decrescente (\Cref{tab:ordenacoes-true}), a diferença em relação
+aos demais métodos de criação diminui, ainda que o último modo permaneça sendo o melhor qualitativa
+e quantitativamente.
+Os modos criados traçando uma linha vertical ou horizontal apresentaram qualidades semelhantes e
+os menores tempos de execução, mas o método o qual traça uma linha vertical obteve mais vitórias.
+Regiões criadas para maximizar uma das mesmas conseguiram o segundo melhor resultado qualitativo e
+quantitativo, ao custo de um pequeno acréscimo no tempo de execução em relação aos dois primeiros.
+O último modo de fato conseguiu os melhores resultados, porém a um custo altíssimo, levando cerca
+de 1000 vezes mais tempo que métodos mais rápidos.
+
+\input{utils/tables/compare/regioes_true}
+
+A \Cref{tab:superposition} traz um comparativo entre os dois tipos de criação de regiões,
+os que é preciso checar sobreposição e os que não (\cref{sec:criacao-de-regioes}).
+Na primeira linha da tabela a coluna “Qualidade \%” representa a média do melhor resultado obtido
+em cada instância e a coluna “Tempo Total (s)” mostra a soma dos tempos que cada método de solução
+levou para cada instância.
+As duas colunas consideram somente métodos de solução que usam regiões onde não são necessárias
+verificações de sobreposição, ou seja, são considerados 30 modos de solução.
+A segunda linha considera somente método de solução o qual utiliza ordenação decrescente pela área
+e criação de regiões onde é necessário verificar sobreposições, esse método foi escolhido para o
+comparativo por apresentar os melhores resultados qualitativos (\cref{sec:comparativo-entre-combinacoes}).
+
+\input{utils/tables/compare/superposition}
+
+Com a \Cref{tab:superposition} fica claro que, por mais que usar regiões onde é preciso checar
+sobreposições apresente o melhor resultado, é melhor executar todos demais métodos os quais não
+precisem e escolher somente o de melhor solução, pois assim é possível obter, na média, soluções
+de maior qualidade e ainda levando 10 vezes menos tempo.

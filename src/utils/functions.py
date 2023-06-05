@@ -315,7 +315,8 @@ def compare_split_true(data_set: list[Data]) -> None:
         iterable.append((split.name,))
     return compare(data_set=data_set, iterable=iterable, file_name="regioes_true", splitmode="key",
                    descending=[Descending.TRUE.name.capitalize()],
-                   caption="Resultado da comparação entre criação de regiões.",
+                   caption="Resultado da comparação entre criação de regiões - ordenação "
+                           "decrescente.",
                    floatfmt=("", "", "", ".4f", ".4f", ".4e"), name="Região", label="regioes-true")
 
 
@@ -361,7 +362,7 @@ def compare_superposition(data_set: list[Data]) -> None:
         for order in OrderKey:
             for descending in Descending:
                 iterable.append((split.name, order.name, descending.name.capitalize()))
-    return compare(name="Superposition", data_set=data_set, iterable=iterable, count_wons=False,
+    return compare(name="Sobreposição", data_set=data_set, iterable=iterable, count_wons=False,
                    short=False, floatfmt=("", ".4f", ".4f", ".4e"), only_best_qualities=True,
                    average_time=False, args=args, file_name="superposition", )
 
