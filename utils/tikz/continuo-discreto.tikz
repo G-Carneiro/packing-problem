@@ -2,6 +2,6 @@
     \begin{axis}
         \addplot[darkgray] {sin((deg(x))};
         \addplot[black, only marks] {cos(deg(x))};
-        \legend{Contínuo, Discreto};
+        \legend{Contínuo, Discreto}
     \end{axis}
 \end{tikzpicture}

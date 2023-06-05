@@ -325,7 +325,7 @@ def compare_order_true(data_set: list[Data]) -> None:
         iterable.append((order.name,))
     return compare(data_set=data_set, iterable=iterable, file_name="ordenacao_true", orderkey="key",
                    descending=[Descending.TRUE.name.capitalize()],
-                   caption="Resultado da comparação entre critérios de ordenação.",
+                   caption="Resultado da comparação entre critérios de ordenação decrescente.",
                    label="ordenacoes-true",
                    floatfmt=("", "", "", ".4f", ".4f", ".4e"), name="Ordenação", )
 

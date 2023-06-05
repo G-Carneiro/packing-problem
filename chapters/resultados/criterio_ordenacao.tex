@@ -1,0 +1,30 @@
+%\section{Comparativo entre critérios de ordenação}\label{sec:comparativo-entre-criterios-de-ordenacao}
+
+Ao comparar os diferentes critérios de ordenação (\Cref{tab:ordenacoes}), inicialmente algo parece
+errado, a ordenação por \textit{id} (nenhuma ordenação) está com os melhores resultados
+qualitativos.
+Além disso, todos os critérios conseguiram praticamente a mesma qualidade média.
+
+\input{utils/tables/compare/ordenacao}
+
+Como mencionado anteriormente, ordenar a fila de forma crescente gera resultados ruins.
+Mas isso não ocorre quando o critério de ordenação é o \textit{id}, porque nele tem-se peças
+sem seguirem alguma ordem.
+Com esse critério o impacto da escolha entre ordenação crescente ou decrescente é praticamente
+nulo.
+Por isso ele também se saí muito melhor que os demais na ordenação crescente, sendo o vitorioso
+na esmagadora maioria.
+Já as qualidades próximas se justificam nos critérios diferentes do \textit{id} pois a
+discrepância entre ordenação crescente e decrescente é muito grande, mas ao tirar média isso acaba
+não ficando evidente.
+
+A \Cref{tab:ordenacoes-true} mostra o mesmo comparativo que a \Cref{tab:ordenacoes}, porém agora
+somente considerando a ordenação decrescente, já que não existem motivos para usar a crescente.
+Representando os dados dessa forma fica fácil identificar que utilizar algum critério de ordenação
+para a fila de entrada é vantajoso, pois ao usar o \textit{id} os resultados foram os piores.
+Além disso, percebe-se que as ordenações por área e perímetro obtiveram os melhores resultados,
+ainda que os demais também sejam competitivos.
+Ao considerar somente a ordenação decrescente deixa claro que a alta quantidade vitórias do critério
+\textit{id} na \Cref{tab:ordenacoes} realmente se deve a ordenação crescente.
+
+\input{utils/tables/compare/ordenacao_true}
