@@ -211,7 +211,7 @@ def data_to_data_obj(datas: list[list[str]]) -> list[Data]:
 
 
 def compare(name: str | list[str], data_set: list[Data], iterable: list[tuple[str, ...]],
-            file_name: str, line_id: str = "key[0]",
+            file_name: str, caption: str, label: str, line_id: str = "key[0]",
             floatfmt: tuple[str, ...] = (), count_wons: bool = True,
             short: bool = True, average_time: bool = True,
             only_best_qualities: bool = False, args: str = "", **kwargs) -> None:
@@ -287,8 +287,7 @@ def compare(name: str | list[str], data_set: list[Data], iterable: list[tuple[st
         new_data += [quality[key], items[key], time[key]]
         data.append(new_data)
     make_ibge_table(data=data, file=f"utils/tables/compare/{file_name.lower()}.tex",
-                    caption=f"Resultado da comparação entre {name}.", label="combinations",
-                    headers=headers, floatfmt=floatfmt)
+                    caption=caption, label=label, headers=headers, floatfmt=floatfmt)
     return None
 
 
@@ -314,9 +313,21 @@ def compare_order(data_set: list[Data]) -> None:
     iterable: list[tuple[str, ...]] = []
     for order in OrderKey:
         iterable.append((order.name,))
-    return compare(data_set=data_set, iterable=iterable, file_name="orderkey", orderkey="key",
+    return compare(data_set=data_set, iterable=iterable, file_name="ordenacao", orderkey="key",
+                   caption="Resultado da comparação entre critérios de ordenação.",
+                   label="ordenacoes",
+                   floatfmt=("", "", "", ".4f", ".4f", ".4e"), name="Ordenação", )
+
+
+def compare_order_true(data_set: list[Data]) -> None:
+    iterable: list[tuple[str, ...]] = []
+    for order in OrderKey:
+        iterable.append((order.name,))
+    return compare(data_set=data_set, iterable=iterable, file_name="ordenacao_true", orderkey="key",
                    descending=[Descending.TRUE.name.capitalize()],
-                   floatfmt=("", "", "", ".4f", ".4f", ".4e"), name="OrderKey", )
+                   caption="Resultado da comparação entre critérios de ordenação.",
+                   label="ordenacoes-true",
+                   floatfmt=("", "", "", ".4f", ".4f", ".4e"), name="Ordenação", )
 
 
 def compare_instance_set(data_set: list[Data]) -> None:
