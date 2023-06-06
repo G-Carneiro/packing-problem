@@ -18,36 +18,24 @@ Somando o máximo de regiões para cada item chega-se no número máximo de regi
 no pior caso.
 Considerando $n$ itens, tem-se a \Cref{eq:sum-1-to-n}.
 
-\begin{equation}
-    \label{eq:sum-1-to-n}
-    \sum_{i=1}^{n} i
-\end{equation}
+\input{utils/equations/sum_1_to_n}
 
 Como a soma de 1 até $n$ pode ser reescrita utilizando a \Cref{eq:formula-sum-1-to-n}
 ~\cite{merca2015alternative}, tem-se que o número máximo de regiões a serem verificadas
 para solucionar o modelo é $\frac{n^2 + n}{2}$.
 
-\begin{equation}
-    \label{eq:formula-sum-1-to-n}
-    \sum_{k=1}^{n} k = \dfrac{n(n+1)}{2}
-\end{equation}
+\input{utils/equations/formula_sum_1_to_n}
 
 Para regiões complexas, além desse número de regiões, ainda é necessário verificar sobreposições.
 No pior caso, ao alocar o item $i$, para cada região será preciso verificar sobreposições com
 todos os itens $i - 1$ (\Cref{eq:sum-i-pow-2}).
 
-\begin{equation}
-    \label{eq:sum-i-pow-2}
-    \sum_{i=1}^{n} i (i - 1)
-\end{equation}
+\input{utils/equations/sum_i_pow_2}
 
 Usando a Fórmula de Faulhaber~\cite{merca2015alternative} é possível reescrever a soma dos quadrados
 dos $n$ primeiros números inteiros como mostra a \Cref{eq:sum-k-pow-2}.
 
-\begin{equation}
-    \label{eq:sum-k-pow-2}
-    \sum_{k=1}^{n} k^2 = \dfrac{n(n+1)(2n+1)}{6}
-\end{equation}
+\input{utils/equations/sum_k_pow_2}
 
 Assim, ao reescrever a \Cref{eq:sum-i-pow-2} utilizando as \Cref{eq:formula-sum-1-to-n,eq:sum-k-pow-2},
 tem-se que, no pior caso, será necessário verificar se existe sobreposição entre peças
