@@ -6,7 +6,6 @@ from tabulate import tabulate
 
 from src.model.data import Data
 from src.utils.descending import Descending
-from src.utils.instances import InstanceSet
 from src.utils.order_key import OrderKey
 from src.utils.split_mode import SplitMode
 
@@ -240,6 +239,7 @@ def compare(name: str | list[str], data_set: list[Data], iterable: list[tuple[st
         time[key] = 0
     size = len(data_set_filtered[iterable[0]])
     best_qualities: list[float] = []
+    best_qualities_items: list[float] = []
     total_time: float = 0
     for idx in range(size):
         qualities = []
@@ -254,13 +254,17 @@ def compare(name: str | list[str], data_set: list[Data], iterable: list[tuple[st
                 pass
         greatest = max(qualities)
         best_qualities.append(greatest)
-        if not count_wons:
+        if not count_wons and not only_best_qualities:
             continue
         draw: bool = qualities.count(greatest) > 1
+        best_qualities_items_appended: bool = False
         for key, value in data_set_filtered.items():
             try:
                 if (value[idx].quality == greatest):
                     wons[key] += 1
+                    if not best_qualities_items_appended:
+                        best_qualities_items.append(value[idx].inside_items)
+                        best_qualities_items_appended = True
                     if draw:
                         draws[key] += 1
             except IndexError:
@@ -270,6 +274,7 @@ def compare(name: str | list[str], data_set: list[Data], iterable: list[tuple[st
         size = len(data_set_filtered[key])
         if only_best_qualities:
             quality[key] = sum(best_qualities)
+            items[key] = sum(best_qualities_items)
         quality[key] /= size
         items[key] /= size
         time[key] /= size
@@ -343,12 +348,22 @@ def compare_order_true(data_set: list[Data]) -> None:
 
 def compare_instance_set(data_set: list[Data]) -> None:
     iterable: list[tuple[str, ...]] = []
-    for data in InstanceSet:
-        iterable.append((data.name,))
-    return compare(data_set=data_set, iterable=iterable, file_name="instanceset", instanceset="key",
-                   descending=[Descending.TRUE.name.capitalize()],
-                   floatfmt=("", ".4f", ".4f", ".4e"), name="InstanceSet",
-                   short=False, count_wons=False, )
+    args: str = f"splitmode=[key[0]], " \
+                f"orderkey=[key[1]], " \
+                f"descending=[key[2]], "
+    for split in SplitMode:
+        if split == SplitMode.NONE:
+            continue
+        for order in OrderKey:
+            for descending in Descending:
+                iterable.append((split.name, order.name, descending.name.capitalize()))
+    return compare(data_set=data_set, iterable=iterable, file_name="instanceset",
+                   instanceset="'OKP'", args=args,
+                   # descending=[Descending.TRUE.name.capitalize()],
+                   caption="Resultados para os conjuntos de instância.",
+                   floatfmt=("", ".4f", ".4f", ".4e"), name="Conjunto",
+                   only_best_qualities=True, average_time=False,
+                   short=False, count_wons=False, label="instancias", )
 
 
 def compare_superposition(data_set: list[Data]) -> None:
