@@ -58,13 +58,15 @@
 \newcommand{\restrictionautorefname}{Restrição}
 \counterwithout{equation}{section}
 \counterwithout{equation}{subsection}
+\ifdefined\thechapter
 \counterwithout{equation}{chapter}
+\fi
 
 \newcounter{restrictionsavedequation}
 \newenvironment{restrictions}{
     \setcounter{restrictionsavedequation}{\value{equation}}
 %    \counterwithin*{equation}{restriction}
-    \refstepcounter{restriction}
+    \stepcounter{restriction}
     \align}
     {\endalign
     \setcounter{equation}{\value{restrictionsavedequation}
