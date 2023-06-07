@@ -4,7 +4,10 @@ Para testar os métodos de solução criados foram usadas 45 instâncias de test
 separadas em cinco conjuntos de instância de características diferentes:
 BKW, GCUT, NGCUT, OF e OKP\@.
 Todas as elas foram obtidas através da biblioteca pública
-\href{https://site.unibo.it/operations-research/en/research/2dpacklib}{2DPackLib}.
+\href{https://site.unibo.it/operations-research/en/research/2dpacklib}{2DPackLib}
+\footnote{Disponível em: https://site.unibo.it/operations-research/en/research/2dpacklib.
+Acessado em: \today.}
+~\cite{2DPackLib}.
 
 O foco do trabalho é no 2D-KP e com o critério de maximização sendo a área ocupada do espaço.
 Mas nem todos conjuntos foram feitos para ser resolvidos dessa forma, nesses casos foram
@@ -17,8 +20,7 @@ existe uma solução ótima onde todos os itens podem ser alocados.
 \citeauthor*{cote2014combinatorial} apresentam alguns resultados para esse conjunto, já
 \citeauthor*{delorme2017logic} trazem resultados usando rotações ortogonais.
 
-Instâncias GCUT foram propostas para 2D-KP com corte guilhotinados~\cite{beasley1985algorithms},
-como o trabalho não usa variantes será usada sem os cortes.
+Instâncias GCUT foram propostas para 2D-KP com corte guilhotinados~\cite{beasley1985algorithms}.
 Esse conjunto já foi usado na literatura no 2D-SPP~\cite{cote2014combinatorial},
 2D-SPP com corte guilhotinado~\cite{mrad2015arc}, 2D-SPP com rotações ortogonais~\cite{delorme2017logic}
 e 2D-CSP com corte guilhotinado~\cite{cintra2008algorithms}.
@@ -50,7 +52,8 @@ Ao analisar a média, a mediana e o desvio padrão, observou-se que a média e m
 valores quase idênticos, enquanto o desvio padrão é pequeno ao ponto de poder ser ignorado,
 indicando que cinco execuções por caso de teste são suficientes.
 Portanto, a mediana e desvio padrão serão omitidos no restante do trabalho, podendo ser encontrados
-na versão completa dos dados gerados no \href{https://github.com/G-Carneiro/packing-problem/}{Github}.
+na versão completa dos dados gerados no \href{https://github.com/G-Carneiro/packing-problem/}{Github}
+\footnote{Disponível em: https://github.com/G-Carneiro/packing-problem/. Acessado em: \today.}.
 No \Cref{ch:tabelas} é possível ver uma versão resumida de todos os dados gerados (sem mediana e
 desvio padrão).
 
