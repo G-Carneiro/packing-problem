@@ -1,18 +1,27 @@
-\chapter{\textit{Bottom-Left}}\label{ch:bottom-left}
+\chapter{Métodos de soluçao}\label{ch:bottom-left}
 % TODO: adicionar figura com exemplo
 
 Como descrito na \autoref{sec:classificacao}, a maioria das classes do problema são NP-difíceis.
-Isso torna métodos de soluções exatos, os quais buscam pela solução ótima, extremamente custosos em tempo e recursos computacionais em instâncias de porte moderado, muitas vezes sendo inviável por falta de algum desses dois motivos.
-Consequentemente a literatura é dominada por abordagens que usem heurísticas e meta-heurísticas, sendo a \textit{bottom-left} uma das principais estratégias de solução e será usada no estudo deste trabalho.
+Isso torna métodos de soluções exatos, os quais buscam pela solução ótima, extremamente custosos
+em tempo e recursos computacionais em instâncias de porte moderado, muitas vezes sendo inviáveis
+por falta de algum desses dois motivos.
+Consequentemente a literatura é dominada por abordagens que usem heurísticas e meta-heurísticas,
+sendo a \textit{bottom-left} uma das principais estratégias de solução e será usada no estudo
+deste trabalho.
 
 \input{utils/figures/bottom_left}
 
-Sua premissa é simples, dado uma fila como entrada, enquanto ela não estiver vazia, basta retirar o primeiro item dela e alocar no canto mais a baixo e a esquerda quanto for possível\cite{aprendizado-reforco}, sem sobreposições entre peças (\autoref{sec:definicao}).
+Sua premissa é simples, dado uma fila de itens como entrada, enquanto ela não estiver vazia,
+basta retirar o primeiro item dela e alocar no canto mais a baixo e à esquerda quanto for
+possível~\cite{aprendizado-reforco}, sem sobreposições entre peças (\autoref{sec:definicao}).
 Caso não exista uma posição válida, a peça é desconsiderada e passa-se para próxima da fila.
 A \autoref{fig:bottom-left} mostra um exemplo de alocação para um dado conjunto de peças regulares.
 
-Vale destacar que a própria ordem da fila pode gerar resultados diferentes, alterando a qualidade da solução.
-Um dos resultados esperados deste trabalho é comparar diferentes formas de ordenação e identificar se há alguma que se destaque na qualidade de solução, para isso será usado um conjunto de instâncias.
+Vale destacar que a própria ordem da fila pode gerar resultados diferentes, alterando a qualidade
+da solução.
+Um dos resultados esperados deste trabalho é identificar se há alguma forma de ordenação que
+se destaque na qualidade de solução, através da comparação entre os diferentes modos.
+Para isso, serão usados conjuntos de instâncias frequentemente utilizados na literatura.
 
 \input{chapters/bottom-left/ordenacao}
 \input{chapters/bottom-left/sobreposicao}

@@ -1,11 +1,16 @@
 \section{Criação de regiões}\label{sec:criacao-de-regioes}
 % TODO: talvez dar nomes para soluções com e sem região
 
-Os dois problemas expostos na \cref{sec:sobreposicao-e-dominio-infinito} podem ser facilmente
+Os dois problemas expostos na \cref{sec:sobreposicao-e-dominio-infinito} podem ser
 resolvidos utilizando a estratégia de criação de regiões.
-Com essa técnica é possível ignorar a \Cref{eq:2}.
-Nela, ao posicionar uma peça, duas regiões são criadas (\Cref{fig:regiao-vertical}) e o item
+Com essa técnica, a \Cref{eq:2} é trivialmente satisfeita.
+Nela, ao posicionar uma peça, duas regiões são criadas e o item
 seguinte será somente posicionado se couber em uma das regiões disponíveis.
+
+Supondo um recipiente com altura e largura 40 e um item 0 com altura 4 e largura 7.
+Quando o item for posicionado na coordenada (0, 0), duas regiões, R1 e R2, serão criadas
+(\Cref{fig:regiao-vertical}).
+A região R1 começará na coordenada (0, 4) e a R2 na (7, 0).
 
 \input{utils/figures/regioes/regiao_vertical}
 
@@ -18,11 +23,17 @@ delas foram usadas.
 
 A primeira delas é \textbf{traçando uma linha vertical} a partir do canto superior direito de cada
 peça alocada (\Cref{fig:regiao-vertical}).
-A segunda é igual a primeira, porém \textbf{traçando uma linha horizontal} (\Cref{fig:regiao-horizontal}).
+Nela a região R1 terá altura 36 e largura 7, indo até à coordenada (7, 40).
+Enquanto a R2 possuirá altura 40 e largura 33, chegando até à coordenada (40, 40).
+
+A segunda é semelhante à primeira, porém \textbf{traçando uma linha horizontal}
+(\Cref{fig:regiao-horizontal}).
+Nesse caso, R1 terá altura 36 e largura 40, indo até à coordenada (40, 40).
+Já R2 possuíra altura 4 e largura 33, chegando até à coordenada (40, 4).
 
 \input{utils/figures/regioes/regiao_horizontal}
 
-Já na terceira, a linha traçada (vertical ou horizontal) depende da área das regiões criadas
+Na terceira, a linha traçada (vertical ou horizontal) depende da área das regiões criadas
 com cada linha.
 Nesse modo o objetivo é maximizar a área de uma das regiões geradas, ele identifica qual linha
 irá gerar a região de maior área e a traça.
@@ -39,9 +50,11 @@ utilizadas, diminuindo a qualidade da solução.
 
 No quarto e último modo de criar regiões nenhuma linha é traçada, todas as regiões vão até o final
 do recipiente (\Cref{fig:regiao-none}).
+R1 terá altura 40 e largura 36, enquanto R2 possuirá altura 40 e largura 33.
+Então, R1 e R2 terminarão na coordenada (40, 40).
 Nesse caso, sobreposições de peças podem ocorrer, então verificações são necessária para cumprir
 a \Cref{eq:2}.
-Ao fazer isso, possibilita que mais peças sejam alocadas, visto que todas as regiões possuem área
+Ao fazer isso, é possível que mais peças sejam alocadas, visto que todas as regiões possuem área
 máxima.
 Esse modo foi criado para identificar se é de fato melhor que os demais e qual seu custo.
 
