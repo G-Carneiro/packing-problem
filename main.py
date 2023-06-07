@@ -121,9 +121,3 @@ if __name__ == "__main__":
     # compare_combinations(data_set=data_set)
     # folder_image_to_figure()
     # make()
-
-# BKW   &     94.4783 &   85.7782 & 1.2688e+01 \\
-# GCUT   &     84.6060 &   20.0994 & 2.0189e-01 \\
-# NGCUT   &     88.2085 &   35.0307 & 8.1531e-01 \\
-# OF   &     92.0714 &   34.0580 & 1.0821e-02 \\
-# OKP   &     93.9360 &   22.8232 & 1.1026e-01
