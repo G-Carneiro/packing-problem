@@ -1,0 +1,30 @@
+\section{Modelos de Otimização}\label{sec:modelos-de-otimizacao}
+% FIXME: adicionar referência
+
+Modelos são aproximações da realidade, representam o problema de maneira simples e objetiva,
+usando restrições.
+Eles são o que baseiam a Pesquisa Operacional.
+De forma geral, um modelo de otimização quer minimizar ou maximizar uma função $f(x)$ com $x$
+obedecendo algumas restrições.
+Pode-se então representar o modelo do seguinte modo:
+
+\input{utils/equations/min_max}
+
+Onde
+
+\begin{itemize}
+    \item $x$: variável de decisão, $x = x_1, x_2, \dots, x_n$.
+    \item $\mathcal{X}$: conjunto factível ou domínio, possui todas as soluções possíveis para o problema.
+    \item $f(x)$: função objetivo, a qual determinará o critério de escolha da solução.
+\end{itemize}
+
+Usando o problema da mochila como exemplo, onde se busca maximizar o valor dos itens alocados
+sem que seus pesos ultrapassem a capacidade da mochila,
+um modelo possível é:
+
+% TODO: confirmar modelo
+\input{utils/equations/modelo_mochila}
+
+Em que $I$ é um conjunto de itens, $v_{i}$ e $w_{i}$ são, respectivamente o valor e o peso do item
+$i \in I$, $C$ é a capacidade da mochila e $x_{i}$ são variáveis binárias indicando se o
+item foi escolhido para mochila ou não.
