@@ -69,7 +69,7 @@ Lá vai (se prepara)...
 
 - Referências para a parte de conceitos e para a parte bottom-left e
   talvez para ordenação:
-    - Wäscher, Gerhard, Heike Haußner, and Holger Schumann. "An improved
+    - [ ] Wäscher, Gerhard, Heike Haußner, and Holger Schumann. "An improved
       typology of cutting and packing problems." European journal of
       operational research 183.3 (2007): 1109-1130. Essa referência
       classifica diversos problemas de corte e empacotamento baseado na
@@ -79,7 +79,7 @@ Lá vai (se prepara)...
       journal of operational research 44.2 (1990): 145-159. Essas duas
       referências acho que podem servir como parágrafo de introdução para
       a Seção 3.2 (Classificação).
-    - A heurística de bottom-left foi proposta Baker, Brenda S., Edward
+    - [ ] A heurística de bottom-left foi proposta Baker, Brenda S., Edward
       G. Coffman, Jr, and Ronald L. Rivest. "Orthogonal packings in two
       dimensions." SIAM Journal on computing 9.4 (1980):
       846-855. Embora tenha sido proposta há décadas, a bottom-left
@@ -87,39 +87,39 @@ Lá vai (se prepara)...
       sofisiticados e para diferentes variantes do problema. (Acho que
       isso pode ser utilizado como motivação para o seu trabalho e/ou
       como introdução do capítulo da bottom-left).
-        - O artigo de Wei, L., Oon, W. C., Zhu, W., & Lim, A. (2011). A
+        - [ ] O artigo de Wei, L., Oon, W. C., Zhu, W., & Lim, A. (2011). A
           skyline heuristic for the 2D rectangular packing and strip
           packing problems. European Journal of Operational Research,
           215(2), 337-346. É o que menciona a proposta da
           bottom-left.
-        - Chehrazad, S., Roose, D., & Wauters, T. (2022). A fast and
+        - [ ] Chehrazad, S., Roose, D., & Wauters, T. (2022). A fast and
           scalable bottom-left-fill algorithm to solve nesting problems
           using a semi-discrete representation. European Journal of
           Operational Research, 300(3), 809-826. Uma referência nova
           que utiliza uma adaptação da bottom-left para empacotamento de
           itens irregulares que posiciona os itens de forma gulosa.
-    - Chen, M., Wu, C., Tang, X., Peng, X., Zeng, Z., & Liu,
+    - [ ] Chen, M., Wu, C., Tang, X., Peng, X., Zeng, Z., & Liu,
       S. (2019). An efficient deterministic heuristic algorithm for the
       rectangular packing problem. Computers & Industrial Engineering,
       137, 106097. Essa é uma referência nova com um algoritmo para o
       empacotamento de retângulos que utiliza a ordenação decrescente
       pela área como parte da solução proposta. Acho que pode ser
       utilizada como motivação para fazermos experimentos com essa estratégia.
-    - Para a parte teórica, uma opção é adicionar: Hillier, F. S., &
+    - [ ] Para a parte teórica, uma opção é adicionar: Hillier, F. S., &
       Lieberman, G. J. (2001). Introduction to operations research. Acho
       que dá para usar essa referência para elaborar um pouco a seção
       2.3.4, com informações como as seguintes.
-        - Programação Linear. Algoritmos importantes para essa classe de
+        - [ ] Programação Linear. Algoritmos importantes para essa classe de
           problemas são: O algoritmo Simples e algorimos de pontos
           interiores.
-        - Programação Linear Inteira Mista. Algoritmos importantes são branch-and-bound
+        - [ ] Programação Linear Inteira Mista. Algoritmos importantes são branch-and-bound
           e branch-and-cut.
-        - Programação não-Linear. Os algoritmos para solução de problemas
+        - [ ] Programação não-Linear. Os algoritmos para solução de problemas
           não lineares podem ser baseados em gradiente, mas com frequência
           dependem bastante do problema a ser resolvido.
-        - Programação estocástico. Alguns métodos para solução podem se
+        - [ ] Programação estocástico. Alguns métodos para solução podem se
           basear em simulação dos eventos aleatórios envolvidos.
-    - Outra sugestão é
+    - [x] Outra sugestão é
       terminar o Cap 2 resumindo as características do problema que
       estamos interessados. Algo como: "O problema de empacotamento de
       retângulos que é alvo deste estudo (detalhado no capítulo X) é determínistico e pode ser
@@ -127,11 +127,11 @@ Lá vai (se prepara)...
       (referência). Neste trabalho, o problema será explorado do ponto
       de vista heurístico com o método apresentado no Capítuo X
       (capítulo da bottom-left).
-    - Na Seção 2.4 conseguimos adicionar a seguinte referência. Wolsey,
+    - [ ] Na Seção 2.4 conseguimos adicionar a seguinte referência. Wolsey,
       Laurence A. Integer programming. John Wiley & Sons, 2020. Para
       falar de exemplos de algoritmos exatos para Programação Linear
       Inteira Mista.
-        - O algoritmo branch-and-bound realiza a enumeração implícita das
+        - [ ] O algoritmo branch-and-bound realiza a enumeração implícita das
           soluções viáveis de um problema de Programação Linear Inteira
           Mista, mantendo valores para os limitantes inferior e superior
           de um problema de otimização. O algoritmo termina quando ambos
@@ -140,21 +140,21 @@ Lá vai (se prepara)...
           de Programação Inteira, como branch-and-cut e planos de corte
           podem ser vistos em Wolsey...). Acho que isso vai ajudar a
           elaborar um pouco o primeiro parágrafo da seção 2.4
-        - Para elaborar sobre heurísticas, podemos usar a referência
+        - [ ] Para elaborar sobre heurísticas, podemos usar a referência
           Michalewicz, Zbigniew, and David B. Fogel. How to solve it:
           modern heuristics. Springer Science & Business Media, 2013. A
           Seção 2.5 do livro fala sobre os conceitos básicos de
           heurísticas que podem ser úteis para elaborar sobre heurísticas.
-            - A definição de um problema de otimização pode ser feita
+            - [ ] A definição de um problema de otimização pode ser feita
               definindo um espaço de busca $S$, uma região factível deste
               espaço $S \subset F$. Com essa definição, deseja-se encontrar
               $x \in F$ tal que $f(x) \leq f(y)$ para todo $y \in F$ e para
               a função objetivo $f$.
-            - Soluções heurísticas tipicamente alternam entre explorar o
+            - [ ] Soluções heurísticas tipicamente alternam entre explorar o
               espaço de busca de forma mais ampla e se concentrar em uma
               vizinhança de uma solução viável já encontrada. Por isso, em
               geral, uma heurística garante apenas a otimalidade local da solução.
-        - Mais um comentário sobre essa parte de heurísticas. As
+        - [ ] Mais um comentário sobre essa parte de heurísticas. As
           heurísticas podem ser divididas entre heurísticas construtivas e
           heurísticas de melhoria. Heurísticas construtivas, como diz o
           nome, constroem uma solução para o problema, enquanto que
@@ -163,7 +163,7 @@ Lá vai (se prepara)...
           comentado antes de falar da referência "How to solve it". Também
           acho importante de comentar isso para depois poder falar que a
           bottom-left é uma heurística construtiva.
-    - Acho que uma adição que pode ficar legal no capítulo 2 é ter uma
+    - [ ] Acho que uma adição que pode ficar legal no capítulo 2 é ter uma
       problema de exemplo para alguns pontos. Por exemplo. Na Seção 2.1,
       é possível utilizar de exemplo o problema da mochila
       (unidimensional mesmo). Um modelo para o problema da mochila é
