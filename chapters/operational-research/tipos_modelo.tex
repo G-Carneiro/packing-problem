@@ -32,15 +32,24 @@ A \autoref{fig:continuo-discreto} mostra um gráfico com exemplos de um modelo c
 
 \subsection{Modelo Determinístico × Estocástico}\label{subsec:modelo-deterministico-x-estocastico}
 
-Em modelos determinísticos seus dados são conhecidos, enquanto os estocásticos possuem uma incerteza quanto aos dados.
+Em modelos determinísticos seus dados são conhecidos, enquanto os estocásticos possuem uma
+incerteza quanto aos dados.
 
 \subsection{Tipos de Programação}\label{subsec:tipos-de-programacao}
 
-Com base nas categorias de modelo é possível também dividir métodos de programação (planejamento) para sua solução.
+Com base nas categorias de modelo é possível também dividir métodos de programação (planejamento)
+para sua solução.
+\citeauthor*{hillier1967introduction} traz alguns exemplos algoritmos de para os tipos de programação.
 
 \begin{itemize}
     \item Linear: modelo linear contínuo determinístico.
+    Algoritmos importantes para essa classe de problemas são: o algoritmo Simplex
+    e algoritmos de pontos interiores.
     \item Inteira: modelo linear discreto determinístico.
+    Aqui se destacam os algoritmos \textit{branch-and-bound} e \textit{branch-and-cut}.
     \item Estocástica: modelo linear contínuo estocástico.
+    Alguns métodos para solução podem se basear em simulação dos eventos aleatórios envolvidos.
     \item Não-linear: modelo não-linear contínuo determinístico.
+    Os algoritmos para solução de problemas não lineares podem ser baseados em gradiente,
+    mas com frequência dependem bastante do problema a ser resolvido.
 \end{itemize}

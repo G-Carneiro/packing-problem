@@ -98,27 +98,27 @@ Lá vai (se prepara)...
           Operational Research, 300(3), 809-826. Uma referência nova
           que utiliza uma adaptação da bottom-left para empacotamento de
           itens irregulares que posiciona os itens de forma gulosa.
-    - [ ] Chen, M., Wu, C., Tang, X., Peng, X., Zeng, Z., & Liu,
-      S. (2019). An efficient deterministic heuristic algorithm for the
-      rectangular packing problem. Computers & Industrial Engineering,
-      137, 106097. Essa é uma referência nova com um algoritmo para o
-      empacotamento de retângulos que utiliza a ordenação decrescente
-      pela área como parte da solução proposta. Acho que pode ser
-      utilizada como motivação para fazermos experimentos com essa estratégia.
-    - [ ] Para a parte teórica, uma opção é adicionar: Hillier, F. S., &
-      Lieberman, G. J. (2001). Introduction to operations research. Acho
-      que dá para usar essa referência para elaborar um pouco a seção
-      2.3.4, com informações como as seguintes.
-        - [ ] Programação Linear. Algoritmos importantes para essa classe de
-          problemas são: O algoritmo Simples e algorimos de pontos
-          interiores.
-        - [ ] Programação Linear Inteira Mista. Algoritmos importantes são branch-and-bound
-          e branch-and-cut.
-        - [ ] Programação não-Linear. Os algoritmos para solução de problemas
-          não lineares podem ser baseados em gradiente, mas com frequência
-          dependem bastante do problema a ser resolvido.
-        - [ ] Programação estocástico. Alguns métodos para solução podem se
-          basear em simulação dos eventos aleatórios envolvidos.
+  - [ ] Chen, M., Wu, C., Tang, X., Peng, X., Zeng, Z., & Liu,
+    S. (2019). An efficient deterministic heuristic algorithm for the
+    rectangular packing problem. Computers & Industrial Engineering,
+    137, 106097. Essa é uma referência nova com um algoritmo para o
+    empacotamento de retângulos que utiliza a ordenação decrescente
+    pela área como parte da solução proposta. Acho que pode ser
+    utilizada como motivação para fazermos experimentos com essa estratégia.
+  - [x] Para a parte teórica, uma opção é adicionar: Hillier, F. S., &
+    Lieberman, G. J. (2001). Introduction to operations research. Acho
+    que dá para usar essa referência para elaborar um pouco a seção
+    2.3.4, com informações como as seguintes.
+      - [x] Programação Linear. Algoritmos importantes para essa classe de
+        problemas são: O algoritmo Simples e algorimos de pontos
+        interiores.
+      - [x] Programação Linear Inteira Mista. Algoritmos importantes são branch-and-bound
+        e branch-and-cut.
+      - [x] Programação não-Linear. Os algoritmos para solução de problemas
+        não lineares podem ser baseados em gradiente, mas com frequência
+        dependem bastante do problema a ser resolvido.
+      - [x] Programação estocástico. Alguns métodos para solução podem se
+        basear em simulação dos eventos aleatórios envolvidos.
     - [x] Outra sugestão é
       terminar o Cap 2 resumindo as características do problema que
       estamos interessados. Algo como: "O problema de empacotamento de
