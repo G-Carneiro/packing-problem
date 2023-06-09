@@ -80,7 +80,7 @@ Lá vai (se prepara)...
       journal of operational research 44.2 (1990): 145-159. Essas duas
       referências acho que podem servir como parágrafo de introdução para
       a Seção 3.2 (Classificação).
-    - [ ] A heurística de bottom-left foi proposta Baker, Brenda S., Edward
+    - [x] A heurística de bottom-left foi proposta Baker, Brenda S., Edward
       G. Coffman, Jr, and Ronald L. Rivest. "Orthogonal packings in two
       dimensions." SIAM Journal on computing 9.4 (1980):
       846-855. Embora tenha sido proposta há décadas, a bottom-left
@@ -88,12 +88,12 @@ Lá vai (se prepara)...
       sofisiticados e para diferentes variantes do problema. (Acho que
       isso pode ser utilizado como motivação para o seu trabalho e/ou
       como introdução do capítulo da bottom-left).
-        - [ ] O artigo de Wei, L., Oon, W. C., Zhu, W., & Lim, A. (2011). A
+        - [x] O artigo de Wei, L., Oon, W. C., Zhu, W., & Lim, A. (2011). A
           skyline heuristic for the 2D rectangular packing and strip
           packing problems. European Journal of Operational Research,
           215(2), 337-346. É o que menciona a proposta da
           bottom-left.
-        - [ ] Chehrazad, S., Roose, D., & Wauters, T. (2022). A fast and
+        - [x] Chehrazad, S., Roose, D., & Wauters, T. (2022). A fast and
           scalable bottom-left-fill algorithm to solve nesting problems
           using a semi-discrete representation. European Journal of
           Operational Research, 300(3), 809-826. Uma referência nova
@@ -128,7 +128,7 @@ Lá vai (se prepara)...
           (referência). Neste trabalho, o problema será explorado do ponto
           de vista heurístico com o método apresentado no Capítuo X
           (capítulo da bottom-left).
-        - [ ] Na Seção 2.4 conseguimos adicionar a seguinte referência. Wolsey,
+        - [x] Na Seção 2.4 conseguimos adicionar a seguinte referência. Wolsey,
           Laurence A. Integer programming. John Wiley & Sons, 2020. Para
           falar de exemplos de algoritmos exatos para Programação Linear
           Inteira Mista.
