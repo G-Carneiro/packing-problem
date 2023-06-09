@@ -2,11 +2,40 @@
 % TODO: falar mais sobre heurísticas e como escapar de ótimos locais.
 % FIXME: referências
 
-Métodos exatos sempre vão garantir a solução ótima para o problema, porém encontrar tal solução pode requerer grande tempo e/ou muitos recursos computacionais.
+Métodos exatos sempre vão garantir a solução ótima para o problema, porém encontrar
+tal solução pode requerer grande tempo e/ou muitos recursos computacionais.
 Já heurísticas buscam por soluções factíveis e são geralmente usadas em problemas de grande porte.
 
-Como o problema de interesse é NP-difícil e o principal interesse é em instâncias de médio e grande porte, utilizar um método exato seria bastante desafiador e, provavelmente, não seria possível obter um resultado em tempo hábil devido aos recursos computacionais atuais.
-Portanto, métodos heurísticos serão usados, já que eles tendem a diminuir a demanda computacional, porém não garantem otimalidade da solução resultante.
+Um dos métodos exatos mais conhecidos é o algoritmo \textit{branch-and-bound}, ele realiza a
+enumeração implícita das soluções viáveis de um problema de programação linear inteira mista,
+mantendo valores para os limitantes inferior e superior de um problema de otimização.
+O algoritmo termina sua execução quando ambos os limitantes se igualam, garantindo a otimalidade
+da solução.
+Detalhes algoritmo \textit{branch-and-bound} e outros problemas de programação inteira, como
+\textit{branch-and-cut} e planos de corte podem ser vistos no trabalho de
+\citeauthor*{wolsey2020integer}.
 
-Heurísticas geralmente convergem para ótimos locais, por isso geralmente mecanismos de fuga são usados para se escapar dessa região e tentar atingir um resultado melhor.
-Alguns exemplos desses mecanismos são o \textit{multi-start} e o \textit{simulated annealing}.
+Como o problema de interesse é NP-difícil e o principal interesse é em instâncias de médio
+e grande porte, utilizar um método exato seria bastante desafiador e, provavelmente, não seria
+possível obter um resultado em tempo hábil devido aos recursos computacionais disponíveis.
+Portanto, métodos heurísticos serão usados, já que eles tendem a diminuir a demanda computacional,
+porém não garantem otimalidade da solução resultante.
+
+Soluções heurísticas tipicamente alternam entre explorar o espaço de busca de forma mais ampla
+e se concentrar em uma vizinhança de uma solução viável já encontrada.
+Por isso, em geral, uma heurística garante apenas a otimalidade local da solução.
+Para escapar de ótimos locais e buscar atingir um resultado melhor, mecanismos de fuga são usados.
+Alguns exemplos desses mecanismos são o \textit{multi-start} e o \textit{simulated annealing}~\cite{
+    firat2020effective,rakotonirainy2020improved,hopper2001empirical}.
+
+Continuando o exemplo do problema da mochila~(\cref{sec:modelos-de-otimizacao}), uma heurística
+possível para ele é ordenar os itens de maneira decrescente de acordo com $\dfrac{v_i}{w_i}$ e
+colocá-los na mochila enquanto couber.
+
+As heurísticas podem ser divididas entre heurísticas construtivas e heurísticas de melhoria.
+Heurísticas construtivas, como diz o nome, constroem uma solução para o problema,
+enquanto heurísticas de melhoria, partem de uma solução viável e realizam tentativas de
+melhorar tal solução~\cite{michalewicz2013solve}.
+A heurística \textit{bottom-left} (detalhada no \Cref{ch:bottom-left}), a qual será usada para
+resolver o problema de empacotamento de retângulos~(\Cref{ch:problema-de-empacotamento}),
+é uma heurística construtiva.
