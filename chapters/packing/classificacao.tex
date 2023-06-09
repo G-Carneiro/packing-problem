@@ -1,0 +1,22 @@
+\section{Classificação}\label{sec:classificacao}
+% TODO: adicionar imagens e revisão bibliografica para cada classe
+% FIXME: adicionar formalizações. (Todos tem a mesma formalização apresentada antes?)
+
+Por existirem diferentes objetivos na solução de um problema de empacotamento foram criadas algumas classificações.
+Algumas delas (as principais) são mostradas em~\cite{exact-solution-techniques}, as quais serão exploradas em seguida, com alguns exemplos já vistos na \href{ch:introducao}{Introdução}.
+
+O objetivo do \textbf{Empacotamento 2D em Faixa} é encontrar um empacotamento de altura mínima para um dado conjunto de itens em uma caixa com comprimento fixo.
+Muito aplicado na área têxtil para minimizar o comprimento de tecido cortado para fazer peças de roupas.
+
+No \textbf{Empacotamento 2D da Mochila} deve-se encontrar $\mathcal{I}' \subseteq \mathcal{I}$ que maximize o valor de $\mathcal{B}$.
+Geralmente o valor é dado pela área de caixa ocupada pelos itens, dessa forma, outra interpretação do problema seria minimizar a área desperdiçada (vazia).
+Pode ser utilizado para maximizar o número de peças cortadas de um pedaço de couro, por exemplo.
+
+Já o \textbf{Empacotamento 2D em Caixas} envolve encontrar uma solução que minimize o número de caixas necessárias para empacotar todos os itens.
+As caixas podem possuir diferentes tamanhos, mas a maioria dos problemas lida com as mesmas dimensões.
+Facilmente aplicável na área logística e de transporte, seja minimizando o número de paletes ou veículos de entrega.
+
+Por fim, no \textbf{Empacotamento 2D Ortogonal} busca-se uma solução, caso exista, para empacotar \textbf{todos} os itens na caixa.
+Usado em situações onde se precisa alocar todos os itens dentro de um caminhão.
+
+Todos os problemas descritos são NP-difícil, com exceção do Ortogonal, sendo NP-completo~\cite{2DPackLib}.
