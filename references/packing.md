@@ -99,7 +99,7 @@ Lá vai (se prepara)...
           Operational Research, 300(3), 809-826. Uma referência nova
           que utiliza uma adaptação da bottom-left para empacotamento de
           itens irregulares que posiciona os itens de forma gulosa.
-    - [ ] Chen, M., Wu, C., Tang, X., Peng, X., Zeng, Z., & Liu,
+    - [x] Chen, M., Wu, C., Tang, X., Peng, X., Zeng, Z., & Liu,
       S. (2019). An efficient deterministic heuristic algorithm for the
       rectangular packing problem. Computers & Industrial Engineering,
       137, 106097. Essa é uma referência nova com um algoritmo para o
