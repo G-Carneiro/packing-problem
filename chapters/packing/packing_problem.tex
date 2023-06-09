@@ -1,19 +1,32 @@
 \chapter{Problema de Empacotamento}\label{ch:problema-de-empacotamento}
 
-O problema de empacotamento, é um problema de otimização de difícil resolução.
-Seu objetivo é simples, colocar peças em um espaço $N$-dimensional, na \autoref{fig:packing-example} é possível ver representações para os casos 1D, 2D e 3D\@.
-Tanto as peças quanto o espaço, podem ser de formato regular (convexo) ou não (côncavo).
-Pensando no caso 2D, triângulos, retângulos, círculos e outros polígonos convexos são considerados regulares, enquanto estrelas e outros polígonos côncavos são irregulares.
+Nas últimas três décadas, as publicações na área de corte e empacotamento tiveram um aumento
+considerável.
+Devido a isso, a categorização e organização desses problemas é cada vez mais importante.
+O trabalho de \citeauthor*{wascher2007improved} fornece a classificação de problemas de corte e
+empacotamento baseado na sua dimensão, tipos de itens, tipo de recipiente e função objetivo,
+fornecendo uma atualização da tipologia definida em~\cite{dyckhoff1990typology}.
 
-Outra forma de definir se uma peça é regular ou não, é o número de parâmetros necessários para representá-la.
+O problema de empacotamento, é um problema de otimização de difícil resolução.
+Seu objetivo é simples, colocar peças em um espaço $N$-dimensional, na \autoref{fig:packing-example}
+é possível ver representações para os casos 1D, 2D e 3D\@.
+Tanto as peças quanto o espaço, podem ser de formato regular (convexo) ou não (côncavo).
+Pensando no caso 2D, triângulos, retângulos, círculos e outros polígonos convexos são
+considerados regulares, enquanto estrelas e outros polígonos côncavos são irregulares.
+
+Outra forma de definir se uma peça é regular ou não, é o número de parâmetros necessários
+para representá-la.
 Se for preciso três ou mais é irregular, caso contrário, regular~\cite{aprendizado-reforco}.
 A \autoref{fig:pieces-example} mostra alguns exemplos de ambos tipos de peças.
 
-O foco deste trabalho será em problemas de empacotamento 2D de peças e objetos retangulares ortogonais, sem qualquer variante (\autoref{sec:variantes}).
-Por mais simples que seja, é uma categoria muito importante do problema, visto que, no mundo real, a maioria do que temos interesse em resolver se encaixa nessas características.
-Existem até mesmo instâncias padronizadas para realizar comparativos entre algoritmos~\cite{2DPackLib}.
-
 \input{utils/figures/pieces_example}
+
+O foco deste trabalho será em problemas de empacotamento 2D de peças e objetos retangulares
+ortogonais, sem qualquer variante (\autoref{sec:variantes}).
+Por mais simples que seja, é uma categoria muito importante do problema, visto que, no mundo real,
+a maioria do que temos interesse em resolver se encaixa nessas características.
+Existem até mesmo instâncias padronizadas para realizar comparativos entre algoritmos~\cite{2DPackLib},
+as instâncias usadas neste trabalho serão explicadas no \Cref{ch:resultados}.
 
 \input{chapters/packing/definicao}
 \input{chapters/packing/classificacao}

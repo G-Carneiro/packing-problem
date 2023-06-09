@@ -70,7 +70,7 @@ Lá vai (se prepara)...
 
 - Referências para a parte de conceitos e para a parte bottom-left e
   talvez para ordenação:
-    - [ ] Wäscher, Gerhard, Heike Haußner, and Holger Schumann. "An improved
+    - [x] Wäscher, Gerhard, Heike Haußner, and Holger Schumann. "An improved
       typology of cutting and packing problems." European journal of
       operational research 183.3 (2007): 1109-1130. Essa referência
       classifica diversos problemas de corte e empacotamento baseado na
