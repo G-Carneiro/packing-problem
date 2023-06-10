@@ -14,13 +14,15 @@ Tanto as peças quanto o espaço, podem ser de formato regular (convexo) ou não
 Pensando no caso 2D, triângulos, retângulos, círculos e outros polígonos convexos são
 considerados regulares, enquanto estrelas e outros polígonos côncavos são irregulares.
 
+\input{utils/figures/packing_example}
+
 Existem diversas formas de identificar se um polígono é convexo ou não.
 A primeira delas é verificando se existe alguma diagonal que não pertença à região interna do
 polígono, caso exista, o polígono é côncavo, caso contrário, convexo.
 Também é possível identificar através dos ângulos internos, polígonos côncavos possuem pelo menos
 um ângulo interno com mais de 180 graus.
-Outra forma de definir se uma peça é regular ou não, é o número de parâmetros necessários
-para representá-la.
+Outra forma de definir se uma peça é regular ou não, é identificar o número de parâmetros
+necessários para representá-la.
 Se for preciso três ou mais é irregular, caso contrário, regular~\cite{aprendizado-reforco}.
 A \autoref{fig:pieces-example} mostra alguns exemplos de peças regulares (à direita) e seus
 contornos convexos (à esquerda).
@@ -33,6 +35,9 @@ Por mais simples que seja, é uma categoria muito importante do problema, visto 
 a maioria do que temos interesse em resolver se encaixa nessas características.
 Inclusive, existem vários trabalhos como~\cite{wei2011skyline} e outros mais recentes~\cite{
     martin2020models,firat2020effective,chen2019efficient} com o mesmo propósito.
+Esse escopo também é utilizado para resolver outros problemas, como o planejamento de integração em
+larga escala~\cite{huang2007efficient} e para o roteamento de veículos levando paletes~\cite{
+    silva2022integer}.
 Existem até mesmo instâncias padronizadas para realizar comparativos entre algoritmos~\cite{
     2DPackLib}, as instâncias usadas neste trabalho serão explicadas no \Cref{ch:resultados}.
 
