@@ -4,24 +4,80 @@
 \chapter*[Introdução]{Introdução}\label{ch:introducao}
 \addcontentsline{toc}{chapter}{INTRODUÇÃO}
 
-Este trabalho visa estudar o Problema de Empacotamento de peças retangulares em uma caixa também retangular no espaço de duas dimensões, sendo sua solução considerada NP-difícil \cite{2DPackLib}.
-Antes de abordar o problema (\autoref{ch:problema-de-empacotamento}) e buscar soluções alguns conceitos básicos são mostrados no \autoref{ch:conceitos-basicos}.
+Serviços de loja \textit{online} com entrega como Amazon e Mercado Livre estão tornando-se cada vez
+mais presentes no dia a dia.
+Para tornar as entregas mais rápidas é necessário fazer uma série de estudos de logística e
+planejamento sobre como organizar os produtos nos estoques e nos veículos de entrega~\cite{
+    silva2022integer,morabito1992abordagem}, muitas vezes sendo necessário considerar a ordem
+em que eles precisarão ser retirados.
+Além de tornar o processo mais rápido, a organização também pode permitir o melhor uso de espaços,
+aumentando a quantidade máxima de itens ou evitando o desperdício dos espaços.
 
-O \autoref{ch:conceitos-basicos} foca em definições sobre otimização (\autoref{sec:definicoes}) e em modelos de otimização (\autoref{sec:modelos-de-otimizacao} e \autoref{sec:tipos-de-modelo}).
-No \autoref{ch:problema-de-empacotamento} é dada a definição do problema (\autoref{sec:definicao}), para então mostrar algumas classificações (\autoref{sec:classificacao}) e variantes (\autoref{sec:variantes}), por fim é explicada a heurística \textit{bottom-left} (\autoref{ch:bottom-left}), a qual será utilizada na resolução das instâncias de teste.
+Ainda sobre evitar desperdícios, esse quesito é muito importante para as indústrias de papel,
+móveis, têxtil e metal-mecânica~\cite{queiroz2022estudo,cavali2004problemas,belluzzo2005otimizacao}.
+Todas essas áreas querem gerar o máximo de produtos com o mínimo de recursos materiais utilizados,
+para evitar o descarte desnecessário do material e prejuízos financeiros.
 
-O problema tem várias aplicações nas indústrias de móveis, têxtil e metal-mecânica \cite{queiroz2022estudo, cavali2004problemas, belluzzo2005otimizacao}, além ser extremamente útil em carregamento de paletes e \textit{containers} \cite{morabito1992abordagem}.
-É possível dividir o problema de acordo com sua dimensão.
+Os problemas citados são considerados problemas de corte e empacotamento.
+Problemas de corte envolvem cortar um objeto, como blocos de gesso, chapas de aço e barras de ferro,
+em itens menores.
+Enquanto problemas de empacotamento tratam sobre alocar um conjunto de itens $\mathcal{I}$ em um
+recipiente $\mathcal{B}$.
+Ambos podem ser reduzidos ao outro e é possível separá-los de acordo com sua dimensão.
 
-Problemas unidimensionais podem ser associados ao corte de barras ou canos, para atender uma demanda por peças de diferentes tamanhos.
-As indústrias de tecido ou couro usam o caso 2D para minimizar o desperdício ao se cortar suas peças.
-O caso 3D é facilmente associável ao carregamento de \textit{containers}, onde objetos são geralmente caixas a serem alocadas em algum veículo.
+Problemas unidimensionais podem ser associados ao corte de barras ou canos, para atender uma
+demanda por peças de diferentes tamanhos, ou ao empilhamento de caixas em busca de uma altura mínima.
+Outra aplicação viável do caso 1D é o famoso problema da mochila~\cite{exact-solution-techniques},
+onde se deseja alocar itens de valor $v_i$ e peso $w_i$ em uma mochila com capacidade $C$,
+de forma que se maximize a soma dos valores dos itens escolhidos para entrar na mochila.
 
-Basicamente, pode-se aplicá-lo em qualquer área que precise de organização ou logística, bem como situações que envolvam o corte de algum material.
-Ao utilizar soluções para resolver problemas de empacotamento, é possível reduzir o desperdício de materiais e impacto ambiental, diminuir tempo de entregas e otimizar espaços de estoque.
+As indústrias de móveis, tecido, couro e papel usam o caso 2D para minimizar o desperdício ao se
+cortar suas peças~\cite{queiroz2022estudo, cavali2004problemas, belluzzo2005otimizacao},
+enquanto os setores de entregas usam para organizar paletes~\cite{morabito1992abordagem}.
+O caso 3D é facilmente associável ao carregamento de \textit{containers}~\cite{morabito1992abordagem},
+onde objetos são geralmente caixas a serem alocadas em algum veículo, ou ao corte de blocos de
+gesso, já citado.
+
+Basicamente, o problema é aplicável em qualquer área que precise de organização ou logística,
+bem como em situações que envolvam o corte de algum material.
+Ao utilizar soluções para resolver problemas de corte e empacotamento, é possível reduzir o
+desperdício de materiais e impacto ambiental, diminuir tempo de entregas e otimizar espaços
+de estoque.
+
+O caso 2D, dimensão de estudo deste trabalho, possui uma vasta literatura de métodos de solução.
+As abordagens de solução se dividem entre exatas, que buscam a solução ótima do problema, e
+heurísticas, as quais podem não encontrar uma solução ótima, mas conseguem uma solução aceitável em
+tempo hábil.
+Dentre os métodos de solução exatos, um que se destaca é o procedimento de busca em árvore~\cite{
+    beasley1985exact}, mas existem muitos outros na literatura~\cite{exact-solution-techniques,
+    fekete1997new,delorme2016bin,kenmochi2009exact}.
+Na parte de heurísticas, tem-se a \textit{bottom-left}~\cite{baker1980orthogonal,chehrazad2022fast}
+e \textit{skyline}~\cite{wei2011skyline}, as heurísticas também possuem grande presença na
+literatura~\cite{burke2004new,rakotonirainy2020improved,hopper2001empirical,chen2019efficient,
+    huang2007efficient,hopper2001review}.
+
+Este trabalho visa estudar o problema de empacotamento no espaço de duas dimensões, onde as peças
+são retangulares e com um recipiente também retangular, mais especificamente na versão do
+empacotamento 2D da mochila, sendo sua solução considerada NP-difícil~\cite{2DPackLib}.
+A abordagem escolhida para resolver o problema foi a utilizar a heurística \textit{bottom-left},
+devido a sua simplicidade e aos limites computacionais e de tempo ao escolher algum método exato.
+Mesmo com a heurística sendo proposta em~\citeyear*{baker1980orthogonal}, ela ainda está presente
+na literatura recente~\cite{chehrazad2022fast,hopper2001empirical,wei2011skyline}.
+
+Antes de abordar o problema (\autoref{ch:problema-de-empacotamento}) e buscar soluções alguns
+conceitos básicos são mostrados no \autoref{ch:conceitos-basicos}.
+
+O \autoref{ch:conceitos-basicos} foca em definições sobre otimização (\autoref{sec:definicoes})
+e em modelos de otimização (\cref{sec:modelos-de-otimizacao,sec:tipos-de-modelo}).
+No \autoref{ch:problema-de-empacotamento} é dada a definição do problema (\autoref{sec:definicao}),
+para então mostrar algumas classificações (\autoref{sec:classificacao}) e variantes
+(\autoref{sec:variantes}), por fim é explicada a heurística \textit{bottom-left}
+(\autoref{ch:bottom-left}), a qual será utilizada na resolução das instâncias de teste.
 
 % FIXME: usar abordagem do tipo "funil" para contruir o texto.
-% Começa ilustrando problemas reais que podem ser traduzidos para problemas de empacotamento 1D, 2D e3D. Cita as complexidades de cada um, formas de tratar, citando técnicas e algoritmos. Enfatiza que vai tratar do 2D, justifica.
+% Começa ilustrando problemas reais que podem ser traduzidos para problemas de empacotamento
+% 1D, 2D e 3D. Cita as complexidades de cada um, formas de tratar, citando técnicas e algoritmos.
+% Enfatiza que vai tratar do 2D, justifica.
 % Apresenta o problema, tomba para os objetivos
 
 \input{chapters/Introduction/objetivos}
