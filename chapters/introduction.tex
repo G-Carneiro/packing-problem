@@ -59,20 +59,30 @@ literatura~\cite{burke2004new,rakotonirainy2020improved,hopper2001empirical,chen
 Este trabalho visa estudar o problema de empacotamento no espaço de duas dimensões, onde as peças
 são retangulares e com um recipiente também retangular, mais especificamente na versão do
 empacotamento 2D da mochila, sendo sua solução considerada NP-difícil~\cite{2DPackLib}.
+Nessa versão do problema, dado um conjunto de itens $I$, com cada item $i$ possuindo um valor $p_i$,
+e uma caixa $B$, o objetivo é maximizar a soma dos valores do itens alocados dentro do recipiente.
 A abordagem escolhida para resolver o problema foi a utilizar a heurística \textit{bottom-left},
 devido a sua simplicidade e aos limites computacionais e de tempo ao escolher algum método exato.
 Mesmo com a heurística sendo proposta em~\citeyear*{baker1980orthogonal}, ela ainda está presente
 na literatura recente~\cite{chehrazad2022fast,hopper2001empirical,wei2011skyline}.
 
-Antes de abordar o problema (\autoref{ch:problema-de-empacotamento}) e buscar soluções alguns
-conceitos básicos são mostrados no \autoref{ch:conceitos-basicos}.
+O fato de somente retângulos serem considerados não é um grande demérito, já que é possível
+transformar qualquer polígono em um retângulo com algumas manipulações, ainda que haja um
+desperdício de área no recipiente ao resolver o problema desse modo.
+A escolha de focar somente no empacotamento de retângulos foi feita justamente por isso, é possível
+utilizá-lo para empacotar qualquer tipo de item, com as devidas adaptações.
 
-O \autoref{ch:conceitos-basicos} foca em definições sobre otimização (\autoref{sec:definicoes})
-e em modelos de otimização (\cref{sec:modelos-de-otimizacao,sec:tipos-de-modelo}).
+Antes de abordar o problema (\autoref{ch:problema-de-empacotamento}) e buscar soluções
+(\Cref{ch:bottom-left}), alguns conceitos básicos são mostrados no \autoref{ch:conceitos-basicos}.
+O \autoref{ch:conceitos-basicos} foca em definições sobre otimização (\autoref{sec:definicoes}),
+modelos de otimização (\cref{sec:modelos-de-otimizacao,sec:tipos-de-modelo}) e a diferença entre
+métodos exatos e heurísticos (\cref{sec:metodos-exatos-heuristicos}).
 No \autoref{ch:problema-de-empacotamento} é dada a definição do problema (\autoref{sec:definicao}),
 para então mostrar algumas classificações (\autoref{sec:classificacao}) e variantes
-(\autoref{sec:variantes}), por fim é explicada a heurística \textit{bottom-left}
-(\autoref{ch:bottom-left}), a qual será utilizada na resolução das instâncias de teste.
+(\autoref{sec:variantes}).
+Depois, é explicada a heurística \textit{bottom-left} (\autoref{ch:bottom-left}) e os métodos feitos
+com base nela, os quais serão utilizados na resolução das instâncias de teste.
+Por fim, no \Cref{ch:resultados} os principais resultados obtidos são mostrados.
 
 % FIXME: usar abordagem do tipo "funil" para contruir o texto.
 % Começa ilustrando problemas reais que podem ser traduzidos para problemas de empacotamento
@@ -80,4 +90,8 @@ para então mostrar algumas classificações (\autoref{sec:classificacao}) e var
 % Enfatiza que vai tratar do 2D, justifica.
 % Apresenta o problema, tomba para os objetivos
 
-\input{chapters/Introduction/objetivos}
+O principal objetivo deste trabalho é criar métodos de solução para o problema de
+empacotamento da mochila de peças retangulares, todos baseados na heurística \textit{bottom-left}.
+Outros objetivos mais específicos são: implementar a \textit{bottom-left} e os métodos derivados em
+python, executá-los com instâncias de teste da literatura, comparar seus resultados e identificar
+vantagens e desvantagens de cada um.
