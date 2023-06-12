@@ -23,7 +23,7 @@ Problemas de corte envolvem cortar um objeto, como blocos de gesso, chapas de a�
 em itens menores.
 Enquanto problemas de empacotamento tratam sobre alocar um conjunto de itens $\mathcal{I}$ em um
 recipiente $\mathcal{B}$.
-Ambos podem ser reduzidos ao outro e é possível separá-los de acordo com sua dimensão.
+Ambos são equivalentes entre si e é possível separá-los de acordo com sua dimensão.
 
 Problemas unidimensionais podem ser associados ao corte de barras ou canos, para atender uma
 demanda por peças de diferentes tamanhos, ou ao empilhamento de caixas em busca de uma altura mínima.
@@ -58,22 +58,24 @@ literatura~\cite{burke2004new,rakotonirainy2020improved,hopper2001empirical,chen
 
 Este trabalho visa estudar o problema de empacotamento no espaço de duas dimensões, onde as peças
 são retangulares e com um recipiente também retangular, mais especificamente na versão do
-empacotamento 2D da mochila, sendo sua solução considerada NP-difícil~\cite{2DPackLib}.
-Nessa versão do problema, dado um conjunto de itens $I$, com cada item $i$ possuindo um valor $p_i$,
-e uma caixa $B$, o objetivo é maximizar a soma dos valores do itens alocados dentro do recipiente.
+empacotamento 2D da mochila, considerado NP-difícil~\cite{2DPackLib}.
+Nessa versão do problema, dado um conjunto de itens $\mathcal{I}$, com cada item $i$ possuindo um
+valor $p_i$, e uma caixa $\mathcal{B}$, o objetivo é maximizar a soma dos valores dos itens alocados
+dentro do recipiente.
 A abordagem escolhida para resolver o problema foi a utilizar a heurística \textit{bottom-left},
 devido a sua simplicidade e aos limites computacionais e de tempo ao escolher algum método exato.
 Mesmo com a heurística sendo proposta em~\citeyear*{baker1980orthogonal}, ela ainda está presente
 na literatura recente~\cite{chehrazad2022fast,hopper2001empirical,wei2011skyline}.
 
-O fato de somente retângulos serem considerados não é um grande demérito, já que é possível
-transformar qualquer polígono em um retângulo com algumas manipulações, ainda que haja um
-desperdício de área no recipiente ao resolver o problema desse modo.
+Empacotamento de retângulos tem importância prática~\cite{firat2020effective} e o fato de somente
+eles serem considerados não é um grande demérito, já que é possível transformar qualquer polígono
+em um retângulo com algumas manipulações, ainda que haja um desperdício de área no recipiente ao
+resolver o problema desse modo.
 A escolha de focar somente no empacotamento de retângulos foi feita justamente por isso, é possível
 utilizá-lo para empacotar qualquer tipo de item, com as devidas adaptações.
 
 Antes de abordar o problema (\autoref{ch:problema-de-empacotamento}) e buscar soluções
-(\Cref{ch:bottom-left}), alguns conceitos básicos são mostrados no \autoref{ch:conceitos-basicos}.
+(\Cref{ch:bottom-left}), alguns conceitos básicos são mostrados.
 O \autoref{ch:conceitos-basicos} foca em definições sobre otimização (\autoref{sec:definicoes}),
 modelos de otimização (\cref{sec:modelos-de-otimizacao,sec:tipos-de-modelo}) e a diferença entre
 métodos exatos e heurísticos (\cref{sec:metodos-exatos-heuristicos}).
@@ -82,7 +84,7 @@ para então mostrar algumas classificações (\autoref{sec:classificacao}) e var
 (\autoref{sec:variantes}).
 Depois, é explicada a heurística \textit{bottom-left} (\autoref{ch:bottom-left}) e os métodos feitos
 com base nela, os quais serão utilizados na resolução das instâncias de teste.
-Por fim, no \Cref{ch:resultados} os principais resultados obtidos são mostrados.
+Por fim, no \Cref{ch:resultados}, os principais resultados obtidos são mostrados.
 
 % FIXME: usar abordagem do tipo "funil" para contruir o texto.
 % Começa ilustrando problemas reais que podem ser traduzidos para problemas de empacotamento
