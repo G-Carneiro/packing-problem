@@ -16,8 +16,8 @@ A região R1 começará na coordenada (0, 4) e a R2 na (7, 0).
 
 Agora o domínio passa a ser somente o canto inferior esquerdo de cada uma das regiões e
 sobreposições deixam de ser possíveis.
-Além disso, a regra para definir se uma peça cabe em dada região é igual a \Cref{eq:1}, tornando
-o algoritmo de solução bem simples.
+Além disso, a regra para definir se uma peça cabe em dada região é igual a \Cref{eq:1},
+simplificando o algoritmo.
 A fim de identificar o impacto das regiões na solução do modelo, quatro formas de criação
 delas foram usadas.
 
@@ -70,5 +70,10 @@ A \Cref{tab:tipos-regioes} mostra, de forma resumida, os quatro modos de criar r
 seu tipo (regiões simples ou complexas) e sua relação com a \Cref{eq:2}.
 A coluna “Divisão” indica o critério usado ao criar as regiões, enquanto a coluna “\Cref{eq:2}”
 mostra se a \Cref{eq:2} é trivialmente satisfeita ou não.
+A última coluna (“Tipo”), indica se a região é simples ou complexa e está diretamente relacionada
+a \Cref{eq:2}.
 
 \input{utils/tables/modos_regioes}
+
+Todas as variações propostas foram implementadas e avaliadas computacionalmente, os resultados
+são apresentados no \Cref{ch:resultados}.

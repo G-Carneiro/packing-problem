@@ -10,7 +10,7 @@ demonstrar os desafios citados.
 Supondo uma instância com recipiente de altura e largura 5 e três itens retangulares a serem
 alocados, nesta ordem, com as seguintes dimensões: altura e largura 2, altura 4 e largura 2 e
 altura 1 e largura 3.
-A \Cref{fig:sobreposicao-dominio} mostra o estado intermediário do algoritmo de solução, onde o
+A \Cref{fig:sobreposicao-dominio} mostra um estado intermediário do algoritmo de solução, onde o
 item 0 foi alocado na coordenada (0, 0) e o item 1 foi alocado a sua direita na posição (2, 0)
 para respeitar a \Cref{eq:1}, porque não cabe logo acima na posição (0, 2).
 
@@ -40,7 +40,7 @@ inteiros, uma abordagem possível seria discretizar o domínio, conforme a
 Dessa forma somente coordenadas de valores inteiros precisariam ser verificadas, resolvendo
 parcialmente o problema com o domínio, já que ainda existiriam muitos pontos, principalmente em
 instâncias com recipientes grandes.
-Mas isso ainda não resolve a parte de sobreposição.
+Mas isso ainda não resolve a sobreposição de itens.
 Para cada ponto ainda é necessário verificar se existe sobreposição com cada uma das peças já
 alocadas, algo custoso.
 
