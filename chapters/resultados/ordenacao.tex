@@ -1,9 +1,10 @@
 \section{Ordenação crescente × decrescente}\label{sec:ordenacao-crescente-decrescente}
 
-A primeira coisa a qual fica evidente com os resultados é a discrepância na qualidade de solução
-entre a ordenação crescente e a decrescente, algo já esperado.
+Uma primeira observação é a discrepância na qualidade de solução entre a ordenação crescente
+e a decrescente, algo já esperado.
 Na \Cref{tab:ordenacao} é possível notar que ordenando de forma decrescente é possível ocupar
-cerca de $20\%$ a mais do espaço (coluna “Qualidade \%”), quando comparado a ordenação crescente.
+cerca de $20\%$ a mais do espaço (coluna “Qualidade \%”), quando comparado a ordenação crescente,
+em média.
 
 \input{utils/tables/compare/descending}
 
@@ -22,8 +23,8 @@ Com isso, fica claro que ordenar a fila de entrada da \textit{bottom-left} de mo
 vantajoso em termos de qualidade, quantidade e tempo de execução.
 Isso se deve a como as regiões são criadas,
 as \Crefrange{fig:estado-inicial}{fig:estado-final} serão utilizadas para exemplificar,
-elas representam estados do modelo usando ordenação crescente pela altura e linhas horizontais
-para criação de regiões para a instância BKW01.
+elas representam estados intermediários do algoritmo, usando ordenação crescente pela altura
+e linhas horizontais para criação de regiões para a instância BKW01.
 A \Cref{fig:estado-inicial} representa o estado inicial do algoritmo de solução, onde ainda
 não existem peças alocadas.
 % TODO: talvez separar as justificativas para qualidade e quantidade e falar sobre o tempo separado.
