@@ -1,0 +1,26 @@
+\begin{algorithm}
+    \caption{Solução usando regiões complexas.}
+    \label{alg:complex-region}
+    \SetKw{AND}{\textbf{and}}
+    \SetKw{Break}{\textbf{break}}
+    \SetKwFunction{Sobreposicao}{Sobreposicao}
+    \SetKwFunction{Regioes}{CriarNovasRegioes}
+    \ForAll{$i \in \mathcal{I}$}{
+        \ForAll{$r \in R$}{
+            \If{$i.largura \leq r.largura$ \AND $i.altura \leq r.altura$}{
+                aloca item $i$ na região $r$\;
+                \ForAll{$i' \in \mathcal{I'}$}{
+                    \If{$i \neq i'$ \AND \Sobreposicao{i, i'}}{
+                        remove item $i$ na região $r$\;
+                        \Break\;
+                    }
+                }
+                \If{$i.coordenadas \neq null$}{
+                    \tcc{elimina $r$ e cria duas novas regiões com base em $i$}
+                    \Regioes{i, r}\;
+                    \Break\;
+                }
+            }
+        }
+    }
+\end{algorithm}
