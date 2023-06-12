@@ -11,13 +11,13 @@ enumeração implícita das soluções viáveis de um problema de programação 
 mantendo valores para os limitantes inferior e superior de um problema de otimização.
 O algoritmo termina sua execução quando ambos os limitantes se igualam, garantindo a otimalidade
 da solução.
-Detalhes algoritmo \textit{branch-and-bound} e outros problemas de programação inteira, como
-\textit{branch-and-cut} e planos de corte podem ser vistos no trabalho de
-\citeauthor*{wolsey2020integer}.
+Detalhes do algoritmo \textit{branch-and-bound} e outros para problemas de programação inteira,
+como \textit{branch-and-cut} e planos de corte podem ser vistos em \citeauthor*{
+    wolsey2020integer}~\citeyear{wolsey2020integer}.
 
-Como o problema de interesse é NP-difícil e o principal interesse é em instâncias de médio
-e grande porte, utilizar um método exato seria bastante desafiador e, provavelmente, não seria
-possível obter um resultado em tempo hábil devido aos recursos computacionais disponíveis.
+Como o problema de empacotamento de retângulos é NP-difícil e o principal interesse é em instâncias
+de médio e grande porte, utilizar um método exato seria bastante desafiador e, provavelmente,
+não seria possível obter um resultado em tempo hábil devido aos recursos computacionais disponíveis.
 Portanto, métodos heurísticos serão usados, já que eles tendem a diminuir a demanda computacional,
 porém não garantem otimalidade da solução resultante.
 
@@ -29,8 +29,8 @@ Alguns exemplos desses mecanismos são o \textit{multi-start} e o \textit{simula
     firat2020effective,rakotonirainy2020improved,hopper2001empirical}.
 
 Continuando o exemplo do problema da mochila~(\cref{sec:modelos-de-otimizacao}), uma heurística
-possível para ele é ordenar os itens de maneira decrescente de acordo com $\dfrac{v_i}{w_i}$ e
-colocá-los na mochila enquanto couber.
+possível para sua solução é ordenar os itens de maneira decrescente de acordo com $\dfrac{v_i}{w_i}$
+e colocá-los na mochila enquanto couber.
 
 As heurísticas podem ser divididas entre heurísticas construtivas e heurísticas de melhoria.
 Heurísticas construtivas, como diz o nome, constroem uma solução para o problema,
