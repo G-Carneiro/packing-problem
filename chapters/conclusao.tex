@@ -2,7 +2,8 @@
 \addcontentsline{toc}{chapter}{CONCLUSÃO}
 
 No trabalho foram avaliadas experimentalmente 40 métodos de solução baseados na heurística
-\textit{bottom-left} para o problema de empacotamento de retângulos.
+\textit{bottom-left} para o problema de empacotamento de retângulos, considerando a versão da
+mochila e com o valor dos itens sua própria área.
 O resultado mais óbvio obtido foi a supremacia da ordenação decrescente sobre a crescente
 (\cref{sec:ordenacao-crescente-decrescente}), não compensando utilizar a segunda para solucionar o
 problema.
@@ -34,14 +35,14 @@ Outros trabalhos possíveis são: expandir o algoritmo de solução para o caso 
 possibilitar a resolução de outras classes do problema (2D-SPP, 2D-CSP, 2D-OPP) e suas variantes.
 Também é possível implementar métodos de solução da literatura diferentes da \textit{bottom-left},
 sejam eles exatos ou heurísticos.
-Com isso, seria possível criar uma ampla biblioteca em python para problemas de corte e empacotamento.
+Com isso, seria possível criar uma ampla biblioteca em Python para problemas de corte e empacotamento.
 
 Por fim, seria interessante buscar soluções quânticas para o problema.
 No momento, existem poucos trabalhos disponíveis na literatura que abordem o tema.
-Um dos mais recentes, feito por \citeauthor*{de2022hybrid}, traz uma heurística híbrida
+Um dos mais recentes, feito por \citeauthoryear{de2022hybrid}, traz uma heurística híbrida
 clássica-quântica para o \textit{bin packing problem} (BPP) unidimensional, conseguindo com essa
 nova heurística bons resultados para o problema.
-Outro resultado interessante foi o de \citeauthor*{fujimura2021quantum}, com um algoritmo quântico
+Outro resultado interessante foi o de \citeauthoryear{fujimura2021quantum}, com um algoritmo quântico
 foi possível chegar a uma complexidade $3(\log_2 k)n$ para o BPP, onde $k$ representa o número de
 caixas e $n$ o número de peças.
 Trabalhos como esses ainda são raros, principalmente para dimensões maiores, mas os poucos que
