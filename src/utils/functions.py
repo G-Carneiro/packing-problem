@@ -336,8 +336,10 @@ def compare_order(data_set: list[Data]) -> None:
         iterable.append((order.name,))
     return compare(data_set=data_set, iterable=iterable, file_name="ordenacao", orderkey="key",
                    caption="Resultado da comparação entre critérios de ordenação.",
-                   label="ordenacoes",
-                   floatfmt=("", "", "", ".4f", ".4f", ".4e"), name="Ordenação", )
+                   label="ordenacoes", short=False, line_id="OrderKey[key[0].upper()].value",
+                   headers=["Ordenação", "Vitórias", "Empates", "Qualidade %", "Itens %",
+                            "Tempo (s)"],
+                   floatfmt=("", "", "", ".4f", ".4f", ".4e"), )
 
 
 def compare_order_true(data_set: list[Data]) -> None:
@@ -347,8 +349,10 @@ def compare_order_true(data_set: list[Data]) -> None:
     return compare(data_set=data_set, iterable=iterable, file_name="ordenacao_true", orderkey="key",
                    descending=[Descending.TRUE.name.capitalize()],
                    caption="Resultado da comparação entre critérios de ordenação decrescente.",
-                   label="ordenacoes-true",
-                   floatfmt=("", "", "", ".4f", ".4f", ".4e"), name="Ordenação", )
+                   label="ordenacoes-true", short=False, line_id="OrderKey[key[0].upper()].value",
+                   headers=["Ordenação", "Vitórias", "Empates", "Qualidade %", "Itens %",
+                            "Tempo (s)"],
+                   floatfmt=("", "", "", ".4f", ".4f", ".4e"), )
 
 
 def compare_instance_set(data_set: list[Data]) -> None:

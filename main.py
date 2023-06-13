@@ -112,8 +112,8 @@ if __name__ == "__main__":
     data_set = data_to_data_obj(datas=data_set)
 
     compare_descending(data_set=data_set)
-    # compare_order(data_set=data_set)
-    # compare_order_true(data_set=data_set)
+    compare_order(data_set=data_set)
+    compare_order_true(data_set=data_set)
     # compare_split(data_set=data_set)
     # compare_split_true(data_set=data_set)
     # compare_instance_set(data_set=data_set)
