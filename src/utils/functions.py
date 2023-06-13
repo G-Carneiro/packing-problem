@@ -316,7 +316,9 @@ def compare_split(data_set: list[Data]) -> None:
         iterable.append((split.name,))
     return compare(data_set=data_set, iterable=iterable, file_name="regioes", splitmode="key",
                    caption="Resultado da comparação entre criação de regiões.",
-                   floatfmt=("", "", "", ".4f", ".4f", ".4e"), name="Região", label="regioes", )
+                   headers=["Divisão", "Vitórias", "Empates", "Qualidade %", "Itens %",
+                            "Tempo (s)"], short=False, line_id="SplitMode[key[0].upper()].value",
+                   floatfmt=("", "", "", ".4f", ".4f", ".4e"), label="regioes", )
 
 
 def compare_split_true(data_set: list[Data]) -> None:
@@ -327,7 +329,9 @@ def compare_split_true(data_set: list[Data]) -> None:
                    descending=[Descending.TRUE.name.capitalize()],
                    caption="Resultado da comparação entre criação de regiões - ordenação "
                            "decrescente.",
-                   floatfmt=("", "", "", ".4f", ".4f", ".4e"), name="Região", label="regioes-true")
+                   headers=["Divisão", "Vitórias", "Empates", "Qualidade %", "Itens %",
+                            "Tempo (s)"], short=False, line_id="SplitMode[key[0].upper()].value",
+                   floatfmt=("", "", "", ".4f", ".4f", ".4e"), label="regioes-true")
 
 
 def compare_order(data_set: list[Data]) -> None:
