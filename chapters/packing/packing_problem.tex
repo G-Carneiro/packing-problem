@@ -10,9 +10,10 @@ fornecendo uma atualização da tipologia definida em~\cite{dyckhoff1990typology
 O problema de empacotamento, é um problema de otimização de difícil resolução.
 Seu objetivo é simples, colocar peças em um espaço $N$-dimensional, na \autoref{fig:packing-example}
 é possível ver representações para os casos 1D, 2D e 3D\@.
-Tanto as peças quanto o espaço, podem ser de formato regular (convexo) ou não (côncavo).
+Tanto as peças quanto o espaço, podem ser de formato convexo ou côncavo.
 Pensando no caso 2D, triângulos, retângulos, círculos e outros polígonos convexos são
-considerados regulares, enquanto estrelas e outros polígonos côncavos são irregulares.
+considerados convexos, enquanto estrelas e outros são côncavos.
+Os polígonos também podem ser classificados como regulares ou irregulares.
 
 \input{utils/figures/packing_example}
 
@@ -21,10 +22,10 @@ A primeira delas é verificando se existe alguma diagonal que não pertença à 
 polígono, caso exista, o polígono é côncavo, caso contrário, convexo.
 Também é possível identificar através dos ângulos internos, polígonos côncavos possuem pelo menos
 um ângulo interno com mais de 180 graus.
-Outra forma de definir se uma peça é regular ou não, é identificar o número de parâmetros
+Uma forma de definir se uma peça é regular ou não, é identificar o número de parâmetros
 necessários para representá-la.
 Se for preciso três ou mais é irregular, caso contrário, regular~\cite{aprendizado-reforco}.
-A \autoref{fig:pieces-example} mostra alguns exemplos de peças regulares e irregulares (à direita)
+A \autoref{fig:pieces-example} mostra alguns exemplos de peças convexas e côncavas (à direita)
 e seus contornos convexos (à esquerda).
 
 \input{utils/figures/pieces_example}
@@ -43,8 +44,8 @@ Existem até mesmo instâncias padronizadas para realizar comparativos entre alg
 
 Tratar somente de objetos retangulares não é um grande limitador para resolver com outros tipos
 de itens, já que é possível usar os contornos convexos de um polígono côncavo para transformá-lo
-em um polígono convexo.
-Após isso, basta transformar o polígono regular em um retângulo.
+em um polígono convexo (\Cref{fig:pieces-example}).
+Após isso, basta transformar o polígono em um retângulo.
 Assim é possível empacotar qualquer polígono usando o empacotamento de retângulos, ainda que
 haja uma área desperdiçada devido às transformações.
 
