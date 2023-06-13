@@ -291,7 +291,8 @@ def compare(data_set: list[Data], iterable: list[tuple[str, ...]],
             new_data[0] = new_data[0][0]
         if count_wons:
             new_data += [wons[key], draws[key]]
-        new_data += [quality[key], items[key], time[key]]
+        # new_data += [quality[key], items[key], time[key]]
+        new_data += [quality[key], time[key]]
         data.append(new_data)
     make_ibge_table(data=data, file=f"utils/tables/compare/{file_name.lower()}.tex",
                     caption=caption, label=label, headers=headers, floatfmt=floatfmt,
@@ -304,11 +305,10 @@ def compare_descending(data_set: list[Data]) -> None:
     for descending in Descending:
         iterable.append((descending.name.capitalize(),))
     return compare(data_set=data_set, iterable=iterable, args="descending=key",
-                   floatfmt=("", "", "", ".4f", ".4f", ".4e"),
+                   floatfmt=("", "", "", ".4f", ".4e"),
                    file_name="descending", label="ordenacao", short=False,
                    line_id="Descending[key[0].upper()].value",
-                   headers=["Decrescente", "Vitórias", "Empates", "Qualidade %", "Itens %",
-                            "Tempo (s)"],
+                   headers=["Decrescente", "Vitórias", "Empates", "Qualidade %", "Tempo (s)"],
                    caption="Resultado da comparação entre ordenação crescente e decrescente")
 
 
@@ -318,9 +318,9 @@ def compare_split(data_set: list[Data]) -> None:
         iterable.append((split.name,))
     return compare(data_set=data_set, iterable=iterable, file_name="regioes", splitmode="key",
                    caption="Resultado da comparação entre criação de regiões.",
-                   headers=["Divisão", "Vitórias", "Empates", "Qualidade %", "Itens %",
-                            "Tempo (s)"], short=False, line_id="SplitMode[key[0].upper()].value",
-                   floatfmt=("", "", "", ".4f", ".4f", ".4e"), label="regioes", )
+                   headers=["Divisão", "Vitórias", "Empates", "Qualidade %", "Tempo (s)"],
+                   short=False, line_id="SplitMode[key[0].upper()].value",
+                   floatfmt=("", "", "", ".4f", ".4e"), label="regioes", )
 
 
 def compare_split_true(data_set: list[Data]) -> None:
@@ -331,9 +331,9 @@ def compare_split_true(data_set: list[Data]) -> None:
                    descending=[Descending.TRUE.name.capitalize()],
                    caption="Resultado da comparação entre criação de regiões - ordenação "
                            "decrescente.",
-                   headers=["Divisão", "Vitórias", "Empates", "Qualidade %", "Itens %",
-                            "Tempo (s)"], short=False, line_id="SplitMode[key[0].upper()].value",
-                   floatfmt=("", "", "", ".4f", ".4f", ".4e"), label="regioes-true")
+                   headers=["Divisão", "Vitórias", "Empates", "Qualidade %", "Tempo (s)"],
+                   short=False, line_id="SplitMode[key[0].upper()].value",
+                   floatfmt=("", "", "", ".4f", ".4e"), label="regioes-true")
 
 
 def compare_order(data_set: list[Data]) -> None:
@@ -343,9 +343,8 @@ def compare_order(data_set: list[Data]) -> None:
     return compare(data_set=data_set, iterable=iterable, file_name="ordenacao", orderkey="key",
                    caption="Resultado da comparação entre critérios de ordenação.",
                    label="ordenacoes", short=False, line_id="OrderKey[key[0].upper()].value",
-                   headers=["Ordenação", "Vitórias", "Empates", "Qualidade %", "Itens %",
-                            "Tempo (s)"],
-                   floatfmt=("", "", "", ".4f", ".4f", ".4e"), )
+                   headers=["Ordenação", "Vitórias", "Empates", "Qualidade %", "Tempo (s)"],
+                   floatfmt=("", "", "", ".4f", ".4e"), )
 
 
 def compare_order_true(data_set: list[Data]) -> None:
@@ -356,9 +355,8 @@ def compare_order_true(data_set: list[Data]) -> None:
                    descending=[Descending.TRUE.name.capitalize()],
                    caption="Resultado da comparação entre critérios de ordenação decrescente.",
                    label="ordenacoes-true", short=False, line_id="OrderKey[key[0].upper()].value",
-                   headers=["Ordenação", "Vitórias", "Empates", "Qualidade %", "Itens %",
-                            "Tempo (s)"],
-                   floatfmt=("", "", "", ".4f", ".4f", ".4e"), )
+                   headers=["Ordenação", "Vitórias", "Empates", "Qualidade %", "Tempo (s)"],
+                   floatfmt=("", "", "", ".4f", ".4e"), )
 
 
 def compare_instance_set(data_set: list[Data]) -> None:
@@ -410,8 +408,8 @@ def compare_combinations(data_set: list[Data]) -> None:
     return compare(data_set=data_set, iterable=iterable, file_name="combinations",
                    caption="Resultado da comparação entre todos os métodos de solução.",
                    label="combinations",
-                   headers=["Divisão", "Ordenação", "Decrescente", "Vitórias", "Empates",
-                            "Qualidade %", "Itens %", "Tempo (s)"],
+                   headers=["Divisão", "Ordenação", "Decres.", "Vitórias", "Empates",
+                            "Qualidade %", "Tempo (s)"],
                    line_id="[SplitMode[key[0].upper()].value, OrderKey[key[1].upper()].value,"
                            "Descending[key[2].upper()].value]", showindex=True,
-                   args=args, short=False, floatfmt=("", "", "", "", "", "", ".4f", ".4f", ".4e"))
+                   args=args, short=False, floatfmt=("", "", "", "", "", "", ".4f", ".4e"))
