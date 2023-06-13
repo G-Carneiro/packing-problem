@@ -7,8 +7,9 @@ Isso acontece devido à complexidade do algoritmo de solução do modelo.
 Em regiões simples, onde não podem acontecer sobreposições, é necessário verificar se o item a ser
 alocado cabe em uma região.
 O \Cref{alg:simple-region} é um pseudocódigo de solução para esse caso, onde $\mathcal{I}$ é o
-conjunto de itens a serem alocados e $R$ são as regiões disponíveis no momento, a função
-\texttt{CriarNovasRegiões()} elimina $r$ e cria duas novas regiões com base no posicionamento de $i$.
+conjunto de itens a serem alocados e $R$ são as regiões disponíveis no momento (ordenadas para
+respeitar a \textit{bottom-left}), a função \texttt{CriarNovasRegiões()} elimina $r$ e cria duas
+novas regiões com base no posicionamento de $i$.
 A linha 3 verifica se um item $i$ cabe em uma região $r$, se for possível, o item é alocado e a
 função \texttt{CriarNovasRegiões()} é chamada.
 Após, um \texttt{\textbf{break}} é acionado para avançar ao próximo item.
