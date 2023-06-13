@@ -36,9 +36,10 @@ def get_data(data_file: str, columns: list[int], short: bool = True,
 def make_ibge_table(data: list[list[str]], file: str, caption: str,
                     label: str, fonte: str = "feito pelo autor.", nota: str = "", legend: str = "",
                     headers: list[str] = None, tablefmt: str = "latex", ibge: bool = True,
-                    floatfmt: tuple[str, ...] = (), monospaced: bool = True
-                    ) -> None:
-    table = tabulate(data, tablefmt=tablefmt, headers=headers, floatfmt=floatfmt)
+                    floatfmt: tuple[str, ...] = (), monospaced: bool = True,
+                    showindex: bool = False, ) -> None:
+    table = tabulate(data, tablefmt=tablefmt, headers=headers, floatfmt=floatfmt,
+                     showindex=showindex)
     lines = begin_environment(environment="table", position="!htb", caption=caption, label=label)
     tabular = file.replace("tables", "tabular")
     write_environment(tex_file=tabular, lines=table)
@@ -220,7 +221,7 @@ def data_to_data_obj(datas: list[list[str]]) -> list[Data]:
 def compare(data_set: list[Data], iterable: list[tuple[str, ...]],
             file_name: str, caption: str, label: str, headers: list[str], line_id: str = "key[0]",
             floatfmt: tuple[str, ...] = (), count_wons: bool = True,
-            short: bool = True, average_time: bool = True,
+            short: bool = True, average_time: bool = True, showindex: bool = False,
             only_best_qualities: bool = False, args: str = "", **kwargs) -> None:
     data_set_filtered: dict[tuple[str, ...], list[Data]] = {}
     wons: dict[tuple[str, ...], int] = {}
@@ -293,7 +294,8 @@ def compare(data_set: list[Data], iterable: list[tuple[str, ...]],
         new_data += [quality[key], items[key], time[key]]
         data.append(new_data)
     make_ibge_table(data=data, file=f"utils/tables/compare/{file_name.lower()}.tex",
-                    caption=caption, label=label, headers=headers, floatfmt=floatfmt)
+                    caption=caption, label=label, headers=headers, floatfmt=floatfmt,
+                    showindex=showindex)
     return None
 
 
@@ -405,8 +407,11 @@ def compare_combinations(data_set: list[Data]) -> None:
             for descending in Descending:
                 iterable.append((split.name, order.name, descending.name.capitalize(),))
 
-    return compare(name=["Split", "Order", "Descending"], data_set=data_set, iterable=iterable,
-                   file_name="combinations", line_id="[key[0][0], key[1][0], key[2][0]]",
+    return compare(data_set=data_set, iterable=iterable, file_name="combinations",
                    caption="Resultado da comparação entre todos os métodos de solução.",
                    label="combinations",
-                   args=args, short=False, floatfmt=("", "", "", "", "", ".4f", ".4f", ".4e"))
+                   headers=["Divisão", "Ordenação", "Decrescente", "Vitórias", "Empates",
+                            "Qualidade %", "Itens %", "Tempo (s)"],
+                   line_id="[SplitMode[key[0].upper()].value, OrderKey[key[1].upper()].value,"
+                           "Descending[key[2].upper()].value]", showindex=True,
+                   args=args, short=False, floatfmt=("", "", "", "", "", "", ".4f", ".4f", ".4e"))

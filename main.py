@@ -118,7 +118,7 @@ if __name__ == "__main__":
     compare_split_true(data_set=data_set)
     # compare_instance_set(data_set=data_set)
     # compare_superposition(data_set=data_set)
-    # compare_combinations(data_set=data_set)
+    compare_combinations(data_set=data_set)
     # folder_image_to_figure()
     # folder_data_to_ibge_table("output/data")
     # make()
