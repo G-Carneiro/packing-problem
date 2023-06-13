@@ -10,7 +10,8 @@ from src.utils.order_key import OrderKey
 from src.utils.split_mode import SplitMode
 
 
-def get_data(data_file: str, columns: list[int], short: bool = True) -> list[list[str]]:
+def get_data(data_file: str, columns: list[int], short: bool = True,
+             short_format: tuple[str, ...] = None) -> list[list[str]]:
     with open(data_file, "r") as f:
         lines = f.readlines()
 
@@ -21,7 +22,11 @@ def get_data(data_file: str, columns: list[int], short: bool = True) -> list[lis
         for idx in columns:
             dat = split[idx]
             if short and (1 <= idx <= 3):
-                dat = dat[0]
+                if short_format:
+                    dat = dat.upper()
+                    dat = eval(f"{short_format[idx - 1]}.{dat}.value")
+                else:
+                    dat = dat[0]
             row.append(dat)
         data.append(row)
 
@@ -29,7 +34,7 @@ def get_data(data_file: str, columns: list[int], short: bool = True) -> list[lis
 
 
 def make_ibge_table(data: list[list[str]], file: str, caption: str,
-                    label: str, fonte: str = "autor", nota: str = "", legend: str = "",
+                    label: str, fonte: str = "feito pelo autor.", nota: str = "", legend: str = "",
                     headers: list[str] = None, tablefmt: str = "latex", ibge: bool = True,
                     floatfmt: tuple[str, ...] = (), monospaced: bool = True
                     ) -> None:
@@ -53,11 +58,13 @@ def make_ibge_table(data: list[list[str]], file: str, caption: str,
 
 def data_to_ibge_table(data_file: str, tex_file: str, caption: str, label: str,
                        short: bool = True, headers: list[str] = None,
-                       columns: list[int] = None, fonte: str = "", nota: str = "",
-                       tablefmt: str = "latex", ibge: bool = True) -> None:
-    data = get_data(data_file=data_file, columns=columns, short=short)
-    make_ibge_table(data=data, file=tex_file, caption=caption, label=label,
-                    fonte=fonte, nota=nota, headers=headers, tablefmt=tablefmt, ibge=ibge)
+                       columns: list[int] = None, nota: str = "",
+                       tablefmt: str = "latex", ibge: bool = True, floatfmt: tuple[str, ...] = ()
+                       ) -> None:
+    data = get_data(data_file=data_file, columns=columns, short=short,
+                    short_format=("SplitMode", "OrderKey", "Descending"))
+    make_ibge_table(data=data, file=tex_file, caption=caption, label=label, floatfmt=floatfmt,
+                    nota=nota, headers=headers, tablefmt=tablefmt, ibge=ibge)
     return None
 
 
@@ -75,14 +82,15 @@ def folder_data_to_ibge_table(folder: str) -> None:
                                            tex_file=tex_file,
                                            caption=f"Resultados da instância {instance.upper()}.",
                                            label=instance,
-                                           fonte="autor",
                                            columns=[0, 1, 2, 3, 4, 5, 13],
-                                           headers=["Instance", "Split", "Order", "Descending",
-                                                    "Quality %", "Time (s)", "Items %"],
-                                           ibge=True
+                                           headers=["Instância", "Divisão", "Ordenação",
+                                                    "Decrescente",
+                                                    "Qualidade %", "Tempo (s)", "Itens %"],
+                                           ibge=True,
+                                           floatfmt=("", "", "", "", ".4f", ".4e", ".2f")
                                            )
-                        with open("aftertext/apendices.tex", "a") as f:
-                            f.write("\\input{" + tex_file[:-4] + "}\n")
+                        # with open("aftertext/apendices.tex", "a") as f:
+                        #     f.write("\\input{" + tex_file[:-4] + "}\n")
 
     return None
 

@@ -1,9 +1,9 @@
-from enum import auto, Enum
+from enum import Enum
 
 
 class OrderKey(Enum):
-    AREA = auto()
-    PERIMETER = auto()
-    HEIGHT = auto()
-    WIDTH = auto()
-    ID = auto()
+    AREA = "Área"
+    PERIMETER = "Perímetro"
+    HEIGHT = "Altura"
+    WIDTH = "Largura"
+    ID = "Id"

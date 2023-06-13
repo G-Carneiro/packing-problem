@@ -2,5 +2,5 @@ from enum import Enum
 
 
 class Descending(Enum):
-    TRUE = 1
-    FALSE = 0
+    TRUE = "Sim"
+    FALSE = "Não"
