@@ -217,19 +217,12 @@ def data_to_data_obj(datas: list[list[str]]) -> list[Data]:
     return data_set
 
 
-def compare(name: str | list[str], data_set: list[Data], iterable: list[tuple[str, ...]],
-            file_name: str, caption: str, label: str, line_id: str = "key[0]",
+def compare(data_set: list[Data], iterable: list[tuple[str, ...]],
+            file_name: str, caption: str, label: str, headers: list[str], line_id: str = "key[0]",
             floatfmt: tuple[str, ...] = (), count_wons: bool = True,
             short: bool = True, average_time: bool = True,
             only_best_qualities: bool = False, args: str = "", **kwargs) -> None:
     data_set_filtered: dict[tuple[str, ...], list[Data]] = {}
-    if isinstance(name, list):
-        headers = name
-    else:
-        headers = [name]
-    if count_wons:
-        headers += ["Wons", "Draws"]
-    headers += ["Quality %", "Items %", "Time (s)"]
     wons: dict[tuple[str, ...], int] = {}
     draws: dict[tuple[str, ...], int] = {}
     quality: dict[tuple[str, ...], float] = {}
@@ -309,8 +302,12 @@ def compare_descending(data_set: list[Data]) -> None:
     for descending in Descending:
         iterable.append((descending.name.capitalize(),))
     return compare(data_set=data_set, iterable=iterable, args="descending=key",
-                   floatfmt=("", "", "", ".4f", ".4f", ".4e"), name="Desc.",
-                   file_name="descending", )
+                   floatfmt=("", "", "", ".4f", ".4f", ".4e"),
+                   file_name="descending", label="ordenacao", short=False,
+                   line_id="Descending[key[0].upper()].value",
+                   headers=["Decrescente", "Vitórias", "Empates", "Qualidade %", "Itens %",
+                            "Tempo (s)"],
+                   caption="Resultado da comparação entre ordenação crescente e decrescente")
 
 
 def compare_split(data_set: list[Data]) -> None:

@@ -111,7 +111,7 @@ if __name__ == "__main__":
     data_set = get_data("output/data/all.dat", columns=[0, 1, 2, 3, 4, 5, 13], short=False)
     data_set = data_to_data_obj(datas=data_set)
 
-    # compare_descending(data_set=data_set)
+    compare_descending(data_set=data_set)
     # compare_order(data_set=data_set)
     # compare_order_true(data_set=data_set)
     # compare_split(data_set=data_set)
@@ -120,5 +120,5 @@ if __name__ == "__main__":
     # compare_superposition(data_set=data_set)
     # compare_combinations(data_set=data_set)
     # folder_image_to_figure()
-    folder_data_to_ibge_table("output/data")
+    # folder_data_to_ibge_table("output/data")
     # make()
