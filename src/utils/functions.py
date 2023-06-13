@@ -309,7 +309,7 @@ def compare_descending(data_set: list[Data]) -> None:
                    file_name="descending", label="ordenacao", short=False,
                    line_id="Descending[key[0].upper()].value",
                    headers=["Decrescente", "Vitórias", "Empates", "Qualidade %", "Tempo (s)"],
-                   caption="Resultado da comparação entre ordenação crescente e decrescente")
+                   caption="Resultado da comparação entre ordenação crescente e decrescente.")
 
 
 def compare_split(data_set: list[Data]) -> None:
