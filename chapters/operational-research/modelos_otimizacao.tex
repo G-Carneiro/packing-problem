@@ -1,4 +1,4 @@
-\section{Modelos de otimização e definições}\label{sec:modelos-de-otimizacao}
+\section{Modelos de otimização e outras definições}\label{sec:modelos-de-otimizacao}
 % FIXME: adicionar referência
 
 Modelos de otimização são aproximações da realidade, representam o problema de maneira simples
@@ -30,7 +30,7 @@ Se para toda solução for possível encontrar outra melhor o problema é dito \
 Uma solução $x'$ é \textbf{ótima} somente se for \textbf{factível} e possuir resultado melhor,
 ou igual, que as demais soluções, isto é, $f(x') \le f(x), \forall x \in \mathcal{X}$ (caso seja um
 problema de maximização é necessário substituir “$\le$” por “$\ge$”).
-Importante observar que existe somente solução ótima se o problema não for infactível nem ilimitado.
+Importante observar que somente existe solução ótima se o problema não for infactível nem ilimitado.
 
 Usando o problema da mochila como exemplo, onde se busca maximizar o valor dos itens alocados
 sem que seus pesos ultrapassem a capacidade da mochila~\cite{exact-solution-techniques},
@@ -45,5 +45,4 @@ item foi escolhido para mochila ou não.
 O problema não é ilimitado, já que a melhor solução (solução ótima) é ocupar toda a capacidade $C$
 da mochila, caso seja possível com os itens $I$.
 Qualquer solução que não ultrapasse o limite da mochila é factível.
-O problema só será considerado infactível caso não seja possível alocar pelo menos um item, ou seja,
-todos os itens possuírem peso $w_i > C$.
+O problema não é considerado infactível, pois colocar nenhum item é uma solução factível.
