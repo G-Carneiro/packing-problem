@@ -31,8 +31,8 @@ class Model:
         self._items: list[Item] = self.sorted_items(order=self.order)
         self._split: SplitMode = split
         self._export_id: int = 0
-        self._regions: OrderedQueue[Region] = OrderedQueue([Region((0, 0), (box.width,
-                                                                            box.height))])
+        self._regions: OrderedQueue[Region] = OrderedQueue([
+            Region((0, 0), (box.width, box.height))])
 
     @property
     def name(self):
