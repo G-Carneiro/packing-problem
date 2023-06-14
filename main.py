@@ -1,3 +1,5 @@
+from os import listdir
+from os.path import basename, dirname
 from time import time
 
 from numpy import mean, median, std
@@ -8,44 +10,6 @@ from src.utils.folders import *
 from src.utils.functions import *
 from src.utils.order_key import OrderKey
 from src.utils.split_mode import SplitMode
-
-
-def tabulate_ins2d(folder: str = "instances/GCUT"):
-    for file in scandir(folder):
-        with open(file, "r") as f:
-            lines = f.readlines()
-
-        data = [lines[0].split(), lines[1].split()]
-        for line in lines[2:]:
-            new_line = line.split()
-            data.append(new_line)
-
-        with open(file, "w") as f:
-            s = tabulate(tabular_data=data, tablefmt="plain")
-            f.write(s)
-    return None
-
-
-def csv_to_table(csv_folder: str, table_folder: str) -> None:
-    for file in scandir(csv_folder):
-        file_name = file.name
-        if not file.is_file():
-            csv_to_table(csv_folder=f"{csv_folder}/{file_name}",
-                         table_folder=f"{table_folder}/{file_name}")
-            continue
-        with open(file, "r") as f:
-            lines = f.readlines()
-
-        data = []
-        for line in lines:
-            data.append(line.split(","))
-
-        makedirs(table_folder, exist_ok=True)
-
-        with open(f"{table_folder}/{file_name}.dat", "w") as f:
-            s = tabulate(tabular_data=data, headers="firstrow", tablefmt="plain")
-            f.write(s)
-    return None
 
 
 def main(folder: str = INSTANCES) -> None:
@@ -94,31 +58,6 @@ def main(folder: str = INSTANCES) -> None:
     return None
 
 
-def test():
-    from src.model.ordered_queue import OrderedQueue
-    from random import randint
-    lista = []
-    for _ in range(100):
-        lista.append(randint(0, 100))
-    print(lista)
-    queue = OrderedQueue(lista)
-    print(queue)
-
-
 # TODO: run bkw13, with order=NONE
 if __name__ == "__main__":
-    # folder_data_to_ibge_table(folder="output/data")
-    data_set = get_data("output/data/all.dat", columns=[0, 1, 2, 3, 4, 5, 13], short=False)
-    data_set = data_to_data_obj(datas=data_set)
-
-    compare_descending(data_set=data_set)
-    compare_order(data_set=data_set)
-    compare_order_true(data_set=data_set)
-    compare_split(data_set=data_set)
-    compare_split_true(data_set=data_set)
-    # compare_instance_set(data_set=data_set)
-    # compare_superposition(data_set=data_set)
-    compare_combinations(data_set=data_set)
-    # folder_image_to_figure()
-    # folder_data_to_ibge_table("output/data")
-    # make()
+    main()
