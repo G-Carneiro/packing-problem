@@ -57,6 +57,7 @@
 \creflabelformat{equation}{#2#1#3}
 \newcounter{restriction}
 \newcommand{\restrictionautorefname}{Restrição}
+\newcommand{\ifnotempty}[2]{\ifthenelse{\not\equal{#1}{}}{#2}{}}
 \counterwithout{equation}{section}
 \counterwithout{equation}{subsection}
 \ifdefined\thechapter
@@ -132,12 +133,14 @@
 
 \newcommand{\printtitlepage}{\imprimirfolhaderosto}
 
+\renewcommand{\imprimirtitulo}{\thetitle\textnormal{\sffamily{: \\ \printsubtitle}}}
+
 \newcommand{\printcoverufsc}{
     \begin{capa}
         \centering
         \begin{figure}
-            \includegraphics[scale=0.2]{logo-ufsc}
             \centering
+            \includegraphics[width=1.84cm,keepaspectratio]{logo-ufsc}
             \label{fig:logo-ufsc}
         \end{figure}
         \ABNTEXchapterfont\MakeUppercase{\printaffil}
@@ -149,7 +152,7 @@
 %        \vfill
         \vspace*{\fill}
 %        \begin{center}
-        \textbf{\printtitle}: \\ \printsubtitle
+        \textbf{\printtitle}
 %        \end{center}
         \vspace*{\fill}
 %        \vfill{
