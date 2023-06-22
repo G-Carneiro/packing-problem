@@ -82,7 +82,10 @@
     }
 }
 
+\ifdefined\nobibintoc
 \nobibintoc
+\else
+\fi
 
 \pgfplotsset{compat=1.18}
 %\pagecolor{black}
@@ -133,7 +136,10 @@
 
 \newcommand{\printtitlepage}{\imprimirfolhaderosto}
 
+\ifdefined\imprimirtitulo
 \renewcommand{\imprimirtitulo}{\thetitle\textnormal{\sffamily{: \\ \printsubtitle}}}
+\else
+\fi
 
 \newcommand{\printcoverufsc}{
     \begin{capa}
