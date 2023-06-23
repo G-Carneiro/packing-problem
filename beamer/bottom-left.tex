@@ -65,10 +65,9 @@
     \end{figure}
     \note<1>{Supondo que estejamos em um estado do modelo como mostra a figura, onde o item 0
     foi o primeiro alocado e o item 1 foi alocado a sua direita na posição (2, 0), porque
-    não cabia logo acima na posição (0, 2) devido a restrição \autoref{eq:eq1}.}
+    não cabia logo acima na posição (0, 2) devido a \Cref{eq:1}.}
     \note<2>{Agora queremos alocar um terceiro item de largura 3 e altura 1. Ao posicionar a peça
-    na posição (0, 2) percebe-se que a restrição \autoref{eq:eq1} é satisfeita, porém a restrição
-    \autoref{eq:eq2} não.}
+    na posição (0, 2) percebe-se que a \Cref{eq:1} é satisfeita, porém a \Cref{eq:2} não.}
     \note<3>{Nesse caso, com poucas peças, com caixa pequena e um auxílio visual é fácil dizer
     que a posição (0, 4) é válida, mas como chegar até ela? Existem infinitos pontos entre
     as coordenadas (0, 2) e (0, 4).}
@@ -87,15 +86,15 @@
 \begin{frame}
     \frametitle{\textit{Bottom-left}}
     \framesubtitle{Regiões}
-    \only<1>{
-        \begin{itemize}
-            \item Vertical.
-            \item Horizontal.
-            \item $\max$(área).
-            \item Nenhuma.
-        \end{itemize}
+    \only<1,6->{
+        \begin{table}
+            \centering
+            \caption{Resumo das regiões.}
+            \label{tab:modos-regioes}
+            \small\ttfamily\input{utils/tabular/modos_regioes}
+        \end{table}
     }
-    \only<2->{
+    \only<2-5>{
         \begin{figure}[!htb]
             \centering
             \includegraphics<2>[scale=0.5]{output/figures/bkw/bkw01/vertically/area/false/01}
@@ -115,14 +114,14 @@
     \note<1>{
         Ambos os problemas, de sobreposição e de domínio infinito, podem ser
         resolvidos utilizando a estratégia de criação de regiões.
-        Utilizando essa técnica é possível ignorar a restrição \autoref{eq:eq2}.
+        Utilizando essa técnica é possível ignorar a \Cref{eq:2}.
         Nela, ao posicionar uma peça, duas regiões são criadas e o item seguinte somente será
         posicionado se couber em uma dessas regiões.
 
         O domínio passa a ser somente o canto inferior esquerdo de cada uma das regiões
         e sobreposições não são mais possíveis.
         Além disso, a regra para definir se uma peça cabe em dada região é igual a
-        restrição \autoref{eq:eq1}, tornando o algoritmo de solução bem simples.
+        \Cref{eq:1}, tornando o algoritmo de solução bem simples.
 
         Escolhi criar as regiões de 4 formas diferentes, para identificar se isso teria algum
         impacto na solução.
@@ -137,7 +136,7 @@
     não ser utilizadas, diminuindo a qualidade da solução.}
     \note<5>{No último modo nenhuma linha é traçada, todas as regiões vão até o final do recipiente.
     Nesse caso sobreposições de peças podem ocorrer, então verificações são necessárias para
-    cumprir a restrição \autoref{eq:eq2}. Teoricamente ao permitir sobreposições possibilita
+    cumprir a \Cref{eq:2}. Teoricamente ao permitir sobreposições possibilita
     que mais peças sejam alocadas. Esse modo foi criado justamente para verificar isso e
     qual seu custo.}
 \end{frame}

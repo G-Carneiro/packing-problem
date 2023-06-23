@@ -125,20 +125,22 @@
     consegue ser competitivo tanto em qualidade quanto em quantidade.}
 \end{frame}
 
-\begin{frame}
+\mode<handout>{
+    \begin{frame}
     \frametitle{Resultados}
     \framesubtitle{Conjuntos de instâncias}
     \begin{table}
-        \centering
-        \caption{Resultados para os conjuntos de instância.}
-        \label{tab:instances}
-        \small\ttfamily\input{utils/tabular/compare/instanceset}
+    \centering
+    \caption{Resultados para os conjuntos de instância.}
+    \label{tab:instances}
+    \small\ttfamily\input{utils/tabular/compare/instanceset}
     \end{table}
     \note{Nessa tabela eu trouxe os resultados separados de acordo com o conjunto de
     instância, a BKW demorou mais por ter os maiores números de itens a serem alocados dentre todas
     as instâncias. Em geral, temos bons resultados para cada conjunto, mas vale investigar se algum
     deles possui alguma característica que torne melhor determinado método de solução.}
-\end{frame}
+    \end{frame}
+}
 
 \begin{frame}
     \frametitle{Resultados}
