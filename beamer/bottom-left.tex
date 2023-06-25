@@ -4,8 +4,8 @@
     \framesubtitle{\textit{Bottom-left}}
     \begin{figure}[!htb]
         \centering
-        \includegraphics[scale=0.8]{utils/images/bottom-left}
         \caption{Representação de alocação.}
+        \includegraphics[scale=0.8]{utils/images/bottom-left}
         \caption*{Fonte: \citeauthoryear{aprendizado-reforco}.}
         \label{fig:bottom-left}
     \end{figure}
@@ -54,16 +54,11 @@
 \begin{frame}
     \frametitle{Métodos de solução}
     \framesubtitle{Sobreposição e domínio infinito}
-    \begin{figure}[!htb]
-        \centering
-        \includegraphics<1>[scale=0.5]{utils/images/continuous_example}
-        \includegraphics<2>[scale=0.5]{utils/images/continuous_example2}
-        \includegraphics<3>[scale=0.5]{utils/images/continuous_example3}
-        \includegraphics<4>[scale=0.5]{utils/images/discrete_example}
-        \includegraphics<5>[scale=0.5]{utils/images/discrete_example2}
-        \caption{Resolvendo sobreposição e domínio infinito.}
-        \label{fig:sobreposicao-dominio}
-    \end{figure}
+    \only<1>{\input{utils/figures/sobreposicao-dominio/continuous_example}}
+    \only<2>{\input{utils/figures/sobreposicao-dominio/continuous_example2}}
+    \only<3>{\input{utils/figures/sobreposicao-dominio/continuous_example3}}
+    \only<4>{\input{utils/figures/sobreposicao-dominio/discrete_example}}
+    \only<5>{\input{utils/figures/sobreposicao-dominio/discrete_example2}}
     \note<1>{Supondo que estejamos em um estado do modelo como mostra a figura, onde o item 0
     foi o primeiro alocado e o item 1 foi alocado a sua direita na posição (2, 0), porque
     não cabia logo acima na posição (0, 2) devido a \Cref{eq:1}.}
@@ -95,22 +90,26 @@
             \small\ttfamily\input{utils/tabular/modos_regioes}
         \end{table}
     }
-    \only<2-5>{
-        \begin{figure}[!htb]
-            \centering
-            \includegraphics<2>[scale=0.5]{output/figures/bkw/bkw01/vertically/area/false/01}
-            \includegraphics<3>[scale=0.5]{output/figures/bkw/bkw01/horizontally/area/false/01}
-            \includegraphics<4>[scale=0.5]{output/figures/bkw/bkw01/max_area/area/false/01}
-            \includegraphics<5>[scale=0.5]{output/figures/bkw/bkw01/none/area/false/01}
-            \caption{
-                \only<2>{Regiões criadas traçando uma linha vertical.}
-                \only<3>{Regiões criadas traçando uma linha horizontal.}
-                \only<4>{Regiões criadas maximizando uma das regiões.}
-                \only<5>{Regiões criadas possibilitando sobreposição.}
-            }
-            \label{fig:regioes}
-        \end{figure}
-    }
+%    \only<2-5>{
+%        \begin{figure}[!htb]
+%            \centering
+%            \caption{
+%                \only<2>{Regiões criadas traçando uma linha vertical.}
+%                \only<3>{Regiões criadas traçando uma linha horizontal.}
+%                \only<4>{Regiões criadas maximizando uma das regiões.}
+%                \only<5>{Regiões criadas possibilitando sobreposição.}
+%            }
+%            \includegraphics<2>[scale=0.5]{output/figures/bkw/bkw01/vertically/height/false/01}
+%            \includegraphics<3>[scale=0.5]{output/figures/bkw/bkw01/horizontally/height/false/01}
+%            \includegraphics<4>[scale=0.5]{output/figures/bkw/bkw01/max_area/height/false/01}
+%            \includegraphics<5>[scale=0.5]{output/figures/bkw/bkw01/none/height/false/01}
+%            \label{fig:regioes}
+%        \end{figure}
+%    }
+    \only<2>{\input{utils/figures/regioes/regiao_vertical}}
+    \only<3>{\input{utils/figures/regioes/regiao_horizontal}}
+    \only<4>{\input{utils/figures/regioes/regiao_max}}
+    \only<5>{\input{utils/figures/regioes/regiao_none}}
 
     \note<1>{
         Ambos os problemas, de sobreposição e de domínio infinito, podem ser

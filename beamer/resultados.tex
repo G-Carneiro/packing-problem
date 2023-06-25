@@ -43,17 +43,10 @@
             \small\ttfamily\input{utils/tabular/compare/descending}
         \end{table}
     }
-    \only<2->{
-        \begin{figure}
-            \centering
-            \includegraphics<2>[scale=0.5]{output/figures/bkw/bkw01/horizontally/height/false/00}
-            \includegraphics<3>[scale=0.5]{output/figures/bkw/bkw01/horizontally/height/false/01}
-            \includegraphics<4>[scale=0.5]{output/figures/bkw/bkw01/horizontally/height/false/02}
-            \includegraphics<5>[scale=0.5]{output/figures/bkw/bkw01/horizontally/height/false/06}
-            \caption{Regiões criadas na ordenação crescente.}
-            \label{fig:false}
-        \end{figure}
-    }
+    \only<2>{\input{utils/figures/ordenacao/estado_0}}
+    \only<3>{\input{utils/figures/ordenacao/estado_1}}
+    \only<4>{\input{utils/figures/ordenacao/estado_2}}
+    \only<5>{\input{utils/figures/ordenacao/estado_final}}
     \note<1>{A primeira coisa que fica evidente com os resultados é discrepância
     na qualidade de solução entre a ordenação crescente e a decrescente, algo já esperado.}
     \note<2>{Isso se deve a como as regiões são criadas, as figuras mostram o caso para
