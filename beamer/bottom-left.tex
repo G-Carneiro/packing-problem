@@ -10,18 +10,20 @@
         \label{fig:bottom-left}
     \end{figure}
     \note{
-        Como o problema é NP-difícil uma heurística será usada e a \textit{bottom-left}
-        foi a escolhida.
+        Como o problema é NP-difícil, usar métodos exatos exigiria muitos recursos computacionais
+        e/ou tempo de execução.
+        Então, a heurística \textit{bottom-left} foi escolhida para solucionar o problema.
 
         Ela é bem simples, dado uma lista como entrada, os itens são retirados um a um
-        e posicionados no ponto mais a baixo a mais a esquerda quanto for possível.
+        e posicionados no ponto mais a baixo e mais a esquerda quanto for possível.
 
         Caso a peça não caiba em nenhuma posição ela não entra na solução e passa-se para
         a próxima da fila.
 
-        Aqui fica claro que a sequência de alocação tem impacto direto na qualidade da solução
-        e é um ponto a ser resolvido.
-        Mas como definir essa ordenação? Existe algum critério que se sobressai dos demais?
+        Aqui fica claro que a sequência de alocação tem impacto direto na qualidade da solução.
+        Mas como definir essa ordenação? Existe algum critério que seja melhor que os demais?
+        Para responder essas perguntas, escolhi alguns critérios para ordenar a lista e comparar
+        suas soluções.
     }
 \end{frame}
 
@@ -42,11 +44,11 @@
         5 critérios de ordenação foram escolhidos: área, perímetro, largura, altura e id.
 
         A ordenação por id considera a ordem em que os itens foram colocados na lista (ou criados),
-        ou seja, seria a forma padrão de resolver.
+        ou seja, seria a forma padrão de resolver, sem ordenações.
 
         Cada critério pode ser usado de forma crescente ou decrescente.
-        Com os critérios definidos, podemos passar para os próximos pontos do problema,
-        que são a sobreposição e o domínio infinito.
+        Com os critérios definidos, podemos passar para os próximos desafios do problema,
+        que são a sobreposição e o domínio contínuo.
     }
 \end{frame}
 
@@ -59,22 +61,22 @@
     \only<3>{\input{utils/figures/sobreposicao-dominio/continuous_example3}}
     \only<4>{\input{utils/figures/sobreposicao-dominio/discrete_example}}
     \only<5>{\input{utils/figures/sobreposicao-dominio/discrete_example2}}
-    \note<1>{Supondo que estejamos em um estado do modelo como mostra a figura, onde o item 0
-    foi o primeiro alocado e o item 1 foi alocado a sua direita na posição (2, 0), porque
+    \note<1>{Bom, supondo que estejamos em um estado do algoritmo como mostra a figura, onde o
+    item 0 foi o primeiro alocado e o item 1 foi alocado a sua direita na posição (2, 0), porque
     não cabia logo acima na posição (0, 2) devido a \Cref{eq:1}.}
-    \note<2>{Agora queremos alocar um terceiro item de largura 3 e altura 1. Ao posicionar a peça
+    \note<2>{Agora queremos alocar um terceiro item, de largura 3 e altura 1. Ao posicionar a peça
     na posição (0, 2) percebe-se que a \Cref{eq:1} é satisfeita, porém a \Cref{eq:2} não.}
-    \note<3>{Nesse caso, com poucas peças, com caixa pequena e um auxílio visual é fácil dizer
-    que a posição (0, 4) é válida, mas como chegar até ela? Existem infinitos pontos entre
-    as coordenadas (0, 2) e (0, 4).}
-    \note<4>{Como todas as instâncias tratam somente de peças e recipientes com valores inteiros
-    uma abordagem possível seria discretizar o domínio.}
+    \note<3>{Nesse caso, com poucas peças alocadas e um auxílio visual, é fácil dizer
+    que a posição (0, 4) é a primeira posição válida de acordo com a \textit{bottom-left}.
+    Mas como chegar até ela? Existem infinitos pontos entre as coordenadas (0, 2) e (0, 4).}
+    \note<4>{Como todas as instâncias de teste usadas tratam somente de peças e recipientes com
+    valores inteiros uma abordagem possível seria discretizar o domínio.}
     \note<5>{Dessa forma somente coordenadas de valores inteiros precisariam ser checadas,
         resolvendo parcialmente o problema com o domínio, já que ainda temos muitos pontos para
-        checar, principalmente em instâncias grandes. Mas isso não resolve a parte de sobreposição.
+        checar, principalmente em recipientes grandes. Mas isso não resolve a parte de sobreposição.
         Para cada ponto ainda é necessário verificar se existe sobreposição com cada uma
         das peças já alocadas, algo extremamente custoso. Além disso, a discretização não
-        funcionaria tão bem em casos diferentes, com valores não inteiros, prejudicando a aplicação
+        funcionaria tão bem em casos com valores não inteiros, prejudicando a aplicação
         em vários problemas do mundo real.}
 \end{frame}
 
@@ -90,31 +92,15 @@
             \small\ttfamily\input{utils/tabular/modos_regioes}
         \end{table}
     }
-%    \only<2-5>{
-%        \begin{figure}[!htb]
-%            \centering
-%            \caption{
-%                \only<2>{Regiões criadas traçando uma linha vertical.}
-%                \only<3>{Regiões criadas traçando uma linha horizontal.}
-%                \only<4>{Regiões criadas maximizando uma das regiões.}
-%                \only<5>{Regiões criadas possibilitando sobreposição.}
-%            }
-%            \includegraphics<2>[scale=0.5]{output/figures/bkw/bkw01/vertically/height/false/01}
-%            \includegraphics<3>[scale=0.5]{output/figures/bkw/bkw01/horizontally/height/false/01}
-%            \includegraphics<4>[scale=0.5]{output/figures/bkw/bkw01/max_area/height/false/01}
-%            \includegraphics<5>[scale=0.5]{output/figures/bkw/bkw01/none/height/false/01}
-%            \label{fig:regioes}
-%        \end{figure}
-%    }
     \only<2>{\input{utils/figures/regioes/regiao_vertical}}
     \only<3>{\input{utils/figures/regioes/regiao_horizontal}}
     \only<4>{\input{utils/figures/regioes/regiao_max}}
     \only<5>{\input{utils/figures/regioes/regiao_none}}
 
     \note<1>{
-        Ambos os problemas, de sobreposição e de domínio infinito, podem ser
+        Ambos desafios, de sobreposição e de domínio infinito, podem ser
         resolvidos utilizando a estratégia de criação de regiões.
-        Utilizando essa técnica é possível ignorar a \Cref{eq:2}.
+        Utilizando essa técnica a \Cref{eq:2} é trivialmente satisfeita.
         Nela, ao posicionar uma peça, duas regiões são criadas e o item seguinte somente será
         posicionado se couber em uma dessas regiões.
 
@@ -125,18 +111,24 @@
 
         Escolhi criar as regiões de 4 formas diferentes, para identificar se isso teria algum
         impacto na solução.
+        Teoricamente, resolver trivialmente a \Cref{eq:2}, pode causar prejuízos na qualidade de
+        solução.
+        Então, um dos modos não resolve trivialmente a \Cref{eq:2} e foi criado verificar seu
+        custo-benefício.
     }
-    \note<2>{A primeira é traçando uma linha vertical a partir do canto superior direito
-    de cada peça alocada. Nas figuras, retângulos indicados com um R no começo são regiões.}
-    \note<3>{A segunda é igual a primeira, porém usando uma linha horizontal.}
-    \note<4>{Já na terceira é traçada uma linha (vertical ou horizontal) que maximize a
+    \note<2>{A primeira forma é traçando uma linha vertical a partir do canto superior direito
+    de cada peça alocada. Nas figuras, retângulos indicados com um R são regiões.}
+    \note<3>{A segunda é semelhante a primeira, porém usando uma linha horizontal.}
+    \note<4>{Já na terceira, é traçada uma linha (vertical ou horizontal) que maximize a
     área de uma das regiões geradas, basicamente identifica qual dos dois primeiros métodos
-    gera a maior área. Isso é interessente pois dá uma garantia maior de que o item seguinte
-    será alocado, em contrapartida pode gerar muitas regiões pequenas que podem
+    gera a região de maior área. Isso é interessente pois dá uma garantia maior de que o item
+    seguinte será alocado, em contrapartida pode gerar muitas regiões pequenas que podem
     não ser utilizadas, diminuindo a qualidade da solução.}
-    \note<5>{No último modo nenhuma linha é traçada, todas as regiões vão até o final do recipiente.
-    Nesse caso sobreposições de peças podem ocorrer, então verificações são necessárias para
-    cumprir a \Cref{eq:2}. Teoricamente ao permitir sobreposições possibilita
-    que mais peças sejam alocadas. Esse modo foi criado justamente para verificar isso e
-    qual seu custo.}
+    \note<5>{No último modo nenhuma linha é traçada, todas as regiões vão até o final do recipiente,
+        ficando sobrepostas.
+        Nesse caso sobreposições de peças podem ocorrer, então verificações são necessárias para
+        cumprir a \Cref{eq:2}.}
+    \note<6>{Resumindo os modos das regiões, 3 geram regiões simples e resolvem trivialmente a
+    \Cref{eq:2} e o último deveria apresentar melhores resultados na qualidade de solução, já que
+    a \Cref{eq:2} é não-trivial.}
 \end{frame}
