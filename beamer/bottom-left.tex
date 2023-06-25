@@ -1,11 +1,12 @@
-\section{\textit{Bottom-left}}\label{sec:bottom-left}
+\section{Métodos de solução}\label{sec:bottom-left}
 \begin{frame}
-    \frametitle{\textit{Bottom-left}}
+    \frametitle{Métodos de solução}
+    \framesubtitle{\textit{Bottom-left}}
     \begin{figure}[!htb]
         \centering
         \includegraphics[scale=0.8]{utils/images/bottom-left}
         \caption{Representação de alocação.}
-        \caption*{Fonte:\cite{aprendizado-reforco}}
+        \caption*{Fonte: \citeauthoryear{aprendizado-reforco}.}
         \label{fig:bottom-left}
     \end{figure}
     \note{
@@ -26,7 +27,7 @@
 
 \subsection{Critérios de ordenação}\label{subsec:criterios-de-ordenacao}
 \begin{frame}
-    \frametitle{\textit{Bottom-left}}
+    \frametitle{Métodos de solução}
     \framesubtitle{Critérios de ordenação}
     \begin{itemize}
         \item Área.
@@ -51,7 +52,7 @@
 
 \subsection{Sobreposição e domínio contínuo}\label{subsec:sobreposicao-e-dominio-continuo}
 \begin{frame}
-    \frametitle{\textit{Bottom-left}}
+    \frametitle{Métodos de solução}
     \framesubtitle{Sobreposição e domínio infinito}
     \begin{figure}[!htb]
         \centering
@@ -84,7 +85,7 @@
 
 \subsection{Regiões}\label{subsec:regioes}
 \begin{frame}
-    \frametitle{\textit{Bottom-left}}
+    \frametitle{Métodos de solução}
     \framesubtitle{Regiões}
     \only<1,6->{
         \begin{table}
@@ -139,37 +140,4 @@
     cumprir a \Cref{eq:2}. Teoricamente ao permitir sobreposições possibilita
     que mais peças sejam alocadas. Esse modo foi criado justamente para verificar isso e
     qual seu custo.}
-\end{frame}
-
-\subsection{Testes}\label{subsec:testes}
-\begin{frame}
-    \frametitle{\textit{Bottom-left}}
-    \framesubtitle{Testes}
-    \begin{itemize}
-        \item 45 instâncias.
-        \begin{itemize}
-            \item BKW\@.
-            \item GCUT\@.
-            \item NGCUT\@.
-            \item OF\@.
-            \item OKP\@.
-        \end{itemize}
-        \item 5 testes por configuração.
-        \item $45 \cdot 5 \cdot 2 \cdot 4 \cdot 5 = 9000$ execuções.
-        \item ±5 horas.
-    \end{itemize}
-    \note{
-        Para testar os métodos de solução criados foram usados 5 conjuntos de instâncias:
-        BKW, GCUT, NGCUT, OF e OKP, totalizando 45 instâncias de teste.
-
-        Cada método foi executado 5 vezes em cada uma das instâncias para se obter um média,
-        também foi calculado a mediana e desvio padrão.
-
-        Como temos 45 instâncias, 5 critérios de ordenação, cada critério pode ser crescente ou
-        decrescente, 4 formas de criar regiões e cada uma dessas combinações foi executada 5
-        vezes, temos o total de 9000 execuções.
-
-        O tempo somado de todas as execuções foi de aproximadamente 5 horas (valor que ainda
-        será alterado, pois falta rodar a maior instância com o método de solução mais demorado).
-    }
 \end{frame}

@@ -1,5 +1,35 @@
 \section{Resultados}\label{sec:resultados}
 
+\subsection{Testes}\label{subsec:testes}
+\begin{frame}
+    \frametitle{Resultados}
+    \framesubtitle{Testes}
+    \begin{itemize}
+        \item 45 instâncias.
+        \begin{itemize}
+            \item BKW\@.
+            \item GCUT\@.
+            \item NGCUT\@.
+            \item OF\@.
+            \item OKP\@.
+        \end{itemize}
+        \item $45 \cdot 5 \cdot 2 \cdot 4 = 1800$ casos de teste.
+        \item 5 testes por configuração.
+        \item $1800\cdot 5 = 9000$ execuções.
+    \end{itemize}
+    \note{
+        Para testar os métodos de solução criados foram usados 5 conjuntos de instâncias:
+        BKW, GCUT, NGCUT, OF e OKP, totalizando 45 instâncias de teste.
+
+        Cada método foi executado 5 vezes em cada uma das instâncias para se obter um média,
+        também foi calculado a mediana e desvio padrão.
+
+        Como temos 45 instâncias, 5 critérios de ordenação, cada critério pode ser crescente ou
+        decrescente, 4 formas de criar regiões e cada uma dessas combinações foi executada 5
+        vezes, temos o total de 9000 execuções.
+    }
+\end{frame}
+
 \subsection{Comparativo - Ordenação}\label{subsec:configuracoes-ruins}
 \begin{frame}
     \frametitle{Resultados}
