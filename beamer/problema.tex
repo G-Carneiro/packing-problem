@@ -1,26 +1,7 @@
 \section{Problema}\label{sec:problema}
-\begin{frame}
-    \frametitle{Problema}
-    Alocar peças em um espaço.
-    \begin{itemize}
-        \item Difícil resolução.
-        \item $N$-dimensional.
-        \item Tipos de peças.
-        \item Classificação.
-        \item Variantes.
-    \end{itemize}
-    \note{
-        A premissa do problema é simples, alocar peças em um espaço.
-        Pode parecer algo bobo de resolver, mas é de difícil resolução já que pode possuir
-        $N$-dimensões e diversos tipos de peças, de modo que é preciso separar o problema em
-        diferentes classes e ainda existem variantes dentro das classificações.
-    }
-\end{frame}
 
-\subsection{N-dimensões}\label{subsec:n-dimensoes}
 \begin{frame}
     \frametitle{Problema}
-    \framesubtitle{$N$-dimensões}
     \begin{figure}[!htb]
         \centering
         \caption{Represeção 1D, 2D e 3D.}
@@ -29,13 +10,20 @@
         \label{fig:packing}
     \end{figure}
     \note{
-        Como eu disse, o problema pode ter $N$-dimensões, aqui vou citar alguns exemplos.
-        \begin{itemize}
-            \item O caso 1D pode ser usado para empilhar caixas de mesma profundidade e largura.
-            \item Já no 2D poderia ser aplicado em casos onde somente a profundidade é fixa.
-            \item E o 3D seria alocar caixas em um depósito ou container.
-            \item O trabalho se concentra somente no caso 2D.
-        \end{itemize}
+        A premissa do problema é simples, alocar peças em um espaço.
+        É algo simples, mas é de difícil resolução, podendo possuir
+        $N$-dimensões e diversos tipos de peças, de modo que é preciso separar o problema em
+        diferentes classes e ainda existem variantes dentro das classificações.
+        Como exemplos:
+
+        O caso 1D pode ser usado para cortar uma barra de ferro em certo tamanhos,
+        de forma que seu desperdício seja mínimo.
+
+        Já no 2D poderia ser aplicado em casos para alocação de paletes com altura fixa
+        em um caminhão ou depósito.
+
+        O caso 3D pode ser usado para alocar caixas em um depósito ou container,
+        acredito que esse seja o mais simples de pensar em aplicações.
     }
 \end{frame}
 
@@ -55,10 +43,47 @@
         \end{align}
     }
     \note{
-        Como já definimos a dimensão do problema, podemos ver as restrições do modelo.
+        O trabalho lida somente com peças retangulares, então a dimensão de interesse é 2D.
+        Para resolver o problema ele será representado como um modelo de otimização, portanto,
+        são necessárias algumas restrições para o modelo.
+
+        Então, dado um recipiente $\mathcal{B}$ de largura $W$ e altura $H$, um conjunto de itens
+        $\mathcal{I}$ e um conjunto solução $\mathcal{I'}$.
+        Tem-se duas restrições.
 
         A primeira restrição garante que um item só é alocado no recipiente se couber nele.
 
         Já a segunda impede sobreposição entre as peças.
+    }
+\end{frame}
+
+\subsection{Empacotamento da mochila}\label{subsec:empacotamento-da-mochila}
+\begin{frame}
+    \frametitle{Problema}
+    \framesubtitle{Empacotamento da mochila}
+    Dado:
+    \begin{itemize}
+        \item Recipiente $\mathcal{B} = (W, H)$.
+        \item Conjunto de itens $\mathcal{I}$.
+        \item Cada item $i \in \mathcal{I}$ possui um valor $p_i$.
+    \end{itemize}
+    Encontrar:
+    \begin{itemize}
+        \item Conjunto solução $\mathcal{I'} \subseteq \mathcal{I}$.
+    \end{itemize}
+    De forma que:
+    \[
+        \max \sum_{i \in \mathcal{I'}} p_i
+    \]
+    \note{
+        Como já mencionado, existem muitas versões do problema e a de interesse é o empacotamento
+        da mochila.
+
+        Nessa versão, dado um recipiente $\mathcal{B}$ e um conjunto de itens, onde cada item $i$
+        possui um valor $p_i$, deve-se encontrar um conjunto solução que maximize o somatório dos
+        valores dos itens alocados.
+
+        No trabalho, o valor $p_i$ é a área do item $i$.
+        Ou seja, o objetivo é maximizar a área ocupada do recipiente $\mathcal{B}$.
     }
 \end{frame}
