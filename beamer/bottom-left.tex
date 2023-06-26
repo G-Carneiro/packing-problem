@@ -41,14 +41,14 @@
     \note{
         A partir desse ponto começa de fato o desenvolvimento do trabalho.
 
-        5 critérios de ordenação foram escolhidos: área, perímetro, largura, altura e id.
+        Onde 5 critérios de ordenação foram escolhidos: área, perímetro, largura, altura e id.
+        Com cada critério podendo ser usado de forma crescente ou decrescente.
 
         A ordenação por id considera a ordem em que os itens foram colocados na lista (ou criados),
         ou seja, seria a forma padrão de resolver, sem ordenações.
 
-        Cada critério pode ser usado de forma crescente ou decrescente.
-        Com os critérios definidos, podemos passar para os próximos desafios do problema,
-        que são a sobreposição e o domínio contínuo.
+        Agora que os critérios foram definidos, podemos passar para os próximos desafios do
+        problema, que são a sobreposição e o domínio contínuo.
     }
 \end{frame}
 
@@ -98,7 +98,7 @@
     \only<5>{\input{utils/figures/regioes/regiao_none}}
 
     \note<1>{
-        Ambos desafios, de sobreposição e de domínio infinito, podem ser
+        Ambos desafios, de sobreposição e de domínio contínuo, podem ser
         resolvidos utilizando a estratégia de criação de regiões.
         Utilizando essa técnica a \Cref{eq:2} é trivialmente satisfeita.
         Nela, ao posicionar uma peça, duas regiões são criadas e o item seguinte somente será
@@ -109,21 +109,21 @@
         Além disso, a regra para definir se uma peça cabe em dada região é igual a
         \Cref{eq:1}, tornando o algoritmo de solução bem simples.
 
-        Escolhi criar as regiões de 4 formas diferentes, para identificar se isso teria algum
+        Eu escolhi criar as regiões de 4 formas diferentes, para identificar se isso teria algum
         impacto na solução.
         Teoricamente, resolver trivialmente a \Cref{eq:2}, pode causar prejuízos na qualidade de
         solução.
         Então, um dos modos não resolve trivialmente a \Cref{eq:2} e foi criado verificar seu
         custo-benefício.
     }
-    \note<2>{A primeira forma é traçando uma linha vertical a partir do canto superior direito
-    de cada peça alocada. Nas figuras, retângulos indicados com um R são regiões.}
+    \note<2>{A primeira forma de criar regiões é traçando uma linha vertical a partir do canto
+    superior direito de cada peça alocada. Nas figuras, retângulos indicados com um R são regiões.}
     \note<3>{A segunda é semelhante a primeira, porém usando uma linha horizontal.}
     \note<4>{Já na terceira, é traçada uma linha (vertical ou horizontal) que maximize a
     área de uma das regiões geradas, basicamente identifica qual dos dois primeiros métodos
-    gera a região de maior área. Isso é interessente pois dá uma garantia maior de que o item
-    seguinte será alocado, em contrapartida pode gerar muitas regiões pequenas que podem
-    não ser utilizadas, diminuindo a qualidade da solução.}
+    gera a região de maior área e traça a reta correspondente. Isso é interessente pois dá uma
+    garantia maior de que o item seguinte será alocado, em contrapartida pode gerar muitas regiões
+    pequenas que podem não ser utilizadas, diminuindo a qualidade da solução.}
     \note<5>{No último modo nenhuma linha é traçada, todas as regiões vão até o final do recipiente,
         ficando sobrepostas.
         Nesse caso sobreposições de peças podem ocorrer, então verificações são necessárias para

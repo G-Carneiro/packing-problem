@@ -8,7 +8,7 @@
         \item 45 instâncias.
         \item $45 \cdot 5 \cdot 2 \cdot 4 = 1800$ casos de teste.
         \item 5 testes por configuração.
-        \item $1800\cdot 5 = 9000$ execuções.
+        \item $1800 \cdot 5 = 9000$ execuções.
     \end{itemize}
     \note{
         Para testar os métodos de solução criados foram usadas 45 instâncias de teste.
@@ -16,8 +16,7 @@
         Como temos 45 instâncias, 5 critérios de ordenação, cada critério pode ser crescente ou
         decrescente, e 4 formas de criar regiões, temos o total de 1800 casos a serem testados.
 
-        Cada método foi executado 5 vezes em cada uma das instâncias para se obter um média,
-        totalizando 9000 execuções.
+        Cada caso foi executado 5 vezes para se obter um média, totalizando 9000 execuções.
     }
 \end{frame}
 
@@ -41,21 +40,22 @@
     \note<1>{
         Nas tabelas, a coluna “Qualidade” indica qualidade da solução obtida pelo método, ou seja,
         a porcentagem, em média, da área ocupada dos recipientes.
-        A coluna “Vitórias” indica quantas vezes o critério obteve o melhor resultado e a coluna
-        “Empates” indica quantas vezes obteve o melhor resultado, mas não foi o único a conseguir.
+        A coluna “Vitórias” indica quantas vezes o critério obteve o melhor resultado, quando
+        comparado aos demais, e a coluna “Empates” indica quantas vezes obteve o melhor resultado,
+        mas não foi o único a conseguir.
         A primeira coisa que fica evidente com os resultados é discrepância
         na qualidade de solução entre a ordenação crescente e a decrescente, algo já esperado.}
     \note<2>{Isso se deve a como as regiões são criadas, as figuras mostram o caso para
     ordenação crescente pela altura e linha horizontal para criação de regiões.}
-    \note<3>{Ao posicionar uma peça uma das regiões ficará com a mesma altura do item
-    recém-posicionado, como a ordenação é crescente a próxima peça terá no mínimo
+    \note<3>{Ao posicionar uma peça, uma das regiões ficará com a mesma altura do item
+    recém-posicionado. Como a ordenação é crescente, a próxima peça terá no mínimo
     a mesma altura, mas o provável é que seja mais alta, impossibilitando que seja
     alocada nessa região.}
     \note<4>{O mesmo ocorre para o segundo e demais itens, fazendo com que muitas regiões fiquem
     sem poder receber peças.}
-    \note<5>{Essa figura mostra o estado final do algoritmo e grande parte do espaço
-    ainda está livre, mas não será preenchido. Algo semelhante ocorre com outros critérios de
-    ordenação e criação regiões.}
+    \note<5>{Essa figura mostra o estado final do algoritmo e grande parte do espaço ainda está
+    livre, mas não será preenchido pois todas as peças restantes são mais altas que as regiões.
+    Algo semelhante ocorre com outros critérios de ordenação e criação regiões.}
 \end{frame}
 
 \begin{frame}
@@ -71,7 +71,7 @@
         Em relação aos critérios de ordenação, fica claro que ter algum critério de ordenação
         melhora e muito a solução, já que ordernar por ID teve um péssimo desempenho.
         Mas o curioso é que todos os demais critérios são competitivos entre si.
-        A literatura em geral usa somente ordenação pela área~\cite{chen2019efficient}, esses
+        A literatura em geral usa somente ordenação pela área~\cite{chen2019efficient}, então esses
         resultados podem indicar que algumas instâncias possuem características que torne mais
         interessante outro método de ordenação.}
 \end{frame}
@@ -86,12 +86,12 @@
         \small\ttfamily\input{utils/tabular/compare/regioes_true}
     \end{table}
     \note{Indo para o comparativo entre regiões percebemos que a que permite sobreposições se saiu
-    melhor, tanto em quantitativa quanto qualitativa, ainda que na maioria dos casos não foi a única
-    que encontrou a melhor solução, porém com um custo altíssimo de tempo.
+    melhor, tanto quantitativa quanto qualitativamente, ainda que na maioria dos casos não foi
+    a única que encontrou a melhor solução, e também teve custo altíssimo de tempo.
     Regiões criadas com linhas verticais e horizontais foram mais rápidas, mas com soluções de pior
     qualidade. Enquanto maximizando as regiões levou um pouco a mais de tempo, mas também
-    com acréscimo na qualidade. Aqui a gente percebe que ter sobreposição demora em torno de
-    1000 vezes mais.}
+    teve acréscimo na qualidade. Aqui a gente percebe que precisar resolver a \Cref{eq:2}, faz com
+    que o algoritmo de solução demore em torno de 1000 vezes mais.}
 \end{frame}
 
 \begin{frame}
@@ -104,8 +104,9 @@
         \small\ttfamily\input{utils/tabular/compare/superposition}
     \end{table}
     \note{Na última tabela eu trouxe os números da comparação entre regiões simples e complexas.
-    Na primeira linha temos os resultados de todas as combinações possíveis com regiões simples
-    e o tempo total que levou para executar todas as instâncias. Já na segunda linha somente a
+    Na primeira linha, temos os resultados de todas as combinações possíveis com regiões simples
+    e o tempo total que levou para executar todas as instâncias, aqui a coluna “Qualidade”
+    representa a média da melhor solução de cada instância. Já na segunda linha somente a
     ordenação decrescente pela área e regiões complexas foi considerada, já que obteve os melhores
     resultados.
     Os demais critérios não foram considerados pois esse sozinho já ultrapassa o tempo de todos os
@@ -128,11 +129,11 @@
         % https://brilliant.org/wiki/sum-of-n-n2-or-n3/
     \end{itemize}
     \note{Isso se deve a complexidade dos algoritmos.
-    Como dito antes, sem sobreposições temos que checar se um item cabe em uma região, no pior
-    caso teremos que fazer isso para $(n^2 + n) / 2$ regiões, onde $n$ é número de itens.
+    Como dito antes, sem sobreposições temos apenas que checar se um item cabe em uma região, no
+    pior caso teremos que fazer isso para $(n^2 + n) / 2$ regiões, onde $n$ é número de itens.
     Enquanto com sobreposição, além de ter esse número de regiões, para cada uma delas
     também é necessário checar possíveis sobreposições com as peças já alocadas, sendo o número
-    de verificações igual a $(n^3 - n)/3$, isso no pior caso, algo custoso.
+    de verificações igual a $(n^3 - n)/3$, isso no pior caso, algo extremante custoso.
     Por exemplo, para uma instância com 3152 itens podem ser necessárias mais de 10 bilhões
     de verificações de sobreposição.
     Então, aquela diferença de 1000 vezes fica ainda maior de acordo com a quantidade de itens
