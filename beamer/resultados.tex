@@ -13,10 +13,10 @@
     \note{
         Para testar os métodos de solução criados foram usadas 45 instâncias de teste.
 
-        Como temos 45 instâncias, 5 critérios de ordenação, cada critério pode ser crescente ou
+        Como temos 45 instâncias, 5 critérios de ordenação, onde cada critério pode ser crescente ou
         decrescente, e 4 formas de criar regiões, temos o total de 1800 casos a serem testados.
 
-        Cada caso foi executado 5 vezes para se obter um média, totalizando 9000 execuções.
+        E cada caso foi executado 5 vezes para se obter um média, totalizando 9000 execuções.
     }
 \end{frame}
 
@@ -38,7 +38,7 @@
     \only<4>{\input{utils/figures/ordenacao/estado_2}}
     \only<5>{\input{utils/figures/ordenacao/estado_final}}
     \note<1>{
-        Nas tabelas, a coluna “Qualidade” indica qualidade da solução obtida pelo método, ou seja,
+        Nas tabelas, a coluna “Qualidade” indica a qualidade da solução obtida pelo método, ou seja,
         a porcentagem, em média, da área ocupada dos recipientes.
         A coluna “Vitórias” indica quantas vezes o critério obteve o melhor resultado, quando
         comparado aos demais, e a coluna “Empates” indica quantas vezes obteve o melhor resultado,
@@ -71,7 +71,7 @@
         Em relação aos critérios de ordenação, fica claro que ter algum critério de ordenação
         melhora e muito a solução, já que ordernar por ID teve um péssimo desempenho.
         Mas o curioso é que todos os demais critérios são competitivos entre si.
-        A literatura em geral usa somente ordenação pela área~\cite{chen2019efficient}, então esses
+        E a literatura em geral usa somente ordenação pela área~\cite{chen2019efficient}, então esses
         resultados podem indicar que algumas instâncias possuem características que torne mais
         interessante outro método de ordenação.}
 \end{frame}
@@ -90,7 +90,7 @@
     a única que encontrou a melhor solução, e também teve custo altíssimo de tempo.
     Regiões criadas com linhas verticais e horizontais foram mais rápidas, mas com soluções de pior
     qualidade. Enquanto maximizando as regiões levou um pouco a mais de tempo, mas também
-    teve acréscimo na qualidade. Aqui a gente percebe que precisar resolver a \Cref{eq:2}, faz com
+    teve acréscimo na qualidade. E aqui a gente percebe que precisar resolver a \Cref{eq:2}, faz com
     que o algoritmo de solução demore em torno de 1000 vezes mais.}
 \end{frame}
 
@@ -103,13 +103,14 @@
         \label{tab:sobreposicao}
         \small\ttfamily\input{utils/tabular/compare/superposition}
     \end{table}
-    \note{Na última tabela eu trouxe os números da comparação entre regiões simples e complexas.
+    \note{\scriptsize Na última tabela eu trouxe os números da comparação entre regiões simples e
+    complexas.
     Na primeira linha, temos os resultados de todas as combinações possíveis com regiões simples
     e o tempo total que levou para executar todas as instâncias, aqui a coluna “Qualidade”
     representa a média da melhor solução de cada instância. Já na segunda linha somente a
     ordenação decrescente pela área e regiões complexas foi considerada, já que obteve os melhores
     resultados.
-    Os demais critérios não foram considerados pois esse sozinho já ultrapassa o tempo de todos os
+    Os demais critérios não foram considerados, pois esse sozinho já ultrapassa o tempo de todos os
     métodos sem sobreposição, caso fossem considerados o tempo total seria cerca de 10 vezes maior
     enquanto a qualidade teria pouco acréscimo.
     Aqui fica nítido que compensa muito mais, tanto em qualidade quanto em tempo, rodar todas
@@ -124,7 +125,7 @@
         \item Sem sobreposição: $R = O\left(\dfrac{n^2 + n}{2}\right)$.
         \item Com sobreposição: $\displaystyle R = O\left(\dfrac{n^2 + n}{2}\right),
         S = O\left(\dfrac{n^3 - n}{3}\right)$.
-        $n = 3152 \to R = \numprint{4969128}, S = \numprint{10438481552}.$
+        \item $n = 3152 \to R = \numprint{4969128}, S = \numprint{10438481552}.$
         % $S = O\left(\sum_{i=1}^{n} i(i - 1)\right)$
         % https://brilliant.org/wiki/sum-of-n-n2-or-n3/
     \end{itemize}
@@ -133,9 +134,10 @@
     pior caso teremos que fazer isso para $(n^2 + n) / 2$ regiões, onde $n$ é número de itens.
     Enquanto com sobreposição, além de ter esse número de regiões, para cada uma delas
     também é necessário checar possíveis sobreposições com as peças já alocadas, sendo o número
-    de verificações igual a $(n^3 - n)/3$, isso no pior caso, algo extremante custoso.
+    de verificações igual a $(n^3 - n)/3$, isso no pior caso, o que é bem mais custoso que o outro
+    método.
     Por exemplo, para uma instância com 3152 itens podem ser necessárias mais de 10 bilhões
     de verificações de sobreposição.
     Então, aquela diferença de 1000 vezes fica ainda maior de acordo com a quantidade de itens
-    a serem alocados.}
+    a serem alocados no recipiente.}
 \end{frame}
