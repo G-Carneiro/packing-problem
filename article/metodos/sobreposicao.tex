@@ -1,0 +1,57 @@
+\subsection{Sobreposição e domínio contínuo}\label{subsec:sobreposicao-e-dominio-infinito}
+
+Por mais simples que a heurística \textit{bottom-left} seja, ainda existem dois desafios,
+respeitar a \autoref{eq:2} (sobreposição de peças) e o domínio contínuo de coordenadas
+ao tentar alocar um item.
+
+Supondo uma instância com recipiente de altura e largura 5 e três itens retangulares a serem
+alocados, nesta ordem, com as seguintes dimensões: altura e largura 2, altura 4 e largura 2 e
+altura 1 e largura 3.
+A \autoref{fig:sobreposicao-dominio} mostra um estado intermediário do algoritmo de solução, onde o
+item 0 foi alocado na coordenada (0, 0) e o item 1 foi alocado a sua direita na posição (2, 0)
+para respeitar a \autoref{eq:1}, porque não cabe logo acima na posição (0, 2).
+
+
+\input{utils/figures/sobreposicao-dominio/continuous_example}
+
+Como a próxima peça da fila tem largura 3 e altura 1, ao posicioná-la na posição (0, 2)
+percebe-se que a \autoref{eq:1} é satisfeita, mas a \autoref{eq:2} não (\autoref{fig:sobreposicao-dominio2}).
+
+\input{utils/figures/sobreposicao-dominio/continuous_example2}
+
+Nesse caso, com poucas peças alocadas e auxílio visual, é fácil identificar que a posição correta,
+seguindo a lógica \textit{bottom-left}, seria a de coordenadas (0, 4)
+(\autoref{fig:sobreposicao-dominio3}).
+Porém, encontrar tal posição pode ser extremamente complexo.
+Entre as coordenadas (0, 2) e (0, 4) o espaço é contínuo, existindo infinitas outras coordenadas
+entre elas, sendo impossível checar todas.
+
+\input{utils/figures/sobreposicao-dominio/continuous_example3}
+
+Como todas as instâncias usadas para testes tratam somente de peças e recipientes com valores
+inteiros, uma abordagem possível seria discretizar o domínio, conforme a
+\autoref{fig:sobreposicao-dominio4}.
+
+\input{utils/figures/sobreposicao-dominio/discrete_example}
+
+Dessa forma somente coordenadas de valores inteiros precisariam ser verificadas, resolvendo
+parcialmente o problema com o domínio, já que ainda existiriam muitos pontos, principalmente em
+instâncias com recipientes grandes.
+Mas isso ainda não resolve a sobreposição de itens.
+Para cada ponto ainda é necessário verificar se existe sobreposição com cada uma das peças já
+alocadas, algo custoso.
+
+Na \autoref{fig:sobreposicao-dominio5} é possível notar que três coordenadas precisaram ser checadas
+até encontrar uma que cumprisse as \autoref{eq:1,eq:2}.
+Por se tratar de um estado inicial de uma instância pequena esse processo não é tão custoso,
+porém em instâncias maiores ou estados mais avançados isso se tornará cada vez mais custoso,
+visto que o domínio será maior e, principalmente, mais peças estarão alocadas para checar
+possíveis sobreposições.
+
+\input{utils/figures/sobreposicao-dominio/discrete_example2}
+
+Outro fator o qual deve ser observado é de que a discretização do domínio pode não funcionar bem em
+casos onde os valores trabalhados não sejam inteiros.
+Nesses casos a discretização poderia ocorrer com algum nível de precisão nas casas decimais,
+mas ainda assim as chances de desperdício de área são grandes.
+Ou seja, muitos problemas reais seriam complexos de serem resolvidos com a discretização.

@@ -87,6 +87,11 @@
 \newcommand{\fonte}[1]{}
 \fi
 
+\ifdefined\IBGEtab
+\else
+\newcommand{\IBGEtab}[1]{#1}
+\fi
+
 \ifdefined\nobibintoc
 \nobibintoc
 \else

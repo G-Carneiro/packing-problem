@@ -1,0 +1,52 @@
+\section{Introdução}\label{sec:introducao}
+
+Serviços de loja \textit{online} com entrega como Amazon e Mercado Livre estão tornando-se cada vez
+mais presentes no dia a dia.
+Para tornar as entregas mais rápidas é necessário fazer uma série de estudos de logística e
+planejamento sobre como organizar os produtos nos estoques e nos veículos de entrega~\cite{
+    silva2022integer,morabito1992abordagem}, muitas vezes sendo necessário considerar a ordem
+em que eles precisarão ser retirados.
+Além de tornar o processo mais rápido, a organização também pode permitir o melhor uso de espaços,
+aumentando a quantidade máxima de itens ou evitando o desperdício dos espaços.
+
+Ainda sobre evitar desperdícios, esse quesito é muito importante para as indústrias de papel,
+móveis, têxtil e metal-mecânica~\cite{queiroz2022estudo,cavali2004problemas,belluzzo2005otimizacao}.
+Todas essas áreas querem gerar o máximo de produtos com o mínimo de recursos materiais utilizados,
+para evitar o descarte desnecessário do material e prejuízos financeiros.
+
+Os problemas citados são considerados problemas de corte e empacotamento.
+Problemas de corte envolvem cortar um objeto, como blocos de gesso, chapas de aço e barras de ferro,
+em itens menores.
+Enquanto problemas de empacotamento tratam sobre alocar um conjunto de itens $\mathcal{I}$ em um
+recipiente $\mathcal{B}$.
+Ambos são equivalentes entre si e é possível separá-los de acordo com sua dimensão.
+
+O caso 2D, dimensão de estudo deste trabalho, possui uma vasta literatura de métodos de solução.
+As abordagens de solução se dividem entre exatas, que buscam a solução ótima do problema, e
+heurísticas, as quais podem não encontrar uma solução ótima, mas conseguem uma solução aceitável em
+tempo hábil.
+Dentre os métodos de solução exatos, um que se destaca é o procedimento de busca em árvore~\cite{
+    beasley1985exact}, mas existem muitos outros na literatura~\cite{exact-solution-techniques,
+    fekete1997new,delorme2016bin,kenmochi2009exact}.
+Na parte de heurísticas, tem-se a \textit{bottom-left}~\cite{baker1980orthogonal,chehrazad2022fast}
+e \textit{skyline}~\cite{wei2011skyline}, as heurísticas também possuem grande presença na
+literatura~\cite{burke2004new,rakotonirainy2020improved,hopper2001empirical,chen2019efficient,
+    huang2007efficient,hopper2001review}.
+
+Este trabalho visa criar métodos de solução para o problema de empacotamento no espaço de duas
+dimensões, onde as peças
+são retangulares e com um recipiente também retangular, mais especificamente na versão do
+empacotamento 2D da mochila, considerado NP-difícil~\cite{2DPackLib}.
+Nessa versão do problema, dado um conjunto de itens $\mathcal{I}$, com cada item $i$ possuindo um
+valor $p_i$, e uma caixa $\mathcal{B}$, o objetivo é maximizar a soma dos valores dos itens alocados
+dentro do recipiente.
+A abordagem escolhida para resolver o problema foi utilizar a heurística \textit{bottom-left},
+devido a sua simplicidade e aos limites computacionais e de tempo ao escolher algum método exato.
+Mesmo com a heurística sendo proposta em 1980, ela ainda está presente
+na literatura recente~\cite{chehrazad2022fast,hopper2001empirical,wei2011skyline}.
+
+O principal objetivo deste trabalho é criar métodos de solução para o problema de
+empacotamento da mochila de peças retangulares, todos baseados na heurística \textit{bottom-left}.
+Outros objetivos mais específicos são: implementar a \textit{bottom-left} e os métodos derivados em
+Python, executá-los com instâncias de teste da literatura, comparar seus resultados e identificar
+vantagens e desvantagens de cada um.
