@@ -38,7 +38,8 @@ versões sem e com corte guilhotinado~\cite{furini2016modeling}.
 Como são cinco critérios de ordenação~(\cref{sec:criterios-de-ordenacao}), com cada critério
 podendo ser crescente ou decrescente, quatro formas de criar regiões~(\cref{sec:criacao-de-regioes})
 e 45 instâncias, tem-se o total de 1800 casos de teste.
-Além disso, para conseguir resultados mais fiéis, a média, mediana e desvio padrão foram calculados.
+Além disso, para conseguir resultados mais fiéis, a média, mediana e desvio padrão do tempo de
+execução foram calculados.
 Por isso, cada caso foi executado cinco vezes, totalizando 9000 execuções.
 Outros dados como a qualidade de solução (objetivo do trabalho), porcentagem de itens alocados
 e tempo, também foram computados.
@@ -60,6 +61,19 @@ Nas tabelas apresentadas nas seções seguintes, as colunas “Vitórias” e �
 resultados de forma quantitativa, enquanto a coluna “Qualidade \%” de modo qualitativo.
 Nos testes, o valor $p_i$ dos itens sempre é sua área, desconsiderando os valores dados pelas
 instâncias, caso hajam.
+
+A qualidade de solução é determinada pela área ocupada do recipiente, no caso de todos os itens
+serem alocados, a qualidade é $100\%$ independente da área do recipiente.
+A coluna “Vitórias” indica quantas vezes tal método de solução obteve o melhor resultado em
+comparação com os demais métodos em outras linhas.
+Enquanto a coluna “Empates” mostra a quantidade de vezes que o método conseguiu a melhor qualidade,
+mas outros também conseguiram.
+Essas colunas foram feitas da seguinte forma: entre cada combinação de critério de ordenação,
+modo de criar regiões e instâncias, é feita a comparação se a qualidade de solução foi melhor
+para ordenação crescente ou decrescente.
+No caso de ambas conseguirem o melhor resultado, é acrescido 1 tanto na coluna “Vitórias”, quanto
+na “Empates” de ambas.
+Por fim, a coluna “Tempo (s)” mostra o tempo médio de execução do método em segundos.
 
 \input{chapters/resultados/ordenacao}
 \input{chapters/resultados/criterio_ordenacao}

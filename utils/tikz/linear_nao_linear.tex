@@ -1,7 +1,7 @@
 \begin{tikzpicture}
-    \begin{axis}
+    \begin{axis}[xlabel=$x$, ylabel=$y$]
         \addplot[darkgray] {2*x + 3};
-        \addplot[red] {cos(deg(x)) + sin(deg(x))};
-        \legend{Linear, Não-linear}
+        \addplot[red] {x^2};
+        \legend{Linear: $y = 2x + 3$, Não-linear: $y = x^2$}
     \end{axis}
 \end{tikzpicture}
