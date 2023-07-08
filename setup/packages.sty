@@ -124,6 +124,7 @@
 
 \providecommand{\printuniversity}{}
 \newcommand{\university}[1]{\renewcommand{\printuniversity}{#1}}
+\instituicao{\printuniversity}
 
 \providecommand{\printprogram}{}
 \newcommand{\program}[1]{\renewcommand{\printprogram}{#1}}
@@ -132,9 +133,13 @@
 \newcommand{\formation}[1]{\renewcommand{\printformation}{#1}}
 
 % TODO: warnings daqui em diante
-\newcommand{\affil}{\instituicao}
+\newcommand{\printaffil}{
+    \printuniversity \\
+    \printeducationcenter \\
+    \printdepartment \\
+    \printcourse
+}
 
-\newcommand{\printaffil}{\imprimirinstituicao}
 
 \newcommand{\printtitle}{\imprimirtitulo}
 
