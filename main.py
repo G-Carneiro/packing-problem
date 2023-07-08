@@ -29,8 +29,6 @@ def main(folder: str = INSTANCES) -> None:
         width, height = lines[1].split()
         box = Item(width=float(width), height=float(height))
         for split in SplitMode:
-            if split == SplitMode.NONE:
-                break
             for order in OrderKey:
                 for descending in [True, False]:
                     exec_time = []
@@ -58,6 +56,5 @@ def main(folder: str = INSTANCES) -> None:
     return None
 
 
-# TODO: run bkw13, with order=NONE
 if __name__ == "__main__":
     main()

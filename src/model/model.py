@@ -174,8 +174,6 @@ class Model:
                 item.position = region.start
                 match self.split:
                     case SplitMode.NONE:
-                        # FIXME: two equal items in same place is posible, try use OrderedSet to
-                        #  solve
                         for other in self.items:
                             if (other == item):
                                 break
