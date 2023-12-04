@@ -1,0 +1,29 @@
+\section{Conclusão}\label{sec:conclusao}
+\begin{frame}
+    \frametitle{Conclusão}
+    \begin{itemize}
+        \item Múltiplos métodos de solução.
+        \item Resultados interessantes.
+        \item Com sobreposição $\times$ sem sobreposição.
+        \begin{itemize}
+            \item Escalabilidade.
+        \end{itemize}
+    \end{itemize}
+    \note{\tiny Bom, indo para as conclusões. Foram testados vários métodos de solução,
+        todos baseados em \textit{bottom-left}, e ficou evidente que ordenar a lista de entrada de
+        forma decrescente é vantajoso.
+        Tivemos alguns resultados interessantes, como a competitividade entre todos os critérios de
+        ordenação, sendo necessária uma investigação sobre as características das instâncias.
+        E também a pouca, ou nenhuma, vantagem em termos de qualidade quando usamos regiões que
+        permitem sobreposições.
+        Outro ponto interessante, é que o tempo de execução do algoritmo não depende do tamanho dos
+        itens ou do recipiente, somente do número total de itens.
+        De modo geral, pode-se resolver um problema com todas as combinações que usem regiões
+        simples e buscar a de melhor solução, já que seu tempo de execução é pequeno.
+        Resolver usando regiões com sobreposição só é recomendado em casos onde o modelo será usado
+        várias vezes e não sofrerá alterações.
+        Por fim, caso se queira aumentar a escala, seja na dimensão ou na quantidade
+        de itens, compensa somente trabalhar com regiões sem sobreposição. No caso de aumentar
+        a dimensão seu custo é baixo, sendo necessário verificar somente um parâmetro extra para
+        cada item.}
+\end{frame}

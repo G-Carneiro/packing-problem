@@ -1,0 +1,47 @@
+\section{Modelos de otimização e outras definições}\label{sec:modelos-de-otimizacao}
+
+Modelos de otimização são aproximações da realidade, representam o problema de maneira simples
+e objetiva, usando restrições.
+De forma geral, um modelo de otimização busca minimizar ou maximizar uma função $f(x)$ com $x$
+obedecendo algumas restrições~\cite{calafiore2014optimization}.
+Pode-se então representar o modelo do seguinte modo:
+
+\input{utils/equations/min_max}
+
+Onde
+
+\begin{itemize}
+    \item $x$: variáveis de decisão, $x = (x_1, x_2, \dots, x_n)$.
+    \item $\mathcal{X}$: conjunto factível ou domínio, possui todas as soluções viáveis para o problema.
+    \item $f(x)$: função objetivo, a qual determinará o critério de escolha da solução.
+\end{itemize}
+
+A seguir serão dadas as definições de quatro expressões que aparecem com frequência no estudo de
+problemas de otimização.
+
+Uma solução $x'$ é \textbf{factível} somente se satisfaz todas as restrições dadas ao problema,
+ou seja, $x' \in \mathcal{X}$.
+Existem casos onde o problema não tem solução, possivelmente por muitas restrições terem sido
+aplicadas.
+Isso é chamado \textbf{problema infactível} e $\mathcal{X} = \emptyset$.
+Se para toda solução for possível encontrar outra melhor o problema é dito \textbf{ilimitado}.
+
+Uma solução $x'$ é \textbf{ótima} somente se for \textbf{factível} e possuir resultado melhor,
+ou igual, que as demais soluções, isto é, $f(x') \le f(x), \forall x \in \mathcal{X}$ (caso seja um
+problema de maximização é necessário substituir “$\le$” por “$\ge$”).
+Importante observar que somente existe solução ótima se o problema não for infactível nem ilimitado.
+
+Usando o problema da mochila como exemplo, onde se busca maximizar o valor dos itens alocados
+sem que seus pesos ultrapassem a capacidade da mochila~\cite{exact-solution-techniques},
+um modelo possível é:
+
+\input{utils/equations/modelo_mochila}
+
+Em que $I$ é um conjunto de itens, $v_{i}$ e $w_{i}$ são, respectivamente o valor e o peso do item
+$i \in I$, $C$ é a capacidade da mochila e $x_{i}$ são variáveis binárias indicando se o
+item foi escolhido para mochila ou não.
+
+O problema não é ilimitado, já que a melhor solução (solução ótima) é ocupar toda a capacidade $C$
+da mochila, caso seja possível com os itens $I$.
+Qualquer solução que não ultrapasse o limite da mochila é factível.
+O problema não é considerado infactível, pois colocar nenhum item é uma solução factível.

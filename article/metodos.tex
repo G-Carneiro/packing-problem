@@ -1,0 +1,36 @@
+\section{Métodos de solução}\label{sec:metodos-de-solucao}
+
+Como descrito na \autoref{sec:introducao}, a maioria das classes do problema são NP-difíceis.
+Isso torna métodos de soluções exatos, os quais buscam pela solução ótima, extremamente custosos
+em tempo e recursos computacionais em instâncias de porte moderado, muitas vezes sendo inviáveis
+por falta de algum desses dois motivos.
+Consequentemente a literatura é dominada por abordagens que usam heurísticas e meta-heurísticas,
+sendo a \textit{bottom-left} uma das principais estratégias de solução e será usada no estudo
+deste trabalho.
+
+A \textit{bottom-left} é uma heurística construtiva proposta por\citeauthoryear{baker1980orthogonal}.
+Embora tenha sido proposta a décadas, ainda é bastante usada na literatura atual, além de poder
+ser usada como componente de algoritmos mais sofisticados e para diferentes classes e variantes
+do problema.
+Ela foi utilizada nos trabalhos de \citeauthoryear{hopper2001empirical} na comparação de vários
+métodos de solução, \citeauthoryear{wei2011skyline} trazendo uma revisão do método e seus derivados
+e, mais recentemente, \citeauthoryear{chehrazad2022fast} através de uma adaptação para o
+empacotamento de itens irregulares de forma gulosa.
+
+Sua premissa é simples, dado uma fila de itens como entrada, enquanto ela não estiver vazia,
+basta retirar o primeiro item dela e alocar no canto mais a baixo e à esquerda quanto for
+possível~\cite{aprendizado-reforco}, sem sobreposições entre peças.
+Caso não exista uma posição válida, a peça é desconsiderada e passa-se para próxima da fila.
+A \autoref{fig:bottom-left} mostra um exemplo de alocação para um dado conjunto de peças regulares.
+
+\input{utils/figures/bottom_left}
+
+Vale destacar que a própria ordem da fila pode gerar resultados diferentes, alterando a qualidade
+da solução.
+Um dos resultados esperados deste trabalho é identificar se há alguma forma de ordenação que
+se destaque na qualidade de solução, através da comparação entre os diferentes modos.
+Para isso, serão usados conjuntos de instâncias frequentemente utilizados na literatura.
+
+
+\input{article/metodos/ordenacao}
+\input{article/metodos/regioes}

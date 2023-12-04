@@ -1,0 +1,21 @@
+\section{Definição}\label{sec:definicao}
+
+Com o escopo do estudo definido como problema de empacotamento de retângulos, é possível ver sua
+definição formal.
+De acordo com \citeauthoryear{2DPackLib}, dado uma caixa retangular $\mathcal{B} = (W, H)$ de
+comprimento $W \in \mathbb{Z}_+$ e altura $H \in \mathbb{Z}_+$ e um conjunto $\mathcal{I}$ de itens
+também retangulares, onde cada item $i \in \mathcal{I}$ com comprimento $w_i \in \mathbb{Z}_+, w_i \le W$
+e altura $h_i \in \mathbb{Z}_+, h_i \le H$.
+Um empacotamento $\mathcal{I}' \subseteq \mathcal{I}$ em $\mathcal{B}$ pode ser descrito como uma função
+$\mathcal{F}: \mathcal{I}' \to \mathbb{Z}_+^2$ que mapeie cada item $i \in \mathcal{I}'$ para um par
+de coordenadas $\mathcal{F}(i) = (x_i, y_i)$, de forma:
+
+\input{utils/equations/restricoes}
+
+Nesse modo de representação a caixa está posicionada no plano cartesiano, com seu canto inferior
+esquerdo na origem.
+Já as coordenadas $\mathcal{F}(i) = (x_i, y_i)$ representam a posição em que o canto inferior
+esquerdo da peça será alocado.
+A \Cref{eq:1} garante que cada item deve estar inteiramente na caixa, enquanto a \Cref{eq:2}
+impede sobreposição entre itens.
+Ambas restrições indicam uma orientação fixa, ou seja, peças não podem ser rotacionadas.

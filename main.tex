@@ -1,0 +1,68 @@
+%\begin{filecontents}{main.xmpdata}
+%    \Title{Problema de empacotamento de retângulos}
+%    \Author{Gabriel Medeiros Lopes Carneiro}
+%    \Keywords{problema de empacotamento, bottom-left, heurística, pesquisa operacional.}
+%\end{filecontents}
+% --------------------------------------------
+% Definição do tipo do documento e suas
+% características.
+% --------------------------------------------
+\documentclass[
+    12pt,                   % Tamanho da fonte.
+    a4paper,                % Tipo de papel.
+    brazil,                 % Linguagem principal do documento.
+    oneside                 % Imprimir documento em um lado da folha.
+]{abntex2}                  % Estilo do documento.
+
+% --------------------------------------------
+% Importação de configurações pessoais.
+% --------------------------------------------
+\usepackage{setup/packages}
+
+
+\input{setup/setup}
+\addbibresource{aftertext/references.bib}
+
+% --------------------------------------------
+% Início do documento.
+% --------------------------------------------
+% Aqui devem ser inseridas todas informações.
+% --------------------------------------------
+\begin{document}
+    % --------------------------------------------
+    % Inserção dos elementos pré-textuais.
+    % --------------------------------------------
+    % Capa, folha de rosto, ficha catalográfica,
+    % errata, folha de aprovação, dedicatória,
+    % agradecimentos, epígrafe, resumos,
+    % lista de ilustrações, lista de tabelas,
+    % lista de abreviaturas e siglas,
+    % lista de símbolos e sumário.
+    % --------------------------------------------
+    \include{beforetext/beforetext}
+
+    % --------------------------------------------
+    % Inserção dos elementos textuais.
+    % --------------------------------------------
+    % Aqui devem ser inseridos todos os capítulos
+    % e/ou seções do trabalho.
+    % --------------------------------------------
+    \textual
+    \input{chapters/introduction}
+    \input{chapters/operational-research/operational_research}
+    \input{chapters/packing/packing_problem}
+    \input{chapters/bottom-left/bottom_left}
+    \input{chapters/resultados/resultados}
+    \input{chapters/conclusao}
+
+    % --------------------------------------------
+    % Inserção dos elementos pós-textuais.
+    % --------------------------------------------
+    % Glossário, apêndices, anexos e índice.
+    % --------------------------------------------
+    \include{aftertext/aftertext}
+
+\end{document}
+% --------------------------------------------
+% Final do documento. Não adicionar nada após.
+% --------------------------------------------

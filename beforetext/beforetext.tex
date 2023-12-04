@@ -1,0 +1,85 @@
+% --------------------------------------------
+% Geração da capa. (obrigatório)
+% --------------------------------------------
+\pagenumbering{Alph}   % this fix: warning destination with same identifier page.
+\printcoverufsc
+\pagenumbering{arabic} % this fix: warning destination with same identifier page.
+%\printcover
+
+% --------------------------------------------
+% Geração da folha de rosto. (obrigatório)
+% --------------------------------------------
+\printtitlepage
+
+% --------------------------------------------
+% Geração da ficha catalográfica.(obrigatório)
+% --------------------------------------------
+\includepdf{beforetext/Ficha_Catalografica}
+%\begin{fichacatalografica}
+%\end{fichacatalografica}
+
+% --------------------------------------------
+% Errata. (opcional)
+% --------------------------------------------
+%\begin{errata}
+%\end{errata}
+
+% --------------------------------------------
+% Folha de aprovação. (obrigatório)
+% --------------------------------------------
+\input{beforetext/folha_aprovacao}
+
+% --------------------------------------------
+% Dedicatória. (opcional)
+% --------------------------------------------
+%\begin{dedicatoria}
+%\end{dedicatoria}
+
+% --------------------------------------------
+% Agradecimentos. (opcional)
+% --------------------------------------------
+\input{beforetext/agradecimentos}
+
+% --------------------------------------------
+% Epígrafe. (opcional)
+% --------------------------------------------
+%\begin{epigrafe}
+%\end{epigrafe}
+
+% --------------------------------------------
+% Resumo/Abstract. (obrigatório)
+% --------------------------------------------
+\input{beforetext/abstract}
+
+% --------------------------------------------
+% Lista de Figuras. (opcional)
+% --------------------------------------------
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+
+% --------------------------------------------
+% Lista de Tabelas. (opcional)
+% --------------------------------------------
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+
+% --------------------------------------------
+% Lista de Siglas. (opcional)
+% --------------------------------------------
+%\begin{siglas}
+%\end{siglas}
+
+% --------------------------------------------
+% Lista de Símbolos. (opcional)
+% --------------------------------------------
+%\begin{simbolos}
+%\end{simbolos}
+
+% --------------------------------------------
+% Geração do Sumário. (obrigatório)
+% --------------------------------------------
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage

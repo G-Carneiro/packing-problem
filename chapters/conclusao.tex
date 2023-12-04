@@ -1,0 +1,49 @@
+\chapter*[Conclusão e trabalhos futuros]{Conclusão e trabalhos futuros}\label{ch:conclusao}
+\addcontentsline{toc}{chapter}{\texorpdfstring{CONCLUSÃO E TRABALHOS FUTUROS}{Conclusão e trabalhos futuros}}
+
+No trabalho foram avaliados experimentalmente 40 métodos de solução baseados na heurística
+\textit{bottom-left} para o problema de empacotamento de retângulos, considerando a versão da
+mochila e com o valor dos itens sua própria área.
+O resultado mais óbvio obtido foi a supremacia da ordenação decrescente sobre a crescente
+(\cref{sec:ordenacao-crescente-decrescente}), não compensando utilizar a segunda para solucionar o
+problema.
+
+O alto uso da ordenação decrescente pela área na literatura~\cite{chen2019efficient} foi justificado
+pelos resultados, já que essa composição conseguiu alguns dos melhores números
+(\cref{sec:comparativo-entre-criterios-de-ordenacao}).
+Os resultados também indicam que qualquer critério de ordenação obtêm melhores resultados do que
+deixar a fila desordenada (ordenação por \textit{id}).
+Mas a alta competitividade de outros critérios de ordenação, esses não tão comuns na literatura,
+conseguindo melhores resultados em algumas instâncias, mostra que ainda há espaço para outras
+formas de ordenação.
+
+Em relação às diferentes regiões criadas, por mais que regiões complexas tenham obtido melhores
+resultados (\cref{sec:comparativo-entre-criacao-de-regioes}), não compensa utilizá-las.
+Ao executar todos os métodos de regiões simples é possível conseguir melhores resultados e em menor
+tempo, quando comparado ao método de ordenação decrescente pela área e usando regiões complexas
+(ver a \Cref{tab:superposition} na \cref{sec:comparativo-entre-criacao-de-regioes}).
+Isso devido à complexidade do algoritmo que precisa verificar a existência de sobreposições de peças
+em regiões complexas (\cref{sec:complexidade}).
+
+Como trabalho futuro, cabe a investigação, a fundo, de abordagens meta-heurísticas para a
+\textit{bottom-left}, considerando os outros critérios promissores que não seja a área.
+Buscando identificar se há alguma característica na instância que proporcione melhores soluções com
+outros critérios, a suspeita inicial é que esteja relacionado a quão quadrados são os itens a serem
+alocados no recipiente.
+
+Outros trabalhos possíveis são: expandir o algoritmo de solução para o caso 3D (ou $N$-dimensões) e
+possibilitar a resolução de outras classes do problema (2D-SPP, 2D-CSP, 2D-OPP) e suas variantes.
+Também é possível implementar métodos de solução da literatura diferentes da \textit{bottom-left},
+sejam eles exatos ou heurísticos.
+Com isso, seria possível criar uma ampla biblioteca em Python para problemas de corte e empacotamento.
+
+Por fim, seria interessante buscar soluções quânticas para o problema.
+No momento, existem poucos trabalhos disponíveis na literatura que abordem o tema.
+Um dos mais recentes, feito por \citeauthoryear{de2022hybrid}, traz uma heurística híbrida
+clássica-quântica para o \textit{bin packing problem} (BPP) unidimensional, conseguindo com essa
+nova heurística bons resultados para o problema.
+Outro resultado interessante foi o de \citeauthoryear{fujimura2021quantum}, com um algoritmo quântico
+foi possível chegar a uma complexidade $3(\log_2 k)n$ para o BPP, onde $k$ representa o número de
+caixas e $n$ o número de peças.
+Trabalhos como esses ainda são raros, principalmente para dimensões maiores, mas os poucos que
+existem indicam bons resultados para soluções quânticas, ou híbridas, do problema de empacotamento.

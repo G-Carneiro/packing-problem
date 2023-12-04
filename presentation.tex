@@ -1,0 +1,107 @@
+%! Author = gabriel
+%! Date = 5/7/23
+
+% Preamble
+\documentclass[12pt]{beamer}
+
+% Packages
+\usepackage{amsmath}
+\usepackage{setup/packages}
+
+\usetheme{Madrid}
+\usecolortheme[named=darkgray]{structure}
+\setbeamercolor{background canvas}{bg=gray}
+%\setbeamercolor{frametitle}{bg=darkgray}
+\setbeamercolor{footline}{bg=darkgray, fg=white}
+\setbeamercolor{author in head/foot}{fg=white}
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{itemize item}[circle]
+\setbeamertemplate{itemize subitem}[circle]
+\setbeamertemplate{sections/subsections in toc}[sections numbered]
+\setbeamercolor{section in toc}{fg=black}
+\setbeamercolor{bibliography entry note}{fg=black, bg=white}
+\setbeamertemplate{navigation symbols}{}
+%\setbeamercolor{titlelike}{fg=white}
+%\usefonttheme{structuresmallcapsserif}
+\usefonttheme{serif}
+%\setbeamertemplate{note page}[compress]
+\setbeameroption{show notes on second screen}
+\title[Empacotamento de retângulos]{Problema de empacotamento de retângulos}
+\subtitle{avaliação de métodos de solução baseados em \textit{bottom-left}}
+\author[\href{https://github.com/G-Carneiro}{Gabriel Carneiro}]{
+    \href{https://github.com/G-Carneiro}{Gabriel Medeiros Lopes Carneiro} \\
+    Orientador: Pedro Belin Castellucci \\
+    Coorientador: Rafael de Santiago
+}
+\institute[UFSC]{Universidade Federal de Santa Catarina}
+
+\logo{\includegraphics[scale=0.05]{utils/images/vertical_sigla_PB_fundo_claro}}
+\titlegraphic{
+    \includegraphics[scale=0.15]{utils/images/vertical_sigla_PB_fundo_claro}
+}
+%
+\setbeamertemplate{title page}[default][rounded=true]
+%\setbeamertemplate{footline}{
+%    \leavevmode%
+%    \hbox{%
+%        \begin{beamercolorbox}[wd=0.7\paperwidth,ht=2.25ex,dp=1ex,leftskip=1em]{footline}%
+%            \includegraphics[scale=0.05]{utils/images/logo-ufsc}\hspace*{1em}%
+%            \usebeamerfont{author in head/foot}\href{https://github.com/G-Carneiro}{Gabriel Carneiro}
+%        \end{beamercolorbox}%
+%%        \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+%%            \usebeamerfont{title in head/foot}\insertshorttitle
+%%        \end{beamercolorbox}%
+%        \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+%%            \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+%            \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+%        \end{beamercolorbox}}%
+%    \vskip0pt%
+%}
+
+\addbibresource{aftertext/references.bib}
+\Crefname{equation}{Restrição}{Restrições}
+
+% Document
+\begin{document}
+    \begin{frame}[plain]
+        \titlepage
+        \note{
+            Boa tarde, meu nome é Gabriel e hoje vou apresentar o meu tcc.
+
+            O trabalho trata sobre a avaliação de métodos de solução baseados em
+            \textit{bottom-left}, para o problema de empacotamento de retângulos.
+            Ele foi feito sob orientação do professor Pedro e teve coorientação do professor Rafael.
+        }
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Sumário}
+        \tableofcontents[hideallsubsections]
+        \note{
+            Eu vou começar explicando o problema em si, passando por suas características e
+            abordando a versão de estudo do trabalho.
+
+            Vou mostrar o que é \textit{bottom-left}, como ela funciona e os métodos de solução
+            criados com base nela.
+
+            Também vou mostrar os resultados obtidos ao rodar instâncias de teste.
+
+            E, por fim, vou apresentar algumas conclusões que podem ser feitas a partir do trabalho.
+        }
+    \end{frame}
+
+
+    \mode<handout>{\input{beamer/conceitos-basicos}}
+    \input{beamer/problema}
+    \input{beamer/bottom-left}
+    \input{beamer/resultados}
+    \input{beamer/conclusao}
+
+    \begin{frame}[allowframebreaks, noframenumbering]
+        \frametitle{Referências}
+        \framesubtitle{}
+        \printbibliography\nocite{cavali2004problemas,belluzzo2005otimizacao}
+        \note{Bom, era isso o que tinha para apresentar, obrigado pela atenção.}
+    \end{frame}
+    \input{beamer/extras}
+\end{document}

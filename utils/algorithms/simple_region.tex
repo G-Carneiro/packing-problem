@@ -1,0 +1,17 @@
+\begin{algorithm}
+    \caption{Solução usando regiões simples.}
+    \label{alg:simple-region}
+    \SetKw{AND}{\textbf{and}}
+    \SetKw{Break}{\textbf{break}}
+    \SetKwFunction{Regioes}{CriarNovasRegioes}
+    \ForAll{$i \in \mathcal{I}$}{
+        \ForAll{$r  \in R$}{
+            \If{$i.largura \leq r.largura$ \AND $i.altura \leq r.altura$}{
+                aloca item $i$ na região $r$\;
+                \tcc{elimina $r$ e cria duas novas regiões com base em $i$}
+                \Regioes{i, r}\;
+                \Break\;
+            }
+        }
+    }
+\end{algorithm}

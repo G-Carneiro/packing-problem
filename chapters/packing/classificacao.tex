@@ -1,0 +1,50 @@
+\section{Classificação}\label{sec:classificacao}
+
+Por existirem diferentes objetivos na solução de um problema de empacotamento foram criadas algumas
+classificações.
+Algumas delas (as principais) são mostradas em \citeauthoryear{exact-solution-techniques} e
+\citeauthoryear{2DPackLib}, as quais serão exploradas em seguida, com alguns exemplos já vistos
+na~\nameref{ch:introducao}.
+
+O objetivo do \textbf{Empacotamento 2D em Faixa}, em inglês \textit{Two-Dimensional Strip Packing
+Problem} (2D-SPP), é encontrar um empacotamento de altura mínima $H$ para um dado conjunto de itens
+$\mathcal{I}$ em uma caixa $\mathcal{B} = (W, H)$ com comprimento fixo $W$.
+Muito aplicado na área têxtil para minimizar o comprimento de tecido cortado para fazer peças
+de roupas.
+
+No \textbf{Empacotamento 2D da Mochila}, em inglês \textit{Two-Dimensional Knapsack Problem} (2D-KP),
+dado um conjunto de itens $\mathcal{I}$, onde cada item $i \in \mathcal{I}$ é associado a um valor
+$p_i$, e uma caixa $\mathcal{B}$, deve-se encontrar um subconjunto $\mathcal{I}' \subseteq
+\mathcal{I}$ que maximize $\sum_{i \in \mathcal{I'}}^{} p_i$.
+Geralmente o valor $p_i$ é dado pela área do item, dessa forma, outra interpretação do problema
+seria minimizar a área desperdiçada (vazia) da caixa $\mathcal{B}$.
+Pode ser utilizado para maximizar o número de peças cortadas de um pedaço de couro, por exemplo.
+
+
+Já o \textbf{Empacotamento 2D em Caixas}, em inglês \textit{Two-Dimensional Cutting Stock Problem}
+(2D-CSP), envolve encontrar uma solução que minimize o número de caixas idênticas necessárias para
+empacotar todos os itens $i \in \mathcal{I}$, onde cada item possui uma demanda
+$d_i \in \mathbb{Z}_+$ (número mínimo de cópias do item que precisam ser empacotadas).
+Existe uma versão menos genérica do 2D-CSP, o \textit{Two-Dimensional Bin Packing Problem} (2D-BPP),
+onde a demanda $d_i$ de cada item é 1.
+As caixas podem possuir diferentes tamanhos ao utilizar uma variante (\cref{sec:variantes}),
+mas a maioria dos problemas lida com as mesmas dimensões.
+Facilmente aplicável na área logística e de transporte, seja minimizando o número de paletes
+ou veículos de entrega.
+
+Por fim, no \textbf{Empacotamento 2D Ortogonal}, em inglês \textit{Two-Dimensional Orthogonal
+Packing Problem} (2D-OPP), busca-se uma solução, caso exista, para empacotar \textbf{todos} os
+itens $i \in \mathcal{I}$ na caixa $\mathcal{B}$.
+Usado em situações onde se precisa alocar todos os itens dentro de um caminhão.
+
+Todos os problemas descritos são NP-difícil, com exceção do Ortogonal, sendo NP-completo~\cite{2DPackLib}.
+Existem resultados recentes para todas as classes do problema~\cite{
+    cote2014combinatorial,delorme2017logic,velasco2019improved,martin2020models,mrad2015arc,
+    cintra2008algorithms,furini2016modeling}.
+A \Cref{fig:exemplo-classificacoes} traz exemplos de solução ótima para 2D-SPP, 2D-BPP e 2D-KP,
+para um dado conjunto de itens.
+
+\input{utils/figures/exemplo_classificacoes}
+
+Este trabalho resolverá as instâncias de teste somente para o 2D-KP, onde o valor $p_i$ de cada
+item $i$ será sua própria área, independente do valor original da instância (caso tenha).

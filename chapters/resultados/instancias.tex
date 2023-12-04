@@ -1,0 +1,17 @@
+\section{Conjuntos de instâncias}\label{sec:conjuntos-de-instancias}
+
+A \Cref{tab:instancias} considera os melhores resultados para cada conjunto de instância.
+As colunas “Qualidade \%” e “Itens \%” representam, respectivamente, a média percentual da qualidade
+de solução e itens alocados no melhor resultado de cada instância, considerando apenas os
+métodos que utilizam regiões simples.
+Já a coluna “Tempo Total (s)” traz o tempo total, em segundos, de execução para todos os métodos
+em todas as instâncias do conjunto.
+
+\input{utils/tables/compare/instanceset}
+
+É notável que ótimos resultados foram obtidos em um baixo período.
+No conjunto BKW, o qual é possível alocar todos os itens, levou mais tempo que os demais, pois
+possui a maior quantidade de instâncias e algumas com várias peças.
+Os conjuntos OF e OKP possuem poucas instâncias e, por isso, tiveram pouco tempo de execução.
+De forma geral, todos os conjuntos conseguiram uma excelente qualidade média, sendo o GCUT e NGCUT
+os únicos a ficarem abaixo de $90\%$.

@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+
+\usepackage{setup/sbc-template}
+\RequirePackage[T1]{fontenc}                        % Pacote de fontes
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{float}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[brazilian, nameinlink, capitalize]{cleveref}
+
+\Crefname{equation}{Restrição}{Restrições}
+\creflabelformat{equation}{#2#1#3}
+%\labelformat{equation}{Restrição~#1}
+\renewcommand{\equationautorefname}{Restrição}
+\newcommand{\citeauthoryear}[1]{~\cite{#1}}
+\ifdefined\fonte
+\else
+\newcommand{\fonte}[1]{}
+\fi
+
+\ifdefined\IBGEtab
+\else
+\newcommand{\IBGEtab}[1]{#1}
+\fi
+
+
+\sloppy
+
+\title{Problema de empacotamento de retângulos: \\
+avaliação de métodos de solução baseados em \textit{bottom-left}}
+
+\author{Gabriel Medeiros Lopes Carneiro\inst{1}, Pedro Belin Castellucci\inst{1},
+    Rafael de Santiago\inst{1} }
+
+
+\address{
+    Departamento de Informática e Estatística\\
+    Universidade Federal de Santa Catarina (UFSC) -- Florianólis, SC -- Brasil
+    \email{gabriel.mlc@grad.ufsc.br, pedro.castellucci@ufsc.br, r.santiago@ufsc.br}
+}
+
+\begin{document}
+
+    \maketitle
+
+    \input{article/resumo}
+    \input{article/introducao}
+    \input{article/definicao}
+    \input{article/metodos}
+    \input{article/resultados}
+    \input{article/conclusao}
+
+    \bibliographystyle{setup/sbc}
+    \bibliography{aftertext/references}
+
+\end{document}

@@ -1,0 +1,36 @@
+%! Author = gabriel
+%! Date = 5/17/21
+% --------------------------------------------
+% Para usar título padrão latex, descomente
+% a linha abaixo.
+% --------------------------------------------
+%\maketitle
+
+% TODO: melhorar capa
+\begin{capa}
+    \OnehalfSpacing
+    %{\fontfamily{lmss}\selectfont
+    \centering
+    %\vspace*{\baselineskip}
+    %\vbox to 12cm{%
+    \includegraphics[width=1.84cm,keepaspectratio]{utils/images/logo-ufsc}\par
+    %\large
+    \MakeTextUppercase{\printaffil}\par
+%    \MakeTextUppercase{\printeducationcenter}\par
+%    \MakeTextUppercase{\printprogram}\par
+    %\vfill
+    \vspace*{5\baselineskip}
+    \imprimirautor\par
+    %\vfill
+    \vspace*{8\baselineskip}
+    \textbf{\imprimirtitulo}
+    \ifnotempty{\printsubtitle}{:~\printsubtitle}\par
+    %}
+    \vfill
+    {
+    %\large
+        \imprimirlocal\par
+        \the\year\par
+    }
+    %}
+\end{capa}

@@ -1,0 +1,83 @@
+\chapter{Resultados}\label{ch:resultados}
+
+Para testar os métodos de solução criados foram usadas 45 instâncias de teste da literatura,
+separadas em cinco conjuntos de instância de características diferentes:
+BKW, GCUT, NGCUT, OF e OKP\@.
+Todas as elas foram obtidas através da biblioteca pública
+\href{https://site.unibo.it/operations-research/en/research/2dpacklib}{2DPackLib}\footnote{
+    Disponível em: https://site.unibo.it/operations-research/en/research/2dpacklib.
+    Acessado em: \today.}~\cite{2DPackLib}.
+
+O foco do trabalho é no 2D-KP e com o critério de maximização sendo a área ocupada do espaço.
+Mas nem todos conjuntos foram feitos para ser resolvidos dessa forma, nesses casos foram
+feitas leves adaptações para usá-los.
+O motivo de usar instâncias feitas com outro objetivo é para não viciar o modelo em instâncias
+específicas.
+
+As instâncias BKW foram propostas para 2D-SPP~\cite{burke2004new}, esse conjunto é interessante, pois
+existe uma solução ótima onde todos os itens podem ser alocados.
+\citeauthoryear{cote2014combinatorial} apresentam alguns resultados para esse conjunto, já
+\citeauthoryear{delorme2017logic} trazem resultados usando rotações ortogonais.
+
+Instâncias GCUT foram propostas para 2D-KP com corte guilhotinados~\cite{beasley1985algorithms}.
+Esse conjunto já foi usado na literatura no 2D-SPP~\cite{cote2014combinatorial},
+2D-SPP com corte guilhotinado~\cite{mrad2015arc}, 2D-SPP com rotações ortogonais~\cite{delorme2017logic}
+e 2D-CSP com corte guilhotinado~\cite{cintra2008algorithms}.
+
+NGCUT é um conjunto proposto para 2D-KP~\cite{beasley1985exact}.
+Ele possui resultados recentes para 2D-KP, 2D-SPP~\cite{cote2014combinatorial} e 2D-SPP com
+rotações ortogonais~\cite{delorme2017logic}.
+
+As instâncias OF foram inicialmente elaboradas para 2D-KP com cortes
+guilhotinados~\cite{oliveira1990improved} e foram resolvidas recentemente com o mesmo propósito
+~\cite{velasco2019improved, martin2020models}.
+
+Por fim, instâncias OKP foram criadas para 2D-KP~\cite{fekete1997new} e já foram resolvidas para
+versões sem e com corte guilhotinado~\cite{furini2016modeling}.
+
+Como são cinco critérios de ordenação~(\cref{sec:criterios-de-ordenacao}), com cada critério
+podendo ser crescente ou decrescente, quatro formas de criar regiões~(\cref{sec:criacao-de-regioes})
+e 45 instâncias, tem-se o total de 1800 casos de teste.
+Além disso, para conseguir resultados mais fiéis, a média, mediana e desvio padrão do tempo de
+execução foram calculados.
+Por isso, cada caso foi executado cinco vezes, totalizando 9000 execuções.
+Outros dados como a qualidade de solução (objetivo do trabalho), porcentagem de itens alocados
+e tempo, também foram computados.
+Todas as execuções foram feitas em um mesmo computador, com configurações conforme a
+\Cref{tab:config}.
+
+\input{utils/tables/config}
+
+Ao analisar a média, a mediana e o desvio padrão do tempo de execução, observou-se que a média
+e mediana possuem valores quase idênticos, enquanto o desvio padrão é pequeno ao ponto de poder
+ser ignorado, indicando que cinco execuções por caso de teste são suficientes.
+Portanto, a mediana e desvio padrão serão omitidos no restante do trabalho, podendo ser encontrados
+na versão completa dos dados gerados no \href{https://github.com/G-Carneiro/packing-problem/}{
+    Github}\footnote{Disponível em: https://github.com/G-Carneiro/packing-problem/. Acessado em: \today.}.
+No \Cref{ch:resultados-das-instancias} é possível ver uma versão resumida de todos os dados gerados
+(sem mediana e desvio padrão) para cada instância.
+
+Nas tabelas apresentadas nas seções seguintes, as colunas “Vitórias” e “Empates” trazem os
+resultados de forma quantitativa, enquanto a coluna “Qualidade \%” de modo qualitativo.
+Nos testes, o valor $p_i$ dos itens sempre é sua área, desconsiderando os valores dados pelas
+instâncias, caso hajam.
+
+A qualidade de solução é determinada pela área ocupada do recipiente, no caso de todos os itens
+serem alocados, a qualidade é $100\%$ independente da área do recipiente.
+A coluna “Vitórias” indica quantas vezes tal método de solução obteve o melhor resultado em
+comparação com os demais métodos em outras linhas.
+Enquanto a coluna “Empates” mostra a quantidade de vezes que o método conseguiu a melhor qualidade,
+mas outros também conseguiram.
+Essas colunas foram feitas da seguinte forma: entre cada combinação de critério de ordenação,
+modo de criar regiões e instâncias, é feita a comparação se a qualidade de solução foi melhor
+para ordenação crescente ou decrescente.
+No caso de ambas conseguirem o melhor resultado, é acrescido 1 tanto na coluna “Vitórias”, quanto
+na “Empates” de ambas.
+Por fim, a coluna “Tempo (s)” mostra o tempo médio de execução do método em segundos.
+
+\input{chapters/resultados/ordenacao}
+\input{chapters/resultados/criterio_ordenacao}
+\input{chapters/resultados/regioes}
+\input{chapters/resultados/combinacoes}
+\input{chapters/resultados/instancias}
+\input{chapters/resultados/complexidade}

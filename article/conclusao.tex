@@ -1,0 +1,24 @@
+\section{Conclusão}\label{sec:conclusao}
+\addcontentsline{toc}{chapter}{\texorpdfstring{CONCLUSÃO E TRABALHOS FUTUROS}{Conclusão e trabalhos futuros}}
+
+No trabalho foram avaliados experimentalmente 40 métodos de solução baseados na heurística
+\textit{bottom-left} para o problema de empacotamento de retângulos, considerando a versão da
+mochila e com o valor dos itens sua própria área.
+O resultado mais óbvio obtido foi a supremacia da ordenação decrescente sobre a crescente
+(\cref{subsec:ordenacao-crescente-decrescente}), não compensando utilizar a segunda para solucionar o
+problema.
+
+O alto uso da ordenação decrescente pela área na literatura~\cite{chen2019efficient} foi justificado
+pelos resultados, já que essa composição conseguiu alguns dos melhores números
+(\cref{subsec:comparativo-entre-criterios-de-ordenacao}).
+Os resultados também indicam que qualquer critério de ordenação obtêm melhores resultados do que
+deixar a fila desordenada (ordenação por \textit{id}).
+Mas a alta competitividade de outros critérios de ordenação, esses não tão comuns na literatura,
+conseguindo melhores resultados em algumas instâncias, mostra que ainda há espaço para outras
+formas de ordenação.
+
+Em relação às diferentes regiões criadas, por mais que regiões complexas tenham obtido melhores
+resultados (\cref{subsec:comparativo-entre-criacao-de-regioes}), não compensa utilizá-las.
+Ao executar todos os métodos de regiões simples é possível conseguir melhores resultados e em menor
+tempo, quando comparado ao método de ordenação decrescente pela área e usando regiões complexas
+(ver a \Cref{tab:superposition} na \cref{subsec:comparativo-entre-criacao-de-regioes}).

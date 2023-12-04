@@ -1,0 +1,94 @@
+% --------------------------------------------
+% Aqui você deve organizar as seções.
+% --------------------------------------------
+\chapter*[Introdução]{Introdução}\label{ch:introducao}
+\addcontentsline{toc}{chapter}{\texorpdfstring{INTRODUÇÃO}{Introdução}}
+
+Serviços de loja \textit{online} com entrega como Amazon e Mercado Livre estão tornando-se cada vez
+mais presentes no dia a dia.
+Para tornar as entregas mais rápidas é necessário fazer uma série de estudos de logística e
+planejamento sobre como organizar os produtos nos estoques e nos veículos de entrega~\cite{
+    silva2022integer,morabito1992abordagem}, muitas vezes sendo necessário considerar a ordem
+em que eles precisarão ser retirados.
+Além de tornar o processo mais rápido, a organização também pode permitir o melhor uso de espaços,
+aumentando a quantidade máxima de itens ou evitando o desperdício dos espaços.
+
+Ainda sobre evitar desperdícios, esse quesito é muito importante para as indústrias de papel,
+móveis, têxtil e metal-mecânica~\cite{queiroz2022estudo,cavali2004problemas,belluzzo2005otimizacao}.
+Todas essas áreas querem gerar o máximo de produtos com o mínimo de recursos materiais utilizados,
+para evitar o descarte desnecessário do material e prejuízos financeiros.
+
+Os problemas citados são considerados problemas de corte e empacotamento.
+Problemas de corte envolvem cortar um objeto, como blocos de gesso, chapas de aço e barras de ferro,
+em itens menores.
+Enquanto problemas de empacotamento tratam sobre alocar um conjunto de itens $\mathcal{I}$ em um
+recipiente $\mathcal{B}$.
+Ambos são equivalentes entre si e é possível separá-los de acordo com sua dimensão.
+
+Problemas unidimensionais podem ser associados ao corte de barras ou canos, para atender uma
+demanda por peças de diferentes tamanhos, ou ao empilhamento de caixas em busca de uma altura mínima.
+Outra aplicação viável do caso 1D é o famoso problema da mochila~\cite{exact-solution-techniques},
+onde se deseja alocar itens de valor $v_i$ e peso $w_i$ em uma mochila com capacidade $C$,
+de forma que se maximize a soma dos valores dos itens escolhidos para entrar na mochila.
+
+As indústrias de móveis, tecido, couro e papel usam o caso 2D para minimizar o desperdício ao se
+cortar suas peças~\cite{queiroz2022estudo, cavali2004problemas, belluzzo2005otimizacao},
+enquanto os setores de entregas usam para organizar paletes~\cite{morabito1992abordagem}.
+O caso 3D é facilmente associável ao carregamento de \textit{containers}~\cite{morabito1992abordagem},
+onde objetos são geralmente caixas a serem alocadas em algum veículo, ou ao corte de blocos de
+gesso, já citado.
+
+Basicamente, o problema é aplicável em qualquer área que precise de organização ou logística,
+bem como em situações que envolvam o corte de algum material.
+Ao utilizar soluções para resolver problemas de corte e empacotamento, é possível reduzir o
+desperdício de materiais e impacto ambiental, diminuir tempo de entregas e otimizar espaços
+de estoque.
+
+O caso 2D, dimensão de estudo deste trabalho, possui uma vasta literatura de métodos de solução.
+As abordagens de solução se dividem entre exatas, que buscam a solução ótima do problema, e
+heurísticas, as quais podem não encontrar uma solução ótima, mas conseguem uma solução aceitável em
+tempo hábil.
+Dentre os métodos de solução exatos, um que se destaca é o procedimento de busca em árvore~\cite{
+    beasley1985exact}, mas existem muitos outros na literatura~\cite{exact-solution-techniques,
+    fekete1997new,delorme2016bin,kenmochi2009exact}.
+Na parte de heurísticas, tem-se a \textit{bottom-left}~\cite{baker1980orthogonal,chehrazad2022fast}
+e \textit{skyline}~\cite{wei2011skyline}, as heurísticas também possuem grande presença na
+literatura~\cite{burke2004new,rakotonirainy2020improved,hopper2001empirical,chen2019efficient,
+    huang2007efficient,hopper2001review}.
+
+Este trabalho visa criar métodos de solução para o problema de empacotamento no espaço de duas
+dimensões, onde as peças
+são retangulares e com um recipiente também retangular, mais especificamente na versão do
+empacotamento 2D da mochila, considerado NP-difícil~\cite{2DPackLib}.
+Nessa versão do problema, dado um conjunto de itens $\mathcal{I}$, com cada item $i$ possuindo um
+valor $p_i$, e uma caixa $\mathcal{B}$, o objetivo é maximizar a soma dos valores dos itens alocados
+dentro do recipiente.
+A abordagem escolhida para resolver o problema foi utilizar a heurística \textit{bottom-left},
+devido a sua simplicidade e aos limites computacionais e de tempo ao escolher algum método exato.
+Mesmo com a heurística sendo proposta em~\citeyear*{baker1980orthogonal}, ela ainda está presente
+na literatura recente~\cite{chehrazad2022fast,hopper2001empirical,wei2011skyline}.
+
+Empacotamento de retângulos tem importância prática~\cite{firat2020effective} e o fato de somente
+eles serem considerados não é um grande demérito, já que é possível transformar qualquer polígono
+em um retângulo com algumas manipulações, ainda que haja um desperdício de área no recipiente ao
+resolver o problema desse modo.
+A escolha de focar somente no empacotamento de retângulos foi feita justamente por isso, é possível
+utilizá-lo para empacotar qualquer tipo de item, com as devidas adaptações.
+
+Antes de abordar o problema (\autoref{ch:problema-de-empacotamento}) e buscar soluções
+(\Cref{ch:bottom-left}), alguns conceitos básicos são mostrados.
+O \autoref{ch:conceitos-basicos} foca em modelos de otimização e definições
+(\cref{sec:modelos-de-otimizacao,sec:tipos-de-modelo}) e a diferença entre métodos exatos e
+heurísticos (\cref{sec:metodos-exatos-heuristicos}).
+No \autoref{ch:problema-de-empacotamento} é dada a definição do problema (\autoref{sec:definicao}),
+para então mostrar algumas classificações (\autoref{sec:classificacao}) e variantes
+(\autoref{sec:variantes}).
+Depois, é explicada a heurística \textit{bottom-left} (\autoref{ch:bottom-left}) e os métodos feitos
+com base nela, os quais serão utilizados na resolução das instâncias de teste.
+Por fim, no \Cref{ch:resultados}, os principais resultados obtidos são mostrados.
+
+O principal objetivo deste trabalho é criar métodos de solução para o problema de
+empacotamento da mochila de peças retangulares, todos baseados na heurística \textit{bottom-left}.
+Outros objetivos mais específicos são: implementar a \textit{bottom-left} e os métodos derivados em
+Python, executá-los com instâncias de teste da literatura, comparar seus resultados e identificar
+vantagens e desvantagens de cada um.

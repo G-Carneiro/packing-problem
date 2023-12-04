@@ -1,0 +1,187 @@
+%! Package = PACKAGE_NAME
+%! Author = gabriel
+%! Date = 5/17/21
+% --------------------------------------------
+% Exportação do pacote criado.
+% --------------------------------------------
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{setup/packages}[2021/05/17 gabriel's Package]
+
+% --------------------------------------------
+% Pacotes utilizados no documento.
+% --------------------------------------------
+\RequirePackage[T1]{fontenc}                        % Pacote de fontes
+\RequirePackage[utf8]{inputenc}                     % Pacote de acentuações
+\RequirePackage[brazil]{babel}                      % Tradução para português (pt-br)
+%\RequirePackage{mathptmx}                          % Fonte utilizada = TIMES
+%\RequirePackage{authblk}                           % Informações extras sobre autor(es)
+%\RequirePackage[nottoc]{tocbibind}                 % Adicionar referencias no sumário
+\RequirePackage{array}                              % Edição de colunas, matrizes e tabelas.
+%\RequirePackage[useregional=numeric]{datetime2}    % Fuso horario brasileiro
+%\RequirePackage{titling}                            % get title, author, date
+\RequirePackage{graphicx}                           % Plotar imagens e gráficos
+\RequirePackage{float}                              % Posicionamento forçado de imagens
+\RequirePackage{xcolor}                             % Pacote de cores
+\RequirePackage{helvet}                             % Fonte utilizada
+\RequirePackage{pdfpages}                           % Adicionar páginas de outros pdf's
+\RequirePackage{multirow}                           % multirow table
+\RequirePackage{svg}                                % Incluir imagens .svg
+\RequirePackage{physics}                            % Símbolos da física (braket)
+\RequirePackage{pgfplots}                           % Criar e plotar gráficos
+\RequirePackage{tikz}                               % Criar tikzpicture environment
+\RequirePackage{numprint}                           % \numprint{} para separador em grandes n°
+\RequirePackage{minted}                             % Incluir códigos
+\RequirePackage{forest}                             % Desenhar árvores (útil para
+\RequirePackage{indentfirst}                        % Indenta primeiro parágrafo
+\RequirePackage{mathtools}                          % Mais símbolos matemáticos
+\RequirePackage{amsfonts}                           % Fontes matemáticas
+\RequirePackage{longtable}                          % Tabelas em mais de uma página
+\RequirePackage{csquotes}                           % Aspas seguindo linguagem babel (biblatex)
+\RequirePackage[ruled, portuguese, linesnumbered]{algorithm2e}
+\RequirePackage{caption}                            % This Fix: destination with same identifier
+\RequirePackage[a-1b]{pdfx}                         % Gerar PDF/A
+\RequirePackage[brazilian, nameinlink]{cleveref}    % \cref references
+\RequirePackage{hyperref}                           % permissão de hyperlinks
+\RequirePackage[style=abnt, maxcitenames=1
+]{biblatex}                                         % Referências com padrão ABNT
+
+% --------------------------------------------
+% Packages configuration.
+% --------------------------------------------
+\graphicspath{{utils/images/}} % diretório de imagens
+%\citebrackets[] % citação com colchetes
+\renewcommand{\listingscaption}{Código}
+\renewcommand{\listoflistingscaption}{Lista de Códigos}
+\providecommand{\listingautorefname}{Código}
+\Crefname{restriction}{Restrição}{Restrições}
+\creflabelformat{equation}{#2#1#3}
+\newcounter{restriction}
+\newcommand{\restrictionautorefname}{Restrição}
+\newcommand{\ifnotempty}[2]{\ifthenelse{\not\equal{#1}{}}{#2}{}}
+\counterwithout{equation}{section}
+\counterwithout{equation}{subsection}
+\ifdefined\thechapter
+\counterwithout{equation}{chapter}
+\fi
+
+\setminted[py]{
+    linenos,
+    breaklines,
+    breakanywhere,
+}
+
+\newcommand{\citeauthoryear}[1]{\citeauthor*{#1}~\citeyear{#1}}
+\newcounter{restrictionsavedequation}
+\newenvironment{restrictions}{
+    \setcounter{restrictionsavedequation}{\value{equation}}
+%    \counterwithin*{equation}{restriction}
+    \stepcounter{restriction}
+    \align}
+    {\endalign
+    \setcounter{equation}{\value{restrictionsavedequation}
+    }
+}
+
+\ifdefined\fonte
+\else
+\newcommand{\fonte}[1]{}
+\fi
+
+\ifdefined\ibgetab
+\else
+\newcommand{\ibgetab}[1]{#1}
+\fi
+
+\ifdefined\nobibintoc
+\nobibintoc
+\else
+\fi
+
+\pgfplotsset{compat=1.18}
+%\pagecolor{black}
+%\color{white}
+
+% --------------------------------------------
+% ABNTEX2 Commands
+% --------------------------------------------
+\providecommand{\printeducationcenter}{}
+\newcommand{\educationcenter}[1]{\renewcommand{\printeducationcenter}{#1}}
+
+\ifdefined\subtitle
+\else
+\providecommand{\printsubtitle}{}
+\newcommand{\subtitle}[1]{\renewcommand{\printsubtitle}{#1}}
+\fi
+
+\providecommand{\printaffilinitials}{}
+\newcommand{\affilinitials}[1]{\renewcommand{\printaffilinitials}{#1}}
+
+\providecommand{\printcourse}{}
+\newcommand{\course}[1]{\renewcommand{\printcourse}{#1}}
+
+\providecommand{\printdepartment}{}
+\newcommand{\department}[1]{\renewcommand{\printdepartment}{#1}}
+
+\providecommand{\printuniversity}{}
+\newcommand{\university}[1]{\renewcommand{\printuniversity}{#1}}
+\instituicao{\printuniversity}
+
+\providecommand{\printprogram}{}
+\newcommand{\program}[1]{\renewcommand{\printprogram}{#1}}
+
+\providecommand{\printformation}{}
+\newcommand{\formation}[1]{\renewcommand{\printformation}{#1}}
+
+% TODO: warnings daqui em diante
+\newcommand{\printaffil}{
+    \printuniversity \\
+    \printeducationcenter \\
+    \printdepartment \\
+    \printcourse
+}
+
+
+\newcommand{\printtitle}{\imprimirtitulo}
+
+\newcommand{\worktype}{\tipotrabalho}
+
+\newcommand{\printworktype}{\imprimirtipotrabalho}
+
+\newcommand{\printcover}{\imprimircapa}
+
+\newcommand{\printtitlepage}{\imprimirfolhaderosto}
+
+\ifdefined\imprimirtitulo
+\renewcommand{\imprimirtitulo}{\thetitle\textnormal{\sffamily{: \\ \printsubtitle}}}
+\else
+\fi
+
+\newcommand{\printcoverufsc}{
+    \begin{capa}
+        \centering
+        \begin{figure}
+            \centering
+            \includegraphics[width=1.84cm,keepaspectratio]{logo-ufsc}
+            \label{fig:logo-ufsc}
+        \end{figure}
+        \ABNTEXchapterfont\MakeUppercase{\printaffil}
+
+        \vspace*{1cm}
+
+        \large\theauthor
+
+%        \vfill
+        \vspace*{\fill}
+%        \begin{center}
+        \textbf{\printtitle}
+%        \end{center}
+        \vspace*{\fill}
+%        \vfill{
+
+        \large\imprimirlocal
+
+        \large\the\year
+
+        \vspace*{1cm}
+    \end{capa}
+}

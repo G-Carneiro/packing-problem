@@ -1,0 +1,7 @@
+\begin{tikzpicture}
+    \begin{axis}[xlabel=$x$, ylabel=$y$]
+        \addplot[darkgray, samples=40] {x^2};
+        \addplot[black, only marks, samples=7] {-x^2};
+        \legend{Contínuo: $y = x^2$, Discreto: $y = -x^2 \mid x \in \mathbb{Z}$}
+    \end{axis}
+\end{tikzpicture}

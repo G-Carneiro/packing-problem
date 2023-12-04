@@ -1,0 +1,89 @@
+\section{Problema}\label{sec:problema}
+
+\begin{frame}
+    \frametitle{Problema}
+    \begin{figure}[!htb]
+        \centering
+        \caption{Represeção 1D, 2D e 3D.}
+        \includegraphics[scale=0.6]{utils/images/packing-example}
+        \caption*{Fonte: \citeauthoryear{castellucci2019consolidation}.}
+        \label{fig:packing}
+    \end{figure}
+    \note{
+        A premissa do problema é simples, alocar peças em um espaço.
+        É algo simples, mas de difícil resolução, podendo possuir $N$-dimensões e diversos tipos
+        de peças, de modo que é preciso separar o problema em diferentes classes e ainda existem
+        variantes dentro dessas classificações.
+        Como exemplos:
+
+        Temos o caso 1D que pode ser usado para cortar uma barra de ferro em certos tamanhos,
+        de forma que seu desperdício seja mínimo.
+
+        Já o 2D poderia ser aplicado para alocação de paletes com altura fixa em um caminhão
+        ou depósito.
+
+        O caso 3D pode ser usado para alocar caixas em um depósito ou container, e
+        acredito que esse seja o mais simples de pensar em aplicações.
+    }
+\end{frame}
+
+\subsection{Restrições}\label{subsec:restricoes}
+\begin{frame}
+    \frametitle{Problema}
+    \framesubtitle{Restrições}
+    \begin{itemize}
+        \item Recipiente $\mathcal{B} = (W, H)$.
+        \item Conjunto de itens $\mathcal{I}$.
+        \item Conjunto solução $\mathcal{I'} \subseteq \mathcal{I}$.
+    \end{itemize}
+    \scriptsize{
+        \begin{align}
+            x_i \in \{0, \dots, W - w_i\}, y_i \in \{0, \dots, H - h_i\} \left(i \in \mathcal{I}'\right) \label{eq:1} \\
+            [x_i, x_i + w_i) \cap [x_j, x_j + w_j) = \emptyset \text{ ou } [y_i, y_i + h_i) \cap [y_j, y_j + h_j) = \emptyset \left(i, j \in \mathcal{I}', i \neq j\right) \label{eq:2}
+        \end{align}
+    }
+    \note{
+        O trabalho lida somente com peças retangulares, então a dimensão de interesse é 2D.
+        Para resolver o problema ele será representado como um modelo de otimização, e portanto,
+        são necessárias algumas restrições para o modelo.
+
+        Então, dado um recipiente $\mathcal{B}$ de largura $W$ e altura $H$, um conjunto de itens
+        $\mathcal{I}$ e um conjunto solução $\mathcal{I'}$.
+        Tem-se duas restrições.
+
+        A primeira restrição garante que um item só é alocado no recipiente se couber nele.
+
+        Já a segunda impede sobreposição entre as peças.
+    }
+\end{frame}
+
+\subsection{Empacotamento da mochila}\label{subsec:empacotamento-da-mochila}
+\begin{frame}
+    \frametitle{Problema}
+    \framesubtitle{Empacotamento da mochila}
+    Dado:
+    \begin{itemize}
+        \item Recipiente $\mathcal{B} = (W, H)$.
+        \item Conjunto de itens $\mathcal{I}$.
+        \item Cada item $i \in \mathcal{I}$ possui um valor $p_i$.
+    \end{itemize}
+    Encontrar:
+    \begin{itemize}
+        \item Conjunto solução $\mathcal{I'} \subseteq \mathcal{I}$.
+    \end{itemize}
+    De forma que:
+    \[
+        \max \sum_{i \in \mathcal{I'}} p_i
+    \]
+    \note{
+        Como já mencionado, existem muitas versões do problema e a de interesse é o empacotamento
+        da mochila.
+
+        Nessa versão, dado um recipiente $\mathcal{B}$ e um conjunto de itens, onde cada item $i$
+        possui um valor $p_i$, deve-se encontrar um conjunto solução que maximize o somatório dos
+        valores dos itens alocados.
+
+        No trabalho, o valor $p_i$ é a área do item $i$.
+        Ou seja, o objetivo é maximizar a área ocupada do recipiente $\mathcal{B}$.
+    }
+\end{frame}

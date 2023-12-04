@@ -1,0 +1,46 @@
+% --------------------------------------------
+% Organização dos elementos pós-textuais.
+% --------------------------------------------
+\postextual
+% --------------------------------------------
+% Definição do estilo da bibliografia.
+% Deve estar comentado para padrão ABNT.
+% --------------------------------------------
+%\bibliographystyle{unsrt}
+
+% --------------------------------------------
+% Definição do arquivo da bibliografia.
+% --------------------------------------------
+\addcontentsline{toc}{chapter}{\texorpdfstring{REFERÊNCIAS}{Referências}}
+\printbibliography
+
+% --------------------------------------------
+% Glossário. (opcional)
+% --------------------------------------------
+% TODO: use glossaries package
+
+% --------------------------------------------
+% Apêndice. (opcional)
+% --------------------------------------------
+\apendices
+
+
+\input{aftertext/apendices/resultados}
+
+
+\input{aftertext/apendices/codigo_fonte}
+
+\input{aftertext/apendices/artigo}
+\newpage
+\mbox{}
+\newpage
+% --------------------------------------------
+% Anexos. (opcional)
+% --------------------------------------------
+\anexos
+
+% --------------------------------------------
+% Índice. (opcional)
+% --------------------------------------------
+% TODO: needs MakeIndex compiler.
+%\printindex

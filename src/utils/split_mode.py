@@ -1,8 +1,8 @@
-from enum import auto, Enum
+from enum import Enum
 
 
 class SplitMode(Enum):
-    VERTICALLY = auto()
-    HORIZONTALLY = auto()
-    MAX_AREA = auto()
-    NONE = auto()
+    VERTICALLY = "Vertical"
+    HORIZONTALLY = "Horizontal"
+    MAX_AREA = "Maior área"
+    NONE = "Sobrepostas"

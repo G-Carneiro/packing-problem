@@ -1,0 +1,71 @@
+\section{Complexidade}\label{sec:complexidade}
+
+As \cref{sec:comparativo-entre-criacao-de-regioes,sec:comparativo-entre-combinacoes} deixaram claro
+que regiões onde a sobreposição pode ocorrer são mais custosas no tempo de execução.
+Isso acontece devido à complexidade do algoritmo de solução do modelo.
+
+Em regiões simples, onde não podem acontecer sobreposições, é necessário verificar se o item a ser
+alocado cabe em uma região.
+O \Cref{alg:simple-region} é um pseudocódigo de solução para esse caso (código fonte feito em
+Python pode ser visto no \Cref{ch:codigo-fonte}).
+Onde $\mathcal{I}$ é o conjunto de itens a serem alocados e $R$ são as regiões disponíveis no
+momento (ordenadas para respeitar a \textit{bottom-left}).
+A função \texttt{CriarNovasRegiões()} elimina $r$, cria duas novas regiões com base no
+posicionamento de $i$ e atualiza $R$ com as novas regiões.
+A linha 3 verifica se um item $i$ cabe em uma região $r$, se for possível, o item é alocado e a
+função \texttt{CriarNovasRegiões()} é chamada.
+Quando um item é alocado, o conjunto $\mathcal{I'}$ (conjunto de itens alocados) é atualizado.
+Após, um \texttt{\textbf{break}} é acionado para avançar ao próximo item.
+No pior caso, todas as peças só conseguiriam ser alocadas na última região checada.
+É possível descobrir o número máximo de regiões disponíveis no momento de alocação do item $i$ da
+fila.
+
+\input{utils/algorithms/simple_region}
+
+Para o primeiro item, existe somente uma região, o próprio espaço.
+Após alocar o primeiro item, tem-se duas regiões disponíveis para posicionar o segundo (ver
+\cref{sec:ordenacao-crescente-decrescente}).
+Ao posicionar uma peça o número de regiões sempre é acrescido em um (uma região é eliminada e duas
+são criadas).
+Com isso, é possível afirmar que para alocar o item $i$ será preciso verificar no máximo $i$ regiões.
+Somando o máximo de regiões para cada item chega-se no número máximo de regiões a serem verificadas
+no pior caso.
+Considerando $n$ itens, tem-se a \Cref{eq:sum-1-to-n}.
+
+\input{utils/equations/sum_1_to_n}
+
+Como a soma de 1 até $n$ pode ser reescrita utilizando a \Cref{eq:formula-sum-1-to-n}
+~\cite{merca2015alternative}, tem-se que o número máximo de regiões a serem verificadas
+para solucionar o modelo é $\frac{n^2 + n}{2}$.
+
+\input{utils/equations/formula_sum_1_to_n}
+
+Para regiões complexas, além desse número de regiões, ainda é necessário verificar sobreposições,
+conforme o \Cref{alg:complex-region}.
+O conjunto $\mathcal{I'}$ se refere aos itens já alocados no recipiente e a função
+\texttt{Sobreposicao} verifica se existe sobreposição entre duas peças.
+Agora, para cada região $r \in R$ onde é possível alocar o item $i \in \mathcal{I}$, também é
+preciso verificar todos itens $i' \in \mathcal{I'}$.
+A linha 6 garante que $i$ e $i'$ são diferentes e, caso haja sobreposição, o item $i$ é removido
+da região $r$ (foi alocado na linha 4) e um \texttt{\textbf{break}} é acionado, pois não existe
+necessidade de verificar outros itens $i' \in \mathcal{I'}$.
+Na linha 11 é checado se as coordenadas do item $i$ existem, ou seja, se o item ainda está
+posicionado (não houve sobreposição), então a função \texttt{CriarNovasRegiões} é chamada.
+
+\input{utils/algorithms/complex_region}
+
+No pior caso, ao alocar o item $i$, para cada região será preciso verificar sobreposições com
+todos os itens $i - 1$ (\Cref{eq:sum-i-pow-2}).
+
+\input{utils/equations/sum_i_pow_2}
+
+Usando a Fórmula de Faulhaber~\cite{merca2015alternative} é possível reescrever a soma dos quadrados
+dos $n$ primeiros números inteiros como mostra a \Cref{eq:sum-k-pow-2}.
+
+\input{utils/equations/sum_k_pow_2}
+
+Assim, ao reescrever a \Cref{eq:sum-i-pow-2} utilizando as \Cref{eq:formula-sum-1-to-n,eq:sum-k-pow-2},
+tem-se que, no pior caso, será necessário verificar se existe sobreposição entre peças
+$\frac{n^3-n}{3}$ vezes.
+Para $n = 3152$, seriam quase cinco milhões de regiões e mais 10 bilhões de sobreposições a serem
+checadas, explicando o tempo elevado ao executar um método de solução utilizando regiões complexas.

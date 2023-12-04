@@ -1,0 +1,143 @@
+\section{Resultados}\label{sec:resultados}
+
+\subsection{Testes}\label{subsec:testes}
+\begin{frame}
+    \frametitle{Resultados}
+    \framesubtitle{Testes}
+    \begin{itemize}
+        \item 45 instâncias.
+        \item $45 \cdot 5 \cdot 2 \cdot 4 = 1800$ casos de teste.
+        \item 5 testes por configuração.
+        \item $1800 \cdot 5 = 9000$ execuções.
+    \end{itemize}
+    \note{
+        Para testar os métodos de solução criados foram usadas 45 instâncias de teste.
+
+        Como temos 45 instâncias, 5 critérios de ordenação, onde cada critério pode ser crescente ou
+        decrescente, e 4 formas de criar regiões, temos o total de 1800 casos a serem testados.
+
+        E cada caso foi executado 5 vezes para se obter um média, totalizando 9000 execuções.
+    }
+\end{frame}
+
+\subsection{Comparativo - Ordenação}\label{subsec:configuracoes-ruins}
+\begin{frame}
+    \frametitle{Resultados}
+    \framesubtitle{Ordenação}
+
+    \only<1>{
+        \begin{table}
+            \centering
+            \caption{Comparativo entre ordenação crescente e decrescente.}
+            \label{tab:descending}
+            \small\ttfamily\input{utils/tabular/compare/descending}
+        \end{table}
+    }
+    \only<2>{\input{utils/figures/ordenacao/estado_0}}
+    \only<3>{\input{utils/figures/ordenacao/estado_1}}
+    \only<4>{\input{utils/figures/ordenacao/estado_2}}
+    \only<5>{\input{utils/figures/ordenacao/estado_final}}
+    \note<1>{
+        Nas tabelas, a coluna “Qualidade” indica a qualidade da solução obtida pelo método, ou seja,
+        a porcentagem, em média, da área ocupada dos recipientes.
+        A coluna “Vitórias” indica quantas vezes o critério obteve o melhor resultado, quando
+        comparado aos demais, e a coluna “Empates” indica quantas vezes obteve o melhor resultado,
+        mas não foi o único a conseguir.
+        A primeira coisa que fica evidente com os resultados é discrepância
+        na qualidade de solução entre a ordenação crescente e a decrescente, algo já esperado.}
+    \note<2>{Isso se deve a como as regiões são criadas, as figuras mostram o caso para
+    ordenação crescente pela altura e linha horizontal para criação de regiões.}
+    \note<3>{Ao posicionar uma peça, uma das regiões ficará com a mesma altura do item
+    recém-posicionado. Como a ordenação é crescente, a próxima peça terá no mínimo
+    a mesma altura, mas o provável é que seja mais alta, impossibilitando que seja
+    alocada nessa região.}
+    \note<4>{O mesmo ocorre para o segundo e demais itens, fazendo com que muitas regiões fiquem
+    sem poder receber peças.}
+    \note<5>{Essa figura mostra o estado final do algoritmo e grande parte do espaço ainda está
+    livre, mas não será preenchido pois todas as peças restantes são mais altas que as regiões.
+    Algo semelhante ocorre com outros critérios de ordenação e criação regiões.}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Resultados}
+    \framesubtitle{Critérios de ordenação}
+    \begin{table}
+        \centering
+        \caption{Resultado para os critérios de ordenção.}
+        \label{tab:order}
+        \small\ttfamily\input{utils/tabular/compare/ordenacao_true}
+    \end{table}
+    \note{
+        Em relação aos critérios de ordenação, fica claro que ter algum critério de ordenação
+        melhora e muito a solução, já que ordernar por ID teve um péssimo desempenho.
+        Mas o curioso é que todos os demais critérios são competitivos entre si.
+        E a literatura em geral usa somente ordenação pela área~\cite{chen2019efficient}, então esses
+        resultados podem indicar que algumas instâncias possuem características que torne mais
+        interessante outro método de ordenação.}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Resultados}
+    \framesubtitle{Regiões}
+    \begin{table}
+        \centering
+        \caption{Comparativo entre criação de regiões.}
+        \label{tab:regioes}
+        \small\ttfamily\input{utils/tabular/compare/regioes_true}
+    \end{table}
+    \note{Indo para o comparativo entre regiões percebemos que a que permite sobreposições se saiu
+    melhor, tanto quantitativa quanto qualitativamente, ainda que na maioria dos casos não foi
+    a única que encontrou a melhor solução, e também teve custo altíssimo de tempo.
+    Regiões criadas com linhas verticais e horizontais foram mais rápidas, mas com soluções de pior
+    qualidade. Enquanto maximizando as regiões levou um pouco a mais de tempo, mas também
+    teve acréscimo na qualidade. E aqui a gente percebe que precisar resolver a \Cref{eq:2}, faz com
+    que o algoritmo de solução demore em torno de 1000 vezes mais.}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Resultados}
+    \framesubtitle{Sobreposição}
+    \begin{table}
+        \centering
+        \caption{Resultados para sobreposição.}
+        \label{tab:sobreposicao}
+        \small\ttfamily\input{utils/tabular/compare/superposition}
+    \end{table}
+    \note{\scriptsize Na última tabela eu trouxe os números da comparação entre regiões simples e
+    complexas.
+    Na primeira linha, temos os resultados de todas as combinações possíveis com regiões simples
+    e o tempo total que levou para executar todas as instâncias, aqui a coluna “Qualidade”
+    representa a média da melhor solução de cada instância. Já na segunda linha somente a
+    ordenação decrescente pela área e regiões complexas foi considerada, já que obteve os melhores
+    resultados.
+    Os demais critérios não foram considerados, pois esse sozinho já ultrapassa o tempo de todos os
+    métodos sem sobreposição, caso fossem considerados o tempo total seria cerca de 10 vezes maior
+    enquanto a qualidade teria pouco acréscimo.
+    Aqui fica nítido que compensa muito mais, tanto em qualidade quanto em tempo, rodar todas
+    as combinações possíveis com regiões simples e escolher o melhor resultado.
+    Mas por que tanta diferença no tempo de execução entre com e sem sobreposição?}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Resultados}
+    \framesubtitle{Complexidade}
+    \begin{itemize}
+        \item Sem sobreposição: $R = O\left(\dfrac{n^2 + n}{2}\right)$.
+        \item Com sobreposição: $\displaystyle R = O\left(\dfrac{n^2 + n}{2}\right),
+        S = O\left(\dfrac{n^3 - n}{3}\right)$.
+        \item $n = 3152 \to R = \numprint{4969128}, S = \numprint{10438481552}.$
+        % $S = O\left(\sum_{i=1}^{n} i(i - 1)\right)$
+        % https://brilliant.org/wiki/sum-of-n-n2-or-n3/
+    \end{itemize}
+    \note{Isso se deve a complexidade dos algoritmos.
+    Como dito antes, sem sobreposições temos apenas que checar se um item cabe em uma região, no
+    pior caso teremos que fazer isso para $(n^2 + n) / 2$ regiões, onde $n$ é número de itens.
+    Enquanto com sobreposição, além de ter esse número de regiões, para cada uma delas
+    também é necessário checar possíveis sobreposições com as peças já alocadas, sendo o número
+    de verificações igual a $(n^3 - n)/3$, isso no pior caso, o que é bem mais custoso que o outro
+    método.
+    Por exemplo, para uma instância com 3152 itens podem ser necessárias mais de 10 bilhões
+    de verificações de sobreposição.
+    Então, aquela diferença de 1000 vezes fica ainda maior de acordo com a quantidade de itens
+    a serem alocados no recipiente.}
+\end{frame}
